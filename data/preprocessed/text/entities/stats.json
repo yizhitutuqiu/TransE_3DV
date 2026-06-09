@@ -1,0 +1,24 @@
+{
+  "created_at": "2026-06-09T08:28:53.986670+00:00",
+  "docs_path": "/data/litengmo/ml-test-1/zstp_final/data/preprocessed/text/documents.jsonl",
+  "out_dir": "/data/litengmo/ml-test-1/zstp_final/data/preprocessed/text/entities",
+  "doc_entities_path": "/data/litengmo/ml-test-1/zstp_final/data/preprocessed/text/entities/doc_entities.jsonl",
+  "entity_registry_seed_path": "/data/litengmo/ml-test-1/zstp_final/data/preprocessed/text/entities/entity_registry_seed.jsonl",
+  "doc_count_processed": 1507,
+  "entity_registry_seed_count": 1568,
+  "entity_mentions_by_type": {
+    "Paper": 931,
+    "Task": 3157,
+    "Dataset": 378,
+    "Metric": 733,
+    "Venue": 493,
+    "Repo": 576
+  },
+  "docs_by_category": {
+    "3d_generation": 463,
+    "4d_reconstruction": 463,
+    "pose_estimation": 581
+  },
+  "llm_enabled": false,
+  "llm_cache_path": "/data/litengmo/ml-test-1/zstp_final/data/preprocessed/text/entities/llm_cache.jsonl"
+}
