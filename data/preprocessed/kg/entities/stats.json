@@ -1,9 +1,9 @@
 {
-  "created_at": "2026-06-09T09:23:40.925711+00:00",
-  "seed_registry_path": "/data/litengmo/ml-test-1/zstp_final/data/preprocessed/text/entities/entity_registry_seed.jsonl",
-  "doc_entities_path": "/data/litengmo/ml-test-1/zstp_final/data/preprocessed/text/entities/doc_entities.jsonl",
-  "out_dir": "/data/litengmo/ml-test-1/zstp_final/data/preprocessed/kg/entities",
-  "entity_registry_path": "/data/litengmo/ml-test-1/zstp_final/data/preprocessed/kg/entities/entity_registry.jsonl",
+  "created_at": "2026-06-09T10:01:59.473851+00:00",
+  "seed_registry_path": "/Users/a4x/mia_codebook_2stage/tmp/TransE_3DV/data/preprocessed/text/entities/entity_registry_seed.jsonl",
+  "doc_entities_path": "/Users/a4x/mia_codebook_2stage/tmp/TransE_3DV/data/preprocessed/text/entities/doc_entities.jsonl",
+  "out_dir": "/Users/a4x/mia_codebook_2stage/tmp/TransE_3DV/data/preprocessed/kg/entities",
+  "entity_registry_path": "/Users/a4x/mia_codebook_2stage/tmp/TransE_3DV/data/preprocessed/kg/entities/entity_registry.jsonl",
   "entity_count": 5518,
   "by_type": {
     "Dataset": 40,
@@ -14,5 +14,5 @@
     "Task": 23,
     "Venue": 21
   },
-  "alias_rules_path": "/data/litengmo/ml-test-1/zstp_final/data/preprocessed/kg/entities/alias_rules.json"
+  "alias_rules_path": "/Users/a4x/mia_codebook_2stage/tmp/TransE_3DV/data/preprocessed/kg/entities/alias_rules.json"
 }
