@@ -9,8 +9,10 @@ import random
 import re
 import time
 from collections import Counter, defaultdict
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
 from pathlib import Path
+from threading import Lock
 from typing import Any, Dict, Iterable, Iterator, List, Optional, Sequence, Set, Tuple
 
 import requests
@@ -23,6 +25,10 @@ except Exception:
 
 def _utc_now_iso() -> str:
     return dt.datetime.now(dt.timezone.utc).isoformat()
+
+
+def _data_dir() -> Path:
+    return Path(__file__).resolve().parents[1]
 
 
 def _iter_jsonl(path: Path) -> Iterator[Dict[str, Any]]:
@@ -403,6 +409,36 @@ def _build_method_prompt(doc: Dict[str, Any], *, max_chars: int) -> Tuple[str, s
     return system, user
 
 
+def _build_method_prompt_batch(docs: Sequence[Dict[str, Any]], *, max_chars: int) -> Tuple[str, str, List[str]]:
+    system = "You extract entity names from 3D vision text. Output must be strict JSON."
+    parts: List[str] = []
+    doc_ids: List[str] = []
+    for d in docs:
+        doc_id = d.get("doc_id")
+        if not isinstance(doc_id, str) or not doc_id:
+            continue
+        title = d.get("title") if isinstance(d.get("title"), str) else ""
+        text = d.get("text") if isinstance(d.get("text"), str) else ""
+        full = _normalize_ws(f"{title}\n\n{text}")
+        if len(full) > max_chars:
+            full = full[:max_chars].rsplit(" ", 1)[0]
+        doc_ids.append(doc_id)
+        parts.append(f"doc_id: {doc_id}\ntext:\n{full}")
+    user = (
+        "For each item, extract method/model/framework names that are relevant to 3D vision.\n"
+        "Return a JSON object mapping doc_id to an array of strings.\n"
+        "No explanations.\n\n"
+        + "\n\n---\n\n".join(parts)
+    )
+    return system, user, doc_ids
+
+
+def _chunked(seq: Sequence[Any], n: int) -> List[Sequence[Any]]:
+    if n <= 0:
+        return [seq]
+    return [seq[i : i + n] for i in range(0, len(seq), n)]
+
+
 def _load_processed_doc_ids(path: Path) -> Set[str]:
     if not path.exists():
         return set()
@@ -443,17 +479,17 @@ def main() -> int:
     ap.add_argument(
         "--docs_path",
         type=str,
-        default="/data/litengmo/ml-test-1/zstp_final/data/preprocessed/text/documents.jsonl",
+        default=str((_data_dir() / "preprocessed" / "text" / "documents.jsonl").resolve()),
     )
     ap.add_argument(
         "--out_dir",
         type=str,
-        default="/data/litengmo/ml-test-1/zstp_final/data/preprocessed/text/entities",
+        default=str((_data_dir() / "preprocessed" / "text" / "entities").resolve()),
     )
     ap.add_argument(
         "--dict_dir",
         type=str,
-        default="/data/litengmo/ml-test-1/zstp_final/data/preprocessed/text/dicts",
+        default=str((_data_dir() / "preprocessed" / "text" / "dicts").resolve()),
     )
     ap.add_argument("--overwrite", action="store_true")
     ap.add_argument("--resume", action="store_true")
@@ -465,6 +501,8 @@ def main() -> int:
     ap.add_argument("--enable_llm", action="store_true")
     ap.add_argument("--llm_max_chars", type=int, default=3500)
     ap.add_argument("--llm_sleep_s", type=float, default=0.2)
+    ap.add_argument("--llm_batch_docs", type=int, default=4)
+    ap.add_argument("--llm_concurrency", type=int, default=4)
     ap.add_argument("--llm_cache_path", type=str, default="")
     ap.add_argument("--doubao_model", type=str, default="doubao-seed-2-0-pro-260215")
     ap.add_argument("--doubao_base_url", type=str, default="https://ark.cn-beijing.volces.com/api/v3")
@@ -530,6 +568,85 @@ def main() -> int:
         if k not in uniq:
             uniq[k] = {"type": typ, "canonical": canonical, "created_at": _utc_now_iso()}
 
+    if args.enable_llm:
+        want: List[Dict[str, Any]] = []
+        for doc in _iter_jsonl(docs_path):
+            doc_id = doc.get("doc_id")
+            if not isinstance(doc_id, str) or not doc_id:
+                continue
+            if doc_id in processed:
+                continue
+            text = doc.get("text")
+            if not isinstance(text, str) or len(text) < args.min_doc_chars:
+                continue
+            if llm_cache.get(doc_id, {}).get("ok") is True:
+                continue
+            want.append(doc)
+            if args.limit and len(want) >= args.limit:
+                break
+
+        if want:
+            cache_lock = Lock()
+
+            def run_batch(batch_docs: Sequence[Dict[str, Any]]) -> List[Dict[str, Any]]:
+                local_session = requests.Session()
+                system, user, doc_ids = _build_method_prompt_batch(batch_docs, max_chars=args.llm_max_chars)
+                prompt_sha = _sha256_text(system + "\n" + user)
+                raw = ""
+                ok_map: Dict[str, Any] = {}
+                err = ""
+                try:
+                    raw = _doubao_infer(local_session, llm_cfg, system=system, user=user)
+                    parsed_any = _extract_first_json(raw)
+                    if isinstance(parsed_any, dict):
+                        ok_map = parsed_any
+                    elif isinstance(parsed_any, list) and len(doc_ids) == 1:
+                        ok_map = {doc_ids[0]: parsed_any}
+                    else:
+                        err = "parse_failed"
+                except Exception as e:
+                    err = f"{type(e).__name__}:{str(e)[:200]}"
+
+                ts = _utc_now_iso()
+                out_items: List[Dict[str, Any]] = []
+                for did in doc_ids:
+                    val = ok_map.get(did)
+                    ok = isinstance(val, list)
+                    out_items.append(
+                        {
+                            "doc_id": did,
+                            "model": llm_cfg.model,
+                            "base_url": llm_cfg.base_url,
+                            "prompt_sha256": prompt_sha,
+                            "ok": ok,
+                            "error": "" if ok else (err or "missing_key"),
+                            "raw": raw,
+                            "parsed": val if ok else None,
+                            "created_at": ts,
+                        }
+                    )
+                if args.llm_sleep_s:
+                    time.sleep(max(0.0, float(args.llm_sleep_s)))
+                return out_items
+
+            batches = _chunked(want, max(1, int(args.llm_batch_docs)))
+            max_workers = max(1, int(args.llm_concurrency))
+            pbar_llm = _tqdm(total=len(batches), desc="llm:batches") if _tqdm is not None else None
+            with ThreadPoolExecutor(max_workers=max_workers) as ex:
+                futs = [ex.submit(run_batch, b) for b in batches]
+                for fut in as_completed(futs):
+                    items = fut.result()
+                    with cache_lock:
+                        for it in items:
+                            _append_llm_cache(llm_cache_path, it)
+                            did = it.get("doc_id")
+                            if isinstance(did, str) and did:
+                                llm_cache[did] = it
+                    if pbar_llm is not None:
+                        pbar_llm.update(1)
+            if pbar_llm is not None:
+                pbar_llm.close()
+
     total_docs = _count_lines(docs_path)
     pbar = _tqdm(total=total_docs, desc="entities:docs") if _tqdm is not None else None
     for doc in _iter_jsonl(docs_path):
@@ -562,37 +679,7 @@ def main() -> int:
 
         if args.enable_llm:
             cached = llm_cache.get(doc_id)
-            if cached and cached.get("ok") is True:
-                parsed = cached.get("parsed")
-            else:
-                system, user = _build_method_prompt(doc, max_chars=args.llm_max_chars)
-                prompt_sha = _sha256_text(system + "\n" + user)
-                raw = ""
-                ok = False
-                parsed: Any = None
-                err = ""
-                try:
-                    raw = _doubao_infer(session, llm_cfg, system=system, user=user)
-                    parsed = _extract_first_json(raw)
-                    ok = isinstance(parsed, list)
-                    if not ok:
-                        err = "parse_failed"
-                except Exception as e:
-                    err = f"{type(e).__name__}:{str(e)[:200]}"
-                item = {
-                    "doc_id": doc_id,
-                    "model": llm_cfg.model,
-                    "base_url": llm_cfg.base_url,
-                    "prompt_sha256": prompt_sha,
-                    "ok": ok,
-                    "error": err,
-                    "raw": raw,
-                    "parsed": parsed if ok else None,
-                    "created_at": _utc_now_iso(),
-                }
-                _append_llm_cache(llm_cache_path, item)
-                llm_cache[doc_id] = item
-                time.sleep(max(0.0, float(args.llm_sleep_s)))
+            parsed = cached.get("parsed") if isinstance(cached, dict) and cached.get("ok") is True else None
 
             if isinstance(parsed, list):
                 for name in parsed[:80]:

@@ -378,17 +378,21 @@ def build_ontology_schema() -> Dict[str, Any]:
     }
 
 
+def _data_dir() -> Path:
+    return Path(__file__).resolve().parents[1]
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument(
         "--raw_root",
         type=str,
-        default="/data/litengmo/ml-test-1/zstp_final/data/raw",
+        default=str((_data_dir() / "raw").resolve()),
     )
     ap.add_argument(
         "--out_dir",
         type=str,
-        default="/data/litengmo/ml-test-1/zstp_final/data/preprocessed/text",
+        default=str((_data_dir() / "preprocessed" / "text").resolve()),
     )
     ap.add_argument("--max_doc_chars", type=int, default=12000)
     ap.add_argument("--min_doc_chars", type=int, default=80)
