@@ -503,6 +503,7 @@ def main() -> int:
     ap.add_argument("--llm_sleep_s", type=float, default=0.2)
     ap.add_argument("--llm_batch_docs", type=int, default=4)
     ap.add_argument("--llm_concurrency", type=int, default=4)
+    ap.add_argument("--llm_disable_proxy", action="store_true")
     ap.add_argument("--llm_cache_path", type=str, default="")
     ap.add_argument("--doubao_model", type=str, default="doubao-seed-2-0-pro-260215")
     ap.add_argument("--doubao_base_url", type=str, default="https://ark.cn-beijing.volces.com/api/v3")
@@ -590,6 +591,8 @@ def main() -> int:
 
             def run_batch(batch_docs: Sequence[Dict[str, Any]]) -> List[Dict[str, Any]]:
                 local_session = requests.Session()
+                if args.llm_disable_proxy:
+                    local_session.trust_env = False
                 system, user, doc_ids = _build_method_prompt_batch(batch_docs, max_chars=args.llm_max_chars)
                 prompt_sha = _sha256_text(system + "\n" + user)
                 raw = ""
