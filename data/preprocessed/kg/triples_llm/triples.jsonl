@@ -2703,3 +2703,1264 @@
 {"h": "Repo:FORTH-ModelBasedTracker/MocapNET", "r": "repo_implements_method", "t": "Method:mocapnet", "doc_id": "github:FORTH-ModelBasedTracker/MocapNET", "confidence": 1.0, "source": "llm"}
 {"h": "Repo:FORTH-ModelBasedTracker/MocapNET", "r": "repo_implements_method", "t": "Method:mocapnet3", "doc_id": "github:FORTH-ModelBasedTracker/MocapNET", "confidence": 0.95, "source": "llm"}
 {"h": "Repo:FORTH-ModelBasedTracker/MocapNET", "r": "repo_implements_method", "t": "Method:nsrm", "doc_id": "github:FORTH-ModelBasedTracker/MocapNET", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:1904.11781", "r": "paper_proposes_method", "t": "Method:em-fusion", "doc_id": "arxiv:1904.11781", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1901.05103", "r": "paper_proposes_method", "t": "Method:deepsdf", "doc_id": "arxiv:1901.05103", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2003.04618", "r": "paper_proposes_method", "t": "Method:convolutional occupancy networks", "doc_id": "arxiv:2003.04618", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2003.08593", "r": "paper_proposes_method", "t": "Method:curriculum deepsdf", "doc_id": "arxiv:2003.08593", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2012.05536", "r": "paper_proposes_method", "t": "Method:transformesh", "doc_id": "arxiv:2012.05536", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2003.12406", "r": "paper_proposes_method", "t": "Method:implicit surface light fields", "doc_id": "arxiv:2003.12406", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2003.12753", "r": "paper_proposes_method", "t": "Method:deep fashion3d", "doc_id": "arxiv:2003.12753", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2011.05813", "r": "paper_proposes_method", "t": "Method:dynamic plane convolutional occupancy networks", "doc_id": "arxiv:2011.05813", "confidence": 1.0, "source": "llm"}
+{"h": "Method:dynamic plane convolutional occupancy networks", "r": "method_uses_dataset", "t": "Dataset:shapenet", "doc_id": "arxiv:2011.05813", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2011.06498", "r": "paper_proposes_method", "t": "Method:fit2form", "doc_id": "arxiv:2011.06498", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2011.06498", "r": "paper_proposes_method", "t": "Method:fitness network", "doc_id": "arxiv:2011.06498", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2011.06498", "r": "paper_proposes_method", "t": "Method:3d generative network", "doc_id": "arxiv:2011.06498", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2012.02190", "r": "paper_proposes_method", "t": "Method:pixelnerf", "doc_id": "arxiv:2012.02190", "confidence": 1.0, "source": "llm"}
+{"h": "Method:pixelnerf", "r": "method_uses_dataset", "t": "Dataset:shapenet", "doc_id": "arxiv:2012.02190", "confidence": 1.0, "source": "llm"}
+{"h": "Method:pixelnerf", "r": "method_uses_dataset", "t": "Dataset:dtu", "doc_id": "arxiv:2012.02190", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2007.02798", "r": "paper_proposes_method", "t": "Method:gradient origin networks", "doc_id": "arxiv:2007.02798", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2009.11193", "r": "paper_proposes_method", "t": "Method:contactnets", "doc_id": "arxiv:2009.11193", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2010.07492", "r": "paper_proposes_method", "t": "Method:nerf++", "doc_id": "arxiv:2010.07492", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2007.03858", "r": "paper_proposes_method", "t": "Method:pamir", "doc_id": "arxiv:2007.03858", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2007.03858", "r": "paper_proposes_method", "t": "Method:parametric model-conditioned implicit representation", "doc_id": "arxiv:2007.03858", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2005.00922", "r": "paper_proposes_method", "t": "Method:samp", "doc_id": "arxiv:2005.00922", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2005.00922", "r": "paper_proposes_method", "t": "Method:shape and motion priors", "doc_id": "arxiv:2005.00922", "confidence": 1.0, "source": "llm"}
+{"h": "Method:samp", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "arxiv:2005.00922", "confidence": 1.0, "source": "llm"}
+{"h": "Method:shape and motion priors", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "arxiv:2005.00922", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2010.10505", "r": "paper_proposes_method", "t": "Method:sdf-srn", "doc_id": "arxiv:2010.10505", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2103.14910", "r": "paper_proposes_method", "t": "Method:mine", "doc_id": "arxiv:2103.14910", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2103.14910", "r": "paper_has_repo", "t": "Repo:vincentfung13/MINE", "doc_id": "arxiv:2103.14910", "confidence": 1.0, "source": "llm"}
+{"h": "Method:mine", "r": "method_uses_dataset", "t": "Dataset:realestate10k", "doc_id": "arxiv:2103.14910", "confidence": 1.0, "source": "llm"}
+{"h": "Method:mine", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "arxiv:2103.14910", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2106.10859", "r": "paper_proposes_method", "t": "Method:omnidirectional neural radiance fields", "doc_id": "arxiv:2106.10859", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2106.10859", "r": "paper_proposes_method", "t": "Method:omninerf", "doc_id": "arxiv:2106.10859", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2108.05577", "r": "paper_proposes_method", "t": "Method:ibutter", "doc_id": "arxiv:2108.05577", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2106.13228", "r": "paper_proposes_method", "t": "Method:hypernerf", "doc_id": "arxiv:2106.13228", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2106.01970", "r": "paper_proposes_method", "t": "Method:nerfactor", "doc_id": "arxiv:2106.01970", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1805.08676", "r": "paper_proposes_method", "t": "Method:convexity shape prior", "doc_id": "arxiv:1805.08676", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1903.03477", "r": "paper_proposes_method", "t": "Method:auto-encoding progressive generative adversarial networks", "doc_id": "arxiv:1903.03477", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1911.13225", "r": "paper_proposes_method", "t": "Method:dist", "doc_id": "arxiv:1911.13225", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1911.13225", "r": "paper_proposes_method", "t": "Method:differentiable sphere tracing", "doc_id": "arxiv:1911.13225", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1909.00703", "r": "paper_proposes_method", "t": "Method:learned semantic multi-sensor depth map fusion", "doc_id": "arxiv:1909.00703", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1905.02082", "r": "paper_proposes_method", "t": "Method:refusion", "doc_id": "arxiv:1905.02082", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1904.13073", "r": "paper_proposes_method", "t": "Method:surfelwarp", "doc_id": "arxiv:1904.13073", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2112.08867", "r": "paper_proposes_method", "t": "Method:gram", "doc_id": "arxiv:2112.08867", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2112.03517", "r": "paper_proposes_method", "t": "Method:cg-nerf", "doc_id": "arxiv:2112.03517", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2112.03517", "r": "paper_proposes_method", "t": "Method:conditional generative neural radiance fields", "doc_id": "arxiv:2112.03517", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2112.05637", "r": "paper_proposes_method", "t": "Method:headnerf", "doc_id": "arxiv:2112.05637", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2107.02791", "r": "paper_proposes_method", "t": "Method:ds-nerf", "doc_id": "arxiv:2107.02791", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2107.02791", "r": "paper_proposes_method", "t": "Method:depth-supervised neural radiance fields", "doc_id": "arxiv:2107.02791", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2109.01750", "r": "paper_proposes_method", "t": "Method:codenerf", "doc_id": "arxiv:2109.01750", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2012.05903", "r": "paper_proposes_method", "t": "Method:portrait neural radiance fields", "doc_id": "arxiv:2012.05903", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2010.07429", "r": "paper_proposes_method", "t": "Method:dynamic exploration planner", "doc_id": "arxiv:2010.07429", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2010.07429", "r": "paper_proposes_method", "t": "Method:dep", "doc_id": "arxiv:2010.07429", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2003.00397", "r": "paper_proposes_method", "t": "Method:house plan generative model", "doc_id": "arxiv:2003.00397", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2003.00397", "r": "paper_proposes_method", "t": "Method:hpgm", "doc_id": "arxiv:2003.00397", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2006.03817", "r": "paper_proposes_method", "t": "Method:uclid-net", "doc_id": "arxiv:2006.03817", "confidence": 1.0, "source": "llm"}
+{"h": "Method:uclid-net", "r": "method_uses_dataset", "t": "Dataset:shapenet", "doc_id": "arxiv:2006.03817", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.12038", "r": "paper_proposes_method", "t": "Method:onerf", "doc_id": "arxiv:2211.12038", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.07600", "r": "paper_proposes_method", "t": "Method:latent-nerf", "doc_id": "arxiv:2211.07600", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.07600", "r": "paper_proposes_method", "t": "Method:sketch-shape", "doc_id": "arxiv:2211.07600", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2212.04701", "r": "paper_proposes_method", "t": "Method:4k-nerf", "doc_id": "arxiv:2212.04701", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2212.08328", "r": "paper_proposes_method", "t": "Method:meil-nerf", "doc_id": "arxiv:2212.08328", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.07968", "r": "paper_proposes_method", "t": "Method:nerffaceediting", "doc_id": "arxiv:2211.07968", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2212.11966", "r": "paper_proposes_method", "t": "Method:nerf inpainting method", "doc_id": "arxiv:2212.11966", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2212.00436", "r": "paper_proposes_method", "t": "Method:viewnerf", "doc_id": "arxiv:2212.00436", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.12436", "r": "paper_proposes_method", "t": "Method:dynamic depth-supervised nerf", "doc_id": "arxiv:2211.12436", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2212.08070", "r": "paper_proposes_method", "t": "Method:nerf-art", "doc_id": "arxiv:2212.08070", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2210.17415", "r": "paper_proposes_method", "t": "Method:probnerf", "doc_id": "arxiv:2210.17415", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.12656", "r": "paper_proposes_method", "t": "Method:activermap", "doc_id": "arxiv:2211.12656", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2212.13056", "r": "paper_proposes_method", "t": "Method:mononerf", "doc_id": "arxiv:2212.13056", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2103.13744", "r": "paper_proposes_method", "t": "Method:kilonerf", "doc_id": "arxiv:2103.13744", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.15246", "r": "paper_proposes_method", "t": "Method:ha-nerf", "doc_id": "arxiv:2111.15246", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.12993", "r": "paper_proposes_method", "t": "Method:neural relightable participating media rendering", "doc_id": "arxiv:2110.12993", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2103.15606", "r": "paper_proposes_method", "t": "Method:gnerf", "doc_id": "arxiv:2103.15606", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.16431", "r": "paper_proposes_method", "t": "Method:neurallift-360", "doc_id": "arxiv:2211.16431", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2212.06135", "r": "paper_proposes_method", "t": "Method:rodin", "doc_id": "arxiv:2212.06135", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2212.06135", "r": "paper_proposes_method", "t": "Method:roll-out diffusion network", "doc_id": "arxiv:2212.06135", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2212.06135", "r": "paper_proposes_method", "t": "Method:3d-aware diffusion", "doc_id": "arxiv:2212.06135", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2212.06135", "r": "paper_proposes_method", "t": "Method:3d-aware convolution", "doc_id": "arxiv:2212.06135", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2211.16630", "r": "paper_proposes_method", "t": "Method:diner", "doc_id": "arxiv:2211.16630", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.16630", "r": "paper_proposes_method", "t": "Method:depth-aware image-based neural radiance fields", "doc_id": "arxiv:2211.16630", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2212.02280", "r": "paper_proposes_method", "t": "Method:depth-aware generalizable neural radiance field", "doc_id": "arxiv:2212.02280", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2212.02280", "r": "paper_proposes_method", "t": "Method:darf", "doc_id": "arxiv:2212.02280", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2212.02280", "r": "paper_proposes_method", "t": "Method:depth-aware dynamic sampling", "doc_id": "arxiv:2212.02280", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2212.02280", "r": "paper_proposes_method", "t": "Method:dads", "doc_id": "arxiv:2212.02280", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2212.02280", "r": "paper_proposes_method", "t": "Method:multi-level semantic consistency loss", "doc_id": "arxiv:2212.02280", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2212.02280", "r": "paper_proposes_method", "t": "Method:msc", "doc_id": "arxiv:2212.02280", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.12368", "r": "paper_proposes_method", "t": "Method:decomposed audio-spatial encoding module", "doc_id": "arxiv:2211.12368", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2211.12368", "r": "paper_proposes_method", "t": "Method:pseudo-3d deformable module", "doc_id": "arxiv:2211.12368", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2211.11505", "r": "paper_proposes_method", "t": "Method:l2g-nerf", "doc_id": "arxiv:2211.11505", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.11646", "r": "paper_proposes_method", "t": "Method:nerf-rpn", "doc_id": "arxiv:2211.11646", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.04237", "r": "paper_proposes_method", "t": "Method:template-nerf", "doc_id": "arxiv:2111.04237", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2111.15234", "r": "paper_proposes_method", "t": "Method:nerfren", "doc_id": "arxiv:2111.15234", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2104.14786", "r": "paper_proposes_method", "t": "Method:layered neural representation", "doc_id": "arxiv:2104.14786", "confidence": 0.97, "source": "llm"}
+{"h": "Paper:2104.14786", "r": "paper_proposes_method", "t": "Method:st-nerf", "doc_id": "arxiv:2104.14786", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2104.14786", "r": "paper_proposes_method", "t": "Method:4d label map tracking", "doc_id": "arxiv:2104.14786", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2104.14786", "r": "paper_proposes_method", "t": "Method:object-aware volume rendering", "doc_id": "arxiv:2104.14786", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2106.05264", "r": "paper_proposes_method", "t": "Method:nerf in detail (nerf-id)", "doc_id": "arxiv:2106.05264", "confidence": 0.98, "source": "llm"}
+{"h": "Method:nerf in detail (nerf-id)", "r": "method_uses_dataset", "t": "Dataset:llff", "doc_id": "arxiv:2106.05264", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2112.01523", "r": "paper_proposes_method", "t": "Method:neural light field", "doc_id": "arxiv:2112.01523", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2112.01523", "r": "paper_proposes_method", "t": "Method:ray-space embedding network", "doc_id": "arxiv:2112.01523", "confidence": 0.97, "source": "llm"}
+{"h": "Paper:2211.12544", "r": "paper_proposes_method", "t": "Method:zero-nerf", "doc_id": "arxiv:2211.12544", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.15977", "r": "paper_proposes_method", "t": "Method:progressive volume distillation", "doc_id": "arxiv:2211.15977", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.15977", "r": "paper_proposes_method", "t": "Method:pvd", "doc_id": "arxiv:2211.15977", "confidence": 1.0, "source": "llm"}
+{"h": "Method:progressive volume distillation", "r": "method_uses_dataset", "t": "Dataset:llff", "doc_id": "arxiv:2211.15977", "confidence": 1.0, "source": "llm"}
+{"h": "Method:pvd", "r": "method_uses_dataset", "t": "Dataset:llff", "doc_id": "arxiv:2211.15977", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.05873", "r": "paper_proposes_method", "t": "Method:learning for casadi", "doc_id": "arxiv:2312.05873", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.05873", "r": "paper_proposes_method", "t": "Method:l4casadi", "doc_id": "arxiv:2312.05873", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.09780", "r": "paper_proposes_method", "t": "Method:ranrac", "doc_id": "arxiv:2312.09780", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.09780", "r": "paper_proposes_method", "t": "Method:random ray consensus", "doc_id": "arxiv:2312.09780", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.06642", "r": "paper_proposes_method", "t": "Method:corresnerf", "doc_id": "arxiv:2312.06642", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.04651", "r": "paper_proposes_method", "t": "Method:voodoo 3d", "doc_id": "arxiv:2312.04651", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.04527", "r": "paper_proposes_method", "t": "Method:reflection correspondences", "doc_id": "arxiv:2312.04527", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.04527", "r": "paper_proposes_method", "t": "Method:neural correspondence estimator", "doc_id": "arxiv:2312.04527", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.04527", "r": "paper_proposes_method", "t": "Method:ransac", "doc_id": "arxiv:2312.04527", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.04784", "r": "paper_proposes_method", "t": "Method:recalab", "doc_id": "arxiv:2312.04784", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.04784", "r": "paper_proposes_method", "t": "Method:pose-conditioned deformable nerf", "doc_id": "arxiv:2312.04784", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2312.04784", "r": "paper_proposes_method", "t": "Method:image-conditioned diffusion model", "doc_id": "arxiv:2312.04784", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2312.09031", "r": "paper_proposes_method", "t": "Method:icomma", "doc_id": "arxiv:2312.09031", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.04337", "r": "paper_proposes_method", "t": "Method:mirage", "doc_id": "arxiv:2312.04337", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.04337", "r": "paper_proposes_method", "t": "Method:pose-conditioned diffusion model", "doc_id": "arxiv:2312.04337", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2312.16215", "r": "paper_proposes_method", "t": "Method:sundial", "doc_id": "arxiv:2312.16215", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.05664", "r": "paper_proposes_method", "t": "Method:cogs", "doc_id": "arxiv:2312.05664", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.05664", "r": "paper_proposes_method", "t": "Method:controllable gaussian splatting", "doc_id": "arxiv:2312.05664", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.04386", "r": "paper_proposes_method", "t": "Method:superq-grasp", "doc_id": "arxiv:2411.04386", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.01725", "r": "paper_proposes_method", "t": "Method:plink", "doc_id": "arxiv:2411.01725", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.04955", "r": "paper_proposes_method", "t": "Method:mixedgaussianavatar", "doc_id": "arxiv:2412.04955", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.12471", "r": "paper_proposes_method", "t": "Method:scigs", "doc_id": "arxiv:2411.12471", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.15278", "r": "paper_proposes_method", "t": "Method:dreamark", "doc_id": "arxiv:2412.15278", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.05572", "r": "paper_proposes_method", "t": "Method:r2-talker", "doc_id": "arxiv:2312.05572", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.13528", "r": "paper_proposes_method", "t": "Method:moblurf", "doc_id": "arxiv:2312.13528", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.13332", "r": "paper_proposes_method", "t": "Method:ternary-type opacity model", "doc_id": "arxiv:2312.13332", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.13332", "r": "paper_proposes_method", "t": "Method:hybrid odometry scheme", "doc_id": "arxiv:2312.13332", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.09313", "r": "paper_proposes_method", "t": "Method:latenteditor", "doc_id": "arxiv:2312.09313", "confidence": 1.0, "source": "llm"}
+{"h": "Method:latenteditor", "r": "method_uses_dataset", "t": "Dataset:llff", "doc_id": "arxiv:2312.09313", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2312.11841", "r": "paper_proposes_method", "t": "Method:mixrt", "doc_id": "arxiv:2312.11841", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.15253", "r": "paper_proposes_method", "t": "Method:forplane", "doc_id": "arxiv:2312.15253", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.15253", "r": "paper_proposes_method", "t": "Method:fast orthogonal plane", "doc_id": "arxiv:2312.15253", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.05330", "r": "paper_proposes_method", "t": "Method:3d gan inversion", "doc_id": "arxiv:2312.05330", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2312.05161", "r": "paper_proposes_method", "t": "Method:trihuman", "doc_id": "arxiv:2312.05161", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.05161", "r": "paper_proposes_method", "t": "Method:tri-plane representation", "doc_id": "arxiv:2312.05161", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2312.13494", "r": "paper_proposes_method", "t": "Method:visual tomography", "doc_id": "arxiv:2312.13494", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.13494", "r": "paper_proposes_method", "t": "Method:inverse raytracing", "doc_id": "arxiv:2312.13494", "confidence": 0.8, "source": "llm"}
+{"h": "Paper:2312.04564", "r": "paper_proposes_method", "t": "Method:eagles", "doc_id": "arxiv:2312.04564", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.05311", "r": "paper_proposes_method", "t": "Method:360° Volumetric Portrait Avatar", "doc_id": "arxiv:2312.05311", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.05311", "r": "paper_proposes_method", "t": "Method:3vp avatar", "doc_id": "arxiv:2312.05311", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.15890", "r": "paper_proposes_method", "t": "Method:neuropump", "doc_id": "arxiv:2412.15890", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.05322", "r": "paper_proposes_method", "t": "Method:rate-aware compression framework", "doc_id": "arxiv:2411.05322", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.05322", "r": "paper_proposes_method", "t": "Method:adaptive quantization strategy", "doc_id": "arxiv:2411.05322", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.05322", "r": "paper_proposes_method", "t": "Method:ρ-Nerf", "doc_id": "arxiv:2412.05322", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.04844", "r": "paper_proposes_method", "t": "Method:discretized gaussian representation", "doc_id": "arxiv:2411.04844", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.04844", "r": "paper_proposes_method", "t": "Method:dgr", "doc_id": "arxiv:2411.04844", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.04844", "r": "paper_proposes_method", "t": "Method:fast volume reconstruction", "doc_id": "arxiv:2411.04844", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2411.01853", "r": "paper_proposes_method", "t": "Method:gaussian voxel kernel functions", "doc_id": "arxiv:2411.01853", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.01853", "r": "paper_proposes_method", "t": "Method:gvkf", "doc_id": "arxiv:2411.01853", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.19130", "r": "paper_proposes_method", "t": "Method:mvs-gs", "doc_id": "arxiv:2412.19130", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2410.23742", "r": "paper_proposes_method", "t": "Method:fused-planes", "doc_id": "arxiv:2410.23742", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.05557", "r": "paper_proposes_method", "t": "Method:nerf", "doc_id": "arxiv:2411.05557", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.02482", "r": "paper_proposes_method", "t": "Method:nerf-aug", "doc_id": "arxiv:2411.02482", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2511.16542", "r": "paper_proposes_method", "t": "Method:eogs++", "doc_id": "arxiv:2511.16542", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2510.21441", "r": "paper_proposes_method", "t": "Method:openhype", "doc_id": "arxiv:2510.21441", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.07527", "r": "paper_proposes_method", "t": "Method:orbit2ground", "doc_id": "arxiv:2512.07527", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2509.15242", "r": "paper_proposes_method", "t": "Method:profusion", "doc_id": "arxiv:2509.15242", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.12197", "r": "paper_proposes_method", "t": "Method:mtfusion", "doc_id": "arxiv:2411.12197", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.02979", "r": "paper_proposes_method", "t": "Method:cad-nerf", "doc_id": "arxiv:2411.02979", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.02979", "r": "paper_proposes_method", "t": "Method:multi-view pose retrieval", "doc_id": "arxiv:2411.02979", "confidence": 0.9, "source": "llm"}
+{"h": "Method:cad-nerf", "r": "method_uses_dataset", "t": "Dataset:shapenet", "doc_id": "arxiv:2411.02979", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2411.08037", "r": "paper_proposes_method", "t": "Method:brdftransform", "doc_id": "arxiv:2411.08037", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.00754", "r": "paper_proposes_method", "t": "Method:ctrlnerf", "doc_id": "arxiv:2412.00754", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.08029", "r": "paper_proposes_method", "t": "Method:nerf-nqa", "doc_id": "arxiv:2412.08029", "confidence": 1.0, "source": "llm"}
+{"h": "Method:nerf-nqa", "r": "method_uses_dataset", "t": "Dataset:llff", "doc_id": "arxiv:2412.08029", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2511.07552", "r": "paper_proposes_method", "t": "Method:livenerf", "doc_id": "arxiv:2511.07552", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2510.10993", "r": "paper_proposes_method", "t": "Method:painpainter", "doc_id": "arxiv:2510.10993", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2511.06457", "r": "paper_proposes_method", "t": "Method:inpaint360gs", "doc_id": "arxiv:2511.06457", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.14352", "r": "paper_proposes_method", "t": "Method:hgs", "doc_id": "arxiv:2512.14352", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.14352", "r": "paper_proposes_method", "t": "Method:hybrid gaussian splatting", "doc_id": "arxiv:2512.14352", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.15622", "r": "paper_proposes_method", "t": "Method:sac-nerf", "doc_id": "arxiv:2603.15622", "confidence": 1.0, "source": "llm"}
+{"h": "Method:sac-nerf", "r": "method_uses_dataset", "t": "Dataset:llff", "doc_id": "arxiv:2603.15622", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2509.12458", "r": "paper_proposes_method", "t": "Method:neural 3d reconstruction", "doc_id": "arxiv:2509.12458", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2509.12458", "r": "paper_proposes_method", "t": "Method:n3dr", "doc_id": "arxiv:2509.12458", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2509.11411", "r": "paper_proposes_method", "t": "Method:weighted rotation blending", "doc_id": "arxiv:2509.11411", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2511.04283", "r": "paper_proposes_method", "t": "Method:fastgs", "doc_id": "arxiv:2511.04283", "confidence": 1.0, "source": "llm"}
+{"h": "Method:fastgs", "r": "method_uses_dataset", "t": "Dataset:mip-nerf 360", "doc_id": "arxiv:2511.04283", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2511.18293", "r": "paper_proposes_method", "t": "Method:aia-ultranerf", "doc_id": "arxiv:2511.18293", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2511.18293", "r": "paper_proposes_method", "t": "Method:dual-supervised network", "doc_id": "arxiv:2511.18293", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2510.27318", "r": "paper_proposes_method", "t": "Method:sags", "doc_id": "arxiv:2510.27318", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2510.27318", "r": "paper_proposes_method", "t": "Method:4d deformation decoder", "doc_id": "arxiv:2510.27318", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2605.30268", "r": "paper_proposes_method", "t": "Method:phygenhoi", "doc_id": "arxiv:2605.30268", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2605.30268", "r": "paper_proposes_method", "t": "Method:windowed attraction loss", "doc_id": "arxiv:2605.30268", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2605.30268", "r": "paper_proposes_method", "t": "Method:contact-driven re-simulation", "doc_id": "arxiv:2605.30268", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2605.30268", "r": "paper_proposes_method", "t": "Method:masked video-sds", "doc_id": "arxiv:2605.30268", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2605.23602", "r": "paper_proposes_method", "t": "Method:glowgs", "doc_id": "arxiv:2605.23602", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2509.15123", "r": "paper_proposes_method", "t": "Method:ros-cam", "doc_id": "arxiv:2509.15123", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2510.00592", "r": "paper_proposes_method", "t": "Method:mds-nerf", "doc_id": "arxiv:2510.00592", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2511.19542", "r": "paper_proposes_method", "t": "Method:splap", "doc_id": "arxiv:2511.19542", "confidence": 1.0, "source": "llm"}
+{"h": "Method:splap", "r": "method_uses_dataset", "t": "Dataset:shapenet", "doc_id": "arxiv:2511.19542", "confidence": 1.0, "source": "llm"}
+{"h": "Method:splap", "r": "method_uses_dataset", "t": "Dataset:objaverse", "doc_id": "arxiv:2511.19542", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2510.08491", "r": "paper_proposes_method", "t": "Method:splattable neural primitives", "doc_id": "arxiv:2510.08491", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2510.08491", "r": "paper_proposes_method", "t": "Method:splatnet", "doc_id": "arxiv:2510.08491", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2509.11171", "r": "paper_proposes_method", "t": "Method:sphere", "doc_id": "arxiv:2509.11171", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2509.11171", "r": "paper_proposes_method", "t": "Method:semantic-guided gaussian initialization", "doc_id": "arxiv:2509.11171", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2509.11171", "r": "paper_proposes_method", "t": "Method:sgi", "doc_id": "arxiv:2509.11171", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2509.11171", "r": "paper_proposes_method", "t": "Method:physical-aware harmonics enhancement", "doc_id": "arxiv:2509.11171", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2509.11171", "r": "paper_proposes_method", "t": "Method:phe", "doc_id": "arxiv:2509.11171", "confidence": 1.0, "source": "llm"}
+{"h": "Method:sphere", "r": "method_uses_dataset", "t": "Dataset:semantickitti", "doc_id": "arxiv:2509.11171", "confidence": 1.0, "source": "llm"}
+{"h": "Method:sphere", "r": "method_uses_dataset", "t": "Dataset:kitti-360", "doc_id": "arxiv:2509.11171", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2606.03120", "r": "paper_proposes_method", "t": "Method:kc-3dgs", "doc_id": "arxiv:2606.03120", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2605.30342", "r": "paper_proposes_method", "t": "Method:gavis", "doc_id": "arxiv:2605.30342", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2605.30342", "r": "paper_proposes_method", "t": "Method:gaussian splatting anisotropic visibility field", "doc_id": "arxiv:2605.30342", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2606.00450", "r": "paper_proposes_method", "t": "Method:depth-guided point lifting method", "doc_id": "arxiv:2606.00450", "confidence": 1.0, "source": "llm"}
+{"h": "Method:depth-guided point lifting method", "r": "method_uses_dataset", "t": "Dataset:replica", "doc_id": "arxiv:2606.00450", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2605.20820", "r": "paper_proposes_method", "t": "Method:air", "doc_id": "arxiv:2605.20820", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2605.20820", "r": "paper_proposes_method", "t": "Method:amortized image reconstruction framework", "doc_id": "arxiv:2605.20820", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2605.20820", "r": "paper_proposes_method", "t": "Method:predict--optimize--distill training strategy", "doc_id": "arxiv:2605.20820", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:1802.06140", "r": "paper_proposes_method", "t": "Method:recurrent optimization network", "doc_id": "arxiv:1802.06140", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:1802.06140", "r": "paper_proposes_method", "t": "Method:ron", "doc_id": "arxiv:1802.06140", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:1802.06140", "r": "paper_proposes_method", "t": "Method:dijkstra gaussian mean curvature", "doc_id": "arxiv:1802.06140", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:1802.06140", "r": "paper_proposes_method", "t": "Method:dgmc", "doc_id": "arxiv:1802.06140", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2605.20872", "r": "paper_proposes_method", "t": "Method:cadam", "doc_id": "arxiv:2605.20872", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2601.03869", "r": "paper_proposes_method", "t": "Method:mdenerf", "doc_id": "arxiv:2601.03869", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2605.20150", "r": "paper_proposes_method", "t": "Method:tidegs", "doc_id": "arxiv:2605.20150", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2605.17002", "r": "paper_proposes_method", "t": "Method:decoder-side gaussian splatting", "doc_id": "arxiv:2605.17002", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2605.17002", "r": "paper_proposes_method", "t": "Method:dsgs", "doc_id": "arxiv:2605.17002", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1804.04610", "r": "paper_proposes_method", "t": "Method:pix3d", "doc_id": "arxiv:1804.04610", "confidence": 1.0, "source": "llm"}
+{"h": "Method:pix3d", "r": "method_uses_dataset", "t": "Dataset:pix3d", "doc_id": "arxiv:1804.04610", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:1804.06702", "r": "paper_proposes_method", "t": "Method:implicit 3d features", "doc_id": "arxiv:1804.06702", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1804.06702", "r": "paper_proposes_method", "t": "Method:active-light authentication framework", "doc_id": "arxiv:1804.06702", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1804.06702", "r": "paper_proposes_method", "t": "Method:disparity-based implicit 3d feature", "doc_id": "arxiv:1804.06702", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1808.02244", "r": "paper_proposes_method", "t": "Method:multi-projection-center (mpc) model", "doc_id": "arxiv:1808.02244", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1808.02244", "r": "paper_proposes_method", "t": "Method:light field camera calibration method", "doc_id": "arxiv:1808.02244", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1812.03015", "r": "paper_proposes_method", "t": "Method:geometry-aware patch deformation technique", "doc_id": "arxiv:1812.03015", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1805.07794", "r": "paper_proposes_method", "t": "Method:next best object (nbo)", "doc_id": "arxiv:1805.07794", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:1805.07794", "r": "paper_proposes_method", "t": "Method:next best view (nbv)", "doc_id": "arxiv:1805.07794", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:1805.07794", "r": "paper_proposes_method", "t": "Method:objectness-based segmentation method", "doc_id": "arxiv:1805.07794", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:1805.07794", "r": "paper_proposes_method", "t": "Method:multi-class graph cuts minimization", "doc_id": "arxiv:1805.07794", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:1807.11080", "r": "paper_proposes_method", "t": "Method:feature transform-based similarity measure", "doc_id": "arxiv:1807.11080", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:1807.11080", "r": "paper_proposes_method", "t": "Method:weighted regularization scheme", "doc_id": "arxiv:1807.11080", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:1807.11080", "r": "paper_proposes_method", "t": "Method:feature-based registration", "doc_id": "arxiv:1807.11080", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:1807.11080", "r": "paper_proposes_method", "t": "Method:non-rigid registration", "doc_id": "arxiv:1807.11080", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:1812.05806", "r": "paper_proposes_method", "t": "Method:self-supervised bootstrap method for single-image 3d face reconstruction", "doc_id": "arxiv:1812.05806", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:1812.11339", "r": "paper_proposes_method", "t": "Method:variational framework", "doc_id": "arxiv:1812.11339", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:1807.06294", "r": "paper_proposes_method", "t": "Method:geodesc", "doc_id": "arxiv:1807.06294", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:1803.09167", "r": "paper_proposes_method", "t": "Method:3D Reconstruction & Assessment Framework", "doc_id": "arxiv:1803.09167", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1812.11166", "r": "paper_proposes_method", "t": "Method:generalizable reconstruction", "doc_id": "arxiv:1812.11166", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1812.11166", "r": "paper_proposes_method", "t": "Method:genre", "doc_id": "arxiv:1812.11166", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1912.03005", "r": "paper_proposes_method", "t": "Method:multifocus stacking", "doc_id": "arxiv:1912.03005", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1912.03005", "r": "paper_proposes_method", "t": "Method:fixed-lens multifocus capture", "doc_id": "arxiv:1912.03005", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1904.12144", "r": "paper_proposes_method", "t": "Method:ismo-gan", "doc_id": "arxiv:1904.12144", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1904.12144", "r": "paper_proposes_method", "t": "Method:isometry-aware monocular generative adversarial network", "doc_id": "arxiv:1904.12144", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1911.07841", "r": "paper_proposes_method", "t": "Method:tigris", "doc_id": "arxiv:1911.07841", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1811.09790", "r": "paper_proposes_method", "t": "Method:superpixel markov random field", "doc_id": "arxiv:1811.09790", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1811.09790", "r": "paper_proposes_method", "t": "Method:mrf", "doc_id": "arxiv:1811.09790", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1811.07791", "r": "paper_proposes_method", "t": "Method:deep shape-from-template", "doc_id": "arxiv:1811.07791", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1811.07791", "r": "paper_proposes_method", "t": "Method:deepsft", "doc_id": "arxiv:1811.07791", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1803.09659", "r": "paper_proposes_method", "t": "Method:multilayer backpropagation saliency detection algorithm", "doc_id": "arxiv:1803.09659", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2606.03479", "r": "paper_proposes_method", "t": "Method:persistgs", "doc_id": "arxiv:2606.03479", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2605.30855", "r": "paper_proposes_method", "t": "Method:robust dreamer", "doc_id": "arxiv:2605.30855", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2605.30855", "r": "paper_proposes_method", "t": "Method:latent gaussian memory", "doc_id": "arxiv:2605.30855", "confidence": 0.95, "source": "llm"}
+{"h": "Method:robust dreamer", "r": "method_uses_dataset", "t": "Dataset:scannet", "doc_id": "arxiv:2605.30855", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2606.03682", "r": "paper_proposes_method", "t": "Method:gn0", "doc_id": "arxiv:2606.03682", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2606.03682", "r": "paper_proposes_method", "t": "Method:break and establish", "doc_id": "arxiv:2606.03682", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2606.03682", "r": "paper_proposes_method", "t": "Method:gn-bae", "doc_id": "arxiv:2606.03682", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2605.18263", "r": "paper_proposes_method", "t": "Method:rt-splatting", "doc_id": "arxiv:2605.18263", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2605.18263", "r": "paper_proposes_method", "t": "Method:specular-aware gradient gating", "doc_id": "arxiv:2605.18263", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2605.17916", "r": "paper_proposes_method", "t": "Method:panoworld", "doc_id": "arxiv:2605.17916", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2605.17916", "r": "paper_proposes_method", "t": "Method:panoramic lrm", "doc_id": "arxiv:2605.17916", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2605.17916", "r": "paper_proposes_method", "t": "Method:room-aware group attention", "doc_id": "arxiv:2605.17916", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:1905.09939", "r": "paper_proposes_method", "t": "Method:bi-objective framework", "doc_id": "arxiv:1905.09939", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1912.07009", "r": "paper_proposes_method", "t": "Method:c-flow", "doc_id": "arxiv:1912.07009", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1907.10202", "r": "paper_proposes_method", "t": "Method:gan-based framework", "doc_id": "arxiv:1907.10202", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1907.10202", "r": "paper_proposes_method", "t": "Method:tc-gan", "doc_id": "arxiv:1907.10202", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1907.10202", "r": "paper_proposes_method", "t": "Method:3da-gan", "doc_id": "arxiv:1907.10202", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1905.07515", "r": "paper_proposes_method", "t": "Method:deep learning based perspective portrait undistortion approach", "doc_id": "arxiv:1905.07515", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1905.09829", "r": "paper_proposes_method", "t": "Method:plane-based optimization", "doc_id": "arxiv:1905.09829", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2007.06853", "r": "paper_proposes_method", "t": "Method:topology-change-aware volumetric fusion", "doc_id": "arxiv:2007.06853", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2007.06853", "r": "paper_proposes_method", "t": "Method:non-manifold volumetric grid", "doc_id": "arxiv:2007.06853", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2010.13662", "r": "paper_proposes_method", "t": "Method:scfusion", "doc_id": "arxiv:2010.13662", "confidence": 0.99, "source": "llm"}
+{"h": "Paper:2007.07527", "r": "paper_proposes_method", "t": "Method:wireframe representation", "doc_id": "arxiv:2007.07527", "confidence": 0.97, "source": "llm"}
+{"h": "Paper:2011.02635", "r": "paper_proposes_method", "t": "Method:gprnet", "doc_id": "arxiv:2011.02635", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2007.06620", "r": "paper_proposes_method", "t": "Method:auto3d", "doc_id": "arxiv:2007.06620", "confidence": 0.99, "source": "llm"}
+{"h": "Paper:1907.00939", "r": "paper_proposes_method", "t": "Method:pano popups", "doc_id": "arxiv:1907.00939", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1907.00939", "r": "paper_proposes_method", "t": "Method:plane-aware network", "doc_id": "arxiv:1907.00939", "confidence": 1.0, "source": "llm"}
+{"h": "Method:semi-global block matching", "r": "method_uses_dataset", "t": "Dataset:middlebury", "doc_id": "arxiv:1912.05012", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:1912.04663", "r": "paper_proposes_method", "t": "Method:3d-gmnet", "doc_id": "arxiv:1912.04663", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1912.04663", "r": "paper_proposes_method", "t": "Method:3d gaussian mixture loss", "doc_id": "arxiv:1912.04663", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1912.04663", "r": "paper_proposes_method", "t": "Method:2d multi-view loss", "doc_id": "arxiv:1912.04663", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1907.10844", "r": "paper_proposes_method", "t": "Method:pu-gan", "doc_id": "arxiv:1907.10844", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1905.03561", "r": "paper_proposes_method", "t": "Method:d2-net", "doc_id": "arxiv:1905.03561", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1907.12253", "r": "paper_proposes_method", "t": "Method:silhouette guided point cloud reconstruction", "doc_id": "arxiv:1907.12253", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1907.12253", "r": "paper_proposes_method", "t": "Method:2d reprojection loss", "doc_id": "arxiv:1907.12253", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:1907.12253", "r": "paper_proposes_method", "t": "Method:surface-based smoothing and refinement", "doc_id": "arxiv:1907.12253", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:1910.00983", "r": "paper_proposes_method", "t": "Method:geometrically aware grasping 3d reconstruction framework", "doc_id": "arxiv:1910.00983", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1911.12012", "r": "paper_proposes_method", "t": "Method:uncertainty-aware cascaded stereo network", "doc_id": "arxiv:1911.12012", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1911.12012", "r": "paper_proposes_method", "t": "Method:ucs-net", "doc_id": "arxiv:1911.12012", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1911.12012", "r": "paper_proposes_method", "t": "Method:adaptive thin volumes", "doc_id": "arxiv:1911.12012", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:1911.12012", "r": "paper_proposes_method", "t": "Method:atvs", "doc_id": "arxiv:1911.12012", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:1905.07442", "r": "paper_proposes_method", "t": "Method:transport-based neural style transfer", "doc_id": "arxiv:1905.07442", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1905.07442", "r": "paper_proposes_method", "t": "Method:tnst", "doc_id": "arxiv:1905.07442", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1905.09634", "r": "paper_proposes_method", "t": "Method:bayesian network", "doc_id": "arxiv:1905.09634", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:1905.09634", "r": "paper_proposes_method", "t": "Method:expectation-maximization algorithm", "doc_id": "arxiv:1905.09634", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:1905.09634", "r": "paper_proposes_method", "t": "Method:cauchy distribution", "doc_id": "arxiv:1905.09634", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:1905.09634", "r": "paper_proposes_method", "t": "Method:cauchy-uniform mixture model", "doc_id": "arxiv:1905.09634", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:1905.09634", "r": "paper_proposes_method", "t": "Method:gaussian-uniform mixture model", "doc_id": "arxiv:1905.09634", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:1907.06071", "r": "paper_proposes_method", "t": "Method:S&CNet", "doc_id": "arxiv:1907.06071", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1907.06071", "r": "paper_proposes_method", "t": "Method:S&C enhancer", "doc_id": "arxiv:1907.06071", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1907.06071", "r": "paper_proposes_method", "t": "Method:dual-stream attention module", "doc_id": "arxiv:1907.06071", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1907.06071", "r": "paper_proposes_method", "t": "Method:coarse-to-fine network", "doc_id": "arxiv:1907.06071", "confidence": 0.95, "source": "llm"}
+{"h": "Method:S&CNet", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "arxiv:1907.06071", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1904.12012", "r": "paper_proposes_method", "t": "Method:revealnet", "doc_id": "arxiv:1904.12012", "confidence": 1.0, "source": "llm"}
+{"h": "Method:revealnet", "r": "method_uses_dataset", "t": "Dataset:scannet", "doc_id": "arxiv:1904.12012", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2011.07008", "r": "paper_proposes_method", "t": "Method:dynamically adaptive kernel-based method", "doc_id": "arxiv:2011.07008", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2011.07008", "r": "paper_proposes_method", "t": "Method:rotation correction technique", "doc_id": "arxiv:2011.07008", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2011.13607", "r": "paper_proposes_method", "t": "Method:perspective crop layers", "doc_id": "arxiv:2011.13607", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2011.13607", "r": "paper_proposes_method", "t": "Method:pcls", "doc_id": "arxiv:2011.13607", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2011.14005", "r": "paper_proposes_method", "t": "Method:3d cyclegan", "doc_id": "arxiv:2011.14005", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2009.13146", "r": "paper_proposes_method", "t": "Method:arm", "doc_id": "arxiv:2009.13146", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2012.11575", "r": "paper_proposes_method", "t": "Method:collision-loss", "doc_id": "arxiv:2012.11575", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2012.11575", "r": "paper_proposes_method", "t": "Method:shape-selection mechanism", "doc_id": "arxiv:2012.11575", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2012.02689", "r": "paper_proposes_method", "t": "Method:isometric multi-shape matching", "doc_id": "arxiv:2012.02689", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2012.10802", "r": "paper_proposes_method", "t": "Method:perspective transformation", "doc_id": "arxiv:2012.10802", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2012.10802", "r": "paper_proposes_method", "t": "Method:disparity map transformation algorithm", "doc_id": "arxiv:2012.10802", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2009.00258", "r": "paper_proposes_method", "t": "Method:dips", "doc_id": "arxiv:2009.00258", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2011.09390", "r": "paper_proposes_method", "t": "Method:pssnet", "doc_id": "arxiv:2011.09390", "confidence": 1.0, "source": "llm"}
+{"h": "Method:pssnet", "r": "method_uses_dataset", "t": "Dataset:shapenet", "doc_id": "arxiv:2011.09390", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.11860", "r": "paper_proposes_method", "t": "Method:air-nets", "doc_id": "arxiv:2110.11860", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.11860", "r": "paper_proposes_method", "t": "Method:attentive implicit representation networks", "doc_id": "arxiv:2110.11860", "confidence": 1.0, "source": "llm"}
+{"h": "Method:air-nets", "r": "method_uses_dataset", "t": "Dataset:shapenet", "doc_id": "arxiv:2110.11860", "confidence": 1.0, "source": "llm"}
+{"h": "Method:attentive implicit representation networks", "r": "method_uses_dataset", "t": "Dataset:shapenet", "doc_id": "arxiv:2110.11860", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.00511", "r": "paper_proposes_method", "t": "Method:ash", "doc_id": "arxiv:2110.00511", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2109.00512", "r": "paper_proposes_method", "t": "Method:nerformer", "doc_id": "arxiv:2109.00512", "confidence": 1.0, "source": "llm"}
+{"h": "Method:nerformer", "r": "method_uses_dataset", "t": "Dataset:co3d", "doc_id": "arxiv:2109.00512", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2109.00033", "r": "paper_proposes_method", "t": "Method:densepose 3d", "doc_id": "arxiv:2109.00033", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2112.05498", "r": "paper_proposes_method", "t": "Method:ednet", "doc_id": "arxiv:2112.05498", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2112.05498", "r": "paper_proposes_method", "t": "Method:semantic mesh deformation optimization", "doc_id": "arxiv:2112.05498", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.13112", "r": "paper_proposes_method", "t": "Method:vaxnerf", "doc_id": "arxiv:2111.13112", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2112.00726", "r": "paper_proposes_method", "t": "Method:monoscene", "doc_id": "arxiv:2112.00726", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2109.11373", "r": "paper_proposes_method", "t": "Method:spherical rendering", "doc_id": "arxiv:2109.11373", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2112.00236", "r": "paper_proposes_method", "t": "Method:vortx", "doc_id": "arxiv:2112.00236", "confidence": 1.0, "source": "llm"}
+{"h": "Method:vortx", "r": "method_uses_dataset", "t": "Dataset:scannet", "doc_id": "arxiv:2112.00236", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.11089", "r": "paper_proposes_method", "t": "Method:road planar parallax attention network", "doc_id": "arxiv:2111.11089", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.11089", "r": "paper_proposes_method", "t": "Method:rpanet", "doc_id": "arxiv:2111.11089", "confidence": 1.0, "source": "llm"}
+{"h": "Method:rpanet", "r": "method_uses_dataset", "t": "Dataset:waymo open dataset", "doc_id": "arxiv:2111.11089", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2009.04420", "r": "paper_proposes_method", "t": "Method:sigmoid-based intensity transform", "doc_id": "arxiv:2009.04420", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2009.04420", "r": "paper_proposes_method", "t": "Method:pixel-to-pixel generative adversarial network", "doc_id": "arxiv:2009.04420", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2009.04420", "r": "paper_proposes_method", "t": "Method:pix2pixgan", "doc_id": "arxiv:2009.04420", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2011.09114", "r": "paper_proposes_method", "t": "Method:dehazing cost volume", "doc_id": "arxiv:2011.09114", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2112.12130", "r": "paper_proposes_method", "t": "Method:nice-slam", "doc_id": "arxiv:2112.12130", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2112.05598", "r": "paper_proposes_method", "t": "Method:perf", "doc_id": "arxiv:2112.05598", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2112.05598", "r": "paper_proposes_method", "t": "Method:Performant, Explicit Radiance Fields", "doc_id": "arxiv:2112.05598", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2210.11170", "r": "paper_proposes_method", "t": "Method:coco-inr", "doc_id": "arxiv:2210.11170", "confidence": 1.0, "source": "llm"}
+{"h": "Method:coco-inr", "r": "method_uses_dataset", "t": "Dataset:blendedmvs", "doc_id": "arxiv:2210.11170", "confidence": 1.0, "source": "llm"}
+{"h": "Method:coco-inr", "r": "method_uses_dataset", "t": "Dataset:dtu", "doc_id": "arxiv:2210.11170", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2209.15383", "r": "paper_proposes_method", "t": "Method:ssp3d", "doc_id": "arxiv:2209.15383", "confidence": 1.0, "source": "llm"}
+{"h": "Method:ssp3d", "r": "method_uses_dataset", "t": "Dataset:shapenet", "doc_id": "arxiv:2209.15383", "confidence": 1.0, "source": "llm"}
+{"h": "Method:ssp3d", "r": "method_uses_dataset", "t": "Dataset:pix3d", "doc_id": "arxiv:2209.15383", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2212.02501", "r": "paper_proposes_method", "t": "Method:scenerf", "doc_id": "arxiv:2212.02501", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2210.13641", "r": "paper_proposes_method", "t": "Method:nerf-slam", "doc_id": "arxiv:2210.13641", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2210.01721", "r": "paper_proposes_method", "t": "Method:mbw", "doc_id": "arxiv:2210.01721", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2210.01721", "r": "paper_proposes_method", "t": "Method:multi-view bootstrapping in the wild", "doc_id": "arxiv:2210.01721", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.11674", "r": "paper_proposes_method", "t": "Method:bootstrapped radiance field inversion", "doc_id": "arxiv:2211.11674", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2209.11677", "r": "paper_proposes_method", "t": "Method:pnerf", "doc_id": "arxiv:2209.11677", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2209.11677", "r": "paper_proposes_method", "t": "Method:probabilistic neural scene representations", "doc_id": "arxiv:2209.11677", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2211.03889", "r": "paper_proposes_method", "t": "Method:tracker-nerf", "doc_id": "arxiv:2211.03889", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2209.11336", "r": "paper_proposes_method", "t": "Method:unav", "doc_id": "arxiv:2209.11336", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2212.14871", "r": "paper_proposes_method", "t": "Method:equivariant light field convolution", "doc_id": "arxiv:2212.14871", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2212.14871", "r": "paper_proposes_method", "t": "Method:equivariant light field transformer", "doc_id": "arxiv:2212.14871", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2212.14871", "r": "paper_proposes_method", "t": "Method:se(3)-equivariant convolution", "doc_id": "arxiv:2212.14871", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2212.14871", "r": "paper_proposes_method", "t": "Method:se(3)-equivariant transformer", "doc_id": "arxiv:2212.14871", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2212.14871", "r": "paper_proposes_method", "t": "Method:se(3)-equivariant attention", "doc_id": "arxiv:2212.14871", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2210.05714", "r": "paper_proposes_method", "t": "Method:vlmaps", "doc_id": "arxiv:2210.05714", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2210.05714", "r": "paper_proposes_method", "t": "Method:visual language maps", "doc_id": "arxiv:2210.05714", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2210.04572", "r": "paper_proposes_method", "t": "Method:floorplan-aware camera poses refinement optimization algorithm", "doc_id": "arxiv:2210.04572", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.14467", "r": "paper_proposes_method", "t": "Method:self-supervised surgical instrument reconstruction", "doc_id": "arxiv:2211.14467", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.14467", "r": "paper_proposes_method", "t": "Method:ssir", "doc_id": "arxiv:2211.14467", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.14981", "r": "paper_proposes_method", "t": "Method:soloplanes", "doc_id": "arxiv:2311.14981", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.04999", "r": "paper_proposes_method", "t": "Method:implicit neural representations", "doc_id": "arxiv:2311.04999", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2311.18311", "r": "paper_proposes_method", "t": "Method:anisotropic neural representation learning", "doc_id": "arxiv:2311.18311", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.02221", "r": "paper_proposes_method", "t": "Method:slice3d", "doc_id": "arxiv:2312.02221", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.18448", "r": "paper_proposes_method", "t": "Method:hold", "doc_id": "arxiv:2311.18448", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.18448", "r": "paper_proposes_method", "t": "Method:compositional articulated implicit model", "doc_id": "arxiv:2311.18448", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2312.02396", "r": "paper_proposes_method", "t": "Method:modified expectation-maximization gaussian mixture model (gmm)", "doc_id": "arxiv:2312.02396", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.02396", "r": "paper_proposes_method", "t": "Method:Earth Mover's Distance", "doc_id": "arxiv:2312.02396", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2312.02152", "r": "paper_proposes_method", "t": "Method:steerers", "doc_id": "arxiv:2312.02152", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.06659", "r": "paper_proposes_method", "t": "Method:3dfusion", "doc_id": "arxiv:2311.06659", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.08159", "r": "paper_proposes_method", "t": "Method:dynamicsurf", "doc_id": "arxiv:2311.08159", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.12024", "r": "paper_proposes_method", "t": "Method:pf-lrm", "doc_id": "arxiv:2311.12024", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.02568", "r": "paper_proposes_method", "t": "Method:prompt2nerf-pil", "doc_id": "arxiv:2312.02568", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.07920", "r": "paper_proposes_method", "t": "Method:drivinggaussian", "doc_id": "arxiv:2312.07920", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.17245", "r": "paper_proposes_method", "t": "Method:lightgaussian", "doc_id": "arxiv:2311.17245", "confidence": 1.0, "source": "llm"}
+{"h": "Method:lightgaussian", "r": "method_uses_dataset", "t": "Dataset:mip-nerf 360", "doc_id": "arxiv:2311.17245", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.04339", "r": "paper_proposes_method", "t": "Method:likelihood-scheduled score-based generative modeling", "doc_id": "arxiv:2412.04339", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.03910", "r": "paper_proposes_method", "t": "Method:dgns", "doc_id": "arxiv:2412.03910", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.03512", "r": "paper_proposes_method", "t": "Method:distillation of diffusion features", "doc_id": "arxiv:2412.03512", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.09621", "r": "paper_proposes_method", "t": "Method:stereo4d", "doc_id": "arxiv:2412.09621", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.12796", "r": "paper_proposes_method", "t": "Method:shape-from-template (sft)", "doc_id": "arxiv:2311.12796", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2312.10714", "r": "paper_proposes_method", "t": "Method:p3haoi", "doc_id": "arxiv:2312.10714", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2311.18287", "r": "paper_proposes_method", "t": "Method:dispersed structured light", "doc_id": "arxiv:2311.18287", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2311.18287", "r": "paper_proposes_method", "t": "Method:dsl", "doc_id": "arxiv:2311.18287", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2311.18729", "r": "paper_proposes_method", "t": "Method:portrait4d", "doc_id": "arxiv:2311.18729", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2312.09138", "r": "paper_proposes_method", "t": "Method:more", "doc_id": "arxiv:2312.09138", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2311.12125", "r": "paper_proposes_method", "t": "Method:mixing-denoising generalizable occupancy networks", "doc_id": "arxiv:2311.12125", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2412.14568", "r": "paper_proposes_method", "t": "Method:reprojection-based dof separation", "doc_id": "arxiv:2412.14568", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.11033", "r": "paper_proposes_method", "t": "Method:aurora", "doc_id": "arxiv:2412.11033", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.03571", "r": "paper_proposes_method", "t": "Method:style3d", "doc_id": "arxiv:2412.03571", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.03571", "r": "paper_proposes_method", "t": "Method:multifusion attention", "doc_id": "arxiv:2412.03571", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.09617", "r": "paper_proposes_method", "t": "Method:normalflow", "doc_id": "arxiv:2412.09617", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.17769", "r": "paper_proposes_method", "t": "Method:activegs", "doc_id": "arxiv:2412.17769", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.11680", "r": "paper_proposes_method", "t": "Method:egp3d", "doc_id": "arxiv:2412.11680", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.02017", "r": "paper_proposes_method", "t": "Method:visualsync", "doc_id": "arxiv:2512.02017", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.16564", "r": "paper_proposes_method", "t": "Method:4D Primitive-Mâché", "doc_id": "arxiv:2512.16564", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.04528", "r": "paper_proposes_method", "t": "Method:auto3r", "doc_id": "arxiv:2512.04528", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.07381", "r": "paper_proposes_method", "t": "Method:tessellation gs", "doc_id": "arxiv:2512.07381", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.01204", "r": "paper_proposes_method", "t": "Method:tabletopgen", "doc_id": "arxiv:2512.01204", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.01204", "r": "paper_proposes_method", "t": "Method:differentiable rotation optimizer", "doc_id": "arxiv:2512.01204", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.01204", "r": "paper_proposes_method", "t": "Method:top-view spatial alignment", "doc_id": "arxiv:2512.01204", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.10994", "r": "paper_proposes_method", "t": "Method:lumimotion", "doc_id": "arxiv:2604.10994", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.07350", "r": "paper_proposes_method", "t": "Method:elastic test-time training", "doc_id": "arxiv:2604.07350", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.07350", "r": "paper_proposes_method", "t": "Method:fast spatial memory", "doc_id": "arxiv:2604.07350", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.09877", "r": "paper_proposes_method", "t": "Method:genie 4d", "doc_id": "arxiv:2604.09877", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.17969", "r": "paper_proposes_method", "t": "Method:e3vs-bench", "doc_id": "arxiv:2604.17969", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.13746", "r": "paper_proposes_method", "t": "Method:clipgstream", "doc_id": "arxiv:2604.13746", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.11372", "r": "paper_proposes_method", "t": "Method:mr.scalemaster", "doc_id": "arxiv:2604.11372", "confidence": 1.0, "source": "llm"}
+{"h": "Method:mr.scalemaster", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "arxiv:2604.11372", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.05259", "r": "paper_proposes_method", "t": "Method:aionhmr", "doc_id": "arxiv:2512.05259", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.10415", "r": "paper_proposes_method", "t": "Method:point2pose", "doc_id": "arxiv:2604.10415", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.21960", "r": "paper_proposes_method", "t": "Method:conditional diffusion posterior alignment", "doc_id": "arxiv:2604.21960", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.21960", "r": "paper_proposes_method", "t": "Method:cdpa", "doc_id": "arxiv:2604.21960", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.28193", "r": "paper_proposes_method", "t": "Method:genwildsplat", "doc_id": "arxiv:2604.28193", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.13235", "r": "paper_proposes_method", "t": "Method:neural height field", "doc_id": "arxiv:2604.13235", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.18640", "r": "paper_proposes_method", "t": "Method:gpert", "doc_id": "arxiv:2512.18640", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.18640", "r": "paper_proposes_method", "t": "Method:geometric-photometric event-based 3d gaussian ray tracing", "doc_id": "arxiv:2512.18640", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2512.25073", "r": "paper_proposes_method", "t": "Method:gamo", "doc_id": "arxiv:2512.25073", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.25073", "r": "paper_proposes_method", "t": "Method:geometry-aware multi-view outpainter", "doc_id": "arxiv:2512.25073", "confidence": 0.98, "source": "llm"}
+{"h": "Method:gamo", "r": "method_uses_dataset", "t": "Dataset:replica", "doc_id": "arxiv:2512.25073", "confidence": 0.95, "source": "llm"}
+{"h": "Method:gamo", "r": "method_uses_dataset", "t": "Dataset:scannet++", "doc_id": "arxiv:2512.25073", "confidence": 0.95, "source": "llm"}
+{"h": "Method:gamo", "r": "method_uses_dataset", "t": "Dataset:mip-nerf 360", "doc_id": "arxiv:2512.25073", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2602.06044", "r": "paper_proposes_method", "t": "Method:cosmos", "doc_id": "arxiv:2602.06044", "confidence": 1.0, "source": "llm"}
+{"h": "Method:cosmos", "r": "method_uses_dataset", "t": "Dataset:dtu", "doc_id": "arxiv:2602.06044", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2512.17773", "r": "paper_proposes_method", "t": "Method:pix2nphm", "doc_id": "arxiv:2512.17773", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.03962", "r": "paper_proposes_method", "t": "Method:tada-dip", "doc_id": "arxiv:2512.03962", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.12683", "r": "paper_proposes_method", "t": "Method:quantum implicit representation networks", "doc_id": "arxiv:2512.12683", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2512.12683", "r": "paper_proposes_method", "t": "Method:qiren", "doc_id": "arxiv:2512.12683", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2512.12683", "r": "paper_proposes_method", "t": "Method:quantum neural radiance fields", "doc_id": "arxiv:2512.12683", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.12683", "r": "paper_proposes_method", "t": "Method:q-nerf", "doc_id": "arxiv:2512.12683", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.05113", "r": "paper_proposes_method", "t": "Method:splannequin", "doc_id": "arxiv:2512.05113", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.02375", "r": "paper_proposes_method", "t": "Method:on-the-fly feedback sfm", "doc_id": "arxiv:2512.02375", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.21513", "r": "paper_proposes_method", "t": "Method:mus-polar3d", "doc_id": "arxiv:2512.21513", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.05272", "r": "paper_proposes_method", "t": "Method:com4d", "doc_id": "arxiv:2512.05272", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.07197", "r": "paper_proposes_method", "t": "Method:success-gs", "doc_id": "arxiv:2512.07197", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.09723", "r": "paper_proposes_method", "t": "Method:mac-ego3d", "doc_id": "arxiv:2412.09723", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.09723", "r": "paper_has_repo", "t": "Repo:Xiaohao-Xu/MAC-Ego3D", "doc_id": "arxiv:2412.09723", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2412.12083", "r": "paper_proposes_method", "t": "Method:idarb", "doc_id": "arxiv:2412.12083", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.12083", "r": "paper_proposes_method", "t": "Method:arb-objaverse", "doc_id": "arxiv:2412.12083", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2412.13244", "r": "paper_proposes_method", "t": "Method:irbsm", "doc_id": "arxiv:2412.13244", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.15447", "r": "paper_proposes_method", "t": "Method:lihi-gs", "doc_id": "arxiv:2412.15447", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.06777", "r": "paper_proposes_method", "t": "Method:driv3r", "doc_id": "arxiv:2412.06777", "confidence": 1.0, "source": "llm"}
+{"h": "Method:driv3r", "r": "method_uses_dataset", "t": "Dataset:nuscenes", "doc_id": "arxiv:2412.06777", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.07696", "r": "paper_proposes_method", "t": "Method:simvs", "doc_id": "arxiv:2412.07696", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.12685", "r": "paper_proposes_method", "t": "Method:semstereo", "doc_id": "arxiv:2412.12685", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.12685", "r": "paper_proposes_method", "t": "Method:semantic-guided cascade structure", "doc_id": "arxiv:2412.12685", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.12685", "r": "paper_proposes_method", "t": "Method:semantic selective refinement", "doc_id": "arxiv:2412.12685", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.12685", "r": "paper_proposes_method", "t": "Method:ssr", "doc_id": "arxiv:2412.12685", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.12685", "r": "paper_proposes_method", "t": "Method:left-right semantic consistency", "doc_id": "arxiv:2412.12685", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.12685", "r": "paper_proposes_method", "t": "Method:lrsc", "doc_id": "arxiv:2412.12685", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.05548", "r": "paper_proposes_method", "t": "Method:street gaussians", "doc_id": "arxiv:2412.05548", "confidence": 1.0, "source": "llm"}
+{"h": "Method:street gaussians", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "arxiv:2412.05548", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.06273", "r": "paper_proposes_method", "t": "Method:omni-scene", "doc_id": "arxiv:2412.06273", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.06273", "r": "paper_proposes_method", "t": "Method:omni-gaussian representation", "doc_id": "arxiv:2412.06273", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.20093", "r": "paper_proposes_method", "t": "Method:furnset", "doc_id": "arxiv:2604.20093", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.19747", "r": "paper_proposes_method", "t": "Method:anyrecon", "doc_id": "arxiv:2604.19747", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1809.00969", "r": "paper_proposes_method", "t": "Method:undemon", "doc_id": "arxiv:1809.00969", "confidence": 1.0, "source": "llm"}
+{"h": "Method:undemon", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "arxiv:1809.00969", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1812.00725", "r": "paper_proposes_method", "t": "Method:craves", "doc_id": "arxiv:1812.00725", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1812.01232", "r": "paper_proposes_method", "t": "Method:globally-optimal spherical mixture alignment", "doc_id": "arxiv:1812.01232", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1809.01995", "r": "paper_proposes_method", "t": "Method:dense pose transfer", "doc_id": "arxiv:1809.01995", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1809.10790", "r": "paper_proposes_method", "t": "Method:deep object pose estimation", "doc_id": "arxiv:1809.10790", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1812.05231", "r": "paper_proposes_method", "t": "Method:nrityantar", "doc_id": "arxiv:1812.05231", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1808.05942", "r": "paper_proposes_method", "t": "Method:neural body fitting", "doc_id": "arxiv:1808.05942", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1811.07461", "r": "paper_proposes_method", "t": "Method:indoor geonet", "doc_id": "arxiv:1811.07461", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1811.05939", "r": "paper_proposes_method", "t": "Method:domain randomization", "doc_id": "arxiv:1811.05939", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1809.07217", "r": "paper_proposes_method", "t": "Method:siamese equivariant embedding", "doc_id": "arxiv:1809.07217", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1809.00096", "r": "paper_proposes_method", "t": "Method:quest", "doc_id": "arxiv:1809.00096", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1809.05380", "r": "paper_proposes_method", "t": "Method:kittingbot", "doc_id": "arxiv:1809.05380", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1811.09347", "r": "paper_proposes_method", "t": "Method:drop-and-refresh (dar)", "doc_id": "arxiv:1811.09347", "confidence": 1.0, "source": "llm"}
+{"h": "Method:drop-and-refresh (dar)", "r": "method_uses_dataset", "t": "Dataset:imagenet", "doc_id": "arxiv:1811.09347", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1808.08319", "r": "paper_proposes_method", "t": "Method:bop", "doc_id": "arxiv:1808.08319", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1911.09245", "r": "paper_proposes_method", "t": "Method:consensus-based optimization algorithm", "doc_id": "arxiv:1911.09245", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1910.10750", "r": "paper_proposes_method", "t": "Method:6-pack", "doc_id": "arxiv:1910.10750", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1910.00679", "r": "paper_proposes_method", "t": "Method:tagslam", "doc_id": "arxiv:1910.00679", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1912.12847", "r": "paper_proposes_method", "t": "Method:generative memorize-then-recall framework", "doc_id": "arxiv:1912.12847", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.14048", "r": "paper_proposes_method", "t": "Method:free geometry", "doc_id": "arxiv:2604.14048", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.10512", "r": "paper_proposes_method", "t": "Method:freescale", "doc_id": "arxiv:2604.10512", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.13476", "r": "paper_proposes_method", "t": "Method:robotpan", "doc_id": "arxiv:2604.13476", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.26567", "r": "paper_proposes_method", "t": "Method:airzoo", "doc_id": "arxiv:2604.26567", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.12592", "r": "paper_proposes_method", "t": "Method:elog-gs", "doc_id": "arxiv:2604.12592", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.10259", "r": "paper_proposes_method", "t": "Method:feed-forward gaussian splatting", "doc_id": "arxiv:2604.10259", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.10259", "r": "paper_proposes_method", "t": "Method:humangs", "doc_id": "arxiv:2604.10259", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1811.06666", "r": "paper_proposes_method", "t": "Method:ground plane polling", "doc_id": "arxiv:1811.06666", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1811.06666", "r": "paper_proposes_method", "t": "Method:gpp", "doc_id": "arxiv:1811.06666", "confidence": 1.0, "source": "llm"}
+{"h": "Method:ground plane polling", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "arxiv:1811.06666", "confidence": 1.0, "source": "llm"}
+{"h": "Method:gpp", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "arxiv:1811.06666", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1812.00252", "r": "paper_proposes_method", "t": "Method:augmented gait state estimation framework", "doc_id": "arxiv:1812.00252", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1812.00739", "r": "paper_proposes_method", "t": "Method:2d soft localization heatmap", "doc_id": "arxiv:1812.00739", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1809.05958", "r": "paper_proposes_method", "t": "Method:snake gate detection algorithm", "doc_id": "arxiv:1809.05958", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1809.05958", "r": "paper_proposes_method", "t": "Method:state prediction-based feed-forward control strategy", "doc_id": "arxiv:1809.05958", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1912.02323", "r": "paper_proposes_method", "t": "Method:keytrack", "doc_id": "arxiv:1912.02323", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1912.02323", "r": "paper_proposes_method", "t": "Method:pose entailment", "doc_id": "arxiv:1912.02323", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1911.01911", "r": "paper_proposes_method", "t": "Method:blenderproc", "doc_id": "arxiv:1911.01911", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1909.11155", "r": "paper_proposes_method", "t": "Method:anchor loss", "doc_id": "arxiv:1909.11155", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1912.05013", "r": "paper_proposes_method", "t": "Method:2d-3d registration method", "doc_id": "arxiv:1912.05013", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1909.12494", "r": "paper_proposes_method", "t": "Method:deep gated multi-modal learning", "doc_id": "arxiv:1909.12494", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1912.04618", "r": "paper_proposes_method", "t": "Method:deep attention based semi-supervised 2d-pose estimation", "doc_id": "arxiv:1912.04618", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1912.04618", "r": "paper_proposes_method", "t": "Method:total variation confidence measure", "doc_id": "arxiv:1912.04618", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1910.13911", "r": "paper_proposes_method", "t": "Method:rpm", "doc_id": "arxiv:1910.13911", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1912.04627", "r": "paper_proposes_method", "t": "Method:superncn", "doc_id": "arxiv:1912.04627", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1911.00962", "r": "paper_proposes_method", "t": "Method:conservative wasserstein training", "doc_id": "arxiv:1911.00962", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1911.07424", "r": "paper_proposes_method", "t": "Method:hcrnn", "doc_id": "arxiv:1911.07424", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1912.09057", "r": "paper_proposes_method", "t": "Method:pointvotenet", "doc_id": "arxiv:1912.09057", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1910.10653", "r": "paper_proposes_method", "t": "Method:graph convolutional neural network", "doc_id": "arxiv:1910.10653", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:1910.03695", "r": "paper_proposes_method", "t": "Method:nads-net", "doc_id": "arxiv:1910.03695", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1912.04071", "r": "paper_proposes_method", "t": "Method:deepfuse", "doc_id": "arxiv:1912.04071", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2011.07387", "r": "paper_proposes_method", "t": "Method:translucent filter", "doc_id": "arxiv:2011.07387", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2011.07387", "r": "paper_proposes_method", "t": "Method:image enhancement module", "doc_id": "arxiv:2011.07387", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2010.16117", "r": "paper_proposes_method", "t": "Method:pyrapose", "doc_id": "arxiv:2010.16117", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2012.01788", "r": "paper_proposes_method", "t": "Method:active object mapping framework", "doc_id": "arxiv:2012.01788", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2012.10714", "r": "paper_proposes_method", "t": "Method:light field slam front-end", "doc_id": "arxiv:2012.10714", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2011.14679", "r": "paper_proposes_method", "t": "Method:canonpose", "doc_id": "arxiv:2011.14679", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2010.09355", "r": "paper_proposes_method", "t": "Method:shrec 2020 track 6d object pose estimation", "doc_id": "arxiv:2010.09355", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2012.03205", "r": "paper_proposes_method", "t": "Method:temporal-aware self-supervised network (tassn)", "doc_id": "arxiv:2012.03205", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2011.07748", "r": "paper_proposes_method", "t": "Method:uncertainty quantification (uq) method for 6-dof object pose estimation", "doc_id": "arxiv:2011.07748", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.03393", "r": "paper_proposes_method", "t": "Method:liodom", "doc_id": "arxiv:2111.03393", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.12580", "r": "paper_proposes_method", "t": "Method:uda-cope", "doc_id": "arxiv:2111.12580", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.02951", "r": "paper_proposes_method", "t": "Method:video autoencoder", "doc_id": "arxiv:2110.02951", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2010.08221", "r": "paper_proposes_method", "t": "Method:hperl", "doc_id": "arxiv:2010.08221", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2010.14076", "r": "paper_proposes_method", "t": "Method:P² Net", "doc_id": "arxiv:2010.14076", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2010.14076", "r": "paper_proposes_method", "t": "Method:DA²", "doc_id": "arxiv:2010.14076", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2010.14076", "r": "paper_proposes_method", "t": "Method:parallel fusion", "doc_id": "arxiv:2010.14076", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2010.14076", "r": "paper_proposes_method", "t": "Method:progressive fusion", "doc_id": "arxiv:2010.14076", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2010.14076", "r": "paper_proposes_method", "t": "Method:attention module", "doc_id": "arxiv:2010.14076", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2012.08055", "r": "paper_proposes_method", "t": "Method:3d part-guided visual data augmentation", "doc_id": "arxiv:2012.08055", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2012.08055", "r": "paper_proposes_method", "t": "Method:multi-task network for vus parsing", "doc_id": "arxiv:2012.08055", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2012.08055", "r": "paper_proposes_method", "t": "Method:multi-stream network for vhi parsing", "doc_id": "arxiv:2012.08055", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2010.08202", "r": "paper_proposes_method", "t": "Method:affordance coordinate frame", "doc_id": "arxiv:2010.08202", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2010.08202", "r": "paper_proposes_method", "t": "Method:acf", "doc_id": "arxiv:2010.08202", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2011.04307", "r": "paper_proposes_method", "t": "Method:efficientpose", "doc_id": "arxiv:2011.04307", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2011.04307", "r": "paper_proposes_method", "t": "Method:6d augmentation", "doc_id": "arxiv:2011.04307", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2012.09496", "r": "paper_proposes_method", "t": "Method:learnable joint groups", "doc_id": "arxiv:2012.09496", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2012.09496", "r": "paper_proposes_method", "t": "Method:binary selector", "doc_id": "arxiv:2012.09496", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2012.09496", "r": "paper_proposes_method", "t": "Method:learnablegroups-hand", "doc_id": "arxiv:2012.09496", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2011.00184", "r": "paper_proposes_method", "t": "Method:temporal regression network", "doc_id": "arxiv:2011.00184", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2011.00184", "r": "paper_proposes_method", "t": "Method:gated convolution module", "doc_id": "arxiv:2011.00184", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2011.11946", "r": "paper_proposes_method", "t": "Method:kapture-localization", "doc_id": "arxiv:2011.11946", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2010.13321", "r": "paper_proposes_method", "t": "Method:view-invariant probabilistic embedding model", "doc_id": "arxiv:2010.13321", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2010.13321", "r": "paper_proposes_method", "t": "Method:temporal embedding model", "doc_id": "arxiv:2010.13321", "confidence": 0.92, "source": "llm"}
+{"h": "Paper:2011.08418", "r": "paper_proposes_method", "t": "Method:dynamic time warping", "doc_id": "arxiv:2011.08418", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2111.08614", "r": "paper_proposes_method", "t": "Method:ikea object state dataset", "doc_id": "arxiv:2111.08614", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2112.09081", "r": "paper_proposes_method", "t": "Method:topo-datagen", "doc_id": "arxiv:2112.09081", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2112.09081", "r": "paper_proposes_method", "t": "Method:crossloc", "doc_id": "arxiv:2112.09081", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.05092", "r": "paper_proposes_method", "t": "Method:multi-view and temporal fusing transformer", "doc_id": "arxiv:2110.05092", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.05092", "r": "paper_proposes_method", "t": "Method:mtf-transformer", "doc_id": "arxiv:2110.05092", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.05092", "r": "paper_proposes_method", "t": "Method:multi-view fusing transformer", "doc_id": "arxiv:2110.05092", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.05092", "r": "paper_proposes_method", "t": "Method:mft", "doc_id": "arxiv:2110.05092", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.05092", "r": "paper_proposes_method", "t": "Method:temporal fusing transformer", "doc_id": "arxiv:2110.05092", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.05092", "r": "paper_proposes_method", "t": "Method:tft", "doc_id": "arxiv:2110.05092", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.05092", "r": "paper_proposes_method", "t": "Method:relative-attention block", "doc_id": "arxiv:2110.05092", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.14021", "r": "paper_proposes_method", "t": "Method:semi-automatic monoplotting framework", "doc_id": "arxiv:2111.14021", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.08472", "r": "paper_proposes_method", "t": "Method:bilayer graph", "doc_id": "arxiv:2110.08472", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.08472", "r": "paper_proposes_method", "t": "Method:dual-scale graph approach", "doc_id": "arxiv:2110.08472", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.08472", "r": "paper_proposes_method", "t": "Method:graph fusion blocks", "doc_id": "arxiv:2110.08472", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.11426", "r": "paper_proposes_method", "t": "Method:neural fields", "doc_id": "arxiv:2111.11426", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2111.05916", "r": "paper_proposes_method", "t": "Method:dance in the wild", "doc_id": "arxiv:2111.05916", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2112.09854", "r": "paper_proposes_method", "t": "Method:drlavt", "doc_id": "arxiv:2112.09854", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2112.11153", "r": "paper_proposes_method", "t": "Method:ponet", "doc_id": "arxiv:2112.11153", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2112.11153", "r": "paper_proposes_method", "t": "Method:pose orientation net", "doc_id": "arxiv:2112.11153", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2111.10524", "r": "paper_proposes_method", "t": "Method:acr-pose", "doc_id": "arxiv:2111.10524", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.10524", "r": "paper_proposes_method", "t": "Method:adversarial canonical representation reconstruction network", "doc_id": "arxiv:2111.10524", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.10524", "r": "paper_proposes_method", "t": "Method:pose-irrelevant module", "doc_id": "arxiv:2111.10524", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2111.10524", "r": "paper_proposes_method", "t": "Method:pim", "doc_id": "arxiv:2111.10524", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2111.10524", "r": "paper_proposes_method", "t": "Method:relational reconstruction module", "doc_id": "arxiv:2111.10524", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2111.10524", "r": "paper_proposes_method", "t": "Method:rrm", "doc_id": "arxiv:2111.10524", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2111.14411", "r": "paper_proposes_method", "t": "Method:pgganet", "doc_id": "arxiv:2111.14411", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.14411", "r": "paper_proposes_method", "t": "Method:pose guided graph attention network", "doc_id": "arxiv:2111.14411", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.12401", "r": "paper_proposes_method", "t": "Method:dynamic keypoints selection network", "doc_id": "arxiv:2110.12401", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.02135", "r": "paper_proposes_method", "t": "Method:efficientlo-net", "doc_id": "arxiv:2111.02135", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.02135", "r": "paper_proposes_method", "t": "Method:Pyramid, Warping, and Cost volume (PWC) structure", "doc_id": "arxiv:2111.02135", "confidence": 0.9, "source": "llm"}
+{"h": "Method:efficientlo-net", "r": "method_uses_dataset", "t": "Dataset:kitti odometry", "doc_id": "arxiv:2111.02135", "confidence": 1.0, "source": "llm"}
+{"h": "Method:efficientlo-net", "r": "method_uses_dataset", "t": "Dataset:argoverse", "doc_id": "arxiv:2111.02135", "confidence": 1.0, "source": "llm"}
+{"h": "Method:efficientlo-net", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "arxiv:2111.02135", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.01245", "r": "paper_proposes_method", "t": "Method:direct regression model", "doc_id": "arxiv:2111.01245", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.01245", "r": "paper_proposes_method", "t": "Method:sparse correspondence model", "doc_id": "arxiv:2111.01245", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.01245", "r": "paper_proposes_method", "t": "Method:dense correspondence model", "doc_id": "arxiv:2111.01245", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.15127", "r": "paper_proposes_method", "t": "Method:raim", "doc_id": "arxiv:2211.15127", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.15127", "r": "paper_proposes_method", "t": "Method:fault detection and exclusion", "doc_id": "arxiv:2211.15127", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.15127", "r": "paper_proposes_method", "t": "Method:protection level", "doc_id": "arxiv:2211.15127", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2212.08731", "r": "paper_proposes_method", "t": "Method:graph neural networks", "doc_id": "arxiv:2212.08731", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2212.08731", "r": "paper_proposes_method", "t": "Method:multilayer perceptron", "doc_id": "arxiv:2212.08731", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.17081", "r": "paper_proposes_method", "t": "Method:self-emphasizing network (sen)", "doc_id": "arxiv:2211.17081", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.17081", "r": "paper_proposes_method", "t": "Method:temporal self-emphasizing module", "doc_id": "arxiv:2211.17081", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.03151", "r": "paper_proposes_method", "t": "Method:lg-hand", "doc_id": "arxiv:2211.03151", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.03151", "r": "paper_proposes_method", "t": "Method:angle loss", "doc_id": "arxiv:2211.03151", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.03151", "r": "paper_proposes_method", "t": "Method:direction loss", "doc_id": "arxiv:2211.03151", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.13357", "r": "paper_proposes_method", "t": "Method:mpt", "doc_id": "arxiv:2211.13357", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.13357", "r": "paper_proposes_method", "t": "Method:mesh pre-training", "doc_id": "arxiv:2211.13357", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.13357", "r": "paper_proposes_method", "t": "Method:mesh regression transformer", "doc_id": "arxiv:2211.13357", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.13357", "r": "paper_proposes_method", "t": "Method:masked heatmap modeling", "doc_id": "arxiv:2211.13357", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2210.13797", "r": "paper_proposes_method", "t": "Method:maroam", "doc_id": "arxiv:2210.13797", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.11066", "r": "paper_proposes_method", "t": "Method:hybrid transformer", "doc_id": "arxiv:2211.11066", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.08754", "r": "paper_proposes_method", "t": "Method:s-graphs+", "doc_id": "arxiv:2211.08754", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.15692", "r": "paper_proposes_method", "t": "Method:h3wb", "doc_id": "arxiv:2211.15692", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.16290", "r": "paper_proposes_method", "t": "Method:locposenet", "doc_id": "arxiv:2211.16290", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.03174", "r": "paper_proposes_method", "t": "Method:wheel-slam", "doc_id": "arxiv:2211.03174", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.03375", "r": "paper_proposes_method", "t": "Method:alphapose", "doc_id": "arxiv:2211.03375", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.03375", "r": "paper_proposes_method", "t": "Method:symmetric integral keypoint regression", "doc_id": "arxiv:2211.03375", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.03375", "r": "paper_proposes_method", "t": "Method:sikr", "doc_id": "arxiv:2211.03375", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.03375", "r": "paper_proposes_method", "t": "Method:parametric pose non-maximum-suppression", "doc_id": "arxiv:2211.03375", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.03375", "r": "paper_proposes_method", "t": "Method:p-nms", "doc_id": "arxiv:2211.03375", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.03375", "r": "paper_proposes_method", "t": "Method:pose aware identity embedding", "doc_id": "arxiv:2211.03375", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.03375", "r": "paper_proposes_method", "t": "Method:part-guided proposal generator", "doc_id": "arxiv:2211.03375", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.03375", "r": "paper_proposes_method", "t": "Method:pgpg", "doc_id": "arxiv:2211.03375", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.03375", "r": "paper_has_repo", "t": "Repo:MVIG-SJTU/AlphaPose", "doc_id": "arxiv:2211.03375", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.10963", "r": "paper_proposes_method", "t": "Method:domain adaptive absolute pose regressor", "doc_id": "arxiv:2211.10963", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.10963", "r": "paper_proposes_method", "t": "Method:domain adaptive training framework for absolute pose regression", "doc_id": "arxiv:2211.10963", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.10963", "r": "paper_proposes_method", "t": "Method:lightweight cnn-based absolute pose regressor", "doc_id": "arxiv:2211.10963", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.11394", "r": "paper_proposes_method", "t": "Method:implicitpdf model", "doc_id": "arxiv:2211.11394", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2211.11394", "r": "paper_proposes_method", "t": "Method:automatic pose labeling scheme", "doc_id": "arxiv:2211.11394", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2211.11394", "r": "paper_proposes_method", "t": "Method:point cloud registration", "doc_id": "arxiv:2211.11394", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2211.11394", "r": "paper_proposes_method", "t": "Method:render-and-compare validation", "doc_id": "arxiv:2211.11394", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2211.00960", "r": "paper_proposes_method", "t": "Method:prima6d++", "doc_id": "arxiv:2211.00960", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2311.14155", "r": "paper_proposes_method", "t": "Method:gigapose", "doc_id": "arxiv:2311.14155", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2311.14155", "r": "paper_has_repo", "t": "Repo:nv-nguyen/gigapose", "doc_id": "arxiv:2311.14155", "confidence": 0.99, "source": "llm"}
+{"h": "Paper:2312.15636", "r": "paper_proposes_method", "t": "Method:pose-guided transformer layer", "doc_id": "arxiv:2312.15636", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2312.15636", "r": "paper_proposes_method", "t": "Method:adaptive feature selection module", "doc_id": "arxiv:2312.15636", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2312.08411", "r": "paper_proposes_method", "t": "Method:gaussian-density neural network", "doc_id": "arxiv:2312.08411", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2312.08411", "r": "paper_proposes_method", "t": "Method:discriminative bayesian filter", "doc_id": "arxiv:2312.08411", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2312.08411", "r": "paper_proposes_method", "t": "Method:se(3) velocity-based servo control", "doc_id": "arxiv:2312.08411", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2311.12043", "r": "paper_proposes_method", "t": "Method:generative prior", "doc_id": "arxiv:2311.12043", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2311.12043", "r": "paper_proposes_method", "t": "Method:guided diffusion model", "doc_id": "arxiv:2311.12043", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2311.12043", "r": "paper_proposes_method", "t": "Method:zedo-i", "doc_id": "arxiv:2311.12043", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.07854", "r": "paper_proposes_method", "t": "Method:image generation diffusion models", "doc_id": "arxiv:2312.07854", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2311.16495", "r": "paper_proposes_method", "t": "Method:fisheyevit", "doc_id": "arxiv:2311.16495", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2311.16495", "r": "paper_proposes_method", "t": "Method:egowholebody", "doc_id": "arxiv:2311.16495", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2311.11125", "r": "paper_proposes_method", "t": "Method:secondpose", "doc_id": "arxiv:2311.11125", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.15130", "r": "paper_proposes_method", "t": "Method:pace", "doc_id": "arxiv:2312.15130", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.15130", "r": "paper_proposes_method", "t": "Method:pace-sim", "doc_id": "arxiv:2312.15130", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.17891", "r": "paper_proposes_method", "t": "Method:cape", "doc_id": "arxiv:2311.17891", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.18107", "r": "paper_proposes_method", "t": "Method:stochastic-geometrical framework", "doc_id": "arxiv:2311.18107", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.15707", "r": "paper_proposes_method", "t": "Method:sam-6d", "doc_id": "arxiv:2311.15707", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.15707", "r": "paper_proposes_method", "t": "Method:instance segmentation model (ism)", "doc_id": "arxiv:2311.15707", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2311.15707", "r": "paper_proposes_method", "t": "Method:pose estimation model (pem)", "doc_id": "arxiv:2311.15707", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2311.12588", "r": "paper_proposes_method", "t": "Method:hipose", "doc_id": "arxiv:2311.12588", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.12588", "r": "paper_proposes_method", "t": "Method:hierarchical binary surface encoding", "doc_id": "arxiv:2311.12588", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2311.12588", "r": "paper_proposes_method", "t": "Method:correspondence pruning", "doc_id": "arxiv:2311.12588", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2311.12028", "r": "paper_proposes_method", "t": "Method:hourglass tokenizer", "doc_id": "arxiv:2311.12028", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.12028", "r": "paper_proposes_method", "t": "Method:hot", "doc_id": "arxiv:2311.12028", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.12028", "r": "paper_proposes_method", "t": "Method:token pruning cluster", "doc_id": "arxiv:2311.12028", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.12028", "r": "paper_proposes_method", "t": "Method:tpc", "doc_id": "arxiv:2311.12028", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.12028", "r": "paper_proposes_method", "t": "Method:token recovering attention", "doc_id": "arxiv:2311.12028", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.12028", "r": "paper_proposes_method", "t": "Method:tra", "doc_id": "arxiv:2311.12028", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.18944", "r": "paper_proposes_method", "t": "Method:waterfall transformer", "doc_id": "arxiv:2411.18944", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.18944", "r": "paper_proposes_method", "t": "Method:wtpose", "doc_id": "arxiv:2411.18944", "confidence": 1.0, "source": "llm"}
+{"h": "Method:wtpose", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:2411.18944", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.14358", "r": "paper_proposes_method", "t": "Method:incrowd-vi", "doc_id": "arxiv:2411.14358", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2412.08496", "r": "paper_proposes_method", "t": "Method:visual slam", "doc_id": "arxiv:2412.08496", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2411.13988", "r": "paper_proposes_method", "t": "Method:du-vio", "doc_id": "arxiv:2411.13988", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2501.00657", "r": "paper_proposes_method", "t": "Method:dual quaternions", "doc_id": "arxiv:2501.00657", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2311.12421", "r": "paper_proposes_method", "t": "Method:consistency loss", "doc_id": "arxiv:2311.12421", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2401.00155", "r": "paper_proposes_method", "t": "Method:dag", "doc_id": "arxiv:2401.00155", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2401.00155", "r": "paper_proposes_method", "t": "Method:mask joints with instance paste", "doc_id": "arxiv:2401.00155", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2401.00155", "r": "paper_proposes_method", "t": "Method:adaptive discriminative attention module", "doc_id": "arxiv:2401.00155", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2401.00155", "r": "paper_proposes_method", "t": "Method:adam", "doc_id": "arxiv:2401.00155", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2401.00155", "r": "paper_proposes_method", "t": "Method:feature-guided multi-hop gcn", "doc_id": "arxiv:2401.00155", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2401.00155", "r": "paper_proposes_method", "t": "Method:fgmp-gcn", "doc_id": "arxiv:2401.00155", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.09653", "r": "paper_proposes_method", "t": "Method:improved tokenpose with sparsity", "doc_id": "arxiv:2311.09653", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.12580", "r": "paper_proposes_method", "t": "Method:covor-slam", "doc_id": "arxiv:2311.12580", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.02613", "r": "paper_proposes_method", "t": "Method:unicrowd", "doc_id": "arxiv:2312.02613", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.19492", "r": "paper_proposes_method", "t": "Method:diorama", "doc_id": "arxiv:2411.19492", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.13607", "r": "paper_proposes_method", "t": "Method:viopose", "doc_id": "arxiv:2411.13607", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.10431", "r": "paper_proposes_method", "t": "Method:cups", "doc_id": "arxiv:2412.10431", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.05734", "r": "paper_proposes_method", "t": "Method:poze", "doc_id": "arxiv:2411.05734", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.12675", "r": "paper_proposes_method", "t": "Method:shotvl", "doc_id": "arxiv:2412.12675", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.18673", "r": "paper_proposes_method", "t": "Method:ac3d", "doc_id": "arxiv:2411.18673", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.04464", "r": "paper_proposes_method", "t": "Method:dualpm", "doc_id": "arxiv:2412.04464", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.08640", "r": "paper_proposes_method", "t": "Method:blade", "doc_id": "arxiv:2412.08640", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.10504", "r": "paper_proposes_method", "t": "Method:usp-gaussian", "doc_id": "arxiv:2411.10504", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.03000", "r": "paper_proposes_method", "t": "Method:dynamicverse", "doc_id": "arxiv:2512.03000", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.06147", "r": "paper_proposes_method", "t": "Method:guidenav", "doc_id": "arxiv:2512.06147", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.09792", "r": "paper_proposes_method", "t": "Method:fastpose-vit", "doc_id": "arxiv:2512.09792", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2511.15565", "r": "paper_proposes_method", "t": "Method:scriboora", "doc_id": "arxiv:2511.15565", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2511.17309", "r": "paper_proposes_method", "t": "Method:mum", "doc_id": "arxiv:2511.17309", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.21054", "r": "paper_proposes_method", "t": "Method:dexavatar", "doc_id": "arxiv:2512.21054", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.11409", "r": "paper_proposes_method", "t": "Method:ikea video manuals", "doc_id": "arxiv:2411.11409", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2411.05552", "r": "paper_proposes_method", "t": "Method:deeparuco++", "doc_id": "arxiv:2411.05552", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.17790", "r": "paper_proposes_method", "t": "Method:generative latent bank", "doc_id": "arxiv:2411.17790", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2411.13620", "r": "paper_proposes_method", "t": "Method:robust sg-nerf", "doc_id": "arxiv:2411.13620", "confidence": 1.0, "source": "llm"}
+{"h": "Method:robust sg-nerf", "r": "method_uses_dataset", "t": "Dataset:dtu", "doc_id": "arxiv:2411.13620", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2501.00510", "r": "paper_proposes_method", "t": "Method:vint-6d", "doc_id": "arxiv:2501.00510", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2512.19058", "r": "paper_proposes_method", "t": "Method:6dattack", "doc_id": "arxiv:2512.19058", "confidence": 1.0, "source": "llm"}
+{"h": "Method:6dattack", "r": "method_uses_dataset", "t": "Dataset:co3d", "doc_id": "arxiv:2512.19058", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.10840", "r": "paper_proposes_method", "t": "Method:posegam", "doc_id": "arxiv:2512.10840", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2511.16494", "r": "paper_proposes_method", "t": "Method:physics-informed deep generative learning framework", "doc_id": "arxiv:2511.16494", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2511.19971", "r": "paper_proposes_method", "t": "Method:vggt4d", "doc_id": "arxiv:2511.19971", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2512.22979", "r": "paper_proposes_method", "t": "Method:posestreamer", "doc_id": "arxiv:2512.22979", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2511.19511", "r": "paper_proposes_method", "t": "Method:determinant ratio matrix (dram)", "doc_id": "arxiv:2511.19511", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2511.20496", "r": "paper_proposes_method", "t": "Method:deformation-force model", "doc_id": "arxiv:2511.20496", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2511.20496", "r": "paper_proposes_method", "t": "Method:multi-layer perceptron", "doc_id": "arxiv:2511.20496", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2511.20496", "r": "paper_proposes_method", "t": "Method:b-spline kinematic models", "doc_id": "arxiv:2511.20496", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2511.18115", "r": "paper_proposes_method", "t": "Method:muskie", "doc_id": "arxiv:2511.18115", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2511.18115", "r": "paper_proposes_method", "t": "Method:multi-view masked image modeling", "doc_id": "arxiv:2511.18115", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2512.15080", "r": "paper_proposes_method", "t": "Method:nap3d", "doc_id": "arxiv:2512.15080", "confidence": 1.0, "source": "llm"}
+{"h": "Method:nap3d", "r": "method_uses_dataset", "t": "Dataset:tum rgb-d", "doc_id": "arxiv:2512.15080", "confidence": 0.99, "source": "llm"}
+{"h": "Paper:2512.08430", "r": "paper_proposes_method", "t": "Method:sdt-6d", "doc_id": "arxiv:2512.08430", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.08430", "r": "paper_proposes_method", "t": "Method:depth-transformer", "doc_id": "arxiv:2512.08430", "confidence": 0.97, "source": "llm"}
+{"h": "Paper:2511.18702", "r": "paper_proposes_method", "t": "Method:deep convolutional neural network", "doc_id": "arxiv:2511.18702", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2511.22404", "r": "paper_proposes_method", "t": "Method:lgfusionnet", "doc_id": "arxiv:2511.22404", "confidence": 0.99, "source": "llm"}
+{"h": "Paper:2603.22631", "r": "paper_proposes_method", "t": "Method:cam3r", "doc_id": "arxiv:2603.22631", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.22631", "r": "paper_proposes_method", "t": "Method:ray module", "doc_id": "arxiv:2603.22631", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.22631", "r": "paper_proposes_method", "t": "Method:cross-view module", "doc_id": "arxiv:2603.22631", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.22631", "r": "paper_proposes_method", "t": "Method:ray-aware global alignment", "doc_id": "arxiv:2603.22631", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.19770", "r": "paper_proposes_method", "t": "Method:flashcap", "doc_id": "arxiv:2603.19770", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.19770", "r": "paper_proposes_method", "t": "Method:respose", "doc_id": "arxiv:2603.19770", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.17571", "r": "paper_proposes_method", "t": "Method:panovggt", "doc_id": "arxiv:2603.17571", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.19709", "r": "paper_proposes_method", "t": "Method:dream2act", "doc_id": "arxiv:2603.19709", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.06748", "r": "paper_proposes_method", "t": "Method:interactive delvm", "doc_id": "arxiv:2604.06748", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.27290", "r": "paper_proposes_method", "t": "Method:bkp-association", "doc_id": "arxiv:2603.27290", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.27290", "r": "paper_proposes_method", "t": "Method:yolo-bkp", "doc_id": "arxiv:2603.27290", "confidence": 1.0, "source": "llm"}
+{"h": "Method:bkp-association", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:2603.27290", "confidence": 0.95, "source": "llm"}
+{"h": "Method:yolo-bkp", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:2603.27290", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2603.29185", "r": "paper_proposes_method", "t": "Method:splathloc", "doc_id": "arxiv:2603.29185", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.11992", "r": "paper_proposes_method", "t": "Method:reefmapgs", "doc_id": "arxiv:2604.11992", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.23324", "r": "paper_proposes_method", "t": "Method:pfgs360", "doc_id": "arxiv:2603.23324", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.23324", "r": "paper_proposes_method", "t": "Method:pose-free omnidirectional gaussian splatting", "doc_id": "arxiv:2603.23324", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2604.17446", "r": "paper_proposes_method", "t": "Method:hykey", "doc_id": "arxiv:2604.17446", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.16596", "r": "paper_proposes_method", "t": "Method:fsmc-pose", "doc_id": "arxiv:2603.16596", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.16596", "r": "paper_proposes_method", "t": "Method:cattlemountnet", "doc_id": "arxiv:2603.16596", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.16596", "r": "paper_proposes_method", "t": "Method:sc2head", "doc_id": "arxiv:2603.16596", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.16596", "r": "paper_proposes_method", "t": "Method:spatial frequency enhancement block", "doc_id": "arxiv:2603.16596", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.16596", "r": "paper_proposes_method", "t": "Method:sfeblock", "doc_id": "arxiv:2603.16596", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.16596", "r": "paper_proposes_method", "t": "Method:receptive aggregation block", "doc_id": "arxiv:2603.16596", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.16596", "r": "paper_proposes_method", "t": "Method:rablock", "doc_id": "arxiv:2603.16596", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.27915", "r": "paper_proposes_method", "t": "Method:flashsign", "doc_id": "arxiv:2603.27915", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.27915", "r": "paper_proposes_method", "t": "Method:trainable sliding tile attention", "doc_id": "arxiv:2603.27915", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.27915", "r": "paper_proposes_method", "t": "Method:t-sta", "doc_id": "arxiv:2603.27915", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1812.03595", "r": "paper_proposes_method", "t": "Method:posefix", "doc_id": "arxiv:1812.03595", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1808.07182", "r": "paper_proposes_method", "t": "Method:random projection layer", "doc_id": "arxiv:1808.07182", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:1807.11147", "r": "paper_proposes_method", "t": "Method:euclidean distance matrix", "doc_id": "arxiv:1807.11147", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:1807.11147", "r": "paper_proposes_method", "t": "Method:edm", "doc_id": "arxiv:1807.11147", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:1807.11147", "r": "paper_proposes_method", "t": "Method:cnn", "doc_id": "arxiv:1807.11147", "confidence": 0.85, "source": "llm"}
+{"h": "Paper:1807.11147", "r": "paper_proposes_method", "t": "Method:sparse coding", "doc_id": "arxiv:1807.11147", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:1811.11209", "r": "paper_proposes_method", "t": "Method:iterative transformer network", "doc_id": "arxiv:1811.11209", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:1811.11209", "r": "paper_proposes_method", "t": "Method:it-net", "doc_id": "arxiv:1811.11209", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:1812.03647", "r": "paper_proposes_method", "t": "Method:nonparametric belief propagation", "doc_id": "arxiv:1812.03647", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:1812.03647", "r": "paper_proposes_method", "t": "Method:pull message passing algorithm for nonparametric belief propagation", "doc_id": "arxiv:1812.03647", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:1812.03647", "r": "paper_proposes_method", "t": "Method:pmpnbp", "doc_id": "arxiv:1812.03647", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:1810.03155", "r": "paper_proposes_method", "t": "Method:sub-pixel convolution-based encoder-decoder network", "doc_id": "arxiv:1810.03155", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:1810.05863", "r": "paper_proposes_method", "t": "Method:ppo constraints", "doc_id": "arxiv:1810.05863", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2603.13987", "r": "paper_proposes_method", "t": "Method:vader", "doc_id": "arxiv:2603.13987", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.17688", "r": "paper_proposes_method", "t": "Method:dual-stream spatio-temporal gcn-transformer network", "doc_id": "arxiv:2604.17688", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.17688", "r": "paper_proposes_method", "t": "Method:mixtgformer", "doc_id": "arxiv:2604.17688", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.17688", "r": "paper_proposes_method", "t": "Method:mixformer", "doc_id": "arxiv:2604.17688", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2604.17688", "r": "paper_proposes_method", "t": "Method:mixformer block", "doc_id": "arxiv:2604.17688", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2604.11138", "r": "paper_proposes_method", "t": "Method:viserdex", "doc_id": "arxiv:2604.11138", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.12837", "r": "paper_proposes_method", "t": "Method:ggd-slam", "doc_id": "arxiv:2604.12837", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.15574", "r": "paper_proposes_method", "t": "Method:skeleton transformer", "doc_id": "arxiv:2603.15574", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.14397", "r": "paper_proposes_method", "t": "Method:enavi", "doc_id": "arxiv:2603.14397", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1808.02194", "r": "paper_proposes_method", "t": "Method:quantized densely connected u-nets", "doc_id": "arxiv:1808.02194", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1810.08393", "r": "paper_proposes_method", "t": "Method:dgc-net", "doc_id": "arxiv:1810.08393", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1811.12004", "r": "paper_proposes_method", "t": "Method:lightweight openpose", "doc_id": "arxiv:1811.12004", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:1808.04803", "r": "paper_proposes_method", "t": "Method:hierarchical binary cnns", "doc_id": "arxiv:1808.04803", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:1808.04803", "r": "paper_proposes_method", "t": "Method:multi-scale residual architecture", "doc_id": "arxiv:1808.04803", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:1808.01525", "r": "paper_proposes_method", "t": "Method:cnn-based 3d human pose refinement framework", "doc_id": "arxiv:1808.01525", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:1809.05786", "r": "paper_proposes_method", "t": "Method:ganvo", "doc_id": "arxiv:1809.05786", "confidence": 0.95, "source": "llm"}
+{"h": "Method:ganvo", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "arxiv:1809.05786", "confidence": 0.98, "source": "llm"}
+{"h": "Method:ganvo", "r": "method_uses_dataset", "t": "Dataset:cityscapes", "doc_id": "arxiv:1809.05786", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:1909.13493", "r": "paper_proposes_method", "t": "Method:object-level semantic slam", "doc_id": "arxiv:1909.13493", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:1909.13493", "r": "paper_proposes_method", "t": "Method:semantic slam framework", "doc_id": "arxiv:1909.13493", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:1909.09225", "r": "paper_proposes_method", "t": "Method:gaze estimation neural network regressor", "doc_id": "arxiv:1909.09225", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:1909.09225", "r": "paper_proposes_method", "t": "Method:confidence gated unit", "doc_id": "arxiv:1909.09225", "confidence": 0.97, "source": "llm"}
+{"h": "Paper:1911.07938", "r": "paper_proposes_method", "t": "Method:mspn", "doc_id": "arxiv:1911.07938", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:1911.07938", "r": "paper_proposes_method", "t": "Method:posefix networks", "doc_id": "arxiv:1911.07938", "confidence": 0.9, "source": "llm"}
+{"h": "Method:mspn", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:1911.07938", "confidence": 0.98, "source": "llm"}
+{"h": "Method:posefix networks", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:1911.07938", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:1912.11695", "r": "paper_proposes_method", "t": "Method:extreme relative pose network", "doc_id": "arxiv:1912.11695", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:1912.11695", "r": "paper_proposes_method", "t": "Method:global-2-local matching procedure", "doc_id": "arxiv:1912.11695", "confidence": 0.95, "source": "llm"}
+{"h": "Method:extreme relative pose network", "r": "method_uses_dataset", "t": "Dataset:scannet", "doc_id": "arxiv:1912.11695", "confidence": 0.97, "source": "llm"}
+{"h": "Paper:1910.00721", "r": "paper_proposes_method", "t": "Method:lit", "doc_id": "arxiv:1910.00721", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:1910.05901", "r": "paper_proposes_method", "t": "Method:multi-stage hrnet", "doc_id": "arxiv:1910.05901", "confidence": 1.0, "source": "llm"}
+{"h": "Method:multi-stage hrnet", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:1910.05901", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1909.05730", "r": "paper_proposes_method", "t": "Method:verefine", "doc_id": "arxiv:1909.05730", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1911.09233", "r": "paper_proposes_method", "t": "Method:goat", "doc_id": "arxiv:1911.09233", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1911.05932", "r": "paper_proposes_method", "t": "Method:gift", "doc_id": "arxiv:1911.05932", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1911.05932", "r": "paper_proposes_method", "t": "Method:group invariant feature transform", "doc_id": "arxiv:1911.05932", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1909.06907", "r": "paper_proposes_method", "t": "Method:x-tom", "doc_id": "arxiv:1909.06907", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1912.00821", "r": "paper_proposes_method", "t": "Method:mixture dense regression", "doc_id": "arxiv:1912.00821", "confidence": 1.0, "source": "llm"}
+{"h": "Method:mixture dense regression", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:1912.00821", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1912.03203", "r": "paper_proposes_method", "t": "Method:dynamic convolutions", "doc_id": "arxiv:1912.03203", "confidence": 1.0, "source": "llm"}
+{"h": "Method:dynamic convolutions", "r": "method_uses_dataset", "t": "Dataset:imagenet", "doc_id": "arxiv:1912.03203", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:1910.04935", "r": "paper_proposes_method", "t": "Method:fetusmap", "doc_id": "arxiv:1910.04935", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1910.04935", "r": "paper_proposes_method", "t": "Method:self-supervised learning", "doc_id": "arxiv:1910.04935", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:1910.13675", "r": "paper_proposes_method", "t": "Method:form2fit", "doc_id": "arxiv:1910.13675", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1912.08077", "r": "paper_proposes_method", "t": "Method:deephar", "doc_id": "arxiv:1912.08077", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1909.13476", "r": "paper_proposes_method", "t": "Method:cullnet", "doc_id": "arxiv:1909.13476", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1909.10376", "r": "paper_proposes_method", "t": "Method:wepose", "doc_id": "arxiv:1909.10376", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1912.00416", "r": "paper_proposes_method", "t": "Method:latentfusion", "doc_id": "arxiv:1912.00416", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2012.07101", "r": "paper_proposes_method", "t": "Method:heatmap-style jigsaw puzzles", "doc_id": "arxiv:2012.07101", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2012.07101", "r": "paper_proposes_method", "t": "Method:hsjp", "doc_id": "arxiv:2012.07101", "confidence": 1.0, "source": "llm"}
+{"h": "Method:heatmap-style jigsaw puzzles", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:2012.07101", "confidence": 1.0, "source": "llm"}
+{"h": "Method:hsjp", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:2012.07101", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2010.00694", "r": "paper_proposes_method", "t": "Method:bayesian approximation", "doc_id": "arxiv:2010.00694", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2010.00694", "r": "paper_proposes_method", "t": "Method:bayesian 3d hand pose estimator", "doc_id": "arxiv:2010.00694", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2010.00694", "r": "paper_proposes_method", "t": "Method:acquisition function", "doc_id": "arxiv:2010.00694", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2010.00829", "r": "paper_proposes_method", "t": "Method:gradient-ascend particle filter", "doc_id": "arxiv:2010.00829", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2010.06100", "r": "paper_proposes_method", "t": "Method:fidip estimation model", "doc_id": "arxiv:2010.06100", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2012.13210", "r": "paper_proposes_method", "t": "Method:3dof pose estimator", "doc_id": "arxiv:2012.13210", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2011.11534", "r": "paper_proposes_method", "t": "Method:hand4whole", "doc_id": "arxiv:2011.11534", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2011.11534", "r": "paper_proposes_method", "t": "Method:pose2pose", "doc_id": "arxiv:2011.11534", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2009.12339", "r": "paper_proposes_method", "t": "Method:super-sam", "doc_id": "arxiv:2009.12339", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2010.04384", "r": "paper_proposes_method", "t": "Method:pose guidance network", "doc_id": "arxiv:2010.04384", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2010.04384", "r": "paper_proposes_method", "t": "Method:pgn", "doc_id": "arxiv:2010.04384", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2012.05901", "r": "paper_proposes_method", "t": "Method:convolutional neural network (cnn)", "doc_id": "arxiv:2012.05901", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2012.05901", "r": "paper_proposes_method", "t": "Method:deformation-splines", "doc_id": "arxiv:2012.05901", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2012.05901", "r": "paper_proposes_method", "t": "Method:geometry-aware depth filtering", "doc_id": "arxiv:2012.05901", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2009.12312", "r": "paper_proposes_method", "t": "Method:cad2real", "doc_id": "arxiv:2009.12312", "confidence": 0.99, "source": "llm"}
+{"h": "Paper:2011.08464", "r": "paper_proposes_method", "t": "Method:intermediate geometrical representations (igrs)", "doc_id": "arxiv:2011.08464", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2011.08464", "r": "paper_proposes_method", "t": "Method:projective invariant based loss function", "doc_id": "arxiv:2011.08464", "confidence": 0.97, "source": "llm"}
+{"h": "Method:intermediate geometrical representations (igrs)", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "arxiv:2011.08464", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2010.16279", "r": "paper_proposes_method", "t": "Method:neural 3d scene representations", "doc_id": "arxiv:2010.16279", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2010.16279", "r": "paper_proposes_method", "t": "Method:differentiable fully-convolutional 3d visual feature mapping model", "doc_id": "arxiv:2010.16279", "confidence": 0.97, "source": "llm"}
+{"h": "Paper:2012.00972", "r": "paper_proposes_method", "t": "Method:pwclo-net", "doc_id": "arxiv:2012.00972", "confidence": 0.99, "source": "llm"}
+{"h": "Paper:2012.00972", "r": "paper_proposes_method", "t": "Method:pwc structure", "doc_id": "arxiv:2012.00972", "confidence": 0.96, "source": "llm"}
+{"h": "Method:pwclo-net", "r": "method_uses_dataset", "t": "Dataset:kitti odometry", "doc_id": "arxiv:2012.00972", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2111.07418", "r": "paper_proposes_method", "t": "Method:tandem", "doc_id": "arxiv:2111.07418", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.07418", "r": "paper_proposes_method", "t": "Method:cascade view-aggregation mvsnet", "doc_id": "arxiv:2111.07418", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.07418", "r": "paper_proposes_method", "t": "Method:cva-mvsnet", "doc_id": "arxiv:2111.07418", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2109.11349", "r": "paper_proposes_method", "t": "Method:pranet", "doc_id": "arxiv:2109.11349", "confidence": 1.0, "source": "llm"}
+{"h": "Method:pranet", "r": "method_uses_dataset", "t": "Dataset:modelnet40", "doc_id": "arxiv:2109.11349", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.04931", "r": "paper_proposes_method", "t": "Method:bev-net", "doc_id": "arxiv:2110.04931", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.09554", "r": "paper_proposes_method", "t": "Method:transfusion", "doc_id": "arxiv:2110.09554", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.09554", "r": "paper_proposes_method", "t": "Method:epipolar field", "doc_id": "arxiv:2110.09554", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2109.11747", "r": "paper_proposes_method", "t": "Method:muvihandnet", "doc_id": "arxiv:2109.11747", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.00280", "r": "paper_proposes_method", "t": "Method:stochastic framework for human pose triangulation", "doc_id": "arxiv:2110.00280", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.07370", "r": "paper_proposes_method", "t": "Method:cosam", "doc_id": "arxiv:2111.07370", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.14213", "r": "paper_proposes_method", "t": "Method:neural view synthesis and matching", "doc_id": "arxiv:2110.14213", "confidence": 1.0, "source": "llm"}
+{"h": "Method:neural view synthesis and matching", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "arxiv:2110.14213", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2212.08641", "r": "paper_proposes_method", "t": "Method:gfpose", "doc_id": "arxiv:2212.08641", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2212.08641", "r": "paper_proposes_method", "t": "Method:time-dependent score network", "doc_id": "arxiv:2212.08641", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2211.14651", "r": "paper_proposes_method", "t": "Method:slicematch", "doc_id": "arxiv:2211.14651", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.14651", "r": "paper_proposes_method", "t": "Method:cross-view attention module", "doc_id": "arxiv:2211.14651", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2210.12035", "r": "paper_proposes_method", "t": "Method:blanketgen", "doc_id": "arxiv:2210.12035", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.10946", "r": "paper_proposes_method", "t": "Method:normalizing flows", "doc_id": "arxiv:2211.10946", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2210.10428", "r": "paper_proposes_method", "t": "Method:mc-hands-1m", "doc_id": "arxiv:2210.10428", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2210.13853", "r": "paper_proposes_method", "t": "Method:thor-net", "doc_id": "arxiv:2210.13853", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2210.13853", "r": "paper_proposes_method", "t": "Method:graformer", "doc_id": "arxiv:2210.13853", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2210.15145", "r": "paper_proposes_method", "t": "Method:ingvio", "doc_id": "arxiv:2210.15145", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2212.02077", "r": "paper_proposes_method", "t": "Method:dl-slot", "doc_id": "arxiv:2212.02077", "confidence": 1.0, "source": "llm"}
+{"h": "Method:dl-slot", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "arxiv:2212.02077", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.12018", "r": "paper_proposes_method", "t": "Method:Level-S$^2$fM", "doc_id": "arxiv:2211.12018", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2212.02796", "r": "paper_proposes_method", "t": "Method:diffupose", "doc_id": "arxiv:2212.02796", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.13398", "r": "paper_proposes_method", "t": "Method:cppf++", "doc_id": "arxiv:2211.13398", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2112.07334", "r": "paper_proposes_method", "t": "Method:omad", "doc_id": "arxiv:2112.07334", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2112.07334", "r": "paper_proposes_method", "t": "Method:omadnet", "doc_id": "arxiv:2112.07334", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2112.10716", "r": "paper_proposes_method", "t": "Method:bapose", "doc_id": "arxiv:2112.10716", "confidence": 1.0, "source": "llm"}
+{"h": "Method:bapose", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:2112.10716", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.08977", "r": "paper_proposes_method", "t": "Method:object-oriented slam", "doc_id": "arxiv:2110.08977", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.08977", "r": "paper_proposes_method", "t": "Method:3d quadric landmark construction", "doc_id": "arxiv:2110.08977", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.08977", "r": "paper_proposes_method", "t": "Method:stereo visual slam", "doc_id": "arxiv:2110.08977", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.08977", "r": "paper_proposes_method", "t": "Method:quadric landmark representation method", "doc_id": "arxiv:2110.08977", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.08977", "r": "paper_proposes_method", "t": "Method:quadric initialization method", "doc_id": "arxiv:2110.08977", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.08977", "r": "paper_proposes_method", "t": "Method:object-oriented data association", "doc_id": "arxiv:2110.08977", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.08977", "r": "paper_proposes_method", "t": "Method:object-based pose optimization", "doc_id": "arxiv:2110.08977", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.11983", "r": "paper_proposes_method", "t": "Method:weakly-supervised pre-training (wsp) strategy", "doc_id": "arxiv:2211.11983", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2112.04203", "r": "paper_proposes_method", "t": "Method:adversarial parametric pose prior", "doc_id": "arxiv:2112.04203", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2109.13879", "r": "paper_proposes_method", "t": "Method:keypoint-based end-to-end 3d hand pose and shape estimation framework", "doc_id": "arxiv:2109.13879", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2109.13879", "r": "paper_proposes_method", "t": "Method:multi-task semantic feature extractor", "doc_id": "arxiv:2109.13879", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2109.13879", "r": "paper_proposes_method", "t": "Method:viewpoint encoder", "doc_id": "arxiv:2109.13879", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2109.13879", "r": "paper_proposes_method", "t": "Method:stable 3d hand estimator", "doc_id": "arxiv:2109.13879", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2111.11969", "r": "paper_proposes_method", "t": "Method:domain adapted 3d body concept framework", "doc_id": "arxiv:2111.11969", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.00988", "r": "paper_proposes_method", "t": "Method:keypoint communities", "doc_id": "arxiv:2110.00988", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.04076", "r": "paper_proposes_method", "t": "Method:multi-view pose transformer", "doc_id": "arxiv:2111.04076", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.04076", "r": "paper_proposes_method", "t": "Method:mvp", "doc_id": "arxiv:2111.04076", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.04076", "r": "paper_proposes_method", "t": "Method:projective attention", "doc_id": "arxiv:2111.04076", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.04076", "r": "paper_proposes_method", "t": "Method:rayconv", "doc_id": "arxiv:2111.04076", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.12707", "r": "paper_proposes_method", "t": "Method:multi-hypothesis transformer", "doc_id": "arxiv:2111.12707", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.12707", "r": "paper_proposes_method", "t": "Method:mhformer", "doc_id": "arxiv:2111.12707", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2210.12418", "r": "paper_proposes_method", "t": "Method:mild", "doc_id": "arxiv:2210.12418", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2210.13540", "r": "paper_proposes_method", "t": "Method:videopose", "doc_id": "arxiv:2210.13540", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.02337", "r": "paper_proposes_method", "t": "Method:uv r-cnn", "doc_id": "arxiv:2211.02337", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.02337", "r": "paper_proposes_method", "t": "Method:dense points loss", "doc_id": "arxiv:2211.02337", "confidence": 1.0, "source": "llm"}
+{"h": "Method:uv r-cnn", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:2211.02337", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2211.03587", "r": "paper_proposes_method", "t": "Method:generalized product-of-experts", "doc_id": "arxiv:2211.03587", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.06038", "r": "paper_proposes_method", "t": "Method:latent space regression", "doc_id": "arxiv:2311.06038", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.17731", "r": "paper_proposes_method", "t": "Method:murp", "doc_id": "arxiv:2312.17731", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.03312", "r": "paper_proposes_method", "t": "Method:context-aware poseformer", "doc_id": "arxiv:2311.03312", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.00462", "r": "paper_proposes_method", "t": "Method:pseudo rotation matrices", "doc_id": "arxiv:2312.00462", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.00462", "r": "paper_proposes_method", "t": "Method:prom", "doc_id": "arxiv:2312.00462", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.14125", "r": "paper_proposes_method", "t": "Method:poet", "doc_id": "arxiv:2211.14125", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.14125", "r": "paper_proposes_method", "t": "Method:pose estimation transformer", "doc_id": "arxiv:2211.14125", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2210.14165", "r": "paper_proposes_method", "t": "Method:meev", "doc_id": "arxiv:2210.14165", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.09500", "r": "paper_proposes_method", "t": "Method:rkhspose", "doc_id": "arxiv:2311.09500", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.08344", "r": "paper_proposes_method", "t": "Method:foundationpose", "doc_id": "arxiv:2312.08344", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.14915", "r": "paper_proposes_method", "t": "Method:posegen", "doc_id": "arxiv:2312.14915", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.11707", "r": "paper_proposes_method", "t": "Method:unified framework for diffusion generative models in so(3)", "doc_id": "arxiv:2312.11707", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.13777", "r": "paper_proposes_method", "t": "Method:gs-pose", "doc_id": "arxiv:2311.13777", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.08438", "r": "paper_proposes_method", "t": "Method:localisebot", "doc_id": "arxiv:2311.08438", "confidence": 1.0, "source": "llm"}
+{"h": "Method:localisebot", "r": "method_uses_dataset", "t": "Dataset:shapenet", "doc_id": "arxiv:2311.08438", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2312.00947", "r": "paper_proposes_method", "t": "Method:freeze", "doc_id": "arxiv:2312.00947", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.07526", "r": "paper_proposes_method", "t": "Method:rtmo", "doc_id": "arxiv:2312.07526", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.07526", "r": "paper_proposes_method", "t": "Method:rtmo-l", "doc_id": "arxiv:2312.07526", "confidence": 0.95, "source": "llm"}
+{"h": "Method:rtmo", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:2312.07526", "confidence": 1.0, "source": "llm"}
+{"h": "Method:rtmo-l", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:2312.07526", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.07526", "r": "paper_has_repo", "t": "Repo:open-mmlab/mmpose", "doc_id": "arxiv:2312.07526", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:open-mmlab/mmpose", "r": "repo_implements_method", "t": "Method:rtmo-l", "doc_id": "arxiv:2312.07526", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2311.04591", "r": "paper_proposes_method", "t": "Method:rasterized event point cloud", "doc_id": "arxiv:2311.04591", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.04591", "r": "paper_proposes_method", "t": "Method:rasepc", "doc_id": "arxiv:2311.04591", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2311.04591", "r": "paper_proposes_method", "t": "Method:decoupled event voxel", "doc_id": "arxiv:2311.04591", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.04591", "r": "paper_proposes_method", "t": "Method:dev", "doc_id": "arxiv:2311.04591", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2311.04591", "r": "paper_has_repo", "t": "Repo:MasterHow/EventPointPose", "doc_id": "arxiv:2311.04591", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:MasterHow/EventPointPose", "r": "repo_implements_method", "t": "Method:dev", "doc_id": "arxiv:2311.04591", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.06583", "r": "paper_proposes_method", "t": "Method:wildhands", "doc_id": "arxiv:2312.06583", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.05141", "r": "paper_proposes_method", "t": "Method:diffcp", "doc_id": "arxiv:2311.05141", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.05141", "r": "paper_proposes_method", "t": "Method:a-ep", "doc_id": "arxiv:2311.05141", "confidence": 0.8, "source": "llm"}
+{"h": "Paper:2411.17240", "r": "paper_proposes_method", "t": "Method:dm-calib", "doc_id": "arxiv:2411.17240", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.04598", "r": "paper_proposes_method", "t": "Method:see-me", "doc_id": "arxiv:2411.04598", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.02725", "r": "paper_proposes_method", "t": "Method:emg2pose", "doc_id": "arxiv:2412.02725", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.09868", "r": "paper_proposes_method", "t": "Method:rp-slam", "doc_id": "arxiv:2412.09868", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.16318", "r": "paper_proposes_method", "t": "Method:onediffusion", "doc_id": "arxiv:2411.16318", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.05887", "r": "paper_proposes_method", "t": "Method:off-axis stereo projection", "doc_id": "arxiv:2311.05887", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2411.16443", "r": "paper_proposes_method", "t": "Method:splatflow", "doc_id": "arxiv:2411.16443", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.16443", "r": "paper_proposes_method", "t": "Method:multi-view rectified flow model", "doc_id": "arxiv:2411.16443", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2411.16443", "r": "paper_proposes_method", "t": "Method:gaussian splatting decoder", "doc_id": "arxiv:2411.16443", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2411.09435", "r": "paper_proposes_method", "t": "Method:remp", "doc_id": "arxiv:2411.09435", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.09435", "r": "paper_proposes_method", "t": "Method:reusable motion prior", "doc_id": "arxiv:2411.09435", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.02903", "r": "paper_proposes_method", "t": "Method:egocast", "doc_id": "arxiv:2412.02903", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.06869", "r": "paper_proposes_method", "t": "Method:capellm", "doc_id": "arxiv:2411.06869", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2501.01993", "r": "paper_proposes_method", "t": "Method:poselectr", "doc_id": "arxiv:2501.01993", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2501.01993", "r": "paper_proposes_method", "t": "Method:legendre convolution", "doc_id": "arxiv:2501.01993", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2512.22228", "r": "paper_proposes_method", "t": "Method:kan-fpn-stem", "doc_id": "arxiv:2512.22228", "confidence": 1.0, "source": "llm"}
+{"h": "Method:kan-fpn-stem", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:2512.22228", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2511.12241", "r": "paper_proposes_method", "t": "Method:aura", "doc_id": "arxiv:2511.12241", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2511.15874", "r": "paper_proposes_method", "t": "Method:waldo", "doc_id": "arxiv:2511.15874", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2511.12935", "r": "paper_proposes_method", "t": "Method:pfavatar", "doc_id": "arxiv:2511.12935", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2410.22128", "r": "paper_proposes_method", "t": "Method:pf3plat", "doc_id": "arxiv:2410.22128", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.00835", "r": "paper_proposes_method", "t": "Method:6dposediffusion", "doc_id": "arxiv:2412.00835", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.03146", "r": "paper_proposes_method", "t": "Method:mcvo", "doc_id": "arxiv:2412.03146", "confidence": 1.0, "source": "llm"}
+{"h": "Method:mcvo", "r": "method_uses_dataset", "t": "Dataset:kitti-360", "doc_id": "arxiv:2412.03146", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2411.13291", "r": "paper_proposes_method", "t": "Method:datap-sfm", "doc_id": "arxiv:2411.13291", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.13291", "r": "paper_proposes_method", "t": "Method:datap", "doc_id": "arxiv:2411.13291", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2410.20358", "r": "paper_proposes_method", "t": "Method:ropetp", "doc_id": "arxiv:2410.20358", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.03807", "r": "paper_proposes_method", "t": "Method:gs2pose", "doc_id": "arxiv:2411.03807", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2410.21153", "r": "paper_proposes_method", "t": "Method:synthetica", "doc_id": "arxiv:2410.21153", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.15742", "r": "paper_proposes_method", "t": "Method:peng", "doc_id": "arxiv:2411.15742", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.07165", "r": "paper_proposes_method", "t": "Method:position discriminator", "doc_id": "arxiv:2411.07165", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.07165", "r": "paper_proposes_method", "t": "Method:reverberation-resistant model", "doc_id": "arxiv:2411.07165", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.15542", "r": "paper_proposes_method", "t": "Method:blanket", "doc_id": "arxiv:2512.15542", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2511.21575", "r": "paper_proposes_method", "t": "Method:u-net", "doc_id": "arxiv:2511.21575", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2511.23030", "r": "paper_proposes_method", "t": "Method:diskchungs", "doc_id": "arxiv:2511.23030", "confidence": 0.98, "source": "llm"}
+{"h": "Method:diskchungs", "r": "method_uses_dataset", "t": "Dataset:replica", "doc_id": "arxiv:2511.23030", "confidence": 0.9, "source": "llm"}
+{"h": "Method:diskchungs", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "arxiv:2511.23030", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2512.04862", "r": "paper_proposes_method", "t": "Method:biotuch", "doc_id": "arxiv:2512.04862", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2511.10647", "r": "paper_proposes_method", "t": "Method:depth anything 3", "doc_id": "arxiv:2511.10647", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2511.10647", "r": "paper_proposes_method", "t": "Method:da3", "doc_id": "arxiv:2511.10647", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2511.13216", "r": "paper_proposes_method", "t": "Method:garlileo", "doc_id": "arxiv:2511.13216", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2512.07215", "r": "paper_proposes_method", "t": "Method:vfm-vlm", "doc_id": "arxiv:2512.07215", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.20778", "r": "paper_proposes_method", "t": "Method:pilot", "doc_id": "arxiv:2603.20778", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.20778", "r": "paper_proposes_method", "t": "Method:dual-thread engine", "doc_id": "arxiv:2603.20778", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.20778", "r": "paper_proposes_method", "t": "Method:joint neural-guided stochastic-gradient optimizer (jngo)", "doc_id": "arxiv:2603.20778", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.17396", "r": "paper_proposes_method", "t": "Method:gesture-aware pretraining", "doc_id": "arxiv:2603.17396", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.17396", "r": "paper_proposes_method", "t": "Method:per-joint token transformer", "doc_id": "arxiv:2603.17396", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.05604", "r": "paper_proposes_method", "t": "Method:coupled robustness verification framework for heatmap-based keypoint detectors", "doc_id": "arxiv:2603.05604", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.06190", "r": "paper_proposes_method", "t": "Method:dreamtonav", "doc_id": "arxiv:2603.06190", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2511.16418", "r": "paper_proposes_method", "t": "Method:rigid body marker", "doc_id": "arxiv:2511.16418", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2511.16418", "r": "paper_proposes_method", "t": "Method:geodesic loss", "doc_id": "arxiv:2511.16418", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2511.13857", "r": "paper_proposes_method", "t": "Method:rspose", "doc_id": "arxiv:2511.13857", "confidence": 1.0, "source": "llm"}
+{"h": "Method:rspose", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:2511.13857", "confidence": 0.99, "source": "llm"}
+{"h": "Paper:2512.10321", "r": "paper_proposes_method", "t": "Method:point2pose", "doc_id": "arxiv:2512.10321", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.03522", "r": "paper_proposes_method", "t": "Method:msg-loc", "doc_id": "arxiv:2512.03522", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2511.14322", "r": "paper_proposes_method", "t": "Method:lsp-yolo", "doc_id": "arxiv:2511.14322", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2511.14322", "r": "paper_proposes_method", "t": "Method:light-c3k2", "doc_id": "arxiv:2511.14322", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2511.14322", "r": "paper_proposes_method", "t": "Method:lsp-yolo-n", "doc_id": "arxiv:2511.14322", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2511.17306", "r": "paper_proposes_method", "t": "Method:bifingerpose", "doc_id": "arxiv:2511.17306", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.07691", "r": "paper_proposes_method", "t": "Method:robopca", "doc_id": "arxiv:2603.07691", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.07691", "r": "paper_proposes_method", "t": "Method:human2afford", "doc_id": "arxiv:2603.07691", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2604.08543", "r": "paper_proposes_method", "t": "Method:e-3dpsm", "doc_id": "arxiv:2604.08543", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.08926", "r": "paper_proposes_method", "t": "Method:magneto-inductive (mi) localization system", "doc_id": "arxiv:2603.08926", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.08055", "r": "paper_proposes_method", "t": "Method:speed3r", "doc_id": "arxiv:2603.08055", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.19625", "r": "paper_proposes_method", "t": "Method:iup-pose", "doc_id": "arxiv:2603.19625", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.19625", "r": "paper_proposes_method", "t": "Method:multi-head bi-cross attention (mhbc)", "doc_id": "arxiv:2603.19625", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2603.09320", "r": "paper_proposes_method", "t": "Method:spacesense-bench", "doc_id": "arxiv:2603.09320", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.25175", "r": "paper_proposes_method", "t": "Method:ag-egopose", "doc_id": "arxiv:2603.25175", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.19048", "r": "paper_proposes_method", "t": "Method:sgc", "doc_id": "arxiv:2603.19048", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.14726", "r": "paper_proposes_method", "t": "Method:hand4whole++", "doc_id": "arxiv:2603.14726", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.14726", "r": "paper_proposes_method", "t": "Method:cham", "doc_id": "arxiv:2603.14726", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.10565", "r": "paper_proposes_method", "t": "Method:tacloc", "doc_id": "arxiv:2603.10565", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.14507", "r": "paper_proposes_method", "t": "Method:emdul", "doc_id": "arxiv:2603.14507", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.03652", "r": "paper_proposes_method", "t": "Method:masc-pose", "doc_id": "arxiv:2604.03652", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.03652", "r": "paper_proposes_method", "t": "Method:adaptive multi-scale temporal modelling", "doc_id": "arxiv:2604.03652", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.03652", "r": "paper_proposes_method", "t": "Method:amtm", "doc_id": "arxiv:2604.03652", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.03652", "r": "paper_proposes_method", "t": "Method:skeleton-constrained adaptive gcn", "doc_id": "arxiv:2604.03652", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.03652", "r": "paper_proposes_method", "t": "Method:sagcn", "doc_id": "arxiv:2604.03652", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.23370", "r": "paper_proposes_method", "t": "Method:object pose transformer", "doc_id": "arxiv:2603.23370", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1811.05306", "r": "paper_proposes_method", "t": "Method:improved fourier mellin invariant (ifmi)", "doc_id": "arxiv:1811.05306", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:1812.03247", "r": "paper_proposes_method", "t": "Method:deep charuco", "doc_id": "arxiv:1812.03247", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1812.03247", "r": "paper_proposes_method", "t": "Method:charuconet", "doc_id": "arxiv:1812.03247", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:1812.03247", "r": "paper_proposes_method", "t": "Method:refinenet", "doc_id": "arxiv:1812.03247", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:1809.08371", "r": "paper_proposes_method", "t": "Method:self-attention model", "doc_id": "arxiv:1809.08371", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:1809.08371", "r": "paper_proposes_method", "t": "Method:attention convolutional neural network (acnn)", "doc_id": "arxiv:1809.08371", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1809.08371", "r": "paper_proposes_method", "t": "Method:acnn", "doc_id": "arxiv:1809.08371", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1810.01616", "r": "paper_proposes_method", "t": "Method:cascaded pyramid network", "doc_id": "arxiv:1810.01616", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1810.01616", "r": "paper_proposes_method", "t": "Method:gloabalnet", "doc_id": "arxiv:1810.01616", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:1810.01616", "r": "paper_proposes_method", "t": "Method:refinenet", "doc_id": "arxiv:1810.01616", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:1810.01616", "r": "paper_proposes_method", "t": "Method:2d-to-3d pose estimator", "doc_id": "arxiv:1810.01616", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:1812.03245", "r": "paper_proposes_method", "t": "Method:visual odometry", "doc_id": "arxiv:1812.03245", "confidence": 0.9, "source": "llm"}
+{"h": "Method:visual odometry", "r": "method_uses_dataset", "t": "Dataset:scannet", "doc_id": "arxiv:1812.03245", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:1805.09707", "r": "paper_proposes_method", "t": "Method:adversarial data augmentation", "doc_id": "arxiv:1805.09707", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1806.01484", "r": "paper_proposes_method", "t": "Method:2d marginal heatmaps", "doc_id": "arxiv:1806.01484", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:1806.01484", "r": "paper_proposes_method", "t": "Method:soft-argmax", "doc_id": "arxiv:1806.01484", "confidence": 0.85, "source": "llm"}
+{"h": "Paper:1806.01484", "r": "paper_proposes_method", "t": "Method:margipose", "doc_id": "arxiv:1806.01484", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1810.01665", "r": "paper_proposes_method", "t": "Method:two-stage robot localization and instance identification framework", "doc_id": "arxiv:1810.01665", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1809.10699", "r": "paper_proposes_method", "t": "Method:two-stage pose estimation procedure", "doc_id": "arxiv:1809.10699", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1807.10580", "r": "paper_proposes_method", "t": "Method:cnn-based pedestrian detection tracking and pose estimation pipeline", "doc_id": "arxiv:1807.10580", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1810.12163", "r": "paper_proposes_method", "t": "Method:relocalisation cascade", "doc_id": "arxiv:1810.12163", "confidence": 0.98, "source": "llm"}
+{"h": "Method:relocalisation cascade", "r": "method_uses_dataset", "t": "Dataset:7-scenes", "doc_id": "arxiv:1810.12163", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:1811.07632", "r": "paper_proposes_method", "t": "Method:collaborative dense slam", "doc_id": "arxiv:1811.07632", "confidence": 0.97, "source": "llm"}
+{"h": "Paper:1811.10681", "r": "paper_proposes_method", "t": "Method:implicitly matched interest points", "doc_id": "arxiv:1811.10681", "confidence": 0.99, "source": "llm"}
+{"h": "Paper:1908.08209", "r": "paper_proposes_method", "t": "Method:object pose estimation framework", "doc_id": "arxiv:1908.08209", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1908.08209", "r": "paper_proposes_method", "t": "Method:object recognition approach", "doc_id": "arxiv:1908.08209", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:1910.11116", "r": "paper_proposes_method", "t": "Method:particle filter", "doc_id": "arxiv:1910.11116", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1908.09216", "r": "paper_proposes_method", "t": "Method:dynamic kernel distillation", "doc_id": "arxiv:1908.09216", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1908.09216", "r": "paper_proposes_method", "t": "Method:dkd", "doc_id": "arxiv:1908.09216", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1807.01511", "r": "paper_proposes_method", "t": "Method:deep autoencoder", "doc_id": "arxiv:1807.01511", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:1807.01511", "r": "paper_proposes_method", "t": "Method:symmetric convolutional autoencoder", "doc_id": "arxiv:1807.01511", "confidence": 0.99, "source": "llm"}
+{"h": "Paper:1810.01849", "r": "paper_proposes_method", "t": "Method:superdepth", "doc_id": "arxiv:1810.01849", "confidence": 0.99, "source": "llm"}
+{"h": "Paper:1810.01849", "r": "paper_proposes_method", "t": "Method:sub-pixel convolutional layer", "doc_id": "arxiv:1810.01849", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:1810.01849", "r": "paper_proposes_method", "t": "Method:differentiable flip-augmentation layer", "doc_id": "arxiv:1810.01849", "confidence": 0.98, "source": "llm"}
+{"h": "Method:superdepth", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "arxiv:1810.01849", "confidence": 0.97, "source": "llm"}
+{"h": "Paper:1806.00746", "r": "paper_proposes_method", "t": "Method:scatternet hybrid deep learning network", "doc_id": "arxiv:1806.00746", "confidence": 0.99, "source": "llm"}
+{"h": "Paper:1808.04969", "r": "paper_proposes_method", "t": "Method:sand filters", "doc_id": "arxiv:1808.04969", "confidence": 0.99, "source": "llm"}
+{"h": "Paper:1909.12945", "r": "paper_proposes_method", "t": "Method:eposit", "doc_id": "arxiv:1909.12945", "confidence": 0.99, "source": "llm"}
+{"h": "Paper:1909.00392", "r": "paper_proposes_method", "t": "Method:cnn", "doc_id": "arxiv:1909.00392", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:1911.04930", "r": "paper_proposes_method", "t": "Method:hmtnet", "doc_id": "arxiv:1911.04930", "confidence": 0.99, "source": "llm"}
+{"h": "Paper:1911.11534", "r": "paper_proposes_method", "t": "Method:decoupled few-shot rgb relocalization framework", "doc_id": "arxiv:1911.11534", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1909.12936", "r": "paper_proposes_method", "t": "Method:correlation fusion 6d pose estimation method", "doc_id": "arxiv:1909.12936", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1911.10346", "r": "paper_proposes_method", "t": "Method:lightweight pose network (lpn)", "doc_id": "arxiv:1911.10346", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1911.10346", "r": "paper_proposes_method", "t": "Method:lpn-50", "doc_id": "arxiv:1911.10346", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1911.10346", "r": "paper_proposes_method", "t": "Method:beta-soft-argmax", "doc_id": "arxiv:1911.10346", "confidence": 1.0, "source": "llm"}
+{"h": "Method:lightweight pose network (lpn)", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:1911.10346", "confidence": 1.0, "source": "llm"}
+{"h": "Method:lpn-50", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:1911.10346", "confidence": 1.0, "source": "llm"}
+{"h": "Method:beta-soft-argmax", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:1911.10346", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1909.11888", "r": "paper_proposes_method", "t": "Method:robust rotation averaging with clique constraints", "doc_id": "arxiv:1909.11888", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1909.12297", "r": "paper_proposes_method", "t": "Method:energy-based models", "doc_id": "arxiv:1909.12297", "confidence": 1.0, "source": "llm"}
+{"h": "Method:energy-based models", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:1909.12297", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1910.03412", "r": "paper_proposes_method", "t": "Method:abstract render-and-compare", "doc_id": "arxiv:1910.03412", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2011.10743", "r": "paper_proposes_method", "t": "Method:semantic-based vps", "doc_id": "arxiv:2011.10743", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2011.10743", "r": "paper_proposes_method", "t": "Method:3d city model", "doc_id": "arxiv:2011.10743", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2012.06475", "r": "paper_proposes_method", "t": "Method:eventhands", "doc_id": "arxiv:2012.06475", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2012.11938", "r": "paper_proposes_method", "t": "Method:3d point-to-keypoint voting network", "doc_id": "arxiv:2012.11938", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2011.07044", "r": "paper_proposes_method", "t": "Method:tactile slam", "doc_id": "arxiv:2011.07044", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2009.00348", "r": "paper_proposes_method", "t": "Method:liftformer", "doc_id": "arxiv:2009.00348", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2009.00225", "r": "paper_proposes_method", "t": "Method:heatmap regression via randomized rounding", "doc_id": "arxiv:2009.00225", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2009.00225", "r": "paper_proposes_method", "t": "Method:h3r", "doc_id": "arxiv:2009.00225", "confidence": 0.9, "source": "llm"}
+{"h": "Method:heatmap regression via randomized rounding", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:2009.00225", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2009.09633", "r": "paper_proposes_method", "t": "Method:3d-future", "doc_id": "arxiv:2009.09633", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2011.01890", "r": "paper_proposes_method", "t": "Method:realheponet", "doc_id": "arxiv:2011.01890", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2009.04630", "r": "paper_proposes_method", "t": "Method:minimum energy filter", "doc_id": "arxiv:2009.04630", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2010.14541", "r": "paper_proposes_method", "t": "Method:perception for autonomous systems (paz)", "doc_id": "arxiv:2010.14541", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2009.07462", "r": "paper_proposes_method", "t": "Method:pl-vins", "doc_id": "arxiv:2009.07462", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1912.05656", "r": "paper_proposes_method", "t": "Method:vibe", "doc_id": "arxiv:1912.05656", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1909.08605", "r": "paper_proposes_method", "t": "Method:graduated non-convexity", "doc_id": "arxiv:1909.08605", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:1909.03752", "r": "paper_proposes_method", "t": "Method:masking by moving", "doc_id": "arxiv:1909.03752", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1911.07846", "r": "paper_proposes_method", "t": "Method:deep multi-task adversarial learning", "doc_id": "arxiv:1911.07846", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2010.12807", "r": "paper_proposes_method", "t": "Method:rede", "doc_id": "arxiv:2010.12807", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2012.03197", "r": "paper_proposes_method", "t": "Method:dggan", "doc_id": "arxiv:2012.03197", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2012.03197", "r": "paper_proposes_method", "t": "Method:depth-image guided generative adversarial networks", "doc_id": "arxiv:2012.03197", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2008.11822", "r": "paper_proposes_method", "t": "Method:indirect object-to-robot pose estimation", "doc_id": "arxiv:2008.11822", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2011.05010", "r": "paper_proposes_method", "t": "Method:residual pose", "doc_id": "arxiv:2011.05010", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2010.06218", "r": "paper_proposes_method", "t": "Method:self-supervised multi-view synchronization learning", "doc_id": "arxiv:2010.06218", "confidence": 1.0, "source": "llm"}
+{"h": "Method:cnn", "r": "method_uses_dataset", "t": "Dataset:imagenet", "doc_id": "arxiv:2011.13669", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2010.13302", "r": "paper_proposes_method", "t": "Method:adafuse", "doc_id": "arxiv:2010.13302", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.04411", "r": "paper_proposes_method", "t": "Method:ppd", "doc_id": "arxiv:2110.04411", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.01376", "r": "paper_proposes_method", "t": "Method:seed", "doc_id": "arxiv:2111.01376", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2109.05885", "r": "paper_proposes_method", "t": "Method:multi-view matching graph module", "doc_id": "arxiv:2109.05885", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2109.05885", "r": "paper_proposes_method", "t": "Method:mmg", "doc_id": "arxiv:2109.05885", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2109.05885", "r": "paper_proposes_method", "t": "Method:center refinement graph module", "doc_id": "arxiv:2109.05885", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2109.05885", "r": "paper_proposes_method", "t": "Method:crg", "doc_id": "arxiv:2109.05885", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2109.05885", "r": "paper_proposes_method", "t": "Method:pose regression graph module", "doc_id": "arxiv:2109.05885", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2109.05885", "r": "paper_proposes_method", "t": "Method:prg", "doc_id": "arxiv:2109.05885", "confidence": 1.0, "source": "llm"}
+{"h": "Method:openpose (cmu-pose)", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:2110.10734", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2210.08562", "r": "paper_proposes_method", "t": "Method:laplacian loss", "doc_id": "arxiv:2210.08562", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2210.08562", "r": "paper_proposes_method", "t": "Method:fully convolutional temporal network", "doc_id": "arxiv:2210.08562", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.03295", "r": "paper_proposes_method", "t": "Method:moganet", "doc_id": "arxiv:2211.03295", "confidence": 1.0, "source": "llm"}
+{"h": "Method:moganet", "r": "method_uses_dataset", "t": "Dataset:imagenet", "doc_id": "arxiv:2211.03295", "confidence": 1.0, "source": "llm"}
+{"h": "Method:moganet", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:2211.03295", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2210.05318", "r": "paper_proposes_method", "t": "Method:casapose", "doc_id": "arxiv:2210.05318", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.05650", "r": "paper_proposes_method", "t": "Method:gm-livox", "doc_id": "arxiv:2110.05650", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2112.03810", "r": "paper_proposes_method", "t": "Method:polarimetric pose prediction", "doc_id": "arxiv:2112.03810", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.00190", "r": "paper_proposes_method", "t": "Method:equi-pose", "doc_id": "arxiv:2111.00190", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.00190", "r": "paper_proposes_method", "t": "Method:se(3) equivariant point cloud network", "doc_id": "arxiv:2111.00190", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2111.00190", "r": "paper_proposes_method", "t": "Method:invariant shape reconstruction module", "doc_id": "arxiv:2111.00190", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.00190", "r": "paper_proposes_method", "t": "Method:equivariant pose estimation module", "doc_id": "arxiv:2111.00190", "confidence": 1.0, "source": "llm"}
+{"h": "Method:equi-pose", "r": "method_uses_dataset", "t": "Dataset:modelnet40", "doc_id": "arxiv:2111.00190", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2112.10485", "r": "paper_proposes_method", "t": "Method:sdaim", "doc_id": "arxiv:2112.10485", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2112.10485", "r": "paper_proposes_method", "t": "Method:cvarm", "doc_id": "arxiv:2112.10485", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2112.10485", "r": "paper_proposes_method", "t": "Method:scale-net", "doc_id": "arxiv:2112.10485", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.05819", "r": "paper_proposes_method", "t": "Method:event-based 6dof fiducial marker tracking pipeline", "doc_id": "arxiv:2110.05819", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.00990", "r": "paper_proposes_method", "t": "Method:hierarchicalprobabilistic3dhuman", "doc_id": "arxiv:2110.00990", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.00990", "r": "paper_proposes_method", "t": "Method:hierarchical matrix-fisher distribution model", "doc_id": "arxiv:2110.00990", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.00990", "r": "paper_proposes_method", "t": "Method:differentiable rejection sampler", "doc_id": "arxiv:2110.00990", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.00990", "r": "paper_has_repo", "t": "Repo:akashsengupta1997/HierarchicalProbabilistic3DHuman", "doc_id": "arxiv:2110.00990", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2109.07082", "r": "paper_proposes_method", "t": "Method:adaptive voxel mapping", "doc_id": "arxiv:2109.07082", "confidence": 1.0, "source": "llm"}
+{"h": "Method:adaptive voxel mapping", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "arxiv:2109.07082", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2112.03045", "r": "paper_proposes_method", "t": "Method:3d hierarchical refinement and augmentation unsupervised training framework", "doc_id": "arxiv:2112.03045", "confidence": 1.0, "source": "llm"}
+{"h": "Method:3d hierarchical refinement and augmentation unsupervised training framework", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "arxiv:2112.03045", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.07383", "r": "paper_proposes_method", "t": "Method:sparse steerable convolutions", "doc_id": "arxiv:2111.07383", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.07383", "r": "paper_proposes_method", "t": "Method:sparse steerable convolution (ss-conv)", "doc_id": "arxiv:2111.07383", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.07383", "r": "paper_proposes_method", "t": "Method:feature-steering module", "doc_id": "arxiv:2111.07383", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2109.09913", "r": "paper_proposes_method", "t": "Method:generative model of physically plausible human motion", "doc_id": "arxiv:2109.09913", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2109.09913", "r": "paper_proposes_method", "t": "Method:differentiable physics-constrained pose estimation optimization formulation", "doc_id": "arxiv:2109.09913", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.12715", "r": "paper_proposes_method", "t": "Method:srt3d", "doc_id": "arxiv:2110.12715", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2110.12715", "r": "paper_proposes_method", "t": "Method:sparse region-based 3d object tracking approach", "doc_id": "arxiv:2110.12715", "confidence": 1.0, "source": "llm"}
+{"h": "Method:vslam", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "arxiv:2210.10491", "confidence": 0.9, "source": "llm"}
+{"h": "Method:vslam", "r": "method_uses_dataset", "t": "Dataset:tum rgb-d", "doc_id": "arxiv:2210.10491", "confidence": 0.9, "source": "llm"}
+{"h": "Method:vslam", "r": "method_uses_dataset", "t": "Dataset:euroc", "doc_id": "arxiv:2210.10491", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2210.13702", "r": "paper_proposes_method", "t": "Method:dextreme", "doc_id": "arxiv:2210.13702", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2210.11384", "r": "paper_proposes_method", "t": "Method:transformer", "doc_id": "arxiv:2210.11384", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2212.01599", "r": "paper_proposes_method", "t": "Method:multisensor fusion framework", "doc_id": "arxiv:2212.01599", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2212.01599", "r": "paper_proposes_method", "t": "Method:kalman filter", "doc_id": "arxiv:2212.01599", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2211.09325", "r": "paper_proposes_method", "t": "Method:tax-pose", "doc_id": "arxiv:2211.09325", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.11182", "r": "paper_proposes_method", "t": "Method:deep projective rotation estimation", "doc_id": "arxiv:2211.11182", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2210.09757", "r": "paper_proposes_method", "t": "Method:real-time fusion framework for long-term visual localization", "doc_id": "arxiv:2210.09757", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2210.15121", "r": "paper_proposes_method", "t": "Method:bootstrapping framework", "doc_id": "arxiv:2210.15121", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.08259", "r": "paper_proposes_method", "t": "Method:agglomerative clustering", "doc_id": "arxiv:2111.08259", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2111.08259", "r": "paper_proposes_method", "t": "Method:contrastive learning", "doc_id": "arxiv:2111.08259", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2109.13540", "r": "paper_proposes_method", "t": "Method:translation-invariant quaternion filter", "doc_id": "arxiv:2109.13540", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2109.13540", "r": "paper_proposes_method", "t": "Method:tiqf", "doc_id": "arxiv:2109.13540", "confidence": 1.0, "source": "llm"}
+{"h": "Method:lidar odometry (lo)", "r": "method_uses_dataset", "t": "Dataset:kitti odometry", "doc_id": "arxiv:2109.06120", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2109.09704", "r": "paper_proposes_method", "t": "Method:babelcalib", "doc_id": "arxiv:2109.09704", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.00312", "r": "paper_proposes_method", "t": "Method:3dp3", "doc_id": "arxiv:2111.00312", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2210.07650", "r": "paper_proposes_method", "t": "Method:dart", "doc_id": "arxiv:2210.07650", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.03146", "r": "paper_proposes_method", "t": "Method:cisru", "doc_id": "arxiv:2311.03146", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.07337", "r": "paper_proposes_method", "t": "Method:rms", "doc_id": "arxiv:2312.07337", "confidence": 1.0, "source": "llm"}
+{"h": "Method:rms", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "arxiv:2312.07337", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.10649", "r": "paper_proposes_method", "t": "Method:pnerfloc", "doc_id": "arxiv:2312.10649", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.06409", "r": "paper_proposes_method", "t": "Method:licampose", "doc_id": "arxiv:2312.06409", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.02593", "r": "paper_proposes_method", "t": "Method:6dapose", "doc_id": "arxiv:2312.02593", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2310.16618", "r": "paper_proposes_method", "t": "Method:active led markers", "doc_id": "arxiv:2310.16618", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2310.16618", "r": "paper_proposes_method", "t": "Method:alm", "doc_id": "arxiv:2310.16618", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.02531", "r": "paper_proposes_method", "t": "Method:polyfit", "doc_id": "arxiv:2312.02531", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.05344", "r": "paper_proposes_method", "t": "Method:6d object pose localizer", "doc_id": "arxiv:2311.05344", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.05344", "r": "paper_proposes_method", "t": "Method:6d pose tracker", "doc_id": "arxiv:2311.05344", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2310.18009", "r": "paper_proposes_method", "t": "Method:procnet", "doc_id": "arxiv:2310.18009", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2310.18009", "r": "paper_proposes_method", "t": "Method:predictive coding (pc)", "doc_id": "arxiv:2310.18009", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.08268", "r": "paper_proposes_method", "t": "Method:query aggregation", "doc_id": "arxiv:2312.08268", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.09056", "r": "paper_proposes_method", "t": "Method:fixed-lag smoother (fls)", "doc_id": "arxiv:2311.09056", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2311.09887", "r": "paper_proposes_method", "t": "Method:lio-ekf", "doc_id": "arxiv:2311.09887", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2311.04699", "r": "paper_proposes_method", "t": "Method:deep keypoint detection", "doc_id": "arxiv:2311.04699", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2311.01782", "r": "paper_proposes_method", "t": "Method:chebyshev constraint", "doc_id": "arxiv:2311.01782", "confidence": 0.97, "source": "llm"}
+{"h": "Paper:2311.01782", "r": "paper_proposes_method", "t": "Method:unbiased pseudo-labels network", "doc_id": "arxiv:2311.01782", "confidence": 0.97, "source": "llm"}
+{"h": "Paper:2311.01782", "r": "paper_proposes_method", "t": "Method:ubpl network", "doc_id": "arxiv:2311.01782", "confidence": 0.97, "source": "llm"}
+{"h": "Paper:2311.01782", "r": "paper_proposes_method", "t": "Method:feature decorrelation loss", "doc_id": "arxiv:2311.01782", "confidence": 0.96, "source": "llm"}
+{"h": "Paper:2311.01782", "r": "paper_proposes_method", "t": "Method:fd loss", "doc_id": "arxiv:2311.01782", "confidence": 0.96, "source": "llm"}
+{"h": "Paper:2311.17105", "r": "paper_proposes_method", "t": "Method:calibrated confidencenet", "doc_id": "arxiv:2311.17105", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2311.17105", "r": "paper_proposes_method", "t": "Method:ccnet", "doc_id": "arxiv:2311.17105", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2311.00401", "r": "paper_proposes_method", "t": "Method:spatial-temporal transformer based framework", "doc_id": "arxiv:2311.00401", "confidence": 0.97, "source": "llm"}
+{"h": "Paper:2311.00401", "r": "paper_proposes_method", "t": "Method:sttf", "doc_id": "arxiv:2311.00401", "confidence": 0.97, "source": "llm"}
+{"h": "Paper:2401.00029", "r": "paper_proposes_method", "t": "Method:6d-diff", "doc_id": "arxiv:2401.00029", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2401.00029", "r": "paper_proposes_method", "t": "Method:mixture-of-cauchy-based forward diffusion process", "doc_id": "arxiv:2401.00029", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2310.14924", "r": "paper_proposes_method", "t": "Method:flexion images", "doc_id": "arxiv:2310.14924", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.01770", "r": "paper_proposes_method", "t": "Method:dual mean-teacher framework", "doc_id": "arxiv:2311.01770", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2311.01770", "r": "paper_proposes_method", "t": "Method:maximum discrepant students (mdss)", "doc_id": "arxiv:2311.01770", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.15962", "r": "paper_proposes_method", "t": "Method:generalized relaxed chebyshev center", "doc_id": "arxiv:2311.15962", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2311.11171", "r": "paper_proposes_method", "t": "Method:lostu", "doc_id": "arxiv:2311.11171", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2310.20249", "r": "paper_proposes_method", "t": "Method:pose-to-motion", "doc_id": "arxiv:2310.20249", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2310.20249", "r": "paper_proposes_method", "t": "Method:pose2motion", "doc_id": "arxiv:2310.20249", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2411.12676", "r": "paper_proposes_method", "t": "Method:ie-ponet", "doc_id": "arxiv:2411.12676", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.12676", "r": "paper_proposes_method", "t": "Method:iot-enhanced pose optimization network", "doc_id": "arxiv:2411.12676", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.19289", "r": "paper_proposes_method", "t": "Method:adugs-vins", "doc_id": "arxiv:2411.19289", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2410.23643", "r": "paper_proposes_method", "t": "Method:scenecomplete", "doc_id": "arxiv:2410.23643", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.20976", "r": "paper_proposes_method", "t": "Method:multi-scale neural feature fields", "doc_id": "arxiv:2412.20976", "confidence": 1.0, "source": "llm"}
+{"h": "Method:multi-scale neural feature fields", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "arxiv:2412.20976", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.14002", "r": "paper_proposes_method", "t": "Method:sempose", "doc_id": "arxiv:2411.14002", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.18377", "r": "paper_proposes_method", "t": "Method:xr-mbt", "doc_id": "arxiv:2411.18377", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.08376", "r": "paper_proposes_method", "t": "Method:reloc3r", "doc_id": "arxiv:2412.08376", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.12286", "r": "paper_proposes_method", "t": "Method:glover", "doc_id": "arxiv:2411.12286", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.12286", "r": "paper_proposes_method", "t": "Method:affordance-aware grasping estimation", "doc_id": "arxiv:2411.12286", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.12286", "r": "paper_proposes_method", "t": "Method:age", "doc_id": "arxiv:2411.12286", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2410.14161", "r": "paper_proposes_method", "t": "Method:med-acdtw", "doc_id": "arxiv:2410.14161", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2410.14161", "r": "paper_proposes_method", "t": "Method:multi-dimensional exercise distance adaptive constrained dynamic time warping", "doc_id": "arxiv:2410.14161", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2410.13896", "r": "paper_proposes_method", "t": "Method:artifact-resilient image translation method", "doc_id": "arxiv:2410.13896", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2410.13896", "r": "paper_proposes_method", "t": "Method:local-global translation framework", "doc_id": "arxiv:2410.13896", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2410.13896", "r": "paper_proposes_method", "t": "Method:noise-resilient feature extraction strategy", "doc_id": "arxiv:2410.13896", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.08603", "r": "paper_proposes_method", "t": "Method:pose space embeddings", "doc_id": "arxiv:2411.08603", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.08603", "r": "paper_proposes_method", "t": "Method:analysis-by-synthesis framework", "doc_id": "arxiv:2411.08603", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2410.21743", "r": "paper_proposes_method", "t": "Method:ei-nexus", "doc_id": "arxiv:2410.21743", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2410.21743", "r": "paper_proposes_method", "t": "Method:local feature distillation (lfd)", "doc_id": "arxiv:2410.21743", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2410.21743", "r": "paper_proposes_method", "t": "Method:context aggregation (ca)", "doc_id": "arxiv:2410.21743", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.20082", "r": "paper_proposes_method", "t": "Method:mambavo", "doc_id": "arxiv:2412.20082", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.20082", "r": "paper_proposes_method", "t": "Method:point-frame graph (pfg)", "doc_id": "arxiv:2412.20082", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.20082", "r": "paper_proposes_method", "t": "Method:geometric initialization module (gim)", "doc_id": "arxiv:2412.20082", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.20082", "r": "paper_proposes_method", "t": "Method:geometric mamba module (gmm)", "doc_id": "arxiv:2412.20082", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.20082", "r": "paper_proposes_method", "t": "Method:trending-aware penalty (tap)", "doc_id": "arxiv:2412.20082", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2412.20082", "r": "paper_proposes_method", "t": "Method:mambavo++", "doc_id": "arxiv:2412.20082", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.11354", "r": "paper_proposes_method", "t": "Method:uw-sld system", "doc_id": "arxiv:2512.11354", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.11354", "r": "paper_proposes_method", "t": "Method:factor graph-based parameter optimization method", "doc_id": "arxiv:2512.11354", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.11354", "r": "paper_proposes_method", "t": "Method:multi-mode 3d imaging strategy", "doc_id": "arxiv:2512.11354", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.11354", "r": "paper_proposes_method", "t": "Method:multi-source information fusion strategy", "doc_id": "arxiv:2512.11354", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.11354", "r": "paper_proposes_method", "t": "Method:adaptive extended kalman filter (aekf)", "doc_id": "arxiv:2512.11354", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.11354", "r": "paper_proposes_method", "t": "Method:edge detection-based icp (ed-icp)", "doc_id": "arxiv:2512.11354", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2511.18851", "r": "paper_proposes_method", "t": "Method:motion discretization", "doc_id": "arxiv:2511.18851", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2511.18851", "r": "paper_proposes_method", "t": "Method:soft-reset mechanism", "doc_id": "arxiv:2511.18851", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.17432", "r": "paper_proposes_method", "t": "Method:ce c-slammot", "doc_id": "arxiv:2411.17432", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.06408", "r": "paper_proposes_method", "t": "Method:simulation-based multimodal policy learning framework", "doc_id": "arxiv:2411.06408", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2410.10167", "r": "paper_proposes_method", "t": "Method:x-fi", "doc_id": "arxiv:2410.10167", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2410.10167", "r": "paper_proposes_method", "t": "Method:x-fusion mechanism", "doc_id": "arxiv:2410.10167", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2410.17983", "r": "paper_proposes_method", "t": "Method:two-view geometry estimation framework", "doc_id": "arxiv:2410.17983", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2410.17983", "r": "paper_proposes_method", "t": "Method:differentiable robust loss function fitting", "doc_id": "arxiv:2410.17983", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2410.18962", "r": "paper_proposes_method", "t": "Method:generative spatial transformer", "doc_id": "arxiv:2410.18962", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2410.18962", "r": "paper_proposes_method", "t": "Method:gst", "doc_id": "arxiv:2410.18962", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2410.18962", "r": "paper_proposes_method", "t": "Method:camera tokenization method", "doc_id": "arxiv:2410.18962", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2511.22686", "r": "paper_proposes_method", "t": "Method:lightweight internal 3d representation alignment scheme", "doc_id": "arxiv:2511.22686", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2511.08294", "r": "paper_proposes_method", "t": "Method:skelsplat", "doc_id": "arxiv:2511.08294", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.16199", "r": "paper_proposes_method", "t": "Method:avatar4d", "doc_id": "arxiv:2512.16199", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2511.05404", "r": "paper_proposes_method", "t": "Method:mprf", "doc_id": "arxiv:2511.05404", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2511.08809", "r": "paper_proposes_method", "t": "Method:posekan", "doc_id": "arxiv:2511.08809", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2511.21681", "r": "paper_proposes_method", "t": "Method:camformer", "doc_id": "arxiv:2511.21681", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2511.09072", "r": "paper_proposes_method", "t": "Method:smf-vo", "doc_id": "arxiv:2511.09072", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2511.13208", "r": "paper_proposes_method", "t": "Method:pave-net", "doc_id": "arxiv:2511.13208", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.00493", "r": "paper_proposes_method", "t": "Method:cc-fmo", "doc_id": "arxiv:2512.00493", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.02727", "r": "paper_proposes_method", "t": "Method:df-mamba", "doc_id": "arxiv:2512.02727", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2512.02727", "r": "paper_proposes_method", "t": "Method:deformable mamba", "doc_id": "arxiv:2512.02727", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.16868", "r": "paper_proposes_method", "t": "Method:multi-object decoder", "doc_id": "arxiv:2603.16868", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.16868", "r": "paper_proposes_method", "t": "Method:mod", "doc_id": "arxiv:2603.16868", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.10398", "r": "paper_proposes_method", "t": "Method:ocpose", "doc_id": "arxiv:2603.10398", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2602.22209", "r": "paper_proposes_method", "t": "Method:whole", "doc_id": "arxiv:2602.22209", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.12176", "r": "paper_proposes_method", "t": "Method:behaviorvlm", "doc_id": "arxiv:2603.12176", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.08551", "r": "paper_proposes_method", "t": "Method:mmgat", "doc_id": "arxiv:2603.08551", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.05078", "r": "paper_proposes_method", "t": "Method:more", "doc_id": "arxiv:2603.05078", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.08540", "r": "paper_proposes_method", "t": "Method:pcfex", "doc_id": "arxiv:2603.08540", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.29383", "r": "paper_proposes_method", "t": "Method:interacting multiple model (imm) proprioceptive odometry framework", "doc_id": "arxiv:2603.29383", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.22193", "r": "paper_proposes_method", "t": "Method:pam (pose-appearance-motion engine)", "doc_id": "arxiv:2603.22193", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.03878", "r": "paper_proposes_method", "t": "Method:test-time constrained optimization (tco) framework", "doc_id": "arxiv:2604.03878", "confidence": 1.0, "source": "llm"}
+{"h": "Method:test-time constrained optimization (tco) framework", "r": "method_uses_dataset", "t": "Dataset:7-scenes", "doc_id": "arxiv:2604.03878", "confidence": 0.95, "source": "llm"}
+{"h": "Method:test-time constrained optimization (tco) framework", "r": "method_uses_dataset", "t": "Dataset:eth3d", "doc_id": "arxiv:2604.03878", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2511.11307", "r": "paper_proposes_method", "t": "Method:yolox-6d-pose", "doc_id": "arxiv:2511.11307", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2512.17547", "r": "paper_proposes_method", "t": "Method:g3splat", "doc_id": "arxiv:2512.17547", "confidence": 0.99, "source": "llm"}
+{"h": "Method:g3splat", "r": "method_uses_dataset", "t": "Dataset:scannet", "doc_id": "arxiv:2512.17547", "confidence": 0.92, "source": "llm"}
+{"h": "Paper:2511.09022", "r": "paper_proposes_method", "t": "Method:radharsimulator v2", "doc_id": "arxiv:2511.09022", "confidence": 0.99, "source": "llm"}
+{"h": "Paper:2511.12030", "r": "paper_proposes_method", "t": "Method:vpho", "doc_id": "arxiv:2511.12030", "confidence": 0.99, "source": "llm"}
+{"h": "Paper:2604.03747", "r": "paper_proposes_method", "t": "Method:ct-voxelmap", "doc_id": "arxiv:2604.03747", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2604.04554", "r": "paper_proposes_method", "t": "Method:relational epipolar graphs", "doc_id": "arxiv:2604.04554", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2603.01720", "r": "paper_proposes_method", "t": "Method:land-reg", "doc_id": "arxiv:2603.01720", "confidence": 0.99, "source": "llm"}
+{"h": "Paper:2603.01720", "r": "paper_proposes_method", "t": "Method:cross-modal latent alignment module", "doc_id": "arxiv:2603.01720", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2603.01720", "r": "paper_proposes_method", "t": "Method:uncertainty-enhanced overlap landmark detector", "doc_id": "arxiv:2603.01720", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2603.13740", "r": "paper_proposes_method", "t": "Method:skynet", "doc_id": "arxiv:2603.13740", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.03627", "r": "paper_proposes_method", "t": "Method:touch2insert", "doc_id": "arxiv:2603.03627", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.21410", "r": "paper_proposes_method", "t": "Method:bayesian inference framework", "doc_id": "arxiv:2603.21410", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.21410", "r": "paper_proposes_method", "t": "Method:customized particle filter", "doc_id": "arxiv:2603.21410", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2603.21410", "r": "paper_proposes_method", "t": "Method:tactile servoing", "doc_id": "arxiv:2603.21410", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2603.00990", "r": "paper_proposes_method", "t": "Method:mlrecon", "doc_id": "arxiv:2603.00990", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.00990", "r": "paper_proposes_method", "t": "Method:vision-guided divergence detector", "doc_id": "arxiv:2603.00990", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.00990", "r": "paper_proposes_method", "t": "Method:dual-stage pose refinement network", "doc_id": "arxiv:2603.00990", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.16954", "r": "paper_proposes_method", "t": "Method:tsm-pose", "doc_id": "arxiv:2604.16954", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.16954", "r": "paper_proposes_method", "t": "Method:topology extractor", "doc_id": "arxiv:2604.16954", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.16954", "r": "paper_proposes_method", "t": "Method:mamba-based global semantic aggregator", "doc_id": "arxiv:2604.16954", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.16954", "r": "paper_proposes_method", "t": "Method:twinmamba", "doc_id": "arxiv:2604.16954", "confidence": 0.95, "source": "llm"}

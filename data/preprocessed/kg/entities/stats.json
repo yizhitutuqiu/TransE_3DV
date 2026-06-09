@@ -1,15 +1,15 @@
 {
-  "created_at": "2026-06-09T10:01:59.473851+00:00",
+  "created_at": "2026-06-09T15:01:48.081405+00:00",
   "seed_registry_path": "/Users/a4x/mia_codebook_2stage/tmp/TransE_3DV/data/preprocessed/text/entities/entity_registry_seed.jsonl",
   "doc_entities_path": "/Users/a4x/mia_codebook_2stage/tmp/TransE_3DV/data/preprocessed/text/entities/doc_entities.jsonl",
   "out_dir": "/Users/a4x/mia_codebook_2stage/tmp/TransE_3DV/data/preprocessed/kg/entities",
   "entity_registry_path": "/Users/a4x/mia_codebook_2stage/tmp/TransE_3DV/data/preprocessed/kg/entities/entity_registry.jsonl",
-  "entity_count": 5518,
+  "entity_count": 8188,
   "by_type": {
-    "Dataset": 40,
-    "Method": 3950,
+    "Dataset": 42,
+    "Method": 5687,
     "Metric": 18,
-    "Paper": 895,
+    "Paper": 1826,
     "Repo": 571,
     "Task": 23,
     "Venue": 21

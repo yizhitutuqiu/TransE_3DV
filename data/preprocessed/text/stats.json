@@ -1,23 +1,25 @@
 {
-  "created_at": "2026-06-09T07:48:36.224177+00:00",
-  "raw_root": "/data/litengmo/ml-test-1/zstp_final/data/raw",
-  "out_dir": "/data/litengmo/ml-test-1/zstp_final/data/preprocessed/text",
-  "documents_path": "/data/litengmo/ml-test-1/zstp_final/data/preprocessed/text/documents.jsonl",
-  "document_count": 1507,
+  "created_at": "2026-06-09T14:23:33.461175+00:00",
+  "raw_root": "/Users/a4x/mia_codebook_2stage/tmp/TransE_3DV/data/raw",
+  "out_dir": "/Users/a4x/mia_codebook_2stage/tmp/TransE_3DV/data/preprocessed/text",
+  "documents_path": "/Users/a4x/mia_codebook_2stage/tmp/TransE_3DV/data/preprocessed/text/documents.jsonl",
+  "document_count_total": 2446,
+  "document_count_new": 939,
   "by_doc_type": {
-    "paper": 931,
+    "paper": 1893,
     "readme": 576
   },
   "by_category": {
-    "3d_generation": 463,
-    "4d_reconstruction": 463,
-    "pose_estimation": 581
+    "3d_generation": 625,
+    "4d_reconstruction": 663,
+    "pose_estimation": 1181
   },
   "text_len": {
     "min": 96,
-    "p50": 1427,
-    "p90": 3755,
-    "p99": 11996,
+    "p50": 1376,
+    "p90": 2290,
+    "p99": 11992,
     "max": 11999
-  }
+  },
+  "write_mode": "append_new"
 }
