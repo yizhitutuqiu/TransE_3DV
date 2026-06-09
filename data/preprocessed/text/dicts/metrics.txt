@@ -1,0 +1,19 @@
+PSNR
+SSIM
+LPIPS
+FID
+IS
+mAP
+AP
+IoU
+Dice
+ATE
+RPE
+RMSE
+Chamfer
+Chamfer Distance
+EMD
+F-score
+Accuracy
+Recall
+Precision
