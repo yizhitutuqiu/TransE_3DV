@@ -1,0 +1,80 @@
+{
+  "created_at": "2026-06-09T11:20:01.226913+00:00",
+  "triples_path": "/data/litengmo/ml-test-1/zstp_final/data/preprocessed/kg/triples_llm/triples.jsonl",
+  "out_dir": "/data/litengmo/ml-test-1/zstp_final/data/preprocessed/final",
+  "params": {
+    "seed": 42,
+    "train_ratio": 0.7,
+    "split_unit": "triple",
+    "min_confidence": 0.5,
+    "min_method_doc_freq": 1,
+    "relations": [
+      "method_uses_dataset",
+      "paper_proposes_method",
+      "repo_implements_method"
+    ]
+  },
+  "raw": {
+    "triple_count": 2705,
+    "by_relation": {
+      "paper_proposes_method": 1193,
+      "method_uses_dataset": 361,
+      "paper_has_repo": 2,
+      "repo_implements_method": 1149
+    }
+  },
+  "filter": {
+    "dropped": {
+      "relation_not_allowed": 2
+    },
+    "kept": 2703,
+    "by_relation": {
+      "paper_proposes_method": 1193,
+      "method_uses_dataset": 361,
+      "repo_implements_method": 1149
+    }
+  },
+  "split": {
+    "triple_total": 2703,
+    "train_triples": 1892,
+    "test_triples": 811
+  },
+  "oov_fix": {
+    "moved_test_to_train": 617,
+    "test_kept": 194
+  },
+  "train": {
+    "triple_count": 2509,
+    "by_relation": {
+      "paper_proposes_method": 1183,
+      "method_uses_dataset": 255,
+      "repo_implements_method": 1071
+    },
+    "entity_count": 3443,
+    "entity_types": {
+      "Paper": 753,
+      "Method": 2156,
+      "Repo": 494,
+      "Dataset": 40
+    }
+  },
+  "test": {
+    "triple_count": 194,
+    "by_relation": {
+      "method_uses_dataset": 106,
+      "paper_proposes_method": 10,
+      "repo_implements_method": 78
+    },
+    "entity_count": 254,
+    "entity_types": {
+      "Paper": 10,
+      "Method": 164,
+      "Dataset": 26,
+      "Repo": 54
+    }
+  },
+  "mappings": {
+    "entity_count": 3443,
+    "relation_count": 3
+  }
+}

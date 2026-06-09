@@ -1,0 +1,194 @@
+{"h": "Method:legs", "r": "method_uses_dataset", "t": "Dataset:mip-nerf 360", "doc_id": "arxiv:2605.00408", "confidence": 1.0, "source": "llm"}
+{"h": "Method:nerp3d", "r": "method_uses_dataset", "t": "Dataset:nuscenes", "doc_id": "arxiv:2603.28090", "confidence": 1.0, "source": "llm"}
+{"h": "Method:fluidgaussian", "r": "method_uses_dataset", "t": "Dataset:mip-nerf 360", "doc_id": "arxiv:2603.21356", "confidence": 0.99, "source": "llm"}
+{"h": "Method:skipgs", "r": "method_uses_dataset", "t": "Dataset:mip-nerf 360", "doc_id": "arxiv:2603.08997", "confidence": 1.0, "source": "llm"}
+{"h": "Method:mv-sam", "r": "method_uses_dataset", "t": "Dataset:scannet++", "doc_id": "arxiv:2601.17866", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2011.12948", "r": "paper_proposes_method", "t": "Method:deformable neural radiance fields", "doc_id": "arxiv:2011.12948", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2012.05551", "r": "paper_proposes_method", "t": "Method:di-fusion", "doc_id": "arxiv:2012.05551", "confidence": 1.0, "source": "llm"}
+{"h": "Method:vipocc", "r": "method_uses_dataset", "t": "Dataset:kitti-360", "doc_id": "arxiv:2412.11210", "confidence": 1.0, "source": "llm"}
+{"h": "Method:liftnav", "r": "method_uses_dataset", "t": "Dataset:replica", "doc_id": "arxiv:2605.31376", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2511.14149", "r": "paper_proposes_method", "t": "Method:igaussian", "doc_id": "arxiv:2511.14149", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2606.03509", "r": "paper_proposes_method", "t": "Method:evomemnav", "doc_id": "arxiv:2606.03509", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2606.02479", "r": "paper_proposes_method", "t": "Method:covrag", "doc_id": "arxiv:2606.02479", "confidence": 1.0, "source": "llm"}
+{"h": "Method:VG²GT", "r": "method_uses_dataset", "t": "Dataset:replica", "doc_id": "arxiv:2606.01573", "confidence": 1.0, "source": "llm"}
+{"h": "Method:gaussian-voxel duet", "r": "method_uses_dataset", "t": "Dataset:scannet", "doc_id": "arxiv:2605.26616", "confidence": 1.0, "source": "llm"}
+{"h": "Method:mpa3d", "r": "method_uses_dataset", "t": "Dataset:waymo open dataset", "doc_id": "arxiv:2605.22997", "confidence": 1.0, "source": "llm"}
+{"h": "Method:twings", "r": "method_uses_dataset", "t": "Dataset:dtu", "doc_id": "arxiv:2605.22069", "confidence": 1.0, "source": "llm"}
+{"h": "Method:confixgs", "r": "method_uses_dataset", "t": "Dataset:nuscenes", "doc_id": "arxiv:2605.09688", "confidence": 1.0, "source": "llm"}
+{"h": "Method:lite3r", "r": "method_uses_dataset", "t": "Dataset:blendedmvs", "doc_id": "arxiv:2605.11354", "confidence": 1.0, "source": "llm"}
+{"h": "Method:cadbench", "r": "method_uses_dataset", "t": "Dataset:abc", "doc_id": "arxiv:2605.10873", "confidence": 1.0, "source": "llm"}
+{"h": "Method:cross3r", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "arxiv:2605.07978", "confidence": 1.0, "source": "llm"}
+{"h": "Method:geonet++", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "arxiv:2012.06980", "confidence": 1.0, "source": "llm"}
+{"h": "Method:aacvp-mvsnet", "r": "method_uses_dataset", "t": "Dataset:dtu", "doc_id": "arxiv:2011.12722", "confidence": 1.0, "source": "llm"}
+{"h": "Method:aacvp-mvsnet", "r": "method_uses_dataset", "t": "Dataset:blendedmvs", "doc_id": "arxiv:2011.12722", "confidence": 1.0, "source": "llm"}
+{"h": "Method:panoptic3d (stage-wise)", "r": "method_uses_dataset", "t": "Dataset:cityscapes", "doc_id": "arxiv:2111.03039", "confidence": 1.0, "source": "llm"}
+{"h": "Method:panoptic3d (end-to-end)", "r": "method_uses_dataset", "t": "Dataset:cityscapes", "doc_id": "arxiv:2111.03039", "confidence": 1.0, "source": "llm"}
+{"h": "Method:panoptic3d (end-to-end)", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:2111.03039", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2112.12484", "r": "paper_proposes_method", "t": "Method:padmix", "doc_id": "arxiv:2112.12484", "confidence": 1.0, "source": "llm"}
+{"h": "Method:pose adaptive dual mixup", "r": "method_uses_dataset", "t": "Dataset:pix3d", "doc_id": "arxiv:2112.12484", "confidence": 1.0, "source": "llm"}
+{"h": "Method:neuralwarp", "r": "method_uses_dataset", "t": "Dataset:dtu", "doc_id": "arxiv:2112.09648", "confidence": 1.0, "source": "llm"}
+{"h": "Method:nope-sac", "r": "method_uses_dataset", "t": "Dataset:matterport3d", "doc_id": "arxiv:2211.16799", "confidence": 1.0, "source": "llm"}
+{"h": "Method:eslam", "r": "method_uses_dataset", "t": "Dataset:replica", "doc_id": "arxiv:2211.11704", "confidence": 1.0, "source": "llm"}
+{"h": "Method:liftimage3d", "r": "method_uses_dataset", "t": "Dataset:llff", "doc_id": "arxiv:2412.09597", "confidence": 1.0, "source": "llm"}
+{"h": "Method:disentangled360", "r": "method_uses_dataset", "t": "Dataset:mip-nerf 360", "doc_id": "arxiv:2512.10293", "confidence": 1.0, "source": "llm"}
+{"h": "Method:multi-scale feature bundle-adjustment (ba) layer", "r": "method_uses_dataset", "t": "Dataset:tanks and temples", "doc_id": "arxiv:2512.18237", "confidence": 0.9, "source": "llm"}
+{"h": "Method:hash-grid nerf", "r": "method_uses_dataset", "t": "Dataset:tanks and temples", "doc_id": "arxiv:2512.18237", "confidence": 0.9, "source": "llm"}
+{"h": "Method:uncertainty-aware loss function", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "arxiv:2606.05437", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2606.03748", "r": "paper_proposes_method", "t": "Method:yoloe-26", "doc_id": "arxiv:2606.03748", "confidence": 1.0, "source": "llm"}
+{"h": "Method:ultralytics yolo26", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:2606.03748", "confidence": 1.0, "source": "llm"}
+{"h": "Method:sa4depth", "r": "method_uses_dataset", "t": "Dataset:kitti odometry", "doc_id": "arxiv:2605.28477", "confidence": 1.0, "source": "llm"}
+{"h": "Method:cambrian-p", "r": "method_uses_dataset", "t": "Dataset:scannet", "doc_id": "arxiv:2605.22819", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2605.19556", "r": "paper_proposes_method", "t": "Method:epidiffvo", "doc_id": "arxiv:2605.19556", "confidence": 1.0, "source": "llm"}
+{"h": "Method:posefm", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "arxiv:2604.22350", "confidence": 1.0, "source": "llm"}
+{"h": "Method:adaptivepose", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:2112.13635", "confidence": 0.99, "source": "llm"}
+{"h": "Method:papnet", "r": "method_uses_dataset", "t": "Dataset:scannet", "doc_id": "arxiv:2012.10042", "confidence": 1.0, "source": "llm"}
+{"h": "Method:scale-adaptive heatmap regression", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:2012.15175", "confidence": 1.0, "source": "llm"}
+{"h": "Method:keypoint r-cnn", "r": "method_uses_dataset", "t": "Dataset:imagenet", "doc_id": "arxiv:2112.09290", "confidence": 0.98, "source": "llm"}
+{"h": "Method:vitpose", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:2212.04246", "confidence": 1.0, "source": "llm"}
+{"h": "Method:lora3d", "r": "method_uses_dataset", "t": "Dataset:replica", "doc_id": "arxiv:2412.07746", "confidence": 1.0, "source": "llm"}
+{"h": "Method:meta prompts", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:2312.14733", "confidence": 0.9, "source": "llm"}
+{"h": "Method:recurrent refinement training strategy", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:2312.14733", "confidence": 0.9, "source": "llm"}
+{"h": "Method:dac", "r": "method_uses_dataset", "t": "Dataset:imagenet", "doc_id": "arxiv:1812.08374", "confidence": 1.0, "source": "llm"}
+{"h": "Method:multi-domain pose network (mdpn)", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:1810.08338", "confidence": 1.0, "source": "llm"}
+{"h": "Method:incarpose", "r": "method_uses_dataset", "t": "Dataset:7-scenes", "doc_id": "arxiv:2604.03814", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2604.02107", "r": "paper_proposes_method", "t": "Method:hyvggt-vo", "doc_id": "arxiv:2604.02107", "confidence": 1.0, "source": "llm"}
+{"h": "Method:flow-to-flow pose estimator (f2fpe)", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "arxiv:2101.02143", "confidence": 0.99, "source": "llm"}
+{"h": "Method:selfvio", "r": "method_uses_dataset", "t": "Dataset:cityscapes", "doc_id": "arxiv:1911.09968", "confidence": 1.0, "source": "llm"}
+{"h": "Method:sensitivity and uncertainty-based lidar point selection method", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "arxiv:2111.07723", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.16487", "r": "paper_proposes_method", "t": "Method:diffpose", "doc_id": "arxiv:2211.16487", "confidence": 1.0, "source": "llm"}
+{"h": "Method:mamkpd", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:2412.01422", "confidence": 1.0, "source": "llm"}
+{"h": "Method:probpose", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:2412.02254", "confidence": 1.0, "source": "llm"}
+{"h": "Method:qf-es-ekf/ukf", "r": "method_uses_dataset", "t": "Dataset:euroc", "doc_id": "arxiv:2512.17505", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:nerfstudio-project/nerfstudio", "r": "repo_implements_method", "t": "Method:nerf", "doc_id": "github:nerfstudio-project/nerfstudio", "confidence": 0.95, "source": "llm"}
+{"h": "Method:multinerf", "r": "method_uses_dataset", "t": "Dataset:llff", "doc_id": "github:google-research/multinerf", "confidence": 0.95, "source": "llm"}
+{"h": "Method:mip-nerf 360", "r": "method_uses_dataset", "t": "Dataset:mip-nerf 360", "doc_id": "github:google-research/multinerf", "confidence": 0.9, "source": "llm"}
+{"h": "Repo:taichi-dev/taichi-nerfs", "r": "repo_implements_method", "t": "Method:nerf", "doc_id": "github:taichi-dev/taichi-nerfs", "confidence": 0.95, "source": "llm"}
+{"h": "Repo:yerfor/Real3DPortrait", "r": "repo_implements_method", "t": "Method:geneface++", "doc_id": "github:yerfor/Real3DPortrait", "confidence": 0.9, "source": "llm"}
+{"h": "Repo:ActiveVisionLab/nerfmm", "r": "repo_implements_method", "t": "Method:nerf--", "doc_id": "github:ActiveVisionLab/nerfmm", "confidence": 1.0, "source": "llm"}
+{"h": "Method:point-nerf", "r": "method_uses_dataset", "t": "Dataset:scannet", "doc_id": "github:Xharlie/pointnerf", "confidence": 0.9, "source": "llm"}
+{"h": "Repo:ashawkey/torch-ngp", "r": "repo_implements_method", "t": "Method:nerf", "doc_id": "github:ashawkey/torch-ngp", "confidence": 0.95, "source": "llm"}
+{"h": "Method:nerfbaselines", "r": "method_uses_dataset", "t": "Dataset:mip-nerf 360", "doc_id": "github:nerfbaselines/nerfbaselines", "confidence": 1.0, "source": "llm"}
+{"h": "Method:object-nerf", "r": "method_uses_dataset", "t": "Dataset:scannet", "doc_id": "github:zju3dv/object_nerf", "confidence": 0.95, "source": "llm"}
+{"h": "Repo:Lakonik/SSDNeRF", "r": "repo_implements_method", "t": "Method:ssdnerf", "doc_id": "github:Lakonik/SSDNeRF", "confidence": 1.0, "source": "llm"}
+{"h": "Method:ssdnerf", "r": "method_uses_dataset", "t": "Dataset:shapenet", "doc_id": "github:Lakonik/SSDNeRF", "confidence": 0.95, "source": "llm"}
+{"h": "Repo:PeterouZh/CIPS-3D", "r": "repo_implements_method", "t": "Method:nerf", "doc_id": "github:PeterouZh/CIPS-3D", "confidence": 0.8, "source": "llm"}
+{"h": "Method:nerf++", "r": "method_uses_dataset", "t": "Dataset:tanks and temples", "doc_id": "github:sjtuytc/UnboundedNeRFPytorch", "confidence": 1.0, "source": "llm"}
+{"h": "Method:plenoxels", "r": "method_uses_dataset", "t": "Dataset:tanks and temples", "doc_id": "github:sjtuytc/UnboundedNeRFPytorch", "confidence": 1.0, "source": "llm"}
+{"h": "Method:mip-nerf-360", "r": "method_uses_dataset", "t": "Dataset:tanks and temples", "doc_id": "github:sjtuytc/UnboundedNeRFPytorch", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:ActiveVisionLab/nope-nerf", "r": "repo_implements_method", "t": "Method:nerf", "doc_id": "github:ActiveVisionLab/nope-nerf", "confidence": 0.9, "source": "llm"}
+{"h": "Method:nerf", "r": "method_uses_dataset", "t": "Dataset:shapenet", "doc_id": "github:munshisanowarraihan/nerf-meta", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:xhuangcv/hdr-nerf", "r": "repo_implements_method", "t": "Method:hdr-nerf", "doc_id": "github:xhuangcv/hdr-nerf", "confidence": 1.0, "source": "llm"}
+{"h": "Method:permutosdf", "r": "method_uses_dataset", "t": "Dataset:blendedmvs", "doc_id": "github:RaduAlexandru/permuto_sdf", "confidence": 1.0, "source": "llm"}
+{"h": "Method:neumesh", "r": "method_uses_dataset", "t": "Dataset:dtu", "doc_id": "github:zju3dv/NeuMesh", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:TencentARC/ArcNerf", "r": "repo_implements_method", "t": "Method:neus", "doc_id": "github:TencentARC/ArcNerf", "confidence": 0.9, "source": "llm"}
+{"h": "Method:directvoxgo", "r": "method_uses_dataset", "t": "Dataset:blendedmvs", "doc_id": "github:sunset1995/DirectVoxGO", "confidence": 0.95, "source": "llm"}
+{"h": "Method:directvoxgo", "r": "method_uses_dataset", "t": "Dataset:co3d", "doc_id": "github:sunset1995/DirectVoxGO", "confidence": 0.95, "source": "llm"}
+{"h": "Method:sparf", "r": "method_uses_dataset", "t": "Dataset:replica", "doc_id": "github:google-research/sparf", "confidence": 1.0, "source": "llm"}
+{"h": "Method:gaustudio", "r": "method_uses_dataset", "t": "Dataset:tanks and temples", "doc_id": "github:GAP-LAB-CUHK-SZ/gaustudio", "confidence": 1.0, "source": "llm"}
+{"h": "Method:gaustudio", "r": "method_uses_dataset", "t": "Dataset:scannet++", "doc_id": "github:GAP-LAB-CUHK-SZ/gaustudio", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:kwea123/ngp_pl", "r": "repo_implements_method", "t": "Method:instant-ngp", "doc_id": "github:kwea123/ngp_pl", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:fnzhan/Neural-Gauge-Fields", "r": "repo_implements_method", "t": "Method:neural gauge fields", "doc_id": "github:fnzhan/Neural-Gauge-Fields", "confidence": 1.0, "source": "llm"}
+{"h": "Method:neuraludf", "r": "method_uses_dataset", "t": "Dataset:dtu", "doc_id": "github:xxlong0/NeuralUDF", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:shg8/3DGS.cpp", "r": "repo_implements_method", "t": "Method:gaussian splatting (gs)", "doc_id": "github:shg8/3DGS.cpp", "confidence": 0.95, "source": "llm"}
+{"h": "Repo:LetianHuang/op43dgs", "r": "repo_implements_method", "t": "Method:optimal gaussian splatting", "doc_id": "github:LetianHuang/op43dgs", "confidence": 0.99, "source": "llm"}
+{"h": "Method:inerf", "r": "method_uses_dataset", "t": "Dataset:llff", "doc_id": "github:salykova/inerf", "confidence": 0.98, "source": "llm"}
+{"h": "Method:matchnerf", "r": "method_uses_dataset", "t": "Dataset:llff", "doc_id": "github:donydchen/matchnerf", "confidence": 0.98, "source": "llm"}
+{"h": "Repo:chinhsuanwu/dreamfusionacc", "r": "repo_implements_method", "t": "Method:dreamfusion", "doc_id": "github:chinhsuanwu/dreamfusionacc", "confidence": 0.95, "source": "llm"}
+{"h": "Repo:sfchng/Gaussian-Activated-Radiance-Fields", "r": "repo_implements_method", "t": "Method:nerf", "doc_id": "github:sfchng/Gaussian-Activated-Radiance-Fields", "confidence": 0.95, "source": "llm"}
+{"h": "Method:s3im", "r": "method_uses_dataset", "t": "Dataset:replica", "doc_id": "github:Madaoer/S3IM-Neural-Fields", "confidence": 0.9, "source": "llm"}
+{"h": "Method:hashnerf", "r": "method_uses_dataset", "t": "Dataset:scannet", "doc_id": "github:yashbhalgat/HashNeRF-pytorch", "confidence": 0.9, "source": "llm"}
+{"h": "Method:neat", "r": "method_uses_dataset", "t": "Dataset:dtu", "doc_id": "github:cherubicXN/neat", "confidence": 0.95, "source": "llm"}
+{"h": "Repo:megvii-research/cv-master-ex", "r": "repo_implements_method", "t": "Method:torch-ngp", "doc_id": "github:megvii-research/cv-master-ex", "confidence": 0.99, "source": "llm"}
+{"h": "Method:torch-ngp", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "github:megvii-research/cv-master-ex", "confidence": 0.95, "source": "llm"}
+{"h": "Method:semantic ray", "r": "method_uses_dataset", "t": "Dataset:scannet", "doc_id": "github:THU-SI/Semantic-Ray", "confidence": 1.0, "source": "llm"}
+{"h": "Method:scenerf", "r": "method_uses_dataset", "t": "Dataset:semantickitti", "doc_id": "github:astra-vision/SceneRF", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:thu3dhuman/sourcecode", "r": "repo_implements_method", "t": "Method:3d gaussian splatting (3dgs)", "doc_id": "github:thu3dhuman/sourcecode", "confidence": 0.9, "source": "llm"}
+{"h": "Repo:thu3dhuman/sourcecode", "r": "repo_implements_method", "t": "Method:tensor4d", "doc_id": "github:thu3dhuman/sourcecode", "confidence": 0.9, "source": "llm"}
+{"h": "Repo:thu3dhuman/sourcecode", "r": "repo_implements_method", "t": "Method:ide-3d", "doc_id": "github:thu3dhuman/sourcecode", "confidence": 0.9, "source": "llm"}
+{"h": "Method:egg-fusion", "r": "method_uses_dataset", "t": "Dataset:replica", "doc_id": "github:panxkun/eggfusion", "confidence": 1.0, "source": "llm"}
+{"h": "Method:egg-fusion", "r": "method_uses_dataset", "t": "Dataset:tum rgb-d", "doc_id": "github:panxkun/eggfusion", "confidence": 1.0, "source": "llm"}
+{"h": "Method:simplerecon", "r": "method_uses_dataset", "t": "Dataset:scannet", "doc_id": "github:nianticlabs/simplerecon", "confidence": 0.98, "source": "llm"}
+{"h": "Method:structure from motion (sfm)", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "github:yudhisteer/3D-Reconstruction-with-Uncalibrated-Stereo", "confidence": 0.9, "source": "llm"}
+{"h": "Method:gomvs", "r": "method_uses_dataset", "t": "Dataset:tanks and temples", "doc_id": "github:Wuuu3511/GoMVS", "confidence": 1.0, "source": "llm"}
+{"h": "Method:multi-view stereo (mvs)", "r": "method_uses_dataset", "t": "Dataset:dtu", "doc_id": "github:XYZ-qiyh/multi-view-3d-reconstruction", "confidence": 0.9, "source": "llm"}
+{"h": "Method:deep two-view structure-from-motion", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "github:jytime/Deep-SfM-Revisited", "confidence": 1.0, "source": "llm"}
+{"h": "Method:deep two-view structure-from-motion", "r": "method_uses_dataset", "t": "Dataset:kitti odometry", "doc_id": "github:jytime/Deep-SfM-Revisited", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:imkaywu/open3DCV", "r": "repo_implements_method", "t": "Method:essential matrix", "doc_id": "github:imkaywu/open3DCV", "confidence": 0.95, "source": "llm"}
+{"h": "Method:a2pm", "r": "method_uses_dataset", "t": "Dataset:scannet", "doc_id": "github:Easonyesheng/A2PM-MESA", "confidence": 1.0, "source": "llm"}
+{"h": "Method:dmesa", "r": "method_uses_dataset", "t": "Dataset:scannet", "doc_id": "github:Easonyesheng/A2PM-MESA", "confidence": 1.0, "source": "llm"}
+{"h": "Method:evo", "r": "method_uses_dataset", "t": "Dataset:euroc", "doc_id": "github:MichaelGrupp/evo", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:gaoxiang12/slambook", "r": "repo_implements_method", "t": "Method:opencv", "doc_id": "github:gaoxiang12/slambook", "confidence": 0.9, "source": "llm"}
+{"h": "Repo:gaoxiang12/slambook", "r": "repo_implements_method", "t": "Method:ceres", "doc_id": "github:gaoxiang12/slambook", "confidence": 0.9, "source": "llm"}
+{"h": "Repo:gaoxiang12/slambook", "r": "repo_implements_method", "t": "Method:g2o", "doc_id": "github:gaoxiang12/slambook", "confidence": 0.9, "source": "llm"}
+{"h": "Repo:gaoxiang12/slambook", "r": "repo_implements_method", "t": "Method:dbow3", "doc_id": "github:gaoxiang12/slambook", "confidence": 0.9, "source": "llm"}
+{"h": "Repo:koide3/hdl_graph_slam", "r": "repo_implements_method", "t": "Method:ndt", "doc_id": "github:koide3/hdl_graph_slam", "confidence": 0.9, "source": "llm"}
+{"h": "Repo:koide3/hdl_graph_slam", "r": "repo_implements_method", "t": "Method:pcl", "doc_id": "github:koide3/hdl_graph_slam", "confidence": 0.9, "source": "llm"}
+{"h": "Repo:SilenceOverflow/VI_ORB_SLAM2", "r": "repo_implements_method", "t": "Method:vi_orb_slam2", "doc_id": "github:SilenceOverflow/VI_ORB_SLAM2", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:engcang/SLAM-application", "r": "repo_implements_method", "t": "Method:fast-lio2", "doc_id": "github:engcang/SLAM-application", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:Yixin-F/better_fastlio2", "r": "repo_implements_method", "t": "Method:gtsam", "doc_id": "github:Yixin-F/better_fastlio2", "confidence": 0.9, "source": "llm"}
+{"h": "Repo:TUMFTM/ORB_SLAM3_RGBL", "r": "repo_implements_method", "t": "Method:orb-slam3", "doc_id": "github:TUMFTM/ORB_SLAM3_RGBL", "confidence": 0.9, "source": "llm"}
+{"h": "Repo:gisbi-kim/PyICP-SLAM", "r": "repo_implements_method", "t": "Method:pyicp slam", "doc_id": "github:gisbi-kim/PyICP-SLAM", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:gisbi-kim/PyICP-SLAM", "r": "repo_implements_method", "t": "Method:icp", "doc_id": "github:gisbi-kim/PyICP-SLAM", "confidence": 0.95, "source": "llm"}
+{"h": "Repo:gisbi-kim/PyICP-SLAM", "r": "repo_implements_method", "t": "Method:scan context", "doc_id": "github:gisbi-kim/PyICP-SLAM", "confidence": 0.95, "source": "llm"}
+{"h": "Repo:varyshare/easy_slam_tutorial", "r": "repo_implements_method", "t": "Method:orb", "doc_id": "github:varyshare/easy_slam_tutorial", "confidence": 0.95, "source": "llm"}
+{"h": "Repo:luigifreda/slamplay", "r": "repo_implements_method", "t": "Method:gtsam", "doc_id": "github:luigifreda/slamplay", "confidence": 0.9, "source": "llm"}
+{"h": "Repo:luigifreda/slamplay", "r": "repo_implements_method", "t": "Method:pcl", "doc_id": "github:luigifreda/slamplay", "confidence": 0.9, "source": "llm"}
+{"h": "Repo:luigifreda/slamplay", "r": "repo_implements_method", "t": "Method:sophus", "doc_id": "github:luigifreda/slamplay", "confidence": 0.9, "source": "llm"}
+{"h": "Repo:luigifreda/slamplay", "r": "repo_implements_method", "t": "Method:tensorrt", "doc_id": "github:luigifreda/slamplay", "confidence": 0.9, "source": "llm"}
+{"h": "Repo:luigifreda/slamplay", "r": "repo_implements_method", "t": "Method:superpoint", "doc_id": "github:luigifreda/slamplay", "confidence": 0.9, "source": "llm"}
+{"h": "Repo:uoip/g2opy", "r": "repo_implements_method", "t": "Method:pnp", "doc_id": "github:uoip/g2opy", "confidence": 0.9, "source": "llm"}
+{"h": "Repo:uoip/stereo_ptam", "r": "repo_implements_method", "t": "Method:pose graph optimization", "doc_id": "github:uoip/stereo_ptam", "confidence": 0.95, "source": "llm"}
+{"h": "Method:s-ptam", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "github:uoip/stereo_ptam", "confidence": 0.98, "source": "llm"}
+{"h": "Method:co-slam", "r": "method_uses_dataset", "t": "Dataset:replica", "doc_id": "github:HengyiWang/Co-SLAM", "confidence": 0.99, "source": "llm"}
+{"h": "Repo:changh95/slam_lecture_codes", "r": "repo_implements_method", "t": "Method:ransac", "doc_id": "github:changh95/slam_lecture_codes", "confidence": 0.8, "source": "llm"}
+{"h": "Repo:changh95/slam_lecture_codes", "r": "repo_implements_method", "t": "Method:icp", "doc_id": "github:changh95/slam_lecture_codes", "confidence": 0.8, "source": "llm"}
+{"h": "Repo:changh95/slam_lecture_codes", "r": "repo_implements_method", "t": "Method:kiss-slam", "doc_id": "github:changh95/slam_lecture_codes", "confidence": 0.8, "source": "llm"}
+{"h": "Repo:changh95/slam_lecture_codes", "r": "repo_implements_method", "t": "Method:fast-livo2", "doc_id": "github:changh95/slam_lecture_codes", "confidence": 0.8, "source": "llm"}
+{"h": "Repo:changh95/slam_lecture_codes", "r": "repo_implements_method", "t": "Method:pin-slam", "doc_id": "github:changh95/slam_lecture_codes", "confidence": 0.8, "source": "llm"}
+{"h": "Repo:Ewenwan/MVision", "r": "repo_implements_method", "t": "Method:opencv", "doc_id": "github:Ewenwan/MVision", "confidence": 0.8, "source": "llm"}
+{"h": "Method:slam", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "github:Ewenwan/MVision", "confidence": 0.7, "source": "llm"}
+{"h": "Method:visual odometry", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "github:Ewenwan/MVision", "confidence": 0.7, "source": "llm"}
+{"h": "Method:vs-slam", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "github:Ewenwan/MVision", "confidence": 0.7, "source": "llm"}
+{"h": "Repo:koide3/slam_docker_collection", "r": "repo_implements_method", "t": "Method:hdl_graph_slam", "doc_id": "github:koide3/slam_docker_collection", "confidence": 1.0, "source": "llm"}
+{"h": "Method:cerebro", "r": "method_uses_dataset", "t": "Dataset:euroc", "doc_id": "github:mpkuse/cerebro", "confidence": 0.95, "source": "llm"}
+{"h": "Method:pvio", "r": "method_uses_dataset", "t": "Dataset:euroc", "doc_id": "github:zju3dv/PVIO", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:michalfaber/tensorflow_Realtime_Multi-Person_Pose_Estimation", "r": "repo_implements_method", "t": "Method:keras", "doc_id": "github:michalfaber/tensorflow_Realtime_Multi-Person_Pose_Estimation", "confidence": 0.98, "source": "llm"}
+{"h": "Repo:stefanopini/simple-HRNet", "r": "repo_implements_method", "t": "Method:hrnet", "doc_id": "github:stefanopini/simple-HRNet", "confidence": 0.99, "source": "llm"}
+{"h": "Repo:stefanopini/simple-HRNet", "r": "repo_implements_method", "t": "Method:resnet", "doc_id": "github:stefanopini/simple-HRNet", "confidence": 0.99, "source": "llm"}
+{"h": "Repo:stefanopini/simple-HRNet", "r": "repo_implements_method", "t": "Method:yolov3", "doc_id": "github:stefanopini/simple-HRNet", "confidence": 0.99, "source": "llm"}
+{"h": "Method:hrnet", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "github:stefanopini/simple-HRNet", "confidence": 0.99, "source": "llm"}
+{"h": "Repo:davexpro/pytorch-pose-estimation", "r": "repo_implements_method", "t": "Method:pytorch", "doc_id": "github:davexpro/pytorch-pose-estimation", "confidence": 0.99, "source": "llm"}
+{"h": "Repo:yo-WASSUP/Good-GYM", "r": "repo_implements_method", "t": "Method:yolo", "doc_id": "github:yo-WASSUP/Good-GYM", "confidence": 0.8, "source": "llm"}
+{"h": "Repo:sithu31296/pose-estimation", "r": "repo_implements_method", "t": "Method:simdr", "doc_id": "github:sithu31296/pose-estimation", "confidence": 1.0, "source": "llm"}
+{"h": "Method:simple baselines for human pose estimation and tracking", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "github:mks0601/TF-SimpleHumanPose", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:MiraPurkrabek/BBoxMaskPose", "r": "repo_implements_method", "t": "Method:bboxmaskpose", "doc_id": "github:MiraPurkrabek/BBoxMaskPose", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:JunkyByte/easy_ViTPose", "r": "repo_implements_method", "t": "Method:vitpose", "doc_id": "github:JunkyByte/easy_ViTPose", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:JunkyByte/easy_ViTPose", "r": "repo_implements_method", "t": "Method:sort", "doc_id": "github:JunkyByte/easy_ViTPose", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:JunkyByte/easy_ViTPose", "r": "repo_implements_method", "t": "Method:yolov8", "doc_id": "github:JunkyByte/easy_ViTPose", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:tucan9389/tf2-mobile-2d-single-pose-estimation", "r": "repo_implements_method", "t": "Method:cpm", "doc_id": "github:tucan9389/tf2-mobile-2d-single-pose-estimation", "confidence": 1.0, "source": "llm"}
+{"h": "Method:cpm", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "github:tucan9389/tf2-mobile-2d-single-pose-estimation", "confidence": 0.9, "source": "llm"}
+{"h": "Repo:Naman-ntc/Pytorch-Human-Pose-Estimation", "r": "repo_implements_method", "t": "Method:pytorch", "doc_id": "github:Naman-ntc/Pytorch-Human-Pose-Estimation", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:Naman-ntc/Pytorch-Human-Pose-Estimation", "r": "repo_implements_method", "t": "Method:inception", "doc_id": "github:Naman-ntc/Pytorch-Human-Pose-Estimation", "confidence": 0.95, "source": "llm"}
+{"h": "Method:resnet", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "github:Naman-ntc/Pytorch-Human-Pose-Estimation", "confidence": 0.9, "source": "llm"}
+{"h": "Method:fractional maxpooling", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "github:Naman-ntc/Pytorch-Human-Pose-Estimation", "confidence": 0.9, "source": "llm"}
+{"h": "Repo:ViTAE-Transformer/ViTPose", "r": "repo_implements_method", "t": "Method:vitpose", "doc_id": "github:ViTAE-Transformer/ViTPose", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:DeepLabCut/DeepLabCut", "r": "repo_implements_method", "t": "Method:mobilenetv2", "doc_id": "github:DeepLabCut/DeepLabCut", "confidence": 0.95, "source": "llm"}
+{"h": "Repo:salykova/inerf", "r": "repo_implements_method", "t": "Method:pytorch", "doc_id": "github:salykova/inerf", "confidence": 0.75, "source": "llm"}
+{"h": "Repo:PJunhyuk/people-counting-pose", "r": "repo_implements_method", "t": "Method:opencv", "doc_id": "github:PJunhyuk/people-counting-pose", "confidence": 0.8, "source": "llm"}
+{"h": "Repo:mkocabas/pose-residual-network", "r": "repo_implements_method", "t": "Method:prn", "doc_id": "github:mkocabas/pose-residual-network", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:nihui/ncnn-android-yolov8", "r": "repo_implements_method", "t": "Method:yolov8", "doc_id": "github:nihui/ncnn-android-yolov8", "confidence": 0.99, "source": "llm"}
+{"h": "Repo:GigaFlopsis/image_pose_estimation", "r": "repo_implements_method", "t": "Method:opencv", "doc_id": "github:GigaFlopsis/image_pose_estimation", "confidence": 0.99, "source": "llm"}
+{"h": "Repo:GigaFlopsis/image_pose_estimation", "r": "repo_implements_method", "t": "Method:sift", "doc_id": "github:GigaFlopsis/image_pose_estimation", "confidence": 0.98, "source": "llm"}
+{"h": "Repo:imsoo/fight_detection", "r": "repo_implements_method", "t": "Method:opencv", "doc_id": "github:imsoo/fight_detection", "confidence": 0.9, "source": "llm"}
+{"h": "Method:egonet", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "github:Nicholasli1995/EgoNet", "confidence": 0.98, "source": "llm"}
+{"h": "Method:imp", "r": "method_uses_dataset", "t": "Dataset:scannet", "doc_id": "github:feixue94/imp-release", "confidence": 0.85, "source": "llm"}
+{"h": "Repo:roytseng-tw/adversarial-pose-pytorch", "r": "repo_implements_method", "t": "Method:hgpose-ae", "doc_id": "github:roytseng-tw/adversarial-pose-pytorch", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:roytseng-tw/adversarial-pose-pytorch", "r": "repo_implements_method", "t": "Method:advpose", "doc_id": "github:roytseng-tw/adversarial-pose-pytorch", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:roytseng-tw/adversarial-pose-pytorch", "r": "repo_implements_method", "t": "Method:advpose-ae", "doc_id": "github:roytseng-tw/adversarial-pose-pytorch", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:salihkaragoz/pose-residual-network-pytorch", "r": "repo_implements_method", "t": "Method:pose residual network", "doc_id": "github:salihkaragoz/pose-residual-network-pytorch", "confidence": 1.0, "source": "llm"}
+{"h": "Method:forge", "r": "method_uses_dataset", "t": "Dataset:gso", "doc_id": "github:UT-Austin-RPL/FORGE", "confidence": 0.95, "source": "llm"}
+{"h": "Method:repogen", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "github:MiraPurkrabek/RePoGen", "confidence": 0.95, "source": "llm"}
+{"h": "Repo:JunkyByte/deepcharuco", "r": "repo_implements_method", "t": "Method:refinenet", "doc_id": "github:JunkyByte/deepcharuco", "confidence": 0.9, "source": "llm"}
+{"h": "Method:deep charuco", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "github:JunkyByte/deepcharuco", "confidence": 0.9, "source": "llm"}
+{"h": "Method:refinenet", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "github:JunkyByte/deepcharuco", "confidence": 0.9, "source": "llm"}
+{"h": "Repo:uyoung-jeong/BoIR", "r": "repo_implements_method", "t": "Method:boir", "doc_id": "github:uyoung-jeong/BoIR", "confidence": 1.0, "source": "llm"}
