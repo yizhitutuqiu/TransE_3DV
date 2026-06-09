@@ -6,7 +6,7 @@ Sources:
 - GitHub REST API: repository metadata + raw README
 
 Default output:
-  /data/litengmo/ml-test-1/zstp_final/data/raw/
+  <repo>/data/raw/
     paper/{pose_estimation,3d_generation,4d_reconstruction}/items.jsonl
     readme/{pose_estimation,3d_generation,4d_reconstruction}/items.jsonl
 """
@@ -570,11 +570,12 @@ def crawl_github_for_category(
 
 
 def main() -> int:
+    default_out_root = str((Path(__file__).resolve().parents[1] / "raw"))
     ap = argparse.ArgumentParser()
     ap.add_argument(
         "--out_root",
         type=str,
-        default="/data/litengmo/ml-test-1/zstp_final/data/raw",
+        default=default_out_root,
         help="Output root containing paper/ and readme/",
     )
     ap.add_argument("--mode", choices=["all", "paper", "readme"], default="all")

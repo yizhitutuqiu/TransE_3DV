@@ -228,6 +228,7 @@ def main() -> int:
         c = stages.get("crawl", {}) or {}
         argv = _python_cmd(crawl_py)
         argv += _as_list(c.get("args"))
+        argv += ["--out_root", str(raw_root)]
         argv += ["--mode", str(c.get("mode", "all"))]
         if c.get("max_papers") is not None:
             argv += ["--max_papers", str(c.get("max_papers"))]
