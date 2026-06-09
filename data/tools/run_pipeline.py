@@ -75,6 +75,90 @@ def _python_cmd(script: Path) -> List[str]:
     return [sys.executable, str(script)]
 
 
+def _read_text_if_exists(p: Path) -> str:
+    if not p.exists():
+        return ""
+    return p.read_text(encoding="utf-8")
+
+
+def _write_json(path: Path, obj: Dict[str, Any]) -> None:
+    path.write_text(json.dumps(obj, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def _load_json(path: Path) -> Dict[str, Any]:
+    if not path.exists():
+        return {}
+    obj = json.loads(path.read_text(encoding="utf-8"))
+    return obj if isinstance(obj, dict) else {}
+
+
+def _is_nonempty_file(p: Path) -> bool:
+    try:
+        return p.exists() and p.is_file() and p.stat().st_size > 0
+    except Exception:
+        return False
+
+
+def _validate_outputs(data_dir: Path, stage: str) -> bool:
+    if stage == "crawl":
+        raw = data_dir / "raw"
+        return (raw / "paper").exists() and (raw / "readme").exists()
+    if stage == "preprocess":
+        return _is_nonempty_file(data_dir / "preprocessed" / "text" / "documents.jsonl")
+    if stage == "entities":
+        return _is_nonempty_file(data_dir / "preprocessed" / "text" / "entities" / "doc_entities.jsonl")
+    if stage == "registry":
+        return _is_nonempty_file(data_dir / "preprocessed" / "kg" / "entities" / "entity_registry.jsonl")
+    if stage == "triples_llm":
+        return _is_nonempty_file(data_dir / "preprocessed" / "kg" / "triples_llm" / "triples.jsonl")
+    if stage == "triples_rules":
+        return _is_nonempty_file(data_dir / "preprocessed" / "kg" / "triples" / "triples.jsonl")
+    if stage == "final":
+        final_dir = data_dir / "preprocessed" / "final"
+        need = ["entity2id.txt", "relation2id.txt", "train2id.txt", "test2id.txt", "metadata.json"]
+        return all(_is_nonempty_file(final_dir / n) for n in need)
+    return False
+
+
+def _stage_marker(run_dir: Path, stage: str) -> Path:
+    return run_dir / f"{stage}.done"
+
+
+def _redact(obj: Any) -> Any:
+    if isinstance(obj, dict):
+        out: Dict[str, Any] = {}
+        for k, v in obj.items():
+            ks = str(k).lower()
+            if any(x in ks for x in ["token", "api_key", "apikey", "secret", "password"]):
+                out[k] = "<redacted>"
+            else:
+                out[k] = _redact(v)
+        return out
+    if isinstance(obj, list):
+        return [_redact(x) for x in obj]
+    return obj
+
+
+def _run_stage(
+    *,
+    stage: str,
+    argv: List[str],
+    repo_root: Path,
+    data_dir: Path,
+    env: Dict[str, str],
+    dry_run: bool,
+    run_dir: Path,
+) -> None:
+    marker = _stage_marker(run_dir, stage)
+    if marker.exists() and _validate_outputs(data_dir, stage):
+        return
+    _run(argv, cwd=repo_root, env=env, dry_run=dry_run)
+    if not dry_run and not _validate_outputs(data_dir, stage):
+        raise RuntimeError(f"stage validation failed: {stage}")
+    if not dry_run:
+        marker.write_text(json.dumps({"stage": stage, "finished_at": time.time()}, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
 def main() -> int:
     repo_root = Path(__file__).resolve().parents[2]
     ap = argparse.ArgumentParser()
@@ -84,6 +168,7 @@ def main() -> int:
         default=str(repo_root / "data" / "tools" / "config" / "pipeline.yaml"),
     )
     ap.add_argument("--dry_run", action="store_true")
+    ap.add_argument("--no_resume", action="store_true")
     args = ap.parse_args()
 
     cfg = _expand(_load_yaml(Path(args.config).resolve()))
@@ -98,12 +183,23 @@ def main() -> int:
     final_dir = Path(paths.get("final_dir", data_dir / "preprocessed" / "final")).resolve()
 
     run_root = Path(paths.get("run_root", data_dir / "preprocessed" / "pipeline_runs")).resolve()
-    run_dir = run_root / _ts()
+    _ensure_dir(run_root)
+    state_path = run_root / "last_run.json"
+    state = _load_json(state_path)
+    resume_ok = (not bool(args.no_resume)) and state.get("status") == "in_progress" and isinstance(state.get("run_dir"), str)
+    if resume_ok and Path(str(state["run_dir"])).exists():
+        run_dir = Path(str(state["run_dir"])).resolve()
+    else:
+        run_dir = run_root / _ts()
+        _ensure_dir(run_dir)
+        _write_json(state_path, {"status": "in_progress", "run_dir": str(run_dir), "created_at": time.strftime("%Y-%m-%dT%H:%M:%S%z")})
     _ensure_dir(run_dir)
 
     env = os.environ.copy()
     for k, v in env_cfg.items():
         if v is None:
+            continue
+        if isinstance(v, str) and not v.strip():
             continue
         env[str(k)] = str(v)
 
@@ -135,7 +231,7 @@ def main() -> int:
             argv += ["--overwrite"]
         _ensure_dir(raw_root / "paper")
         _ensure_dir(raw_root / "readme")
-        _run(argv, cwd=repo_root, env=env, dry_run=bool(args.dry_run))
+        _run_stage(stage="crawl", argv=argv, repo_root=repo_root, data_dir=data_dir, env=env, dry_run=bool(args.dry_run), run_dir=run_dir)
 
     if _bool(stages.get("preprocess", {}).get("enabled"), True):
         p = stages.get("preprocess", {}) or {}
@@ -147,10 +243,12 @@ def main() -> int:
             argv += ["--max_doc_chars", str(p.get("max_doc_chars"))]
         if p.get("min_doc_chars") is not None:
             argv += ["--min_doc_chars", str(p.get("min_doc_chars"))]
+        if _bool(p.get("resume"), True):
+            argv += ["--resume"]
         if _bool(p.get("overwrite"), True):
             argv += ["--overwrite"]
         _ensure_dir(pre_text)
-        _run(argv, cwd=repo_root, env=env, dry_run=bool(args.dry_run))
+        _run_stage(stage="preprocess", argv=argv, repo_root=repo_root, data_dir=data_dir, env=env, dry_run=bool(args.dry_run), run_dir=run_dir)
 
     if _bool(stages.get("entities", {}).get("enabled"), True):
         e = stages.get("entities", {}) or {}
@@ -162,7 +260,7 @@ def main() -> int:
             argv += ["--resume"]
         if _bool(e.get("enable_llm"), False):
             argv += ["--enable_llm"]
-        _run(argv, cwd=repo_root, env=env, dry_run=bool(args.dry_run))
+        _run_stage(stage="entities", argv=argv, repo_root=repo_root, data_dir=data_dir, env=env, dry_run=bool(args.dry_run), run_dir=run_dir)
 
     if _bool(stages.get("registry", {}).get("enabled"), True):
         r = stages.get("registry", {}) or {}
@@ -171,7 +269,7 @@ def main() -> int:
         if _bool(r.get("overwrite"), True):
             argv += ["--overwrite"]
         _ensure_dir(pre_kg / "entities")
-        _run(argv, cwd=repo_root, env=env, dry_run=bool(args.dry_run))
+        _run_stage(stage="registry", argv=argv, repo_root=repo_root, data_dir=data_dir, env=env, dry_run=bool(args.dry_run), run_dir=run_dir)
 
     triples_mode = str((stages.get("triples", {}) or {}).get("mode", "llm")).strip().lower()
     if _bool(stages.get("triples", {}).get("enabled"), True):
@@ -200,7 +298,7 @@ def main() -> int:
             if t.get("min_confidence") is not None:
                 argv += ["--min_confidence", str(t.get("min_confidence"))]
             _ensure_dir(pre_kg / "triples_llm")
-            _run(argv, cwd=repo_root, env=env, dry_run=bool(args.dry_run))
+            _run_stage(stage="triples_llm", argv=argv, repo_root=repo_root, data_dir=data_dir, env=env, dry_run=bool(args.dry_run), run_dir=run_dir)
         else:
             argv = _python_cmd(build_triples_py)
             argv += _as_list(t.get("args"))
@@ -211,7 +309,7 @@ def main() -> int:
             if _bool(t.get("enable_method_uses_dataset"), False):
                 argv += ["--enable_method_uses_dataset"]
             _ensure_dir(pre_kg / "triples")
-            _run(argv, cwd=repo_root, env=env, dry_run=bool(args.dry_run))
+            _run_stage(stage="triples_rules", argv=argv, repo_root=repo_root, data_dir=data_dir, env=env, dry_run=bool(args.dry_run), run_dir=run_dir)
 
     if _bool(stages.get("final", {}).get("enabled"), True):
         f = stages.get("final", {}) or {}
@@ -238,13 +336,14 @@ def main() -> int:
             else:
                 argv += ["--triples_path", str(pre_kg / "triples" / "triples.jsonl")]
         _ensure_dir(final_dir)
-        _run(argv, cwd=repo_root, env=env, dry_run=bool(args.dry_run))
+        _run_stage(stage="final", argv=argv, repo_root=repo_root, data_dir=data_dir, env=env, dry_run=bool(args.dry_run), run_dir=run_dir)
 
-    (run_dir / "config_snapshot.json").write_text(json.dumps(cfg, ensure_ascii=False, indent=2), encoding="utf-8")
+    (run_dir / "config_snapshot.json").write_text(json.dumps(_redact(cfg), ensure_ascii=False, indent=2), encoding="utf-8")
+    if not args.dry_run:
+        _write_json(state_path, {"status": "done", "run_dir": str(run_dir), "finished_at": time.strftime("%Y-%m-%dT%H:%M:%S%z")})
     print(str(run_dir))
     return 0
 
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

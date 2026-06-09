@@ -396,6 +396,8 @@ def main() -> int:
     )
     ap.add_argument("--max_doc_chars", type=int, default=12000)
     ap.add_argument("--min_doc_chars", type=int, default=80)
+    ap.add_argument("--overwrite", action="store_true")
+    ap.add_argument("--resume", action="store_true")
     args = ap.parse_args()
 
     raw_root = Path(args.raw_root).resolve()
@@ -422,7 +424,33 @@ def main() -> int:
     )
 
     docs_path = out_dir / "documents.jsonl"
-    n = _write_jsonl(docs_path, docs)
+    existing = 0
+    seen_doc_ids = set()
+    if docs_path.exists() and (args.resume and not args.overwrite):
+        for it in _iter_jsonl(docs_path):
+            doc_id = it.get("doc_id") if isinstance(it, dict) else None
+            if isinstance(doc_id, str) and doc_id:
+                seen_doc_ids.add(doc_id)
+            existing += 1
+
+    if args.overwrite or not docs_path.exists() or not args.resume:
+        n = _write_jsonl(docs_path, docs)
+        new_n = n
+        total_n = n
+    else:
+        new_docs = []
+        for d in docs:
+            doc_id = d.get("doc_id")
+            if isinstance(doc_id, str) and doc_id in seen_doc_ids:
+                continue
+            new_docs.append(d)
+        if new_docs:
+            with docs_path.open("a", encoding="utf-8") as f:
+                for it in new_docs:
+                    f.write(json.dumps(it, ensure_ascii=False) + "\n")
+        new_n = len(new_docs)
+        total_n = existing + new_n
+        n = new_n
 
     by_type = Counter(d["doc_type"] for d in docs)
     by_cat = Counter(d["category"] for d in docs)
@@ -440,7 +468,8 @@ def main() -> int:
         "raw_root": str(raw_root),
         "out_dir": str(out_dir),
         "documents_path": str(docs_path),
-        "document_count": n,
+        "document_count_total": total_n,
+        "document_count_new": new_n,
         "by_doc_type": dict(by_type),
         "by_category": dict(by_cat),
         "text_len": {
@@ -450,6 +479,7 @@ def main() -> int:
             "p99": pct(0.99),
             "max": lens[-1] if lens else 0,
         },
+        "write_mode": "overwrite" if (args.overwrite or not args.resume) else "append_new",
     }
     (out_dir / "stats.json").write_text(json.dumps(stats, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(stats, ensure_ascii=False))

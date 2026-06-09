@@ -618,6 +618,15 @@ def main() -> int:
 
     rel_counter = Counter()
     triple_seen: Set[Tuple[str, str, str]] = set()
+    if args.resume and triples_path.exists():
+        for it in _iter_jsonl(triples_path):
+            if not isinstance(it, dict):
+                continue
+            h = it.get("h")
+            r = it.get("r")
+            t = it.get("t")
+            if isinstance(h, str) and isinstance(r, str) and isinstance(t, str):
+                triple_seen.add((h, r, t))
 
     def run_batch(doc_ids: Sequence[str]) -> Dict[str, Any]:
         items: List[Dict[str, Any]] = []

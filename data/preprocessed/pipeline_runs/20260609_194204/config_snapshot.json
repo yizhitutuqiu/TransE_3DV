@@ -1,0 +1,74 @@
+{
+  "paths": {
+    "data_dir": "/data/litengmo/ml-test-1/zstp_final/data",
+    "raw_root": "/data/litengmo/ml-test-1/zstp_final/data/raw",
+    "pre_text_dir": "/data/litengmo/ml-test-1/zstp_final/data/preprocessed/text",
+    "pre_kg_dir": "/data/litengmo/ml-test-1/zstp_final/data/preprocessed/kg",
+    "final_dir": "/data/litengmo/ml-test-1/zstp_final/data/preprocessed/final",
+    "run_root": "/data/litengmo/ml-test-1/zstp_final/data/preprocessed/pipeline_runs"
+  },
+  "env": {
+    "GITHUB_TOKEN": "${GITHUB_TOKEN}",
+    "ARK_API_KEY": "${ARK_API_KEY}",
+    "ARK_MODEL": "${ARK_MODEL}",
+    "ARK_BASE_URL": "${ARK_BASE_URL}",
+    "ARK_API_MODE": "${ARK_API_MODE}"
+  },
+  "stages": {
+    "crawl": {
+      "enabled": true,
+      "mode": "all",
+      "max_papers": 600,
+      "max_repos": 300,
+      "github_min_stars": 50,
+      "year_start": 2018,
+      "year_end": 2026,
+      "overwrite": false,
+      "args": []
+    },
+    "preprocess": {
+      "enabled": true,
+      "max_doc_chars": 12000,
+      "min_doc_chars": 80,
+      "resume": true,
+      "overwrite": false,
+      "args": []
+    },
+    "entities": {
+      "enabled": true,
+      "enable_llm": true,
+      "resume": true,
+      "overwrite": false,
+      "args": []
+    },
+    "registry": {
+      "enabled": true,
+      "overwrite": true,
+      "args": []
+    },
+    "triples": {
+      "enabled": true,
+      "mode": "llm",
+      "resume": true,
+      "overwrite": false,
+      "max_doc_chars": 3500,
+      "max_methods": 40,
+      "max_datasets": 25,
+      "batch_size": 6,
+      "request_workers": 6,
+      "sleep_s": 0.2,
+      "min_confidence": 0.65,
+      "args": []
+    },
+    "final": {
+      "enabled": true,
+      "overwrite": true,
+      "train_ratio": 0.9,
+      "split_unit": "triple",
+      "min_confidence": 0.65,
+      "min_method_doc_freq": 1,
+      "triples_path": "",
+      "args": []
+    }
+  }
+}

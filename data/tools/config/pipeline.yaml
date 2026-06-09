@@ -26,13 +26,14 @@ stages:
     enabled: true
     max_doc_chars: 12000
     min_doc_chars: 80
-    overwrite: true
+    resume: true
+    overwrite: false
     args: []
   entities:
     enabled: true
     enable_llm: true
     resume: true
-    overwrite: true
+    overwrite: false
     args: []
   registry:
     enabled: true
@@ -42,7 +43,7 @@ stages:
     enabled: true
     mode: llm
     resume: true
-    overwrite: true
+    overwrite: false
     max_doc_chars: 3500
     max_methods: 40
     max_datasets: 25

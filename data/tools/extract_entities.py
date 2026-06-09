@@ -733,20 +733,11 @@ def main() -> int:
         pbar.set_postfix(processed=n_docs, registry=len(uniq))
         pbar.close()
 
-    if args.overwrite or not entity_registry_path.exists():
-        uniq_items = list(uniq.values())
-        uniq_items.sort(key=lambda x: (x.get("type", ""), x.get("canonical", "")))
-        with entity_registry_path.open("w", encoding="utf-8") as f:
-            for it in uniq_items:
-                f.write(json.dumps(it, ensure_ascii=False) + "\n")
-    else:
-        new_items = []
-        for k, it in uniq.items():
-            new_items.append(it)
-        new_items.sort(key=lambda x: (x.get("type", ""), x.get("canonical", "")))
-        with entity_registry_path.open("w", encoding="utf-8") as f:
-            for it in new_items:
-                f.write(json.dumps(it, ensure_ascii=False) + "\n")
+    uniq_items = list(uniq.values())
+    uniq_items.sort(key=lambda x: (x.get("type", ""), x.get("canonical", "")))
+    with entity_registry_path.open("w", encoding="utf-8") as f:
+        for it in uniq_items:
+            f.write(json.dumps(it, ensure_ascii=False) + "\n")
 
     stats = {
         "created_at": _utc_now_iso(),
