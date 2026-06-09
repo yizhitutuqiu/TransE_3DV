@@ -29,6 +29,11 @@ from typing import Any, Dict, Iterable, List, Optional, Sequence, Set, Tuple
 
 import requests
 
+try:
+    from tqdm import tqdm as _tqdm
+except Exception:
+    _tqdm = None
+
 
 ARXIV_NS = {"a": "http://www.w3.org/2005/Atom", "arxiv": "http://arxiv.org/schemas/atom"}
 
@@ -43,6 +48,49 @@ def _sha256_text(s: str) -> str:
 
 def _safe_mkdir(p: Path) -> None:
     p.mkdir(parents=True, exist_ok=True)
+
+
+def _run_tag_now() -> str:
+    return time.strftime("%Y%m%d_%H%M%S")
+
+
+def _progress(total: int, *, desc: str):
+    if _tqdm is None:
+        return None
+    return _tqdm(total=total, desc=desc)
+
+
+def _iter_items_files(cat_dir: Path) -> List[Path]:
+    files: List[Path] = []
+    p0 = cat_dir / "items.jsonl"
+    if p0.exists():
+        files.append(p0)
+    files += sorted(cat_dir.glob("items_*.jsonl"))
+    return files
+
+
+def _read_jsonl_keys_in_dir(cat_dir: Path, key_field: str) -> Set[str]:
+    keys: Set[str] = set()
+    for path in _iter_items_files(cat_dir):
+        with path.open("r", encoding="utf-8", errors="ignore") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    obj = json.loads(line)
+                except json.JSONDecodeError:
+                    continue
+                v = obj.get(key_field)
+                if isinstance(v, str) and v:
+                    keys.add(v)
+    return keys
+
+
+def _append_jsonl_line(path: Path, obj: Dict[str, Any]) -> None:
+    with path.open("a", encoding="utf-8") as f:
+        f.write(json.dumps(obj, ensure_ascii=False) + "\n")
+        f.flush()
 
 
 def _read_jsonl_keys(path: Path, key_field: str) -> Set[str]:
@@ -295,6 +343,7 @@ def crawl_arxiv_for_category(
     *,
     cfg: CategoryConfig,
     out_dir: Path,
+    items_filename: str,
     max_items: int,
     per_page: int,
     sleep_s: float,
@@ -306,13 +355,14 @@ def crawl_arxiv_for_category(
     connect_timeout_s: int,
     arxiv_base_urls: Sequence[str],
     dry_run: bool,
+    pbar: Any,
 ) -> int:
-    out_path = out_dir / "items.jsonl"
+    out_path = out_dir / items_filename
     _safe_mkdir(out_dir)
-    existing = _read_jsonl_keys(out_path, "arxiv_id")
+    existing = _read_jsonl_keys_in_dir(out_dir, "arxiv_id")
 
     user_agent = "zstp_final-corpus-crawler/1.0 (mailto:local)"
-    new_items: List[Dict[str, Any]] = []
+    appended = 0
 
     if dry_run:
         yr = ""
@@ -391,7 +441,10 @@ def crawl_arxiv_for_category(
                         "year": it.pop("_year", year),
                     }
                 )
-                new_items.append(it)
+                _append_jsonl_line(out_path, it)
+                appended += 1
+                if pbar is not None:
+                    pbar.update(1)
                 existing.add(aid)
     else:
         remaining = max_items
@@ -426,7 +479,10 @@ def crawl_arxiv_for_category(
                             "retrieved_at": ts,
                         }
                     )
-                    new_items.append(it)
+                    _append_jsonl_line(out_path, it)
+                    appended += 1
+                    if pbar is not None:
+                        pbar.update(1)
                     existing.add(it["arxiv_id"])
                     remaining -= 1
                     if remaining <= 0:
@@ -434,7 +490,7 @@ def crawl_arxiv_for_category(
                 start += batch_size
                 time.sleep(max(sleep_s, 0.0))
 
-    return _append_jsonl(out_path, new_items)
+    return appended
 
 
 def github_headers() -> Dict[str, str]:
@@ -497,22 +553,24 @@ def crawl_github_for_category(
     *,
     cfg: CategoryConfig,
     out_dir: Path,
+    items_filename: str,
     max_items: int,
     per_page: int,
     sleep_s: float,
     max_readme_chars: int,
     dry_run: bool,
+    pbar: Any,
 ) -> int:
-    out_path = out_dir / "items.jsonl"
+    out_path = out_dir / items_filename
     _safe_mkdir(out_dir)
-    existing = _read_jsonl_keys(out_path, "repo_full_name")
+    existing = _read_jsonl_keys_in_dir(out_dir, "repo_full_name")
 
     if dry_run:
         print(f"[github][{cfg.slug}] queries={len(cfg.github_queries)} out={out_path}")
         return 0
 
     remaining = max_items
-    new_items: List[Dict[str, Any]] = []
+    appended = 0
 
     for q in cfg.github_queries:
         if remaining <= 0:
@@ -554,7 +612,10 @@ def crawl_github_for_category(
                     "readme_text": readme_text,
                     "readme_sha256": _sha256_text(readme_text),
                 }
-                new_items.append(item)
+                _append_jsonl_line(out_path, item)
+                appended += 1
+                if pbar is not None:
+                    pbar.update(1)
                 existing.add(full_name)
                 remaining -= 1
                 if remaining <= 0:
@@ -566,7 +627,7 @@ def crawl_github_for_category(
                 break
             page += 1
 
-    return _append_jsonl(out_path, new_items)
+    return appended
 
 
 def main() -> int:
@@ -582,6 +643,7 @@ def main() -> int:
     ap.add_argument("--category", choices=["all", "pose_estimation", "3d_generation", "4d_reconstruction"], default="all")
     ap.add_argument("--max_papers", type=int, default=400)
     ap.add_argument("--max_repos", type=int, default=200)
+    ap.add_argument("--run_tag", type=str, default="", help="Suffix tag for new items_<tag>.jsonl files")
     ap.add_argument("--arxiv_per_page", type=int, default=100)
     ap.add_argument("--github_per_page", type=int, default=50)
     ap.add_argument("--github_min_stars", type=int, default=50)
@@ -607,6 +669,8 @@ def main() -> int:
     readme_root = out_root / "readme"
     _safe_mkdir(paper_root)
     _safe_mkdir(readme_root)
+    run_tag = str(args.run_tag).strip() or _run_tag_now()
+    items_filename = f"items_{run_tag}.jsonl"
 
     cfgs = build_category_configs(args.github_min_stars)
     if args.category != "all":
@@ -619,11 +683,11 @@ def main() -> int:
     if args.overwrite:
         for c in cfgs:
             if args.mode in ("all", "paper"):
-                p = paper_root / c.slug / "items.jsonl"
+                p = paper_root / c.slug / items_filename
                 if p.exists():
                     p.unlink()
             if args.mode in ("all", "readme"):
-                p = readme_root / c.slug / "items.jsonl"
+                p = readme_root / c.slug / items_filename
                 if p.exists():
                     p.unlink()
 
@@ -631,13 +695,14 @@ def main() -> int:
     total_repos = 0
 
     if args.mode in ("all", "paper"):
-        per_cat = max(1, args.max_papers // max(len(cfgs), 1))
+        pbar = _progress(max(0, int(args.max_papers)), desc="crawl:papers:new")
         for c in cfgs:
             n = crawl_arxiv_for_category(
                 session,
                 cfg=c,
                 out_dir=paper_root / c.slug,
-                max_items=per_cat,
+                items_filename=items_filename,
+                max_items=max(0, int(args.max_papers) - total_papers),
                 per_page=max(1, args.arxiv_per_page),
                 sleep_s=args.sleep_s,
                 year_start=args.year_start,
@@ -648,23 +713,34 @@ def main() -> int:
                 connect_timeout_s=max(1, int(args.connect_timeout_s)),
                 arxiv_base_urls=arxiv_base_urls,
                 dry_run=args.dry_run,
+                pbar=pbar,
             )
             total_papers += n
+            if total_papers >= max(0, int(args.max_papers)):
+                break
+        if pbar is not None:
+            pbar.close()
 
     if args.mode in ("all", "readme"):
-        per_cat = max(1, args.max_repos // max(len(cfgs), 1))
+        pbar = _progress(max(0, int(args.max_repos)), desc="crawl:readmes:new")
         for c in cfgs:
             n = crawl_github_for_category(
                 session,
                 cfg=c,
                 out_dir=readme_root / c.slug,
-                max_items=per_cat,
+                items_filename=items_filename,
+                max_items=max(0, int(args.max_repos) - total_repos),
                 per_page=max(1, min(args.github_per_page, 100)),
                 sleep_s=args.sleep_s,
                 max_readme_chars=max(1, args.max_readme_chars),
                 dry_run=args.dry_run,
+                pbar=pbar,
             )
             total_repos += n
+            if total_repos >= max(0, int(args.max_repos)):
+                break
+        if pbar is not None:
+            pbar.close()
 
     print(json.dumps({"papers_appended": total_papers, "readmes_appended": total_repos}, ensure_ascii=False))
     return 0

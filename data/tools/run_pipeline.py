@@ -271,11 +271,15 @@ def main() -> int:
     build_triples_llm_py = scripts_root / "build_triples_llm.py"
     build_final_py = scripts_root / "build_final_dataset.py"
 
+    run_tag = run_dir.name
+    crawl_enabled = _bool(stages.get("crawl", {}).get("enabled"), True)
+
     if _bool(stages.get("crawl", {}).get("enabled"), True):
         c = stages.get("crawl", {}) or {}
         argv = _python_cmd(crawl_py)
         argv += _as_list(c.get("args"))
         argv += ["--out_root", str(raw_root)]
+        argv += ["--run_tag", str(run_tag)]
         argv += ["--mode", str(c.get("mode", "all"))]
         if c.get("max_papers") is not None:
             argv += ["--max_papers", str(c.get("max_papers"))]
@@ -299,6 +303,8 @@ def main() -> int:
         argv += _as_list(p.get("args"))
         argv += ["--raw_root", str(raw_root)]
         argv += ["--out_dir", str(pre_text)]
+        if crawl_enabled:
+            argv += ["--raw_run_tag", str(run_tag)]
         if p.get("max_doc_chars") is not None:
             argv += ["--max_doc_chars", str(p.get("max_doc_chars"))]
         if p.get("min_doc_chars") is not None:
