@@ -1,0 +1,16 @@
+{
+  "3dgs": "3d gaussian splatting",
+  "3d gaussian splatting": "3d gaussian splatting",
+  "gaussian splatting": "3d gaussian splatting",
+  "nerf": "nerf",
+  "neural radiance field": "nerf",
+  "neural radiance fields": "nerf",
+  "mip-nerf": "mip-nerf",
+  "instant-ngp": "instant-ngp",
+  "splatting": "3d gaussian splatting",
+  "sfm": "structure from motion",
+  "structure from motion": "structure from motion",
+  "mvs": "multi-view stereo",
+  "multi-view stereo": "multi-view stereo",
+  "slam": "slam"
+}

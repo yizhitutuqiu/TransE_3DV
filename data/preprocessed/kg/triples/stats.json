@@ -1,0 +1,18 @@
+{
+  "created_at": "2026-06-09T09:25:15.353374+00:00",
+  "documents_path": "/data/litengmo/ml-test-1/zstp_final/data/preprocessed/text/documents.jsonl",
+  "doc_entities_path": "/data/litengmo/ml-test-1/zstp_final/data/preprocessed/text/entities/doc_entities.jsonl",
+  "entity_registry_path": "/data/litengmo/ml-test-1/zstp_final/data/preprocessed/kg/entities/entity_registry.jsonl",
+  "out_dir": "/data/litengmo/ml-test-1/zstp_final/data/preprocessed/kg/triples",
+  "triples_path": "/data/litengmo/ml-test-1/zstp_final/data/preprocessed/kg/triples/triples.jsonl",
+  "triple_count": 11882,
+  "by_relation": {
+    "paper_proposes_method": 2939,
+    "method_targets_task": 4276,
+    "method_uses_dataset": 1572,
+    "paper_has_repo": 5,
+    "repo_implements_method": 3090
+  },
+  "enable_paper_has_repo": true,
+  "enable_method_uses_dataset": true
+}
