@@ -15,6 +15,15 @@ def _ts() -> str:
     return time.strftime("%Y%m%d_%H%M%S")
 
 
+def _iso_now() -> str:
+    return time.strftime("%Y-%m-%dT%H:%M:%S%z")
+
+
+def _log(event: str, **fields: Any) -> None:
+    payload = {"ts": _iso_now(), "event": event, **fields}
+    print(json.dumps(payload, ensure_ascii=False), file=sys.stderr, flush=True)
+
+
 def _load_yaml(path: Path) -> Dict[str, Any]:
     import yaml
 
@@ -61,14 +70,32 @@ def _ensure_dir(p: Path) -> None:
 def _run(
     argv: List[str],
     *,
+    stage: str,
     cwd: Path,
     env: Dict[str, str],
     dry_run: bool,
+    heartbeat_s: float,
 ) -> None:
     if dry_run:
         print(json.dumps({"cwd": str(cwd), "argv": argv}, ensure_ascii=False))
         return
-    subprocess.run(argv, cwd=str(cwd), env=env, check=True)
+    _log("proc_start", stage=stage, cwd=str(cwd), argv=argv)
+    t0 = time.time()
+    hb = max(float(heartbeat_s), 0.0)
+    p = subprocess.Popen(argv, cwd=str(cwd), env=env)
+    while True:
+        if hb <= 0:
+            rc = p.wait()
+            break
+        try:
+            rc = p.wait(timeout=hb)
+            break
+        except subprocess.TimeoutExpired:
+            _log("heartbeat", stage=stage, pid=p.pid, elapsed_s=round(time.time() - t0, 3))
+            continue
+    _log("proc_end", stage=stage, pid=p.pid, returncode=rc, elapsed_s=round(time.time() - t0, 3))
+    if rc != 0:
+        raise subprocess.CalledProcessError(rc, argv)
 
 
 def _python_cmd(script: Path) -> List[str]:
@@ -160,15 +187,20 @@ def _run_stage(
     env: Dict[str, str],
     dry_run: bool,
     run_dir: Path,
+    heartbeat_s: float,
 ) -> None:
     marker = _stage_marker(run_dir, stage)
     if marker.exists() and _validate_outputs(data_dir, stage):
+        _log("stage_skip", stage=stage, run_dir=str(run_dir))
         return
-    _run(argv, cwd=repo_root, env=env, dry_run=dry_run)
+    _log("stage_start", stage=stage, run_dir=str(run_dir))
+    _run(argv, stage=stage, cwd=repo_root, env=env, dry_run=dry_run, heartbeat_s=heartbeat_s)
     if not dry_run and not _validate_outputs(data_dir, stage):
+        _log("stage_validation_failed", stage=stage, run_dir=str(run_dir))
         raise RuntimeError(f"stage validation failed: {stage}")
     if not dry_run:
         marker.write_text(json.dumps({"stage": stage, "finished_at": time.time()}, ensure_ascii=False) + "\n", encoding="utf-8")
+    _log("stage_done", stage=stage, run_dir=str(run_dir))
 
 
 def main() -> int:
@@ -187,6 +219,8 @@ def main() -> int:
     paths = cfg.get("paths", {}) or {}
     stages = cfg.get("stages", {}) or {}
     env_cfg = cfg.get("env", {}) or {}
+    logging_cfg = cfg.get("logging", {}) or {}
+    heartbeat_s = float(logging_cfg.get("heartbeat_s", 30))
 
     data_dir = _resolve_path(paths.get("data_dir", "data"), base=repo_root)
     raw_root = _resolve_path(paths.get("raw_root", "data/raw"), base=repo_root)
@@ -206,6 +240,19 @@ def main() -> int:
         _ensure_dir(run_dir)
         _write_json(state_path, {"status": "in_progress", "run_dir": str(run_dir), "created_at": time.strftime("%Y-%m-%dT%H:%M:%S%z")})
     _ensure_dir(run_dir)
+    _log(
+        "pipeline_start",
+        repo_root=str(repo_root),
+        config_path=str(Path(args.config).resolve()),
+        run_dir=str(run_dir),
+        data_dir=str(data_dir),
+        raw_root=str(raw_root),
+        pre_text_dir=str(pre_text),
+        pre_kg_dir=str(pre_kg),
+        final_dir=str(final_dir),
+        heartbeat_s=heartbeat_s,
+        dry_run=bool(args.dry_run),
+    )
 
     env = os.environ.copy()
     for k, v in env_cfg.items():
@@ -244,7 +291,7 @@ def main() -> int:
             argv += ["--overwrite"]
         _ensure_dir(raw_root / "paper")
         _ensure_dir(raw_root / "readme")
-        _run_stage(stage="crawl", argv=argv, repo_root=repo_root, data_dir=data_dir, env=env, dry_run=bool(args.dry_run), run_dir=run_dir)
+        _run_stage(stage="crawl", argv=argv, repo_root=repo_root, data_dir=data_dir, env=env, dry_run=bool(args.dry_run), run_dir=run_dir, heartbeat_s=heartbeat_s)
 
     if _bool(stages.get("preprocess", {}).get("enabled"), True):
         p = stages.get("preprocess", {}) or {}
@@ -261,7 +308,7 @@ def main() -> int:
         if _bool(p.get("overwrite"), True):
             argv += ["--overwrite"]
         _ensure_dir(pre_text)
-        _run_stage(stage="preprocess", argv=argv, repo_root=repo_root, data_dir=data_dir, env=env, dry_run=bool(args.dry_run), run_dir=run_dir)
+        _run_stage(stage="preprocess", argv=argv, repo_root=repo_root, data_dir=data_dir, env=env, dry_run=bool(args.dry_run), run_dir=run_dir, heartbeat_s=heartbeat_s)
 
     if _bool(stages.get("entities", {}).get("enabled"), True):
         e = stages.get("entities", {}) or {}
@@ -273,7 +320,7 @@ def main() -> int:
             argv += ["--resume"]
         if _bool(e.get("enable_llm"), False):
             argv += ["--enable_llm"]
-        _run_stage(stage="entities", argv=argv, repo_root=repo_root, data_dir=data_dir, env=env, dry_run=bool(args.dry_run), run_dir=run_dir)
+        _run_stage(stage="entities", argv=argv, repo_root=repo_root, data_dir=data_dir, env=env, dry_run=bool(args.dry_run), run_dir=run_dir, heartbeat_s=heartbeat_s)
 
     if _bool(stages.get("registry", {}).get("enabled"), True):
         r = stages.get("registry", {}) or {}
@@ -282,7 +329,7 @@ def main() -> int:
         if _bool(r.get("overwrite"), True):
             argv += ["--overwrite"]
         _ensure_dir(pre_kg / "entities")
-        _run_stage(stage="registry", argv=argv, repo_root=repo_root, data_dir=data_dir, env=env, dry_run=bool(args.dry_run), run_dir=run_dir)
+        _run_stage(stage="registry", argv=argv, repo_root=repo_root, data_dir=data_dir, env=env, dry_run=bool(args.dry_run), run_dir=run_dir, heartbeat_s=heartbeat_s)
 
     triples_mode = str((stages.get("triples", {}) or {}).get("mode", "llm")).strip().lower()
     if _bool(stages.get("triples", {}).get("enabled"), True):
@@ -311,7 +358,7 @@ def main() -> int:
             if t.get("min_confidence") is not None:
                 argv += ["--min_confidence", str(t.get("min_confidence"))]
             _ensure_dir(pre_kg / "triples_llm")
-            _run_stage(stage="triples_llm", argv=argv, repo_root=repo_root, data_dir=data_dir, env=env, dry_run=bool(args.dry_run), run_dir=run_dir)
+            _run_stage(stage="triples_llm", argv=argv, repo_root=repo_root, data_dir=data_dir, env=env, dry_run=bool(args.dry_run), run_dir=run_dir, heartbeat_s=heartbeat_s)
         else:
             argv = _python_cmd(build_triples_py)
             argv += _as_list(t.get("args"))
@@ -322,7 +369,7 @@ def main() -> int:
             if _bool(t.get("enable_method_uses_dataset"), False):
                 argv += ["--enable_method_uses_dataset"]
             _ensure_dir(pre_kg / "triples")
-            _run_stage(stage="triples_rules", argv=argv, repo_root=repo_root, data_dir=data_dir, env=env, dry_run=bool(args.dry_run), run_dir=run_dir)
+            _run_stage(stage="triples_rules", argv=argv, repo_root=repo_root, data_dir=data_dir, env=env, dry_run=bool(args.dry_run), run_dir=run_dir, heartbeat_s=heartbeat_s)
 
     if _bool(stages.get("final", {}).get("enabled"), True):
         f = stages.get("final", {}) or {}
@@ -349,11 +396,12 @@ def main() -> int:
             else:
                 argv += ["--triples_path", str(pre_kg / "triples" / "triples.jsonl")]
         _ensure_dir(final_dir)
-        _run_stage(stage="final", argv=argv, repo_root=repo_root, data_dir=data_dir, env=env, dry_run=bool(args.dry_run), run_dir=run_dir)
+        _run_stage(stage="final", argv=argv, repo_root=repo_root, data_dir=data_dir, env=env, dry_run=bool(args.dry_run), run_dir=run_dir, heartbeat_s=heartbeat_s)
 
     (run_dir / "config_snapshot.json").write_text(json.dumps(_redact(cfg), ensure_ascii=False, indent=2), encoding="utf-8")
     if not args.dry_run:
         _write_json(state_path, {"status": "done", "run_dir": str(run_dir), "finished_at": time.strftime("%Y-%m-%dT%H:%M:%S%z")})
+    _log("pipeline_done", run_dir=str(run_dir))
     print(str(run_dir))
     return 0
 
