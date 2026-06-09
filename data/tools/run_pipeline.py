@@ -75,6 +75,18 @@ def _python_cmd(script: Path) -> List[str]:
     return [sys.executable, str(script)]
 
 
+def _resolve_path(p: Any, *, base: Path) -> Path:
+    if p is None:
+        return base
+    s = str(p).strip()
+    if not s:
+        return base
+    pp = Path(s).expanduser()
+    if pp.is_absolute():
+        return pp.resolve()
+    return (base / pp).resolve()
+
+
 def _read_text_if_exists(p: Path) -> str:
     if not p.exists():
         return ""
@@ -176,13 +188,13 @@ def main() -> int:
     stages = cfg.get("stages", {}) or {}
     env_cfg = cfg.get("env", {}) or {}
 
-    data_dir = Path(paths.get("data_dir", repo_root / "data")).resolve()
-    raw_root = Path(paths.get("raw_root", data_dir / "raw")).resolve()
-    pre_text = Path(paths.get("pre_text_dir", data_dir / "preprocessed" / "text")).resolve()
-    pre_kg = Path(paths.get("pre_kg_dir", data_dir / "preprocessed" / "kg")).resolve()
-    final_dir = Path(paths.get("final_dir", data_dir / "preprocessed" / "final")).resolve()
+    data_dir = _resolve_path(paths.get("data_dir", "data"), base=repo_root)
+    raw_root = _resolve_path(paths.get("raw_root", "data/raw"), base=repo_root)
+    pre_text = _resolve_path(paths.get("pre_text_dir", "data/preprocessed/text"), base=repo_root)
+    pre_kg = _resolve_path(paths.get("pre_kg_dir", "data/preprocessed/kg"), base=repo_root)
+    final_dir = _resolve_path(paths.get("final_dir", "data/preprocessed/final"), base=repo_root)
 
-    run_root = Path(paths.get("run_root", data_dir / "preprocessed" / "pipeline_runs")).resolve()
+    run_root = _resolve_path(paths.get("run_root", "data/preprocessed/pipeline_runs"), base=repo_root)
     _ensure_dir(run_root)
     state_path = run_root / "last_run.json"
     state = _load_json(state_path)

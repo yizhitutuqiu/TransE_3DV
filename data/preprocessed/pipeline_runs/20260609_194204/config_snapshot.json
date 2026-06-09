@@ -1,15 +1,15 @@
 {
   "paths": {
-    "data_dir": "/data/litengmo/ml-test-1/zstp_final/data",
-    "raw_root": "/data/litengmo/ml-test-1/zstp_final/data/raw",
-    "pre_text_dir": "/data/litengmo/ml-test-1/zstp_final/data/preprocessed/text",
-    "pre_kg_dir": "/data/litengmo/ml-test-1/zstp_final/data/preprocessed/kg",
-    "final_dir": "/data/litengmo/ml-test-1/zstp_final/data/preprocessed/final",
-    "run_root": "/data/litengmo/ml-test-1/zstp_final/data/preprocessed/pipeline_runs"
+    "data_dir": "data",
+    "raw_root": "data/raw",
+    "pre_text_dir": "data/preprocessed/text",
+    "pre_kg_dir": "data/preprocessed/kg",
+    "final_dir": "data/preprocessed/final",
+    "run_root": "data/preprocessed/pipeline_runs"
   },
   "env": {
-    "GITHUB_TOKEN": "${GITHUB_TOKEN}",
-    "ARK_API_KEY": "${ARK_API_KEY}",
+    "GITHUB_TOKEN": "<redacted>",
+    "ARK_API_KEY": "<redacted>",
     "ARK_MODEL": "${ARK_MODEL}",
     "ARK_BASE_URL": "${ARK_BASE_URL}",
     "ARK_API_MODE": "${ARK_API_MODE}"
