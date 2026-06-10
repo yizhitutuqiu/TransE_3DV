@@ -1,4 +1,4 @@
-checkpoints/
 output/
+checkpoints/
 
 *.pyc

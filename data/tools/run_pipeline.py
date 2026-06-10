@@ -221,7 +221,7 @@ def main() -> int:
     stages = cfg.get("stages", {}) or {}
     env_cfg = cfg.get("env", {}) or {}
     logging_cfg = cfg.get("logging", {}) or {}
-    heartbeat_s = float(logging_cfg.get("heartbeat_s", 30))
+    heartbeat_s = float(logging_cfg.get("heartbeat_s", 0))
 
     data_dir = _resolve_path(paths.get("data_dir", "data"), base=repo_root)
     raw_root = _resolve_path(paths.get("raw_root", "data/raw"), base=repo_root)

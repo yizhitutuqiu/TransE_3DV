@@ -171,12 +171,34 @@ def semantic_scholar_refresh_items_jsonl(
     timeout_s: int,
     connect_timeout_s: int,
     sleep_s: float,
-) -> Dict[str, int]:
+) -> Dict[str, Any]:
     if not items_path.exists():
         return {"scanned": 0, "updated": 0}
     tmp = items_path.with_suffix(items_path.suffix + ".tmp")
+    cache_path = items_path.parent / "semantic_scholar_cache.jsonl"
+    cache: Dict[str, Dict[str, Any]] = {}
+    if cache_path.exists():
+        with cache_path.open("r", encoding="utf-8", errors="ignore") as cf:
+            for line in cf:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    it = json.loads(line)
+                except json.JSONDecodeError:
+                    continue
+                if not isinstance(it, dict):
+                    continue
+                aid = it.get("arxiv_id")
+                if isinstance(aid, str) and aid.strip():
+                    cache[aid.strip()] = it
+
     scanned = 0
     updated = 0
+    ok = 0
+    not_found = 0
+    failed = 0
+    skipped = 0
     total = 0
     with items_path.open("r", encoding="utf-8", errors="ignore") as f:
         for _ in f:
@@ -201,21 +223,78 @@ def semantic_scholar_refresh_items_jsonl(
                 aid = obj.get("arxiv_id")
                 need = ("citation_count" not in obj) or ("references_arxiv" not in obj)
                 if need and isinstance(aid, str) and aid.strip():
-                    extra = semantic_scholar_fetch_paper_by_arxiv(
-                        session,
-                        arxiv_id=aid,
-                        timeout_s=timeout_s,
-                        connect_timeout_s=connect_timeout_s,
-                        sleep_s=sleep_s,
-                    )
-                    if extra:
-                        obj.update(extra)
-                        updated += 1
+                    aid = aid.strip()
+                    cached = cache.get(aid) or {}
+                    cache_ok = cached.get("ok")
+                    cache_retries = cached.get("retries") if isinstance(cached.get("retries"), int) else 0
+                    cached_data = {k: v for k, v in cached.items() if k in {"citation_count", "reference_count", "references_arxiv"}}
+
+                    if cache_ok is True:
+                        if cached_data:
+                            obj.update(cached_data)
+                            updated += 1
+                        obj["semantic_scholar"] = {k: v for k, v in cached.items() if k in {"ok", "status", "retries", "last_error", "updated_at"}}
+                        if str(cached.get("status") or "") == "not_found":
+                            not_found += 1
+                        else:
+                            ok += 1
+                    elif cache_ok is False and cache_retries >= 10:
+                        obj["semantic_scholar"] = {k: v for k, v in cached.items() if k in {"ok", "status", "retries", "last_error", "updated_at"}}
+                        failed += 1
+                        skipped += 1
+                    else:
+                        attempts = 0
+                        last_error = ""
+                        extra: Dict[str, Any] = {}
+                        success = False
+                        for i_try in range(1, 11):
+                            attempts = i_try
+                            try:
+                                extra = semantic_scholar_fetch_paper_by_arxiv(
+                                    session,
+                                    arxiv_id=aid,
+                                    timeout_s=timeout_s,
+                                    connect_timeout_s=connect_timeout_s,
+                                    sleep_s=sleep_s,
+                                )
+                                success = True
+                                break
+                            except Exception as e:
+                                last_error = f"{type(e).__name__}:{str(e)[:200]}"
+                                continue
+
+                        status = "ok"
+                        if success and not extra:
+                            status = "not_found"
+                        if not success:
+                            status = "failed"
+
+                        entry: Dict[str, Any] = {"arxiv_id": aid, "ok": bool(success), "status": status, "retries": int(attempts), "updated_at": _utc_now_iso()}
+                        if last_error:
+                            entry["last_error"] = last_error
+                        if extra:
+                            entry.update(extra)
+
+                        with cache_path.open("a", encoding="utf-8") as cf:
+                            cf.write(json.dumps(entry, ensure_ascii=False) + "\n")
+                        cache[aid] = entry
+
+                        if success:
+                            obj["semantic_scholar"] = {k: v for k, v in entry.items() if k in {"ok", "status", "retries", "last_error", "updated_at"}}
+                            if extra:
+                                obj.update(extra)
+                                updated += 1
+                                ok += 1
+                            else:
+                                not_found += 1
+                        else:
+                            obj["semantic_scholar"] = {k: v for k, v in entry.items() if k in {"ok", "status", "retries", "last_error", "updated_at"}}
+                            failed += 1
                 fout.write(json.dumps(obj, ensure_ascii=False) + "\n")
     finally:
         fin.close()
     tmp.replace(items_path)
-    return {"scanned": scanned, "updated": updated}
+    return {"scanned": scanned, "updated": updated, "ok": ok, "not_found": not_found, "failed": failed, "skipped": skipped, "cache_path": str(cache_path)}
 
 
 def _request_with_backoff(
@@ -253,7 +332,8 @@ def _request_with_backoff(
                     sleep_s = float(retry_after.strip())
                 else:
                     sleep_s = base_sleep_s * (2**i)
-                time.sleep(min(sleep_s, 30))
+                cap = 120 if int(resp.status_code) == 429 else 30
+                time.sleep(min(sleep_s, cap))
                 continue
             return resp
         except Exception as e:
@@ -555,15 +635,18 @@ def crawl_arxiv_for_category(
                     }
                 )
                 if enable_semantic_scholar:
-                    extra = semantic_scholar_fetch_paper_by_arxiv(
-                        session,
-                        arxiv_id=aid,
-                        timeout_s=request_timeout_s,
-                        connect_timeout_s=connect_timeout_s,
-                        sleep_s=1.0,
-                    )
-                    if extra:
-                        it.update(extra)
+                    try:
+                        extra = semantic_scholar_fetch_paper_by_arxiv(
+                            session,
+                            arxiv_id=aid,
+                            timeout_s=request_timeout_s,
+                            connect_timeout_s=connect_timeout_s,
+                            sleep_s=1.0,
+                        )
+                        if extra:
+                            it.update(extra)
+                    except Exception:
+                        pass
                 _append_jsonl_line(out_path, it)
                 appended += 1
                 if pbar is not None:
@@ -603,15 +686,18 @@ def crawl_arxiv_for_category(
                         }
                     )
                     if enable_semantic_scholar:
-                        extra = semantic_scholar_fetch_paper_by_arxiv(
-                            session,
-                            arxiv_id=str(it.get("arxiv_id") or ""),
-                            timeout_s=request_timeout_s,
-                            connect_timeout_s=connect_timeout_s,
-                            sleep_s=1.0,
-                        )
-                        if extra:
-                            it.update(extra)
+                        try:
+                            extra = semantic_scholar_fetch_paper_by_arxiv(
+                                session,
+                                arxiv_id=str(it.get("arxiv_id") or ""),
+                                timeout_s=request_timeout_s,
+                                connect_timeout_s=connect_timeout_s,
+                                sleep_s=1.0,
+                            )
+                            if extra:
+                                it.update(extra)
+                        except Exception:
+                            pass
                     _append_jsonl_line(out_path, it)
                     appended += 1
                     if pbar is not None:
