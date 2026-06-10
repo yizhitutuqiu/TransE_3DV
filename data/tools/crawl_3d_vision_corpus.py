@@ -111,7 +111,10 @@ def semantic_scholar_fetch_paper_by_arxiv(
     arxiv_id: str,
     timeout_s: int,
     connect_timeout_s: int,
+    sleep_s: float,
 ) -> Dict[str, Any]:
+    if sleep_s > 0:
+        time.sleep(float(sleep_s))
     aid = _normalize_arxiv_id_text(arxiv_id)
     url = f"https://api.semanticscholar.org/graph/v1/paper/ARXIV:{urllib.parse.quote(aid)}"
     params = {
@@ -167,37 +170,50 @@ def semantic_scholar_refresh_items_jsonl(
     items_path: Path,
     timeout_s: int,
     connect_timeout_s: int,
+    sleep_s: float,
 ) -> Dict[str, int]:
     if not items_path.exists():
         return {"scanned": 0, "updated": 0}
     tmp = items_path.with_suffix(items_path.suffix + ".tmp")
     scanned = 0
     updated = 0
-    with items_path.open("r", encoding="utf-8", errors="ignore") as fin, tmp.open("w", encoding="utf-8") as fout:
-        for line in fin:
-            line = line.strip()
-            if not line:
-                continue
-            try:
-                obj = json.loads(line)
-            except json.JSONDecodeError:
-                continue
-            if not isinstance(obj, dict):
-                continue
-            scanned += 1
-            aid = obj.get("arxiv_id")
-            need = ("citation_count" not in obj) or ("references_arxiv" not in obj)
-            if need and isinstance(aid, str) and aid.strip():
-                extra = semantic_scholar_fetch_paper_by_arxiv(
-                    session,
-                    arxiv_id=aid,
-                    timeout_s=timeout_s,
-                    connect_timeout_s=connect_timeout_s,
-                )
-                if extra:
-                    obj.update(extra)
-                    updated += 1
-            fout.write(json.dumps(obj, ensure_ascii=False) + "\n")
+    total = 0
+    with items_path.open("r", encoding="utf-8", errors="ignore") as f:
+        for _ in f:
+            total += 1
+    fin = items_path.open("r", encoding="utf-8", errors="ignore")
+    try:
+        it = fin
+        if _tqdm is not None:
+            it = _tqdm(it, total=total, desc=f"s2:refresh:{items_path.parent.name}")
+        with tmp.open("w", encoding="utf-8") as fout:
+            for line in it:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    obj = json.loads(line)
+                except json.JSONDecodeError:
+                    continue
+                if not isinstance(obj, dict):
+                    continue
+                scanned += 1
+                aid = obj.get("arxiv_id")
+                need = ("citation_count" not in obj) or ("references_arxiv" not in obj)
+                if need and isinstance(aid, str) and aid.strip():
+                    extra = semantic_scholar_fetch_paper_by_arxiv(
+                        session,
+                        arxiv_id=aid,
+                        timeout_s=timeout_s,
+                        connect_timeout_s=connect_timeout_s,
+                        sleep_s=sleep_s,
+                    )
+                    if extra:
+                        obj.update(extra)
+                        updated += 1
+                fout.write(json.dumps(obj, ensure_ascii=False) + "\n")
+    finally:
+        fin.close()
     tmp.replace(items_path)
     return {"scanned": scanned, "updated": updated}
 
@@ -215,6 +231,8 @@ def _request_with_backoff(
     base_sleep_s: float = 1.5,
 ) -> requests.Response:
     last_exc: Optional[Exception] = None
+    last_status: Optional[int] = None
+    last_text: str = ""
     for i in range(max_retries):
         try:
             resp = session.request(
@@ -225,7 +243,16 @@ def _request_with_backoff(
                 timeout=(connect_timeout_s, timeout_s),
             )
             if resp.status_code in (429, 500, 502, 503, 504):
-                sleep_s = base_sleep_s * (2**i)
+                last_status = int(resp.status_code)
+                try:
+                    last_text = (resp.text or "")[:300]
+                except Exception:
+                    last_text = ""
+                retry_after = resp.headers.get("Retry-After") or resp.headers.get("retry-after")
+                if isinstance(retry_after, str) and retry_after.strip().isdigit():
+                    sleep_s = float(retry_after.strip())
+                else:
+                    sleep_s = base_sleep_s * (2**i)
                 time.sleep(min(sleep_s, 30))
                 continue
             return resp
@@ -236,7 +263,9 @@ def _request_with_backoff(
             continue
     if last_exc is not None:
         raise last_exc
-    raise RuntimeError("request failed with backoff but no exception captured")
+    if last_status is not None:
+        raise RuntimeError(f"request failed after retries: status={last_status} url={url} body={last_text!r}")
+    raise RuntimeError(f"request failed after retries: url={url}")
 
 
 @dataclasses.dataclass(frozen=True)
@@ -531,6 +560,7 @@ def crawl_arxiv_for_category(
                         arxiv_id=aid,
                         timeout_s=request_timeout_s,
                         connect_timeout_s=connect_timeout_s,
+                        sleep_s=1.0,
                     )
                     if extra:
                         it.update(extra)
@@ -578,6 +608,7 @@ def crawl_arxiv_for_category(
                             arxiv_id=str(it.get("arxiv_id") or ""),
                             timeout_s=request_timeout_s,
                             connect_timeout_s=connect_timeout_s,
+                            sleep_s=1.0,
                         )
                         if extra:
                             it.update(extra)
@@ -835,6 +866,7 @@ def main() -> int:
                     items_path=items_path,
                     timeout_s=max(1, int(args.request_timeout_s)),
                     connect_timeout_s=max(1, int(args.connect_timeout_s)),
+                    sleep_s=1.0,
                 )
                 stats["by_category"][c.slug] = r
             print(json.dumps(stats, ensure_ascii=False))
@@ -847,6 +879,7 @@ def main() -> int:
                 items_path=items_path,
                 timeout_s=max(1, int(args.request_timeout_s)),
                 connect_timeout_s=max(1, int(args.connect_timeout_s)),
+                sleep_s=1.0,
             )
             stats["by_category"][c.slug] = r
         print(json.dumps(stats, ensure_ascii=False))
