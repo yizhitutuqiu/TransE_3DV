@@ -445,6 +445,9 @@ def crawl_arxiv_for_category(
     user_agent = "zstp_final-corpus-crawler/1.0 (mailto:local)"
     appended = 0
 
+    if max_items <= 0:
+        return 0
+
     if dry_run:
         yr = ""
         if year_start is not None and year_end is not None:
@@ -667,6 +670,9 @@ def crawl_github_for_category(
         print(f"[github][{cfg.slug}] queries={len(cfg.github_queries)} out={out_path}")
         return 0
 
+    if max_items <= 0:
+        return 0
+
     remaining = max_items
     appended = 0
 
@@ -794,7 +800,7 @@ def main() -> int:
     total_papers = 0
     total_repos = 0
 
-    if args.mode in ("all", "paper"):
+    if args.mode in ("all", "paper") and int(args.max_papers) > 0:
         pbar = _progress(max(0, int(args.max_papers)), desc="crawl:papers:new")
         for c in cfgs:
             n = crawl_arxiv_for_category(
@@ -832,8 +838,20 @@ def main() -> int:
                 )
                 stats["by_category"][c.slug] = r
             print(json.dumps(stats, ensure_ascii=False))
+    elif enable_s2 and bool(args.refresh_semantic_scholar) and not args.dry_run and args.mode in ("all", "paper"):
+        stats = {"event": "semantic_scholar_refresh", "by_category": {}}
+        for c in cfgs:
+            items_path = (paper_root / c.slug / "items.jsonl").resolve()
+            r = semantic_scholar_refresh_items_jsonl(
+                session,
+                items_path=items_path,
+                timeout_s=max(1, int(args.request_timeout_s)),
+                connect_timeout_s=max(1, int(args.connect_timeout_s)),
+            )
+            stats["by_category"][c.slug] = r
+        print(json.dumps(stats, ensure_ascii=False))
 
-    if args.mode in ("all", "readme"):
+    if args.mode in ("all", "readme") and int(args.max_repos) > 0:
         pbar = _progress(max(0, int(args.max_repos)), desc="crawl:readmes:new")
         for c in cfgs:
             n = crawl_github_for_category(

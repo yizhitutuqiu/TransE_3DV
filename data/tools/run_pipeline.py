@@ -281,11 +281,15 @@ def main() -> int:
         argv += ["--out_root", str(raw_root)]
         if bool(args.refresh):
             argv += ["--refresh_semantic_scholar"]
-        argv += ["--mode", str(c.get("mode", "all"))]
-        if c.get("max_papers") is not None:
-            argv += ["--max_papers", str(c.get("max_papers"))]
-        if c.get("max_repos") is not None:
-            argv += ["--max_repos", str(c.get("max_repos"))]
+            argv += ["--mode", "paper"]
+            argv += ["--max_papers", "0"]
+            argv += ["--max_repos", "0"]
+        else:
+            argv += ["--mode", str(c.get("mode", "all"))]
+            if c.get("max_papers") is not None:
+                argv += ["--max_papers", str(c.get("max_papers"))]
+            if c.get("max_repos") is not None:
+                argv += ["--max_repos", str(c.get("max_repos"))]
         if c.get("github_min_stars") is not None:
             argv += ["--github_min_stars", str(c.get("github_min_stars"))]
         if c.get("year_start") is not None:
