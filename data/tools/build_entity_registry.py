@@ -172,6 +172,11 @@ def main() -> int:
         default=str((_data_dir() / "preprocessed" / "text" / "entities" / "entity_registry_seed.jsonl").resolve()),
     )
     ap.add_argument(
+        "--documents_path",
+        type=str,
+        default=str((_data_dir() / "preprocessed" / "text" / "documents.jsonl").resolve()),
+    )
+    ap.add_argument(
         "--doc_entities_path",
         type=str,
         default=str((_data_dir() / "preprocessed" / "text" / "entities" / "doc_entities.jsonl").resolve()),
@@ -186,6 +191,7 @@ def main() -> int:
     args = ap.parse_args()
 
     seed_path = Path(args.seed_registry_path).resolve()
+    documents_path = Path(args.documents_path).resolve()
     doc_entities_path = Path(args.doc_entities_path).resolve()
     out_dir = Path(args.out_dir).resolve()
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -195,6 +201,33 @@ def main() -> int:
 
     doc_freq: Dict[Tuple[str, str], int] = Counter()
     mention_freq: Dict[Tuple[str, str, str], int] = Counter()
+    paper_metrics: Dict[str, Dict[str, int]] = {}
+
+    if documents_path.exists():
+        total_docs = _count_lines(documents_path)
+        for d in _progress(_iter_jsonl(documents_path), total=total_docs, desc="registry:scan_documents"):
+            doc_id = d.get("doc_id")
+            if not isinstance(doc_id, str) or not doc_id.startswith("arxiv:"):
+                continue
+            aid = doc_id.split(":", 1)[1].strip()
+            if not aid:
+                continue
+            md = d.get("metadata")
+            if not isinstance(md, dict):
+                continue
+            cc = md.get("citation_count")
+            rc = md.get("reference_count")
+            m: Dict[str, int] = {}
+            if isinstance(cc, int):
+                m["citation_count"] = int(cc)
+            if isinstance(rc, int):
+                m["reference_count"] = int(rc)
+            if m:
+                prev = paper_metrics.get(aid) or {}
+                for k, v in m.items():
+                    if v > int(prev.get(k, -1)):
+                        prev[k] = v
+                paper_metrics[aid] = prev
 
     total_docs = _count_lines(doc_entities_path)
     for d in _progress(_iter_jsonl(doc_entities_path), total=total_docs, desc="registry:scan_docs"):
@@ -256,6 +289,8 @@ def main() -> int:
             "stats": {"doc_freq": int(doc_freq.get((typ, canonical), 0))},
             "created_at": _utc_now_iso(),
         }
+        if typ == "Paper" and canonical in paper_metrics:
+            entry["metrics"] = dict(paper_metrics[canonical])
         registry.append(entry)
         by_type[typ] += 1
 
@@ -281,4 +316,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

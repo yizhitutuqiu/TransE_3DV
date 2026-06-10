@@ -273,6 +273,13 @@ def _load_documents(documents_path: Path, *, max_chars: int) -> Dict[str, Dict[s
         doc_id = d.get("doc_id")
         if not isinstance(doc_id, str) or not doc_id:
             continue
+        md = d.get("metadata") if isinstance(d.get("metadata"), dict) else {}
+        refs = md.get("references_arxiv") if isinstance(md, dict) else None
+        refs_out: List[str] = []
+        if isinstance(refs, list):
+            for r in refs:
+                if isinstance(r, str) and r.strip():
+                    refs_out.append(r.strip())
         text = d.get("text") if isinstance(d.get("text"), str) else ""
         title = d.get("title") if isinstance(d.get("title"), str) else ""
         full = _normalize_ws(f"{title}\n\n{text}")
@@ -285,6 +292,7 @@ def _load_documents(documents_path: Path, *, max_chars: int) -> Dict[str, Dict[s
             "category_zh": d.get("category_zh"),
             "title": title,
             "text": full,
+            "references_arxiv": refs_out,
         }
     return doc_map
 
@@ -739,6 +747,39 @@ def main() -> int:
     if pbar is not None:
         pbar.close()
 
+    cite_added = 0
+    for doc_id, doc in doc_map.items():
+        if not isinstance(doc_id, str) or not doc_id.startswith("arxiv:"):
+            continue
+        if str(doc.get("doc_type") or "") != "paper":
+            continue
+        aid = doc_id.split(":", 1)[1].strip()
+        if not aid:
+            continue
+        h = paper_by_arxiv.get(aid)
+        if not h:
+            continue
+        refs = doc.get("references_arxiv") if isinstance(doc, dict) else None
+        if not isinstance(refs, list):
+            continue
+        for rid in refs:
+            if not isinstance(rid, str) or not rid.strip():
+                continue
+            t = paper_by_arxiv.get(rid.strip())
+            if not t:
+                continue
+            k = (h, "paper_cites_paper", t)
+            if k in triple_seen:
+                continue
+            triple_seen.add(k)
+            _append_jsonl_line(
+                triples_path,
+                {"h": h, "r": "paper_cites_paper", "t": t, "doc_id": doc_id, "confidence": 1.0, "source": "semantic_scholar"},
+                lock=lock,
+            )
+            rel_counter["paper_cites_paper"] += 1
+            cite_added += 1
+
     stats = {
         "created_at": _utc_now_iso(),
         "documents_path": str(documents_path),
@@ -751,6 +792,7 @@ def main() -> int:
         "processed_docs": len(todo_docs),
         "triple_count": int(sum(rel_counter.values())),
         "by_relation": dict(rel_counter),
+        "citation_triples_added": int(cite_added),
         "min_confidence": float(args.min_confidence),
         "batch_size": int(args.batch_size),
         "request_workers": int(args.request_workers),

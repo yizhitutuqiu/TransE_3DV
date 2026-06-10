@@ -50,41 +50,10 @@ def _safe_mkdir(p: Path) -> None:
     p.mkdir(parents=True, exist_ok=True)
 
 
-def _run_tag_now() -> str:
-    return time.strftime("%Y%m%d_%H%M%S")
-
-
 def _progress(total: int, *, desc: str):
     if _tqdm is None:
         return None
     return _tqdm(total=total, desc=desc)
-
-
-def _iter_items_files(cat_dir: Path) -> List[Path]:
-    files: List[Path] = []
-    p0 = cat_dir / "items.jsonl"
-    if p0.exists():
-        files.append(p0)
-    files += sorted(cat_dir.glob("items_*.jsonl"))
-    return files
-
-
-def _read_jsonl_keys_in_dir(cat_dir: Path, key_field: str) -> Set[str]:
-    keys: Set[str] = set()
-    for path in _iter_items_files(cat_dir):
-        with path.open("r", encoding="utf-8", errors="ignore") as f:
-            for line in f:
-                line = line.strip()
-                if not line:
-                    continue
-                try:
-                    obj = json.loads(line)
-                except json.JSONDecodeError:
-                    continue
-                v = obj.get(key_field)
-                if isinstance(v, str) and v:
-                    keys.add(v)
-    return keys
 
 
 def _append_jsonl_line(path: Path, obj: Dict[str, Any]) -> None:
@@ -119,6 +88,118 @@ def _append_jsonl(path: Path, items: Iterable[Dict[str, Any]]) -> int:
             f.write(json.dumps(it, ensure_ascii=False) + "\n")
             n += 1
     return n
+
+
+def semantic_scholar_headers() -> Dict[str, str]:
+    h: Dict[str, str] = {}
+    api_key = os.environ.get("SEMANTIC_SCHOLAR_API_KEY", "").strip()
+    if api_key:
+        h["x-api-key"] = api_key
+    return h
+
+
+def _normalize_arxiv_id_text(s: str) -> str:
+    s = s.strip()
+    if not s:
+        return s
+    return re.sub(r"v\d+$", "", s)
+
+
+def semantic_scholar_fetch_paper_by_arxiv(
+    session: requests.Session,
+    *,
+    arxiv_id: str,
+    timeout_s: int,
+    connect_timeout_s: int,
+) -> Dict[str, Any]:
+    aid = _normalize_arxiv_id_text(arxiv_id)
+    url = f"https://api.semanticscholar.org/graph/v1/paper/ARXIV:{urllib.parse.quote(aid)}"
+    params = {
+        "fields": "citationCount,referenceCount,references.externalIds,references.paperId",
+    }
+    resp = _request_with_backoff(
+        session,
+        "GET",
+        url,
+        headers=semantic_scholar_headers(),
+        params=params,
+        timeout_s=timeout_s,
+        connect_timeout_s=connect_timeout_s,
+        max_retries=6,
+        base_sleep_s=1.5,
+    )
+    if resp.status_code == 404:
+        return {}
+    resp.raise_for_status()
+    parsed = resp.json()
+    obj = parsed if isinstance(parsed, dict) else {}
+    out: Dict[str, Any] = {}
+    if isinstance(obj.get("citationCount"), int):
+        out["citation_count"] = int(obj["citationCount"])
+    if isinstance(obj.get("referenceCount"), int):
+        out["reference_count"] = int(obj["referenceCount"])
+    refs = obj.get("references")
+    arxiv_refs: List[str] = []
+    if isinstance(refs, list):
+        for r in refs:
+            if not isinstance(r, dict):
+                continue
+            ext = r.get("externalIds")
+            if not isinstance(ext, dict):
+                continue
+            arx = ext.get("ArXiv") or ext.get("arXiv") or ext.get("arxiv")
+            if isinstance(arx, str) and arx.strip():
+                arxiv_refs.append(_normalize_arxiv_id_text(arx))
+    if arxiv_refs:
+        uniq: List[str] = []
+        seen: Set[str] = set()
+        for x in arxiv_refs:
+            if x and x not in seen:
+                seen.add(x)
+                uniq.append(x)
+        out["references_arxiv"] = uniq
+    return out
+
+
+def semantic_scholar_refresh_items_jsonl(
+    session: requests.Session,
+    *,
+    items_path: Path,
+    timeout_s: int,
+    connect_timeout_s: int,
+) -> Dict[str, int]:
+    if not items_path.exists():
+        return {"scanned": 0, "updated": 0}
+    tmp = items_path.with_suffix(items_path.suffix + ".tmp")
+    scanned = 0
+    updated = 0
+    with items_path.open("r", encoding="utf-8", errors="ignore") as fin, tmp.open("w", encoding="utf-8") as fout:
+        for line in fin:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                obj = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            if not isinstance(obj, dict):
+                continue
+            scanned += 1
+            aid = obj.get("arxiv_id")
+            need = ("citation_count" not in obj) or ("references_arxiv" not in obj)
+            if need and isinstance(aid, str) and aid.strip():
+                extra = semantic_scholar_fetch_paper_by_arxiv(
+                    session,
+                    arxiv_id=aid,
+                    timeout_s=timeout_s,
+                    connect_timeout_s=connect_timeout_s,
+                )
+                if extra:
+                    obj.update(extra)
+                    updated += 1
+            fout.write(json.dumps(obj, ensure_ascii=False) + "\n")
+    tmp.replace(items_path)
+    return {"scanned": scanned, "updated": updated}
 
 
 def _request_with_backoff(
@@ -343,7 +424,6 @@ def crawl_arxiv_for_category(
     *,
     cfg: CategoryConfig,
     out_dir: Path,
-    items_filename: str,
     max_items: int,
     per_page: int,
     sleep_s: float,
@@ -355,11 +435,12 @@ def crawl_arxiv_for_category(
     connect_timeout_s: int,
     arxiv_base_urls: Sequence[str],
     dry_run: bool,
+    enable_semantic_scholar: bool,
     pbar: Any,
 ) -> int:
-    out_path = out_dir / items_filename
+    out_path = out_dir / "items.jsonl"
     _safe_mkdir(out_dir)
-    existing = _read_jsonl_keys_in_dir(out_dir, "arxiv_id")
+    existing = _read_jsonl_keys(out_path, "arxiv_id")
 
     user_agent = "zstp_final-corpus-crawler/1.0 (mailto:local)"
     appended = 0
@@ -441,6 +522,15 @@ def crawl_arxiv_for_category(
                         "year": it.pop("_year", year),
                     }
                 )
+                if enable_semantic_scholar:
+                    extra = semantic_scholar_fetch_paper_by_arxiv(
+                        session,
+                        arxiv_id=aid,
+                        timeout_s=request_timeout_s,
+                        connect_timeout_s=connect_timeout_s,
+                    )
+                    if extra:
+                        it.update(extra)
                 _append_jsonl_line(out_path, it)
                 appended += 1
                 if pbar is not None:
@@ -479,6 +569,15 @@ def crawl_arxiv_for_category(
                             "retrieved_at": ts,
                         }
                     )
+                    if enable_semantic_scholar:
+                        extra = semantic_scholar_fetch_paper_by_arxiv(
+                            session,
+                            arxiv_id=str(it.get("arxiv_id") or ""),
+                            timeout_s=request_timeout_s,
+                            connect_timeout_s=connect_timeout_s,
+                        )
+                        if extra:
+                            it.update(extra)
                     _append_jsonl_line(out_path, it)
                     appended += 1
                     if pbar is not None:
@@ -553,7 +652,6 @@ def crawl_github_for_category(
     *,
     cfg: CategoryConfig,
     out_dir: Path,
-    items_filename: str,
     max_items: int,
     per_page: int,
     sleep_s: float,
@@ -561,9 +659,9 @@ def crawl_github_for_category(
     dry_run: bool,
     pbar: Any,
 ) -> int:
-    out_path = out_dir / items_filename
+    out_path = out_dir / "items.jsonl"
     _safe_mkdir(out_dir)
-    existing = _read_jsonl_keys_in_dir(out_dir, "repo_full_name")
+    existing = _read_jsonl_keys(out_path, "repo_full_name")
 
     if dry_run:
         print(f"[github][{cfg.slug}] queries={len(cfg.github_queries)} out={out_path}")
@@ -643,7 +741,6 @@ def main() -> int:
     ap.add_argument("--category", choices=["all", "pose_estimation", "3d_generation", "4d_reconstruction"], default="all")
     ap.add_argument("--max_papers", type=int, default=400)
     ap.add_argument("--max_repos", type=int, default=200)
-    ap.add_argument("--run_tag", type=str, default="", help="Suffix tag for new items_<tag>.jsonl files")
     ap.add_argument("--arxiv_per_page", type=int, default=100)
     ap.add_argument("--github_per_page", type=int, default=50)
     ap.add_argument("--github_min_stars", type=int, default=50)
@@ -651,6 +748,8 @@ def main() -> int:
     ap.add_argument("--max_readme_chars", type=int, default=200_000)
     ap.add_argument("--request_timeout_s", type=int, default=120)
     ap.add_argument("--connect_timeout_s", type=int, default=10)
+    ap.add_argument("--disable_semantic_scholar", action="store_true")
+    ap.add_argument("--refresh_semantic_scholar", action="store_true")
     ap.add_argument(
         "--arxiv_base_urls",
         type=str,
@@ -669,8 +768,9 @@ def main() -> int:
     readme_root = out_root / "readme"
     _safe_mkdir(paper_root)
     _safe_mkdir(readme_root)
-    run_tag = str(args.run_tag).strip() or _run_tag_now()
-    items_filename = f"items_{run_tag}.jsonl"
+    enable_s2 = not bool(args.disable_semantic_scholar)
+    if enable_s2:
+        print(json.dumps({"event": "semantic_scholar_enabled"}, ensure_ascii=False))
 
     cfgs = build_category_configs(args.github_min_stars)
     if args.category != "all":
@@ -683,11 +783,11 @@ def main() -> int:
     if args.overwrite:
         for c in cfgs:
             if args.mode in ("all", "paper"):
-                p = paper_root / c.slug / items_filename
+                p = paper_root / c.slug / "items.jsonl"
                 if p.exists():
                     p.unlink()
             if args.mode in ("all", "readme"):
-                p = readme_root / c.slug / items_filename
+                p = readme_root / c.slug / "items.jsonl"
                 if p.exists():
                     p.unlink()
 
@@ -701,7 +801,6 @@ def main() -> int:
                 session,
                 cfg=c,
                 out_dir=paper_root / c.slug,
-                items_filename=items_filename,
                 max_items=max(0, int(args.max_papers) - total_papers),
                 per_page=max(1, args.arxiv_per_page),
                 sleep_s=args.sleep_s,
@@ -713,6 +812,7 @@ def main() -> int:
                 connect_timeout_s=max(1, int(args.connect_timeout_s)),
                 arxiv_base_urls=arxiv_base_urls,
                 dry_run=args.dry_run,
+                enable_semantic_scholar=enable_s2,
                 pbar=pbar,
             )
             total_papers += n
@@ -720,6 +820,18 @@ def main() -> int:
                 break
         if pbar is not None:
             pbar.close()
+        if enable_s2 and bool(args.refresh_semantic_scholar) and not args.dry_run:
+            stats = {"event": "semantic_scholar_refresh", "by_category": {}}
+            for c in cfgs:
+                items_path = (paper_root / c.slug / "items.jsonl").resolve()
+                r = semantic_scholar_refresh_items_jsonl(
+                    session,
+                    items_path=items_path,
+                    timeout_s=max(1, int(args.request_timeout_s)),
+                    connect_timeout_s=max(1, int(args.connect_timeout_s)),
+                )
+                stats["by_category"][c.slug] = r
+            print(json.dumps(stats, ensure_ascii=False))
 
     if args.mode in ("all", "readme"):
         pbar = _progress(max(0, int(args.max_repos)), desc="crawl:readmes:new")
@@ -728,7 +840,6 @@ def main() -> int:
                 session,
                 cfg=c,
                 out_dir=readme_root / c.slug,
-                items_filename=items_filename,
                 max_items=max(0, int(args.max_repos) - total_repos),
                 per_page=max(1, min(args.github_per_page, 100)),
                 sleep_s=args.sleep_s,

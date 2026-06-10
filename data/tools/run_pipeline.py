@@ -213,6 +213,7 @@ def main() -> int:
     )
     ap.add_argument("--dry_run", action="store_true")
     ap.add_argument("--no_resume", action="store_true")
+    ap.add_argument("--refresh", action="store_true")
     args = ap.parse_args()
 
     cfg = _expand(_load_yaml(Path(args.config).resolve()))
@@ -232,7 +233,8 @@ def main() -> int:
     _ensure_dir(run_root)
     state_path = run_root / "last_run.json"
     state = _load_json(state_path)
-    resume_ok = (not bool(args.no_resume)) and state.get("status") == "in_progress" and isinstance(state.get("run_dir"), str)
+    no_resume = bool(args.no_resume) or bool(args.refresh)
+    resume_ok = (not no_resume) and state.get("status") == "in_progress" and isinstance(state.get("run_dir"), str)
     if resume_ok and Path(str(state["run_dir"])).exists():
         run_dir = Path(str(state["run_dir"])).resolve()
     else:
@@ -252,6 +254,7 @@ def main() -> int:
         final_dir=str(final_dir),
         heartbeat_s=heartbeat_s,
         dry_run=bool(args.dry_run),
+        refresh=bool(args.refresh),
     )
 
     env = os.environ.copy()
@@ -271,15 +274,13 @@ def main() -> int:
     build_triples_llm_py = scripts_root / "build_triples_llm.py"
     build_final_py = scripts_root / "build_final_dataset.py"
 
-    run_tag = run_dir.name
-    crawl_enabled = _bool(stages.get("crawl", {}).get("enabled"), True)
-
     if _bool(stages.get("crawl", {}).get("enabled"), True):
         c = stages.get("crawl", {}) or {}
         argv = _python_cmd(crawl_py)
         argv += _as_list(c.get("args"))
         argv += ["--out_root", str(raw_root)]
-        argv += ["--run_tag", str(run_tag)]
+        if bool(args.refresh):
+            argv += ["--refresh_semantic_scholar"]
         argv += ["--mode", str(c.get("mode", "all"))]
         if c.get("max_papers") is not None:
             argv += ["--max_papers", str(c.get("max_papers"))]
@@ -303,16 +304,17 @@ def main() -> int:
         argv += _as_list(p.get("args"))
         argv += ["--raw_root", str(raw_root)]
         argv += ["--out_dir", str(pre_text)]
-        if crawl_enabled:
-            argv += ["--raw_run_tag", str(run_tag)]
         if p.get("max_doc_chars") is not None:
             argv += ["--max_doc_chars", str(p.get("max_doc_chars"))]
         if p.get("min_doc_chars") is not None:
             argv += ["--min_doc_chars", str(p.get("min_doc_chars"))]
-        if _bool(p.get("resume"), True):
-            argv += ["--resume"]
-        if _bool(p.get("overwrite"), True):
+        if bool(args.refresh):
             argv += ["--overwrite"]
+        else:
+            if _bool(p.get("resume"), True):
+                argv += ["--resume"]
+            if _bool(p.get("overwrite"), True):
+                argv += ["--overwrite"]
         _ensure_dir(pre_text)
         _run_stage(stage="preprocess", argv=argv, repo_root=repo_root, data_dir=data_dir, env=env, dry_run=bool(args.dry_run), run_dir=run_dir, heartbeat_s=heartbeat_s)
 

@@ -1,5 +1,5 @@
 {
-  "status": "done",
-  "run_dir": "/Users/a4x/mia_codebook_2stage/tmp/TransE_3DV/data/preprocessed/pipeline_runs/20260609_214451",
-  "finished_at": "2026-06-09T23:34:22+0800"
+  "status": "in_progress",
+  "run_dir": "/data/litengmo/ml-test-1/zstp_final/data/preprocessed/pipeline_runs/20260610_094014",
+  "created_at": "2026-06-10T09:40:14+0800"
 }

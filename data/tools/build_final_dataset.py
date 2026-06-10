@@ -311,7 +311,7 @@ def main() -> int:
     ap.add_argument(
         "--relations",
         type=str,
-        default="paper_proposes_method,repo_implements_method,method_uses_dataset",
+        default="paper_proposes_method,repo_implements_method,method_uses_dataset,paper_cites_paper",
     )
     ap.add_argument("--drop_paper_has_repo", action="store_true")
     args = ap.parse_args()

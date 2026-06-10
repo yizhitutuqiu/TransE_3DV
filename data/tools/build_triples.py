@@ -198,12 +198,24 @@ def main() -> int:
     by_type_can, paper_by_arxiv, repo_by_fullname_lower = _entity_lookup(registry_path)
 
     doc_text: Dict[str, str] = {}
+    doc_refs_arxiv: Dict[str, List[str]] = {}
     total_docs = _count_lines(documents_path)
     for d in _progress(_iter_jsonl(documents_path), total=total_docs, desc="triples:load_docs"):
         doc_id = d.get("doc_id")
         text = d.get("text")
         if isinstance(doc_id, str) and isinstance(text, str):
             doc_text[doc_id] = text
+        if isinstance(doc_id, str):
+            md = d.get("metadata")
+            if isinstance(md, dict):
+                refs = md.get("references_arxiv")
+                if isinstance(refs, list):
+                    out: List[str] = []
+                    for r in refs:
+                        if isinstance(r, str) and r.strip():
+                            out.append(r.strip())
+                    if out:
+                        doc_refs_arxiv[doc_id] = out
 
     triples: List[Dict[str, Any]] = []
     seen: Set[Tuple[str, str, str]] = set()
@@ -285,6 +297,13 @@ def main() -> int:
                         rid = repo_by_fullname_lower.get(repo.lower())
                         if rid:
                             add(paper_ent, "paper_has_repo", rid, "paper_github_url")
+
+        if paper_ent and doc_type == "paper":
+            refs = doc_refs_arxiv.get(doc_id) or []
+            for aid in refs:
+                pid = paper_by_arxiv.get(aid)
+                if pid:
+                    add(paper_ent, "paper_cites_paper", pid, "semantic_scholar")
 
         if args.limit and len(triples) >= args.limit:
             break

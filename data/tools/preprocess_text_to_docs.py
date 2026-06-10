@@ -3,7 +3,6 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import hashlib
-import itertools
 import json
 import os
 import re
@@ -211,25 +210,11 @@ def _extract_year_from_iso(s: Any) -> Optional[int]:
     return int(m.group(1))
 
 
-def _items_files(cat_dir: Path, raw_run_tag: Optional[str]) -> List[Path]:
-    tag = (raw_run_tag or "").strip()
-    if tag:
-        p = cat_dir / f"items_{tag}.jsonl"
-        return [p] if p.exists() else []
-    files: List[Path] = []
-    p0 = cat_dir / "items.jsonl"
-    if p0.exists():
-        files.append(p0)
-    files += sorted(cat_dir.glob("items_*.jsonl"))
-    return files
-
-
 def _build_docs_from_papers(
     *,
     raw_root: Path,
     max_doc_chars: int,
     min_doc_chars: int,
-    raw_run_tag: Optional[str],
 ) -> List[Dict[str, Any]]:
     docs: List[Dict[str, Any]] = []
     paper_root = raw_root / "paper"
@@ -237,12 +222,11 @@ def _build_docs_from_papers(
     for cat_dir in _progress(cat_dirs, total=len(cat_dirs), desc="papers:categories"):
         if not cat_dir.is_dir():
             continue
-        files = _items_files(cat_dir, raw_run_tag)
-        if not files:
+        items_path = cat_dir / "items.jsonl"
+        if not items_path.exists():
             continue
-        total = sum(_count_lines(p) for p in files)
-        iters = itertools.chain.from_iterable(_iter_jsonl(p) for p in files)
-        for it in _progress(iters, total=total, desc=f"papers:{cat_dir.name}"):
+        total = _count_lines(items_path)
+        for it in _progress(_iter_jsonl(items_path), total=total, desc=f"papers:{cat_dir.name}"):
             arxiv_id = it.get("arxiv_id")
             if not isinstance(arxiv_id, str) or not arxiv_id:
                 continue
@@ -281,6 +265,9 @@ def _build_docs_from_papers(
                     "links": it.get("links"),
                     "query": it.get("query"),
                     "retrieved_at": it.get("retrieved_at"),
+                    "citation_count": it.get("citation_count"),
+                    "reference_count": it.get("reference_count"),
+                    "references_arxiv": it.get("references_arxiv"),
                 },
             }
             docs.append(doc)
@@ -292,7 +279,6 @@ def _build_docs_from_readmes(
     raw_root: Path,
     max_doc_chars: int,
     min_doc_chars: int,
-    raw_run_tag: Optional[str],
 ) -> List[Dict[str, Any]]:
     docs: List[Dict[str, Any]] = []
     readme_root = raw_root / "readme"
@@ -300,12 +286,11 @@ def _build_docs_from_readmes(
     for cat_dir in _progress(cat_dirs, total=len(cat_dirs), desc="readmes:categories"):
         if not cat_dir.is_dir():
             continue
-        files = _items_files(cat_dir, raw_run_tag)
-        if not files:
+        items_path = cat_dir / "items.jsonl"
+        if not items_path.exists():
             continue
-        total = sum(_count_lines(p) for p in files)
-        iters = itertools.chain.from_iterable(_iter_jsonl(p) for p in files)
-        for it in _progress(iters, total=total, desc=f"readmes:{cat_dir.name}"):
+        total = _count_lines(items_path)
+        for it in _progress(_iter_jsonl(items_path), total=total, desc=f"readmes:{cat_dir.name}"):
             full_name = it.get("repo_full_name")
             if not isinstance(full_name, str) or not full_name:
                 continue
@@ -374,6 +359,7 @@ def build_ontology_schema() -> Dict[str, Any]:
         "relation_types": [
             {"type": "paper_has_repo", "head": "Paper", "tail": "Repo"},
             {"type": "paper_proposes_method", "head": "Paper", "tail": "Method"},
+            {"type": "paper_cites_paper", "head": "Paper", "tail": "Paper"},
             {"type": "repo_implements_method", "head": "Repo", "tail": "Method"},
             {"type": "method_targets_task", "head": "Method", "tail": "Task"},
             {"type": "method_uses_dataset", "head": "Method", "tail": "Dataset"},
@@ -414,7 +400,6 @@ def main() -> int:
     )
     ap.add_argument("--max_doc_chars", type=int, default=12000)
     ap.add_argument("--min_doc_chars", type=int, default=80)
-    ap.add_argument("--raw_run_tag", type=str, default="", help="Only read items_<tag>.jsonl produced by a specific crawl run")
     ap.add_argument("--overwrite", action="store_true")
     ap.add_argument("--resume", action="store_true")
     args = ap.parse_args()
@@ -427,13 +412,11 @@ def main() -> int:
     (out_dir / "ontology_schema.json").write_text(json.dumps(ontology, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     docs: List[Dict[str, Any]] = []
-    raw_run_tag = str(args.raw_run_tag).strip() or None
     docs.extend(
         _build_docs_from_papers(
             raw_root=raw_root,
             max_doc_chars=max(1000, args.max_doc_chars),
             min_doc_chars=max(1, args.min_doc_chars),
-            raw_run_tag=raw_run_tag,
         )
     )
     docs.extend(
@@ -441,7 +424,6 @@ def main() -> int:
             raw_root=raw_root,
             max_doc_chars=max(1000, args.max_doc_chars),
             min_doc_chars=max(1, args.min_doc_chars),
-            raw_run_tag=raw_run_tag,
         )
     )
 
@@ -488,7 +470,6 @@ def main() -> int:
     stats = {
         "created_at": _utc_now_iso(),
         "raw_root": str(raw_root),
-        "raw_run_tag": raw_run_tag,
         "out_dir": str(out_dir),
         "documents_path": str(docs_path),
         "document_count_total": total_n,
