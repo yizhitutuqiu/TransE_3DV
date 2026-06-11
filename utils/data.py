@@ -64,3 +64,44 @@ def build_filter_index(triples: Sequence[Tuple[int, int, int]]) -> FilterIndex:
         heads_by_rt.setdefault((r, t), set()).add(h)
     return FilterIndex(tails_by_hr=tails_by_hr, heads_by_rt=heads_by_rt)
 
+
+RELATION_TYPE_CONSTRAINTS: Dict[str, Tuple[str, str]] = {
+    "paper_proposes_method": ("Paper", "Method"),
+    "repo_implements_method": ("Repo", "Method"),
+    "method_uses_dataset": ("Method", "Dataset"),
+    "paper_has_repo": ("Paper", "Repo"),
+    "method_targets_task": ("Method", "Task"),
+    "paper_cites_paper": ("Paper", "Paper"),
+}
+
+
+def entity_type(name: str) -> Optional[str]:
+    if not isinstance(name, str):
+        return None
+    if ":" not in name:
+        return None
+    t = name.split(":", 1)[0].strip()
+    return t or None
+
+
+def build_ids_by_type(ent_names: Sequence[str]) -> Dict[str, List[int]]:
+    ids_by_type: Dict[str, List[int]] = {}
+    for i, n in enumerate(ent_names):
+        t = entity_type(n) or ""
+        ids_by_type.setdefault(t, []).append(i)
+    return ids_by_type
+
+
+def relation_type_constraint(rel_name: str) -> Optional[Tuple[str, str]]:
+    if not isinstance(rel_name, str):
+        return None
+    rel_name = rel_name.strip()
+    if not rel_name:
+        return None
+    if rel_name.endswith("__inv"):
+        base = rel_name[: -len("__inv")]
+        c = RELATION_TYPE_CONSTRAINTS.get(base)
+        if c is None:
+            return None
+        return (c[1], c[0])
+    return RELATION_TYPE_CONSTRAINTS.get(rel_name)

@@ -13,7 +13,7 @@ if str(_PROJECT_ROOT.parent) not in sys.path:
     sys.path.insert(0, str(_PROJECT_ROOT.parent))
 
 from zstp_final.train.evaluate import evaluate_filtered
-from zstp_final.utils.data import build_filter_index, load_id_map, load_triples_hrt
+from zstp_final.utils.data import build_filter_index, build_ids_by_type, relation_type_constraint, load_id_map, load_triples_hrt
 from zstp_final.utils.transe import TransE
 
 
@@ -37,6 +37,9 @@ def _resolve_path(p: Any, *, base: Path) -> Path:
     pp = Path(s).expanduser()
     if pp.is_absolute():
         return pp.resolve()
+    cand = (Path.cwd() / pp).resolve()
+    if cand.exists():
+        return cand
     return (base / pp).resolve()
 
 
@@ -59,6 +62,19 @@ def _topk(scores: torch.Tensor, *, k: int) -> List[Tuple[int, float]]:
     return out
 
 
+def _infer_int(v: Any) -> int:
+    if v is None:
+        return 0
+    if isinstance(v, int):
+        return int(v)
+    if isinstance(v, float):
+        return int(v)
+    s = str(v).strip().lower()
+    if not s or s == "auto":
+        return 0
+    return int(s)
+
+
 @dataclass
 class ModelInfo:
     ckpt_path: str
@@ -79,6 +95,7 @@ class ZSTPAPI:
     ent_names: List[str]
     rel_names: List[str]
     ids_by_type: Dict[str, List[int]]
+    entity_meta: Dict[str, Dict[str, Any]]
     filter_index: Any
     train_triples: List[Tuple[int, int, int]]
     test_triples: List[Tuple[int, int, int]]
@@ -88,6 +105,7 @@ class ZSTPAPI:
         cfg_path = _resolve_path(config_path, base=_PROJECT_ROOT)
         cfg = _load_yaml(cfg_path)
         model_cfg = cfg.get("model", {}) or {}
+        meta_cfg = cfg.get("metadata", {}) or {}
         infer_cfg = cfg.get("infer", {}) or {}
         eval_cfg = cfg.get("eval", {}) or {}
 
@@ -108,32 +126,85 @@ class ZSTPAPI:
                 device_s = "cpu"
         device = torch.device(device_s)
 
-        embedding_dim = int(model_cfg.get("embedding_dim", 100))
-        p_norm = int(model_cfg.get("p_norm", 1))
-
         ckpt = torch.load(str(ckpt_path), map_location=device)
 
         ent2id, ent_names = load_id_map(str(data_dir / "entity2id.txt"))
         rel2id, rel_names = load_id_map(str(data_dir / "relation2id.txt"))
         num_entities = len(ent2id)
-        num_relations = len(rel2id)
+        num_relations_base = len(rel2id)
 
         st = ckpt.get("model_state", {}) or {}
         ent_w = st.get("ent.weight", None)
         rel_w = st.get("rel.weight", None)
         if hasattr(ent_w, "shape") and int(ent_w.shape[0]) != num_entities:
             raise ValueError(f"entity2id size {num_entities} != ckpt ent.size {int(ent_w.shape[0])}")
-        if hasattr(rel_w, "shape") and int(rel_w.shape[0]) != num_relations:
-            raise ValueError(f"relation2id size {num_relations} != ckpt rel.size {int(rel_w.shape[0])}")
+        ckpt_rel_n = int(rel_w.shape[0]) if hasattr(rel_w, "shape") and len(rel_w.shape) == 2 else 0
+        if ckpt_rel_n not in {num_relations_base, num_relations_base * 2}:
+            raise ValueError(f"relation2id size {num_relations_base} not compatible with ckpt rel.size {ckpt_rel_n}")
+        num_relations = ckpt_rel_n or num_relations_base
+
+        inferred_dim = int(ent_w.shape[1]) if hasattr(ent_w, "shape") and len(ent_w.shape) == 2 else 0
+        ckpt_args = ckpt.get("args", {}) or {}
+        inferred_dim = inferred_dim or _infer_int(ckpt_args.get("embedding_dim"))
+        inferred_p = _infer_int(ckpt_args.get("p_norm"))
+
+        embedding_dim_cfg = _infer_int(model_cfg.get("embedding_dim", "auto"))
+        p_norm_cfg = _infer_int(model_cfg.get("p_norm", "auto"))
+        embedding_dim = inferred_dim or embedding_dim_cfg or 100
+        p_norm = inferred_p or p_norm_cfg or 1
+
+        if num_relations == num_relations_base * 2:
+            rel_names_base = list(rel_names)
+            rel_names = rel_names_base + [f"{x}__inv" for x in rel_names_base]
+            rel2id = dict(rel2id)
+            for i, base in enumerate(rel_names_base):
+                rel2id[f"{base}__inv"] = i + num_relations_base
 
         model = TransE(num_entities=num_entities, num_relations=num_relations, embedding_dim=embedding_dim, p_norm=p_norm).to(device)
         model.load_state_dict(ckpt["model_state"])
         model.eval()
 
-        ids_by_type: Dict[str, List[int]] = {}
-        for i, n in enumerate(ent_names):
-            et = n.split(":", 1)[0] if ":" in n else ""
-            ids_by_type.setdefault(et, []).append(i)
+        ids_by_type = build_ids_by_type(ent_names)
+
+        entity_meta: Dict[str, Dict[str, Any]] = {}
+        docs_path_raw = meta_cfg.get("documents_path", "data/preprocessed/text/documents.jsonl")
+        docs_path = _resolve_path(docs_path_raw, base=_PROJECT_ROOT) if str(docs_path_raw).strip().lower() != "auto" else None
+        if docs_path is not None and docs_path.exists():
+            with docs_path.open("r", encoding="utf-8", errors="ignore") as f:
+                for line in f:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    try:
+                        d = json.loads(line)
+                    except Exception:
+                        continue
+                    if not isinstance(d, dict):
+                        continue
+                    meta = d.get("metadata")
+                    if not isinstance(meta, dict):
+                        continue
+                    if d.get("doc_type") == "paper":
+                        aid = meta.get("arxiv_id")
+                        if isinstance(aid, str) and aid.strip():
+                            k = f"Paper:{aid.strip()}"
+                            entity_meta[k] = {
+                                "citation_count": meta.get("citation_count"),
+                                "reference_count": meta.get("reference_count"),
+                                "year": meta.get("year"),
+                                "title": d.get("title"),
+                            }
+                    if d.get("doc_type") == "readme":
+                        full = meta.get("repo_full_name") or meta.get("full_name")
+                        if isinstance(full, str) and full.strip():
+                            k = f"Repo:{full.strip()}"
+                            entity_meta[k] = {
+                                "repo_stargazers_count": meta.get("repo_stargazers_count"),
+                                "repo_forks_count": meta.get("repo_forks_count"),
+                                "repo_open_issues_count": meta.get("repo_open_issues_count"),
+                                "repo_updated_at": meta.get("repo_updated_at"),
+                                "repo_created_at": meta.get("repo_created_at"),
+                            }
 
         train_triples = load_triples_hrt(str(data_dir / "train2id.txt")) if (data_dir / "train2id.txt").exists() else []
         test_triples = load_triples_hrt(str(data_dir / "test2id.txt")) if (data_dir / "test2id.txt").exists() else []
@@ -157,6 +228,7 @@ class ZSTPAPI:
             ent_names=ent_names,
             rel_names=rel_names,
             ids_by_type=ids_by_type,
+            entity_meta=entity_meta,
             filter_index=filter_index,
             train_triples=list(train_triples),
             test_triples=list(test_triples),
@@ -165,6 +237,7 @@ class ZSTPAPI:
         api._default_batch_size = int(infer_cfg.get("batch_size", 512))
         api._default_filtered = bool(infer_cfg.get("filtered", True))
         api._default_eval_batch_size = int(eval_cfg.get("batch_size", 256))
+        api._default_include_entity_meta = bool(meta_cfg.get("include_in_search", True))
         return api
 
     def model_info(self) -> Dict[str, Any]:
@@ -173,11 +246,20 @@ class ZSTPAPI:
     def relations(self) -> List[str]:
         return list(self.rel_names)
 
-    def search_entities(self, *, q: str = "", entity_type: str = "", limit: int = 50, offset: int = 0) -> Dict[str, Any]:
+    def search_entities(
+        self,
+        *,
+        q: str = "",
+        entity_type: str = "",
+        limit: int = 50,
+        offset: int = 0,
+        include_meta: Optional[bool] = None,
+    ) -> Dict[str, Any]:
         q = str(q or "").strip().lower()
         entity_type = str(entity_type or "").strip()
         limit = max(1, min(int(limit), 2000))
         offset = max(0, int(offset))
+        inc = self._default_include_entity_meta if include_meta is None else bool(include_meta)
 
         ids = list(range(self.info.num_entities))
         if entity_type:
@@ -188,8 +270,24 @@ class ZSTPAPI:
             name = self.ent_names[i]
             if q and q not in name.lower():
                 continue
-            out.append({"id": i, "name": name})
+            it: Dict[str, Any] = {"id": i, "name": name}
+            if inc:
+                m = self.entity_meta.get(name)
+                if isinstance(m, dict) and m:
+                    it["meta"] = m
+            out.append(it)
         return {"count": len(out), "items": out[offset : offset + limit], "offset": offset, "limit": limit}
+
+    def get_entity(self, val: Any, *, include_meta: Optional[bool] = None) -> Dict[str, Any]:
+        ent_id = _resolve_id(val, self.ent2id, "entity")
+        name = self.ent_names[ent_id]
+        inc = self._default_include_entity_meta if include_meta is None else bool(include_meta)
+        out: Dict[str, Any] = {"id": ent_id, "name": name}
+        if inc:
+            m = self.entity_meta.get(name)
+            if isinstance(m, dict) and m:
+                out["meta"] = m
+        return out
 
     def score(self, *, h: Any, r: Any, t: Any) -> Dict[str, Any]:
         h_id = _resolve_id(h, self.ent2id, "entity")
@@ -227,6 +325,10 @@ class ZSTPAPI:
 
         mask = None
         candidate_type = str(candidate_type or "").strip()
+        if not candidate_type:
+            c = relation_type_constraint(self.rel_names[r_id])
+            if c is not None:
+                candidate_type = c[1]
         if candidate_type:
             allowed = set(self.ids_by_type.get(candidate_type, []))
             type_mask = torch.ones(self.info.num_entities, device=device, dtype=torch.bool)
@@ -281,6 +383,10 @@ class ZSTPAPI:
 
         mask = None
         candidate_type = str(candidate_type or "").strip()
+        if not candidate_type:
+            c = relation_type_constraint(self.rel_names[r_id])
+            if c is not None:
+                candidate_type = c[0]
         if candidate_type:
             allowed = set(self.ids_by_type.get(candidate_type, []))
             type_mask = torch.ones(self.info.num_entities, device=device, dtype=torch.bool)

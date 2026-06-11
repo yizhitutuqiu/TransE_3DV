@@ -115,8 +115,10 @@ def main() -> int:
         rel_w = st.get("rel.weight", None)
         if hasattr(ent_w, "shape") and int(ent_w.shape[0]) != len(ent2id):
             raise ValueError(f"entity2id size {len(ent2id)} != ckpt ent.size {int(ent_w.shape[0])}")
-        if hasattr(rel_w, "shape") and int(rel_w.shape[0]) != len(rel2id):
-            raise ValueError(f"relation2id size {len(rel2id)} != ckpt rel.size {int(rel_w.shape[0])}")
+        if hasattr(rel_w, "shape") and len(rel_w.shape) == 2:
+            ckpt_rel_n = int(rel_w.shape[0])
+            if ckpt_rel_n not in {len(rel2id), len(rel2id) * 2}:
+                raise ValueError(f"relation2id size {len(rel2id)} not compatible with ckpt rel.size {ckpt_rel_n}")
 
     out_root = _resolve_path(output_cfg.get("out_root", "output/eval"), base=_PROJECT_ROOT)
     run_dir = out_root / _ts()

@@ -115,8 +115,8 @@ def main() -> int:
     ap.add_argument("--data_dir", type=str, required=True)
     ap.add_argument("--ckpt", type=str, required=True)
     ap.add_argument("--device", type=str, default="cpu")
-    ap.add_argument("--embedding_dim", type=int, default=100)
-    ap.add_argument("--p_norm", type=int, default=1)
+    ap.add_argument("--embedding_dim", type=int, default=0)
+    ap.add_argument("--p_norm", type=int, default=0)
     ap.add_argument("--batch_size", type=int, default=512)
     args = ap.parse_args()
 
@@ -128,13 +128,22 @@ def main() -> int:
 
     device = torch.device(args.device)
 
-    model = TransE(
-        num_entities=len(ent2id),
-        num_relations=len(rel2id),
-        embedding_dim=int(args.embedding_dim),
-        p_norm=int(args.p_norm),
-    ).to(device)
     ckpt = torch.load(str(Path(args.ckpt).resolve()), map_location=device)
+    st = ckpt.get("model_state", {}) or {}
+    ent_w = st.get("ent.weight", None)
+    rel_w = st.get("rel.weight", None)
+
+    inferred_dim = int(ent_w.shape[1]) if hasattr(ent_w, "shape") and len(ent_w.shape) == 2 else 0
+    inferred_rels = int(rel_w.shape[0]) if hasattr(rel_w, "shape") and len(rel_w.shape) == 2 else 0
+    ckpt_args = ckpt.get("args", {}) or {}
+    inferred_dim = inferred_dim or int(ckpt_args.get("embedding_dim") or 0)
+    inferred_p = int(ckpt_args.get("p_norm") or 0)
+
+    embedding_dim = inferred_dim or int(args.embedding_dim) or 100
+    p_norm = inferred_p or int(args.p_norm) or 1
+    num_relations = inferred_rels or len(rel2id)
+
+    model = TransE(num_entities=len(ent2id), num_relations=num_relations, embedding_dim=embedding_dim, p_norm=p_norm).to(device)
     model.load_state_dict(ckpt["model_state"])
 
     filter_index = build_filter_index(list(train_triples) + list(test_triples))
@@ -188,4 +197,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

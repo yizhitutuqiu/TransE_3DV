@@ -20,7 +20,7 @@ from torch.utils.data import DataLoader
 from zstp_final.train.dataset import KGTripleDataset
 from zstp_final.train.evaluate import evaluate_filtered
 from zstp_final.train.sampling import corrupt_batch
-from zstp_final.utils.data import build_filter_index, load_id_map, load_triples_hrt
+from zstp_final.utils.data import build_filter_index, build_ids_by_type, relation_type_constraint, load_id_map, load_triples_hrt
 from zstp_final.utils.transe import TransE
 
 try:
@@ -54,19 +54,22 @@ def main() -> int:
     ap.add_argument("--eval_every", type=int, default=1)
     ap.add_argument("--eval_batch_size", type=int, default=512)
     ap.add_argument("--normalize_every", type=int, default=1)
+    ap.add_argument("--use_reciprocal", action=argparse.BooleanOptionalAction, default=True)
+    ap.add_argument("--type_aware_neg_sampling", action=argparse.BooleanOptionalAction, default=True)
     args = ap.parse_args()
 
     random.seed(args.seed)
     torch.manual_seed(args.seed)
 
     data_dir = Path(args.data_dir).resolve()
-    ent2id, _ = load_id_map(str(data_dir / "entity2id.txt"))
-    rel2id, _ = load_id_map(str(data_dir / "relation2id.txt"))
+    ent2id, ent_names = load_id_map(str(data_dir / "entity2id.txt"))
+    rel2id, rel_names = load_id_map(str(data_dir / "relation2id.txt"))
     train_triples = load_triples_hrt(str(data_dir / "train2id.txt"))
     test_triples = load_triples_hrt(str(data_dir / "test2id.txt"))
 
     num_entities = len(ent2id)
-    num_relations = len(rel2id)
+    num_relations_base = len(rel2id)
+    num_relations = num_relations_base
 
     if args.device == "auto":
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -81,16 +84,37 @@ def main() -> int:
     best_path = run_dir / "best.pt"
     last_path = run_dir / "last.pt"
 
-    model = TransE(
-        num_entities=num_entities,
-        num_relations=num_relations,
-        embedding_dim=int(args.embedding_dim),
-        p_norm=int(args.p_norm),
-    ).to(device)
+    train_triples_aug = list(train_triples)
+    if bool(args.use_reciprocal):
+        train_triples_aug.extend([(t, h, r + num_relations_base) for (h, t, r) in train_triples])
+        num_relations = num_relations_base * 2
+
+    ids_by_type = build_ids_by_type(ent_names)
+    head_candidates: Dict[int, List[int]] = {}
+    tail_candidates: Dict[int, List[int]] = {}
+    for rid, rname in enumerate(rel_names):
+        c = relation_type_constraint(rname)
+        if c is None:
+            continue
+        ht, tt = c
+        hc = ids_by_type.get(ht)
+        tc = ids_by_type.get(tt)
+        if hc:
+            head_candidates[rid] = hc
+        if tc:
+            tail_candidates[rid] = tc
+        if bool(args.use_reciprocal):
+            inv = rid + num_relations_base
+            if tc:
+                head_candidates[inv] = tc
+            if hc:
+                tail_candidates[inv] = hc
+
+    model = TransE(num_entities=num_entities, num_relations=num_relations, embedding_dim=int(args.embedding_dim), p_norm=int(args.p_norm)).to(device)
 
     optimizer = torch.optim.AdamW(model.parameters(), lr=float(args.lr), weight_decay=float(args.weight_decay))
 
-    dataset = KGTripleDataset(train_triples)
+    dataset = KGTripleDataset(train_triples_aug)
     loader = DataLoader(dataset, batch_size=int(args.batch_size), shuffle=True, drop_last=False)
 
     filter_index = build_filter_index(list(train_triples) + list(test_triples))
@@ -108,7 +132,14 @@ def main() -> int:
         rng = random.Random(args.seed + epoch)
         for pos in it:
             pos = pos.to(device)
-            neg = corrupt_batch(pos, num_entities=num_entities, rng=rng).to(device)
+            neg = corrupt_batch(
+                pos,
+                num_entities=num_entities,
+                rng=rng,
+                type_aware=bool(args.type_aware_neg_sampling),
+                head_candidates=head_candidates,
+                tail_candidates=tail_candidates,
+            ).to(device)
             pos_s, neg_s = model(pos, neg)
             loss = F.relu(float(args.margin) + pos_s - neg_s).mean()
 
@@ -131,6 +162,9 @@ def main() -> int:
             "avg_loss": avg_loss,
             "num_entities": num_entities,
             "num_relations": num_relations,
+            "num_relations_base": num_relations_base,
+            "use_reciprocal": bool(args.use_reciprocal),
+            "type_aware_neg_sampling": bool(args.type_aware_neg_sampling),
         }
 
         if int(args.eval_every) > 0 and epoch % int(args.eval_every) == 0:

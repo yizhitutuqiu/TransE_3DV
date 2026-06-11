@@ -14,7 +14,7 @@ _PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(_PROJECT_ROOT.parent) not in sys.path:
     sys.path.insert(0, str(_PROJECT_ROOT.parent))
 
-from zstp_final.utils.data import build_filter_index, load_id_map, load_triples_hrt
+from zstp_final.utils.data import build_filter_index, build_ids_by_type, relation_type_constraint, load_id_map, load_triples_hrt
 from zstp_final.utils.transe import TransE
 
 
@@ -156,29 +156,34 @@ def main() -> int:
     ent2id, ent_names = load_id_map(str(data_dir / "entity2id.txt"))
     rel2id, rel_names = load_id_map(str(data_dir / "relation2id.txt"))
     num_entities = len(ent2id)
-    num_relations = len(rel2id)
-
-    ids_by_type: Dict[str, List[int]] = {}
-    for i, n in enumerate(ent_names):
-        et = n.split(":", 1)[0] if ":" in n else ""
-        ids_by_type.setdefault(et, []).append(i)
-
-    rel_constraints: Dict[str, Dict[str, str]] = {
-        "paper_proposes_method": {"head": "Paper", "tail": "Method"},
-        "repo_implements_method": {"head": "Repo", "tail": "Method"},
-        "method_uses_dataset": {"head": "Method", "tail": "Dataset"},
-    }
-
-    embedding_dim = int(model_cfg.get("embedding_dim", 100))
-    p_norm = int(model_cfg.get("p_norm", 1))
+    num_relations_base = len(rel2id)
 
     st = ckpt.get("model_state", {}) or {}
     ent_w = st.get("ent.weight", None)
     rel_w = st.get("rel.weight", None)
     if hasattr(ent_w, "shape") and int(ent_w.shape[0]) != num_entities:
         raise ValueError(f"entity2id size {num_entities} != ckpt ent.size {int(ent_w.shape[0])}")
-    if hasattr(rel_w, "shape") and int(rel_w.shape[0]) != num_relations:
-        raise ValueError(f"relation2id size {num_relations} != ckpt rel.size {int(rel_w.shape[0])}")
+    ckpt_rel_n = int(rel_w.shape[0]) if hasattr(rel_w, "shape") and len(rel_w.shape) == 2 else 0
+    if ckpt_rel_n not in {num_relations_base, num_relations_base * 2}:
+        raise ValueError(f"relation2id size {num_relations_base} not compatible with ckpt rel.size {ckpt_rel_n}")
+    num_relations = ckpt_rel_n or num_relations_base
+
+    inferred_dim = int(ent_w.shape[1]) if hasattr(ent_w, "shape") and len(ent_w.shape) == 2 else 0
+    ckpt_args = ckpt.get("args", {}) or {}
+    inferred_dim = inferred_dim or int(ckpt_args.get("embedding_dim") or 0)
+    inferred_p = int(ckpt_args.get("p_norm") or 0)
+
+    embedding_dim_cfg = str(model_cfg.get("embedding_dim", "auto")).strip().lower()
+    p_norm_cfg = str(model_cfg.get("p_norm", "auto")).strip().lower()
+    embedding_dim = inferred_dim or (0 if embedding_dim_cfg == "auto" else int(embedding_dim_cfg or 0)) or 100
+    p_norm = inferred_p or (0 if p_norm_cfg == "auto" else int(p_norm_cfg or 0)) or 1
+
+    if num_relations == num_relations_base * 2:
+        rel_names_base = list(rel_names)
+        rel_names = rel_names_base + [f"{x}__inv" for x in rel_names_base]
+        rel2id = dict(rel2id)
+        for i, base in enumerate(rel_names_base):
+            rel2id[f"{base}__inv"] = i + num_relations_base
 
     model = TransE(num_entities=num_entities, num_relations=num_relations, embedding_dim=embedding_dim, p_norm=p_norm).to(device)
     model.load_state_dict(ckpt["model_state"])
@@ -200,6 +205,7 @@ def main() -> int:
     _ensure_dir(run_dir)
 
     results: List[Dict[str, Any]] = []
+    ids_by_type = build_ids_by_type(ent_names)
 
     for q in queries:
         if not isinstance(q, dict):
@@ -211,7 +217,8 @@ def main() -> int:
             mask_t = None
             cand_type = q.get("candidate_type")
             if cand_type is None:
-                cand_type = rel_constraints.get(rel_names[r_id], {}).get("tail")
+                c = relation_type_constraint(rel_names[r_id])
+                cand_type = c[1] if c is not None else None
             if cand_type:
                 allowed = set(ids_by_type.get(str(cand_type), []))
                 type_mask = torch.ones(num_entities, device=device, dtype=torch.bool)
@@ -245,7 +252,8 @@ def main() -> int:
             mask_h = None
             cand_type = q.get("candidate_type")
             if cand_type is None:
-                cand_type = rel_constraints.get(rel_names[r_id], {}).get("head")
+                c = relation_type_constraint(rel_names[r_id])
+                cand_type = c[0] if c is not None else None
             if cand_type:
                 allowed = set(ids_by_type.get(str(cand_type), []))
                 type_mask = torch.ones(num_entities, device=device, dtype=torch.bool)

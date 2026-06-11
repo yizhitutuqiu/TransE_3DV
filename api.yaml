@@ -1,9 +1,13 @@
 model:
-  ckpt_path: checkpoints/transe_v1/best.pt
+  ckpt_path: checkpoints/transe_v2/best.pt
   data_dir: data/preprocessed/final
   device: auto
-  embedding_dim: 100
-  p_norm: 1
+  embedding_dim: auto
+  p_norm: auto
+
+metadata:
+  documents_path: data/preprocessed/text/documents.jsonl
+  include_in_search: true
 
 infer:
   top_k: 10
