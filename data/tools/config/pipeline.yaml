@@ -21,6 +21,8 @@ stages:
     year_start: 2018
     year_end: 2026
     overwrite: false
+    s2_refresh_max_cache_items: 200
+    s2_refresh_full: false
     args: []
   preprocess:
     enabled: true

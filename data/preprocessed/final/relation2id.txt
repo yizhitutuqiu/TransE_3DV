@@ -1,4 +1,5 @@
-3
+4
 method_uses_dataset	0
-paper_proposes_method	1
-repo_implements_method	2
+paper_cites_paper	1
+paper_proposes_method	2
+repo_implements_method	3

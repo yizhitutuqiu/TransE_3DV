@@ -171,6 +171,8 @@ def semantic_scholar_refresh_items_jsonl(
     timeout_s: int,
     connect_timeout_s: int,
     sleep_s: float,
+    max_cache_items: int = 0,
+    full_refresh: bool = False,
 ) -> Dict[str, Any]:
     if not items_path.exists():
         return {"scanned": 0, "updated": 0}
@@ -199,6 +201,7 @@ def semantic_scholar_refresh_items_jsonl(
     not_found = 0
     failed = 0
     skipped = 0
+    skipped_by_limit = 0
     total = 0
     with items_path.open("r", encoding="utf-8", errors="ignore") as f:
         for _ in f:
@@ -210,12 +213,14 @@ def semantic_scholar_refresh_items_jsonl(
             it = _tqdm(it, total=total, desc=f"s2:refresh:{items_path.parent.name}")
         with tmp.open("w", encoding="utf-8") as fout:
             for line in it:
+                raw_line = line
                 line = line.strip()
                 if not line:
                     continue
                 try:
                     obj = json.loads(line)
                 except json.JSONDecodeError:
+                    fout.write(raw_line if raw_line.endswith("\n") else (raw_line + "\n"))
                     continue
                 if not isinstance(obj, dict):
                     continue
@@ -243,6 +248,11 @@ def semantic_scholar_refresh_items_jsonl(
                         failed += 1
                         skipped += 1
                     else:
+                        cap = max(0, int(max_cache_items))
+                        if (not bool(full_refresh)) and cap > 0 and len(cache) >= cap:
+                            skipped_by_limit += 1
+                            fout.write(json.dumps(obj, ensure_ascii=False) + "\n")
+                            continue
                         attempts = 0
                         last_error = ""
                         extra: Dict[str, Any] = {}
@@ -294,7 +304,19 @@ def semantic_scholar_refresh_items_jsonl(
     finally:
         fin.close()
     tmp.replace(items_path)
-    return {"scanned": scanned, "updated": updated, "ok": ok, "not_found": not_found, "failed": failed, "skipped": skipped, "cache_path": str(cache_path)}
+    return {
+        "scanned": scanned,
+        "updated": updated,
+        "ok": ok,
+        "not_found": not_found,
+        "failed": failed,
+        "skipped": skipped,
+        "skipped_by_limit": skipped_by_limit,
+        "cache_size": len(cache),
+        "max_cache_items": max(0, int(max_cache_items)),
+        "full_refresh": bool(full_refresh),
+        "cache_path": str(cache_path),
+    }
 
 
 def _request_with_backoff(
@@ -874,6 +896,17 @@ def main() -> int:
     ap.add_argument("--disable_semantic_scholar", action="store_true")
     ap.add_argument("--refresh_semantic_scholar", action="store_true")
     ap.add_argument(
+        "--s2_refresh_max_cache_items",
+        type=int,
+        default=0,
+        help="Per-category cap on Semantic Scholar refresh (based on semantic_scholar_cache.jsonl size). 0 means no cap.",
+    )
+    ap.add_argument(
+        "--s2_refresh_full",
+        action="store_true",
+        help="Ignore --s2_refresh_max_cache_items and refresh all missing items.",
+    )
+    ap.add_argument(
         "--arxiv_base_urls",
         type=str,
         default="https://export.arxiv.org/api/query,http://export.arxiv.org/api/query,https://arxiv.org/api/query,http://arxiv.org/api/query",
@@ -953,6 +986,8 @@ def main() -> int:
                     timeout_s=max(1, int(args.request_timeout_s)),
                     connect_timeout_s=max(1, int(args.connect_timeout_s)),
                     sleep_s=1.0,
+                    max_cache_items=max(0, int(args.s2_refresh_max_cache_items)),
+                    full_refresh=bool(args.s2_refresh_full),
                 )
                 stats["by_category"][c.slug] = r
             print(json.dumps(stats, ensure_ascii=False))
@@ -966,6 +1001,8 @@ def main() -> int:
                 timeout_s=max(1, int(args.request_timeout_s)),
                 connect_timeout_s=max(1, int(args.connect_timeout_s)),
                 sleep_s=1.0,
+                max_cache_items=max(0, int(args.s2_refresh_max_cache_items)),
+                full_refresh=bool(args.s2_refresh_full),
             )
             stats["by_category"][c.slug] = r
         print(json.dumps(stats, ensure_ascii=False))

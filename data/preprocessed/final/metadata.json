@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-06-09T15:34:21.970524+00:00",
-  "triples_path": "/Users/a4x/mia_codebook_2stage/tmp/TransE_3DV/data/preprocessed/kg/triples_llm/triples.jsonl",
-  "out_dir": "/Users/a4x/mia_codebook_2stage/tmp/TransE_3DV/data/preprocessed/final",
+  "created_at": "2026-06-11T23:00:48.249548+00:00",
+  "triples_path": "/data/litengmo/ml-test-1/zstp_final/data/preprocessed/kg/triples_llm/triples.jsonl",
+  "out_dir": "/data/litengmo/ml-test-1/zstp_final/data/preprocessed/final",
   "params": {
     "seed": 42,
     "train_ratio": 0.9,
@@ -10,71 +10,76 @@
     "min_method_doc_freq": 1,
     "relations": [
       "method_uses_dataset",
+      "paper_cites_paper",
       "paper_proposes_method",
       "repo_implements_method"
     ]
   },
   "raw": {
-    "triple_count": 3966,
+    "triple_count": 6389,
     "by_relation": {
       "paper_proposes_method": 2339,
       "method_uses_dataset": 467,
       "paper_has_repo": 9,
-      "repo_implements_method": 1151
+      "repo_implements_method": 1151,
+      "paper_cites_paper": 2423
     }
   },
   "filter": {
     "dropped": {
       "relation_not_allowed": 9
     },
-    "kept": 3957,
+    "kept": 6380,
     "by_relation": {
       "paper_proposes_method": 2339,
       "method_uses_dataset": 467,
-      "repo_implements_method": 1151
+      "repo_implements_method": 1151,
+      "paper_cites_paper": 2423
     }
   },
   "split": {
-    "triple_total": 3957,
-    "train_triples": 3561,
-    "test_triples": 396
+    "triple_total": 6380,
+    "train_triples": 5742,
+    "test_triples": 638
   },
   "oov_fix": {
-    "moved_test_to_train": 316,
-    "test_kept": 80
+    "moved_test_to_train": 299,
+    "test_kept": 339
   },
   "train": {
-    "triple_count": 3877,
+    "triple_count": 6041,
     "by_relation": {
-      "paper_proposes_method": 2334,
-      "method_uses_dataset": 424,
-      "repo_implements_method": 1119
+      "paper_proposes_method": 2320,
+      "method_uses_dataset": 410,
+      "repo_implements_method": 1122,
+      "paper_cites_paper": 2189
     },
-    "entity_count": 5299,
+    "entity_count": 5444,
     "entity_types": {
-      "Paper": 1501,
       "Method": 3263,
+      "Paper": 1646,
       "Repo": 494,
       "Dataset": 41
     }
   },
   "test": {
-    "triple_count": 80,
+    "triple_count": 339,
     "by_relation": {
-      "method_uses_dataset": 43,
-      "paper_proposes_method": 5,
-      "repo_implements_method": 32
+      "paper_proposes_method": 19,
+      "method_uses_dataset": 57,
+      "repo_implements_method": 29,
+      "paper_cites_paper": 234
     },
-    "entity_count": 126,
+    "entity_count": 445,
     "entity_types": {
-      "Dataset": 19,
-      "Method": 77,
-      "Paper": 5,
-      "Repo": 25
+      "Paper": 306,
+      "Method": 98,
+      "Repo": 23,
+      "Dataset": 18
     }
   },
   "mappings": {
-    "entity_count": 5299,
-    "relation_count": 3
+    "entity_count": 5444,
+    "relation_count": 4
   }
 }

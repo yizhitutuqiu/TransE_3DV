@@ -1,6 +1,6 @@
 {
   "version": "0.1",
-  "created_at": "2026-06-09T14:23:28.073485+00:00",
+  "created_at": "2026-06-11T21:48:08.973098+00:00",
   "domain": "3d_vision_paper_code_ecosystem",
   "entity_types": [
     {
@@ -77,6 +77,11 @@
       "type": "paper_proposes_method",
       "head": "Paper",
       "tail": "Method"
+    },
+    {
+      "type": "paper_cites_paper",
+      "head": "Paper",
+      "tail": "Paper"
     },
     {
       "type": "repo_implements_method",

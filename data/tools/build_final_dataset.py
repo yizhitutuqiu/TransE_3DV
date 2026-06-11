@@ -124,6 +124,8 @@ def _valid_type_constraint(r: str, h: str, t: str) -> bool:
         return ht == "Paper" and tt == "Repo"
     if r == "method_targets_task":
         return ht == "Method" and tt == "Task"
+    if r == "paper_cites_paper":
+        return ht == "Paper" and tt == "Paper"
     return False
 
 

@@ -281,6 +281,10 @@ def main() -> int:
         argv += ["--out_root", str(raw_root)]
         if bool(args.refresh):
             argv += ["--refresh_semantic_scholar"]
+            if c.get("s2_refresh_max_cache_items") is not None:
+                argv += ["--s2_refresh_max_cache_items", str(c.get("s2_refresh_max_cache_items"))]
+            if _bool(c.get("s2_refresh_full"), False):
+                argv += ["--s2_refresh_full"]
             argv += ["--mode", "paper"]
             argv += ["--max_papers", "0"]
             argv += ["--max_repos", "0"]

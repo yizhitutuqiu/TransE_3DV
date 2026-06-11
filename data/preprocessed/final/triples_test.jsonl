@@ -1,80 +1,339 @@
-{"h": "Method:fluidgaussian", "r": "method_uses_dataset", "t": "Dataset:mip-nerf 360", "doc_id": "arxiv:2603.21356", "confidence": 0.99, "source": "llm"}
-{"h": "Paper:2011.12948", "r": "paper_proposes_method", "t": "Method:deformable neural radiance fields", "doc_id": "arxiv:2011.12948", "confidence": 1.0, "source": "llm"}
-{"h": "Method:vipocc", "r": "method_uses_dataset", "t": "Dataset:kitti-360", "doc_id": "arxiv:2412.11210", "confidence": 1.0, "source": "llm"}
-{"h": "Method:liftnav", "r": "method_uses_dataset", "t": "Dataset:replica", "doc_id": "arxiv:2605.31376", "confidence": 1.0, "source": "llm"}
-{"h": "Paper:2606.03509", "r": "paper_proposes_method", "t": "Method:evomemnav", "doc_id": "arxiv:2606.03509", "confidence": 1.0, "source": "llm"}
-{"h": "Method:VG²GT", "r": "method_uses_dataset", "t": "Dataset:replica", "doc_id": "arxiv:2606.01573", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.13679", "r": "paper_proposes_method", "t": "Method:rawnerf", "doc_id": "arxiv:2111.13679", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2109.01847", "r": "paper_proposes_method", "t": "Method:object-compositional neural radiance field", "doc_id": "arxiv:2109.01847", "confidence": 1.0, "source": "llm"}
+{"h": "Method:divas (depth-interactive voxel aggregation segmentation)", "r": "method_uses_dataset", "t": "Dataset:llff", "doc_id": "arxiv:2601.04860", "confidence": 1.0, "source": "llm"}
+{"h": "Method:evomemnav", "r": "method_uses_dataset", "t": "Dataset:hm3d", "doc_id": "arxiv:2606.03509", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2606.02479", "r": "paper_proposes_method", "t": "Method:covrag", "doc_id": "arxiv:2606.02479", "confidence": 1.0, "source": "llm"}
+{"h": "Method:gaussian-voxel duet", "r": "method_uses_dataset", "t": "Dataset:scannet++", "doc_id": "arxiv:2605.26616", "confidence": 1.0, "source": "llm"}
 {"h": "Method:twings", "r": "method_uses_dataset", "t": "Dataset:dtu", "doc_id": "arxiv:2605.22069", "confidence": 1.0, "source": "llm"}
-{"h": "Method:confixgs", "r": "method_uses_dataset", "t": "Dataset:nuscenes", "doc_id": "arxiv:2605.09688", "confidence": 1.0, "source": "llm"}
-{"h": "Method:panoptic3d (end-to-end)", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:2111.03039", "confidence": 1.0, "source": "llm"}
+{"h": "Method:cross3r", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "arxiv:2605.07978", "confidence": 1.0, "source": "llm"}
+{"h": "Method:panoptic3d (stage-wise)", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:2111.03039", "confidence": 1.0, "source": "llm"}
 {"h": "Paper:2112.12484", "r": "paper_proposes_method", "t": "Method:padmix", "doc_id": "arxiv:2112.12484", "confidence": 1.0, "source": "llm"}
-{"h": "Method:pose adaptive dual mixup", "r": "method_uses_dataset", "t": "Dataset:pix3d", "doc_id": "arxiv:2112.12484", "confidence": 1.0, "source": "llm"}
-{"h": "Method:nope-sac", "r": "method_uses_dataset", "t": "Dataset:matterport3d", "doc_id": "arxiv:2211.16799", "confidence": 1.0, "source": "llm"}
-{"h": "Method:hash-grid nerf", "r": "method_uses_dataset", "t": "Dataset:tanks and temples", "doc_id": "arxiv:2512.18237", "confidence": 0.9, "source": "llm"}
-{"h": "Method:cambrian-p", "r": "method_uses_dataset", "t": "Dataset:scannet", "doc_id": "arxiv:2605.22819", "confidence": 0.98, "source": "llm"}
-{"h": "Method:lora3d", "r": "method_uses_dataset", "t": "Dataset:replica", "doc_id": "arxiv:2412.07746", "confidence": 1.0, "source": "llm"}
-{"h": "Method:recurrent refinement training strategy", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:2312.14733", "confidence": 0.9, "source": "llm"}
-{"h": "Method:incarpose", "r": "method_uses_dataset", "t": "Dataset:7-scenes", "doc_id": "arxiv:2604.03814", "confidence": 0.95, "source": "llm"}
+{"h": "Method:padmix", "r": "method_uses_dataset", "t": "Dataset:shapenet", "doc_id": "arxiv:2112.12484", "confidence": 1.0, "source": "llm"}
+{"h": "Method:liftimage3d", "r": "method_uses_dataset", "t": "Dataset:llff", "doc_id": "arxiv:2412.09597", "confidence": 1.0, "source": "llm"}
+{"h": "Method:fstm", "r": "method_uses_dataset", "t": "Dataset:scannet++", "doc_id": "arxiv:2605.03463", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2606.05437", "r": "paper_proposes_method", "t": "Method:uncertainty-aware loss function", "doc_id": "arxiv:2606.05437", "confidence": 1.0, "source": "llm"}
+{"h": "Method:sa4depth", "r": "method_uses_dataset", "t": "Dataset:cityscapes", "doc_id": "arxiv:2605.28477", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2605.23523", "r": "paper_proposes_method", "t": "Method:compose", "doc_id": "arxiv:2605.23523", "confidence": 1.0, "source": "llm"}
+{"h": "Method:wildpose", "r": "method_uses_dataset", "t": "Dataset:7-scenes", "doc_id": "arxiv:2605.12774", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2605.10100", "r": "paper_proposes_method", "t": "Method:hyperpose", "doc_id": "arxiv:2605.10100", "confidence": 1.0, "source": "llm"}
+{"h": "Method:pose-accompanied point cloud classification network", "r": "method_uses_dataset", "t": "Dataset:scannet", "doc_id": "arxiv:2012.10042", "confidence": 1.0, "source": "llm"}
+{"h": "Method:weight-adaptive heatmap regression", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:2012.15175", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2312.14733", "r": "paper_proposes_method", "t": "Method:meta prompts", "doc_id": "arxiv:2312.14733", "confidence": 1.0, "source": "llm"}
+{"h": "Method:dac", "r": "method_uses_dataset", "t": "Dataset:imagenet", "doc_id": "arxiv:1812.08374", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2604.02107", "r": "paper_proposes_method", "t": "Method:hyvggt-vo", "doc_id": "arxiv:2604.02107", "confidence": 1.0, "source": "llm"}
+{"h": "Method:selfvio", "r": "method_uses_dataset", "t": "Dataset:cityscapes", "doc_id": "arxiv:1911.09968", "confidence": 1.0, "source": "llm"}
+{"h": "Method:selfvio", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "arxiv:1911.09968", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2211.16487", "r": "paper_proposes_method", "t": "Method:diffpose", "doc_id": "arxiv:2211.16487", "confidence": 1.0, "source": "llm"}
+{"h": "Method:sharpose", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:2312.10758", "confidence": 1.0, "source": "llm"}
 {"h": "Method:probpose", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:2412.02254", "confidence": 1.0, "source": "llm"}
-{"h": "Repo:nerfstudio-project/nerfstudio", "r": "repo_implements_method", "t": "Method:nerf", "doc_id": "github:nerfstudio-project/nerfstudio", "confidence": 0.95, "source": "llm"}
-{"h": "Repo:yerfor/Real3DPortrait", "r": "repo_implements_method", "t": "Method:geneface++", "doc_id": "github:yerfor/Real3DPortrait", "confidence": 0.9, "source": "llm"}
-{"h": "Repo:ActiveVisionLab/nerfmm", "r": "repo_implements_method", "t": "Method:nerf--", "doc_id": "github:ActiveVisionLab/nerfmm", "confidence": 1.0, "source": "llm"}
-{"h": "Method:point-nerf", "r": "method_uses_dataset", "t": "Dataset:scannet", "doc_id": "github:Xharlie/pointnerf", "confidence": 0.9, "source": "llm"}
-{"h": "Method:nerfbaselines", "r": "method_uses_dataset", "t": "Dataset:mip-nerf 360", "doc_id": "github:nerfbaselines/nerfbaselines", "confidence": 1.0, "source": "llm"}
-{"h": "Method:plenoxels", "r": "method_uses_dataset", "t": "Dataset:tanks and temples", "doc_id": "github:sjtuytc/UnboundedNeRFPytorch", "confidence": 1.0, "source": "llm"}
-{"h": "Method:mip-nerf-360", "r": "method_uses_dataset", "t": "Dataset:tanks and temples", "doc_id": "github:sjtuytc/UnboundedNeRFPytorch", "confidence": 1.0, "source": "llm"}
-{"h": "Repo:xhuangcv/hdr-nerf", "r": "repo_implements_method", "t": "Method:hdr-nerf", "doc_id": "github:xhuangcv/hdr-nerf", "confidence": 1.0, "source": "llm"}
-{"h": "Method:permutosdf", "r": "method_uses_dataset", "t": "Dataset:blendedmvs", "doc_id": "github:RaduAlexandru/permuto_sdf", "confidence": 1.0, "source": "llm"}
-{"h": "Repo:TencentARC/ArcNerf", "r": "repo_implements_method", "t": "Method:neus", "doc_id": "github:TencentARC/ArcNerf", "confidence": 0.9, "source": "llm"}
-{"h": "Method:sparf", "r": "method_uses_dataset", "t": "Dataset:replica", "doc_id": "github:google-research/sparf", "confidence": 1.0, "source": "llm"}
-{"h": "Method:gaustudio", "r": "method_uses_dataset", "t": "Dataset:tanks and temples", "doc_id": "github:GAP-LAB-CUHK-SZ/gaustudio", "confidence": 1.0, "source": "llm"}
-{"h": "Method:gaustudio", "r": "method_uses_dataset", "t": "Dataset:scannet++", "doc_id": "github:GAP-LAB-CUHK-SZ/gaustudio", "confidence": 1.0, "source": "llm"}
-{"h": "Repo:kwea123/ngp_pl", "r": "repo_implements_method", "t": "Method:instant-ngp", "doc_id": "github:kwea123/ngp_pl", "confidence": 1.0, "source": "llm"}
-{"h": "Repo:LetianHuang/op43dgs", "r": "repo_implements_method", "t": "Method:optimal gaussian splatting", "doc_id": "github:LetianHuang/op43dgs", "confidence": 0.99, "source": "llm"}
-{"h": "Method:inerf", "r": "method_uses_dataset", "t": "Dataset:llff", "doc_id": "github:salykova/inerf", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:2512.16089", "r": "paper_proposes_method", "t": "Method:lapx", "doc_id": "arxiv:2512.16089", "confidence": 1.0, "source": "llm"}
+{"h": "Method:trifocal tensor", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "arxiv:2512.19110", "confidence": 0.95, "source": "llm"}
+{"h": "Method:monoem-gs", "r": "method_uses_dataset", "t": "Dataset:7-scenes", "doc_id": "arxiv:2604.10593", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2603.27429", "r": "paper_proposes_method", "t": "Method:seed", "doc_id": "arxiv:2603.27429", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:kwea123/nerf_pl", "r": "repo_implements_method", "t": "Method:nerf", "doc_id": "github:kwea123/nerf_pl", "confidence": 1.0, "source": "llm"}
+{"h": "Method:point-nerf", "r": "method_uses_dataset", "t": "Dataset:dtu", "doc_id": "github:Xharlie/pointnerf", "confidence": 0.9, "source": "llm"}
+{"h": "Repo:ashawkey/torch-ngp", "r": "repo_implements_method", "t": "Method:torch-ngp", "doc_id": "github:ashawkey/torch-ngp", "confidence": 1.0, "source": "llm"}
+{"h": "Method:nerf++", "r": "method_uses_dataset", "t": "Dataset:tanks and temples", "doc_id": "github:sjtuytc/UnboundedNeRFPytorch", "confidence": 1.0, "source": "llm"}
+{"h": "Method:tetra-nerf", "r": "method_uses_dataset", "t": "Dataset:tanks and temples", "doc_id": "github:jkulhanek/tetra-nerf", "confidence": 1.0, "source": "llm"}
+{"h": "Method:tetra-nerf", "r": "method_uses_dataset", "t": "Dataset:mip-nerf 360", "doc_id": "github:jkulhanek/tetra-nerf", "confidence": 1.0, "source": "llm"}
+{"h": "Method:mip-splatting", "r": "method_uses_dataset", "t": "Dataset:mip-nerf 360", "doc_id": "github:autonomousvision/mip-splatting", "confidence": 1.0, "source": "llm"}
+{"h": "Method:intrinsicnerf", "r": "method_uses_dataset", "t": "Dataset:replica", "doc_id": "github:zju3dv/IntrinsicNeRF", "confidence": 0.9, "source": "llm"}
 {"h": "Repo:sfchng/Gaussian-Activated-Radiance-Fields", "r": "repo_implements_method", "t": "Method:nerf", "doc_id": "github:sfchng/Gaussian-Activated-Radiance-Fields", "confidence": 0.95, "source": "llm"}
-{"h": "Method:semantic ray", "r": "method_uses_dataset", "t": "Dataset:scannet", "doc_id": "github:THU-SI/Semantic-Ray", "confidence": 1.0, "source": "llm"}
 {"h": "Method:scenerf", "r": "method_uses_dataset", "t": "Dataset:semantickitti", "doc_id": "github:astra-vision/SceneRF", "confidence": 1.0, "source": "llm"}
-{"h": "Repo:thu3dhuman/sourcecode", "r": "repo_implements_method", "t": "Method:ide-3d", "doc_id": "github:thu3dhuman/sourcecode", "confidence": 0.9, "source": "llm"}
-{"h": "Method:egg-fusion", "r": "method_uses_dataset", "t": "Dataset:tum rgb-d", "doc_id": "github:panxkun/eggfusion", "confidence": 1.0, "source": "llm"}
-{"h": "Method:gomvs", "r": "method_uses_dataset", "t": "Dataset:tanks and temples", "doc_id": "github:Wuuu3511/GoMVS", "confidence": 1.0, "source": "llm"}
-{"h": "Method:multi-view stereo (mvs)", "r": "method_uses_dataset", "t": "Dataset:dtu", "doc_id": "github:XYZ-qiyh/multi-view-3d-reconstruction", "confidence": 0.9, "source": "llm"}
-{"h": "Method:deep two-view structure-from-motion", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "github:jytime/Deep-SfM-Revisited", "confidence": 1.0, "source": "llm"}
-{"h": "Method:deep two-view structure-from-motion", "r": "method_uses_dataset", "t": "Dataset:kitti odometry", "doc_id": "github:jytime/Deep-SfM-Revisited", "confidence": 1.0, "source": "llm"}
-{"h": "Repo:Easonyesheng/A2PM-MESA", "r": "repo_implements_method", "t": "Method:a2pm", "doc_id": "github:Easonyesheng/A2PM-MESA", "confidence": 1.0, "source": "llm"}
-{"h": "Repo:Easonyesheng/A2PM-MESA", "r": "repo_implements_method", "t": "Method:dmesa", "doc_id": "github:Easonyesheng/A2PM-MESA", "confidence": 1.0, "source": "llm"}
+{"h": "Method:dfnet", "r": "method_uses_dataset", "t": "Dataset:7-scenes", "doc_id": "github:ActiveVisionLab/DFNet", "confidence": 0.95, "source": "llm"}
+{"h": "Repo:thu3dhuman/sourcecode", "r": "repo_implements_method", "t": "Method:tensor4d", "doc_id": "github:thu3dhuman/sourcecode", "confidence": 0.9, "source": "llm"}
+{"h": "Repo:samorr/Computer-Vision-and-Photogrammetry", "r": "repo_implements_method", "t": "Method:essential matrix", "doc_id": "github:samorr/Computer-Vision-and-Photogrammetry", "confidence": 0.9, "source": "llm"}
+{"h": "Repo:yudhisteer/3D-Reconstruction-with-Uncalibrated-Stereo", "r": "repo_implements_method", "t": "Method:multi-view stereo (mvs)", "doc_id": "github:yudhisteer/3D-Reconstruction-with-Uncalibrated-Stereo", "confidence": 1.0, "source": "llm"}
+{"h": "Method:structure from motion (sfm)", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "github:yudhisteer/3D-Reconstruction-with-Uncalibrated-Stereo", "confidence": 0.9, "source": "llm"}
+{"h": "Repo:openMVG/openMVG", "r": "repo_implements_method", "t": "Method:openmvg", "doc_id": "github:openMVG/openMVG", "confidence": 1.0, "source": "llm"}
+{"h": "Method:multi-view stereo (mvs)", "r": "method_uses_dataset", "t": "Dataset:tanks and temples", "doc_id": "github:XYZ-qiyh/multi-view-3d-reconstruction", "confidence": 0.9, "source": "llm"}
+{"h": "Method:dmesa", "r": "method_uses_dataset", "t": "Dataset:scannet", "doc_id": "github:Easonyesheng/A2PM-MESA", "confidence": 1.0, "source": "llm"}
+{"h": "Method:evo", "r": "method_uses_dataset", "t": "Dataset:euroc", "doc_id": "github:MichaelGrupp/evo", "confidence": 1.0, "source": "llm"}
 {"h": "Repo:gaoxiang12/slambook", "r": "repo_implements_method", "t": "Method:sophus", "doc_id": "github:gaoxiang12/slambook", "confidence": 0.9, "source": "llm"}
-{"h": "Repo:gaoxiang12/slambook", "r": "repo_implements_method", "t": "Method:opencv", "doc_id": "github:gaoxiang12/slambook", "confidence": 0.9, "source": "llm"}
-{"h": "Repo:koide3/hdl_graph_slam", "r": "repo_implements_method", "t": "Method:ndt", "doc_id": "github:koide3/hdl_graph_slam", "confidence": 0.9, "source": "llm"}
-{"h": "Repo:engcang/SLAM-application", "r": "repo_implements_method", "t": "Method:fast-lio2", "doc_id": "github:engcang/SLAM-application", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:gaoxiang12/slambook", "r": "repo_implements_method", "t": "Method:g2o", "doc_id": "github:gaoxiang12/slambook", "confidence": 0.9, "source": "llm"}
+{"h": "Repo:cvg/nice-slam", "r": "repo_implements_method", "t": "Method:nice-slam", "doc_id": "github:cvg/nice-slam", "confidence": 0.99, "source": "llm"}
+{"h": "Method:superpoint-slam", "r": "method_uses_dataset", "t": "Dataset:euroc", "doc_id": "github:KinglittleQ/SuperPoint_SLAM", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:pamela-project/slambench", "r": "repo_implements_method", "t": "Method:elasticfusion", "doc_id": "github:pamela-project/slambench", "confidence": 0.95, "source": "llm"}
 {"h": "Repo:Yixin-F/better_fastlio2", "r": "repo_implements_method", "t": "Method:gtsam", "doc_id": "github:Yixin-F/better_fastlio2", "confidence": 0.9, "source": "llm"}
-{"h": "Repo:luigifreda/slamplay", "r": "repo_implements_method", "t": "Method:pcl", "doc_id": "github:luigifreda/slamplay", "confidence": 0.9, "source": "llm"}
-{"h": "Repo:luigifreda/slamplay", "r": "repo_implements_method", "t": "Method:superpoint", "doc_id": "github:luigifreda/slamplay", "confidence": 0.9, "source": "llm"}
+{"h": "Repo:Yixin-F/better_fastlio2", "r": "repo_implements_method", "t": "Method:icp", "doc_id": "github:Yixin-F/better_fastlio2", "confidence": 0.9, "source": "llm"}
+{"h": "Repo:TUMFTM/ORB_SLAM3_RGBL", "r": "repo_implements_method", "t": "Method:orb-slam3-rgbl", "doc_id": "github:TUMFTM/ORB_SLAM3_RGBL", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:TUMFTM/ORB_SLAM3_RGBL", "r": "repo_implements_method", "t": "Method:orb-slam3", "doc_id": "github:TUMFTM/ORB_SLAM3_RGBL", "confidence": 0.9, "source": "llm"}
+{"h": "Repo:varyshare/easy_slam_tutorial", "r": "repo_implements_method", "t": "Method:orb", "doc_id": "github:varyshare/easy_slam_tutorial", "confidence": 0.95, "source": "llm"}
+{"h": "Method:dynamic-orb-slam2", "r": "method_uses_dataset", "t": "Dataset:euroc", "doc_id": "github:Horacehxw/Dynamic_ORB_SLAM2", "confidence": 0.99, "source": "llm"}
 {"h": "Repo:changh95/slam_lecture_codes", "r": "repo_implements_method", "t": "Method:icp", "doc_id": "github:changh95/slam_lecture_codes", "confidence": 0.8, "source": "llm"}
 {"h": "Repo:changh95/slam_lecture_codes", "r": "repo_implements_method", "t": "Method:fast-livo2", "doc_id": "github:changh95/slam_lecture_codes", "confidence": 0.8, "source": "llm"}
-{"h": "Repo:changh95/slam_lecture_codes", "r": "repo_implements_method", "t": "Method:pin-slam", "doc_id": "github:changh95/slam_lecture_codes", "confidence": 0.8, "source": "llm"}
+{"h": "Repo:Ewenwan/MVision", "r": "repo_implements_method", "t": "Method:yolo", "doc_id": "github:Ewenwan/MVision", "confidence": 0.8, "source": "llm"}
+{"h": "Method:cerebro", "r": "method_uses_dataset", "t": "Dataset:euroc", "doc_id": "github:mpkuse/cerebro", "confidence": 0.95, "source": "llm"}
 {"h": "Method:pvio", "r": "method_uses_dataset", "t": "Dataset:euroc", "doc_id": "github:zju3dv/PVIO", "confidence": 1.0, "source": "llm"}
-{"h": "Repo:stefanopini/simple-HRNet", "r": "repo_implements_method", "t": "Method:yolov3", "doc_id": "github:stefanopini/simple-HRNet", "confidence": 0.99, "source": "llm"}
-{"h": "Repo:yo-WASSUP/Good-GYM", "r": "repo_implements_method", "t": "Method:yolo", "doc_id": "github:yo-WASSUP/Good-GYM", "confidence": 0.8, "source": "llm"}
-{"h": "Repo:MiraPurkrabek/BBoxMaskPose", "r": "repo_implements_method", "t": "Method:bboxmaskpose", "doc_id": "github:MiraPurkrabek/BBoxMaskPose", "confidence": 1.0, "source": "llm"}
-{"h": "Repo:JunkyByte/easy_ViTPose", "r": "repo_implements_method", "t": "Method:vitpose", "doc_id": "github:JunkyByte/easy_ViTPose", "confidence": 1.0, "source": "llm"}
-{"h": "Repo:JunkyByte/easy_ViTPose", "r": "repo_implements_method", "t": "Method:sort", "doc_id": "github:JunkyByte/easy_ViTPose", "confidence": 1.0, "source": "llm"}
-{"h": "Repo:tucan9389/tf2-mobile-2d-single-pose-estimation", "r": "repo_implements_method", "t": "Method:cpm", "doc_id": "github:tucan9389/tf2-mobile-2d-single-pose-estimation", "confidence": 1.0, "source": "llm"}
-{"h": "Repo:Naman-ntc/Pytorch-Human-Pose-Estimation", "r": "repo_implements_method", "t": "Method:inception", "doc_id": "github:Naman-ntc/Pytorch-Human-Pose-Estimation", "confidence": 0.95, "source": "llm"}
+{"h": "Repo:by-sabbir/HeadPoseEstimation", "r": "repo_implements_method", "t": "Method:opencv", "doc_id": "github:by-sabbir/HeadPoseEstimation", "confidence": 0.99, "source": "llm"}
+{"h": "Repo:andyzeng/apc-vision-toolbox", "r": "repo_implements_method", "t": "Method:icp", "doc_id": "github:andyzeng/apc-vision-toolbox", "confidence": 0.95, "source": "llm"}
+{"h": "Repo:MiraPurkrabek/BBoxMaskPose", "r": "repo_implements_method", "t": "Method:vitpose", "doc_id": "github:MiraPurkrabek/BBoxMaskPose", "confidence": 1.0, "source": "llm"}
+{"h": "Method:mobilenet", "r": "method_uses_dataset", "t": "Dataset:imagenet", "doc_id": "github:satyaborg/pose-estimation-detection", "confidence": 1.0, "source": "llm"}
+{"h": "Method:mmpose", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "github:open-mmlab/mmpose", "confidence": 1.0, "source": "llm"}
+{"h": "Method:cpm", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "github:tucan9389/tf2-mobile-2d-single-pose-estimation", "confidence": 0.9, "source": "llm"}
+{"h": "Repo:Naman-ntc/Pytorch-Human-Pose-Estimation", "r": "repo_implements_method", "t": "Method:resnet", "doc_id": "github:Naman-ntc/Pytorch-Human-Pose-Estimation", "confidence": 0.95, "source": "llm"}
+{"h": "Repo:Naman-ntc/Pytorch-Human-Pose-Estimation", "r": "repo_implements_method", "t": "Method:pyramid residual modules", "doc_id": "github:Naman-ntc/Pytorch-Human-Pose-Estimation", "confidence": 0.95, "source": "llm"}
+{"h": "Method:inception", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "github:Naman-ntc/Pytorch-Human-Pose-Estimation", "confidence": 0.9, "source": "llm"}
 {"h": "Method:fractional maxpooling", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "github:Naman-ntc/Pytorch-Human-Pose-Estimation", "confidence": 0.9, "source": "llm"}
-{"h": "Method:simplepose", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "github:hellojialee/Improved-Body-Parts", "confidence": 0.99, "source": "llm"}
-{"h": "Repo:salihkaragoz/pose-residual-network-pytorch", "r": "repo_implements_method", "t": "Method:pose residual network", "doc_id": "github:salihkaragoz/pose-residual-network-pytorch", "confidence": 1.0, "source": "llm"}
-{"h": "Repo:salihkaragoz/pose-residual-network-pytorch", "r": "repo_implements_method", "t": "Method:pytorch", "doc_id": "github:salihkaragoz/pose-residual-network-pytorch", "confidence": 0.95, "source": "llm"}
-{"h": "Method:repogen", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "github:MiraPurkrabek/RePoGen", "confidence": 0.95, "source": "llm"}
-{"h": "Repo:fazildgr8/realsense_explorer_bot", "r": "repo_implements_method", "t": "Method:ros", "doc_id": "github:fazildgr8/realsense_explorer_bot", "confidence": 1.0, "source": "llm"}
-{"h": "Repo:FORTH-ModelBasedTracker/MocapNET", "r": "repo_implements_method", "t": "Method:nsrm", "doc_id": "github:FORTH-ModelBasedTracker/MocapNET", "confidence": 0.9, "source": "llm"}
-{"h": "Method:progressive volume distillation", "r": "method_uses_dataset", "t": "Dataset:llff", "doc_id": "arxiv:2211.15977", "confidence": 1.0, "source": "llm"}
-{"h": "Paper:2509.11171", "r": "paper_proposes_method", "t": "Method:sphere", "doc_id": "arxiv:2509.11171", "confidence": 1.0, "source": "llm"}
-{"h": "Method:coco-inr", "r": "method_uses_dataset", "t": "Dataset:dtu", "doc_id": "arxiv:2210.11170", "confidence": 1.0, "source": "llm"}
-{"h": "Method:nap3d", "r": "method_uses_dataset", "t": "Dataset:tum rgb-d", "doc_id": "arxiv:2512.15080", "confidence": 0.99, "source": "llm"}
-{"h": "Method:mspn", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:1911.07938", "confidence": 0.98, "source": "llm"}
+{"h": "Method:vitpose++", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "github:ViTAE-Transformer/ViTPose", "confidence": 0.9, "source": "llm"}
+{"h": "Method:pose residual network", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "github:mkocabas/pose-residual-network", "confidence": 0.95, "source": "llm"}
+{"h": "Repo:tjiiv-cprg/EPro-PnP", "r": "repo_implements_method", "t": "Method:epro-pnp-det v2", "doc_id": "github:tjiiv-cprg/EPro-PnP", "confidence": 0.99, "source": "llm"}
+{"h": "Method:imp", "r": "method_uses_dataset", "t": "Dataset:scannet", "doc_id": "github:feixue94/imp-release", "confidence": 0.85, "source": "llm"}
+{"h": "Method:hprnet", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "github:nerminsamet/HPRNet", "confidence": 0.98, "source": "llm"}
+{"h": "Repo:roytseng-tw/adversarial-pose-pytorch", "r": "repo_implements_method", "t": "Method:hgpose", "doc_id": "github:roytseng-tw/adversarial-pose-pytorch", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:roytseng-tw/adversarial-pose-pytorch", "r": "repo_implements_method", "t": "Method:hgpose-ae", "doc_id": "github:roytseng-tw/adversarial-pose-pytorch", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:szczyglis-dev/js-ai-body-tracker", "r": "repo_implements_method", "t": "Method:movenet", "doc_id": "github:szczyglis-dev/js-ai-body-tracker", "confidence": 1.0, "source": "llm"}
+{"h": "Repo:fazildgr8/realsense_explorer_bot", "r": "repo_implements_method", "t": "Method:yolov3", "doc_id": "github:fazildgr8/realsense_explorer_bot", "confidence": 0.9, "source": "llm"}
+{"h": "Paper:2007.03858", "r": "paper_proposes_method", "t": "Method:pamir", "doc_id": "arxiv:2007.03858", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2411.02979", "r": "paper_proposes_method", "t": "Method:cad-nerf", "doc_id": "arxiv:2411.02979", "confidence": 1.0, "source": "llm"}
+{"h": "Method:depth-guided point lifting method", "r": "method_uses_dataset", "t": "Dataset:replica", "doc_id": "arxiv:2606.00450", "confidence": 0.95, "source": "llm"}
+{"h": "Paper:2110.11860", "r": "paper_proposes_method", "t": "Method:air-nets", "doc_id": "arxiv:2110.11860", "confidence": 1.0, "source": "llm"}
+{"h": "Method:attentive implicit representation networks", "r": "method_uses_dataset", "t": "Dataset:shapenet", "doc_id": "arxiv:2110.11860", "confidence": 1.0, "source": "llm"}
+{"h": "Method:gamo", "r": "method_uses_dataset", "t": "Dataset:replica", "doc_id": "arxiv:2512.25073", "confidence": 0.95, "source": "llm"}
+{"h": "Method:driv3r", "r": "method_uses_dataset", "t": "Dataset:nuscenes", "doc_id": "arxiv:2412.06777", "confidence": 1.0, "source": "llm"}
+{"h": "Method:ground plane polling", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "arxiv:1811.06666", "confidence": 1.0, "source": "llm"}
+{"h": "Method:efficientlo-net", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "arxiv:2111.02135", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2311.14155", "r": "paper_proposes_method", "t": "Method:gigapose", "doc_id": "arxiv:2311.14155", "confidence": 0.98, "source": "llm"}
+{"h": "Method:ganvo", "r": "method_uses_dataset", "t": "Dataset:cityscapes", "doc_id": "arxiv:1809.05786", "confidence": 0.98, "source": "llm"}
+{"h": "Paper:1910.05901", "r": "paper_proposes_method", "t": "Method:multi-stage hrnet", "doc_id": "arxiv:1910.05901", "confidence": 1.0, "source": "llm"}
 {"h": "Method:hsjp", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:2012.07101", "confidence": 1.0, "source": "llm"}
 {"h": "Method:intermediate geometrical representations (igrs)", "r": "method_uses_dataset", "t": "Dataset:kitti", "doc_id": "arxiv:2011.08464", "confidence": 0.95, "source": "llm"}
-{"h": "Paper:2111.07418", "r": "paper_proposes_method", "t": "Method:cva-mvsnet", "doc_id": "arxiv:2111.07418", "confidence": 1.0, "source": "llm"}
-{"h": "Method:lpn-50", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:1911.10346", "confidence": 1.0, "source": "llm"}
-{"h": "Method:beta-soft-argmax", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:1911.10346", "confidence": 1.0, "source": "llm"}
+{"h": "Method:pranet", "r": "method_uses_dataset", "t": "Dataset:modelnet40", "doc_id": "arxiv:2109.11349", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:1810.12163", "r": "paper_proposes_method", "t": "Method:relocalisation cascade", "doc_id": "arxiv:1810.12163", "confidence": 0.98, "source": "llm"}
+{"h": "Method:heatmap regression via randomized rounding", "r": "method_uses_dataset", "t": "Dataset:coco", "doc_id": "arxiv:2009.00225", "confidence": 1.0, "source": "llm"}
+{"h": "Method:cnn", "r": "method_uses_dataset", "t": "Dataset:imagenet", "doc_id": "arxiv:2011.13669", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2111.00190", "r": "paper_proposes_method", "t": "Method:equi-pose", "doc_id": "arxiv:2111.00190", "confidence": 1.0, "source": "llm"}
+{"h": "Paper:2606.00137", "r": "paper_cites_paper", "t": "Paper:2111.11426", "doc_id": "arxiv:2606.00137", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2606.00137", "r": "paper_cites_paper", "t": "Paper:2009.09633", "doc_id": "arxiv:2606.00137", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2606.00137", "r": "paper_cites_paper", "t": "Paper:1812.03828", "doc_id": "arxiv:2606.00137", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.28125", "r": "paper_cites_paper", "t": "Paper:2010.07492", "doc_id": "arxiv:2605.28125", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.10830", "r": "paper_cites_paper", "t": "Paper:2012.02190", "doc_id": "arxiv:2605.10830", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2603.28090", "r": "paper_cites_paper", "t": "Paper:2212.02501", "doc_id": "arxiv:2603.28090", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2603.12766", "r": "paper_cites_paper", "t": "Paper:2212.08070", "doc_id": "arxiv:2603.12766", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2603.05932", "r": "paper_cites_paper", "t": "Paper:2511.10647", "doc_id": "arxiv:2603.05932", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2603.00805", "r": "paper_cites_paper", "t": "Paper:2106.05264", "doc_id": "arxiv:2603.00805", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2602.18322", "r": "paper_cites_paper", "t": "Paper:2311.17245", "doc_id": "arxiv:2602.18322", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2602.18322", "r": "paper_cites_paper", "t": "Paper:2112.05140", "doc_id": "arxiv:2602.18322", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2602.18322", "r": "paper_cites_paper", "t": "Paper:2010.07492", "doc_id": "arxiv:2602.18322", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2602.06488", "r": "paper_cites_paper", "t": "Paper:2112.00726", "doc_id": "arxiv:2602.06488", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2602.05423", "r": "paper_cites_paper", "t": "Paper:2312.02126", "doc_id": "arxiv:2602.05423", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2602.05423", "r": "paper_cites_paper", "t": "Paper:2112.12130", "doc_id": "arxiv:2602.05423", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2601.21269", "r": "paper_cites_paper", "t": "Paper:2311.17245", "doc_id": "arxiv:2601.21269", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2601.20857", "r": "paper_cites_paper", "t": "Paper:2411.19548", "doc_id": "arxiv:2601.20857", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2601.15951", "r": "paper_cites_paper", "t": "Paper:2312.12337", "doc_id": "arxiv:2601.15951", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2601.15951", "r": "paper_cites_paper", "t": "Paper:2301.00157", "doc_id": "arxiv:2601.15951", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:1905.05172", "r": "paper_cites_paper", "t": "Paper:1808.05942", "doc_id": "arxiv:1905.05172", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:1902.01275", "r": "paper_cites_paper", "t": "Paper:1809.10790", "doc_id": "arxiv:1902.01275", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2101.01602", "r": "paper_cites_paper", "t": "Paper:2010.07492", "doc_id": "arxiv:2101.01602", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2109.01129", "r": "paper_cites_paper", "t": "Paper:2012.05903", "doc_id": "arxiv:2109.01129", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2111.09996", "r": "paper_cites_paper", "t": "Paper:1901.05103", "doc_id": "arxiv:2111.09996", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2112.05504", "r": "paper_cites_paper", "t": "Paper:2011.12948", "doc_id": "arxiv:2112.05504", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2112.01517", "r": "paper_cites_paper", "t": "Paper:2104.14786", "doc_id": "arxiv:2112.01517", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2112.01517", "r": "paper_cites_paper", "t": "Paper:2103.13744", "doc_id": "arxiv:2112.01517", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2111.13679", "r": "paper_cites_paper", "t": "Paper:2109.01129", "doc_id": "arxiv:2111.13679", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2111.14292", "r": "paper_cites_paper", "t": "Paper:2012.02190", "doc_id": "arxiv:2111.14292", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2212.04823", "r": "paper_cites_paper", "t": "Paper:2112.05637", "doc_id": "arxiv:2212.04823", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2212.14704", "r": "paper_cites_paper", "t": "Paper:2112.08867", "doc_id": "arxiv:2212.14704", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2212.04492", "r": "paper_cites_paper", "t": "Paper:2012.02190", "doc_id": "arxiv:2212.04492", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2212.04492", "r": "paper_cites_paper", "t": "Paper:2011.12948", "doc_id": "arxiv:2212.04492", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2212.04492", "r": "paper_cites_paper", "t": "Paper:1812.03828", "doc_id": "arxiv:2212.04492", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2511.14149", "r": "paper_cites_paper", "t": "Paper:2012.02190", "doc_id": "arxiv:2511.14149", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2606.03909", "r": "paper_cites_paper", "t": "Paper:2312.07920", "doc_id": "arxiv:2606.03909", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2312.09780", "r": "paper_cites_paper", "t": "Paper:2111.15246", "doc_id": "arxiv:2312.09780", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2312.09780", "r": "paper_cites_paper", "t": "Paper:2111.09996", "doc_id": "arxiv:2312.09780", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2312.09780", "r": "paper_cites_paper", "t": "Paper:2012.02190", "doc_id": "arxiv:2312.09780", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2606.08205", "r": "paper_cites_paper", "t": "Paper:2211.14651", "doc_id": "arxiv:2606.08205", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2606.02479", "r": "paper_cites_paper", "t": "Paper:2312.14132", "doc_id": "arxiv:2606.02479", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2606.01573", "r": "paper_cites_paper", "t": "Paper:2412.09573", "doc_id": "arxiv:2606.01573", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.31595", "r": "paper_cites_paper", "t": "Paper:2112.05131", "doc_id": "arxiv:2605.31595", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.31595", "r": "paper_cites_paper", "t": "Paper:2012.05901", "doc_id": "arxiv:2605.31595", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.31577", "r": "paper_cites_paper", "t": "Paper:2511.10647", "doc_id": "arxiv:2605.31577", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.30863", "r": "paper_cites_paper", "t": "Paper:2312.12337", "doc_id": "arxiv:2605.30863", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.29997", "r": "paper_cites_paper", "t": "Paper:2312.12337", "doc_id": "arxiv:2605.29997", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.27372", "r": "paper_cites_paper", "t": "Paper:2511.10647", "doc_id": "arxiv:2605.27372", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.26519", "r": "paper_cites_paper", "t": "Paper:2104.04532", "doc_id": "arxiv:2605.26519", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.26368", "r": "paper_cites_paper", "t": "Paper:2603.17571", "doc_id": "arxiv:2605.26368", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.26230", "r": "paper_cites_paper", "t": "Paper:2312.14132", "doc_id": "arxiv:2605.26230", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.26113", "r": "paper_cites_paper", "t": "Paper:2312.07920", "doc_id": "arxiv:2605.26113", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.25909", "r": "paper_cites_paper", "t": "Paper:1901.05103", "doc_id": "arxiv:2605.25909", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.24642", "r": "paper_cites_paper", "t": "Paper:2511.19971", "doc_id": "arxiv:2605.24642", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.23892", "r": "paper_cites_paper", "t": "Paper:2604.02107", "doc_id": "arxiv:2605.23892", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.23892", "r": "paper_cites_paper", "t": "Paper:2312.14132", "doc_id": "arxiv:2605.23892", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.23888", "r": "paper_cites_paper", "t": "Paper:2312.12337", "doc_id": "arxiv:2605.23888", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.21032", "r": "paper_cites_paper", "t": "Paper:2601.15951", "doc_id": "arxiv:2605.21032", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.18735", "r": "paper_cites_paper", "t": "Paper:2511.10647", "doc_id": "arxiv:2605.18735", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.17942", "r": "paper_cites_paper", "t": "Paper:2511.10647", "doc_id": "arxiv:2605.17942", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.16807", "r": "paper_cites_paper", "t": "Paper:2112.00726", "doc_id": "arxiv:2605.16807", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.13018", "r": "paper_cites_paper", "t": "Paper:2312.15130", "doc_id": "arxiv:2605.13018", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.12399", "r": "paper_cites_paper", "t": "Paper:2107.02791", "doc_id": "arxiv:2605.12399", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.12027", "r": "paper_cites_paper", "t": "Paper:2511.19971", "doc_id": "arxiv:2605.12027", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.10760", "r": "paper_cites_paper", "t": "Paper:2112.12130", "doc_id": "arxiv:2605.10760", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.10307", "r": "paper_cites_paper", "t": "Paper:2311.08159", "doc_id": "arxiv:2605.10307", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.09688", "r": "paper_cites_paper", "t": "Paper:2312.12337", "doc_id": "arxiv:2605.09688", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2012.06650", "r": "paper_cites_paper", "t": "Paper:1901.05103", "doc_id": "arxiv:2012.06650", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2012.09856", "r": "paper_cites_paper", "t": "Paper:1804.04610", "doc_id": "arxiv:2012.09856", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2012.03196", "r": "paper_cites_paper", "t": "Paper:1807.09259", "doc_id": "arxiv:2012.03196", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2111.03039", "r": "paper_cites_paper", "t": "Paper:1812.11166", "doc_id": "arxiv:2111.03039", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2111.13674", "r": "paper_cites_paper", "t": "Paper:1911.10414", "doc_id": "arxiv:2111.13674", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2111.13674", "r": "paper_cites_paper", "t": "Paper:1901.05103", "doc_id": "arxiv:2111.13674", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2112.09648", "r": "paper_cites_paper", "t": "Paper:2003.04618", "doc_id": "arxiv:2112.09648", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2112.03243", "r": "paper_cites_paper", "t": "Paper:1911.11763", "doc_id": "arxiv:2112.03243", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2211.16991", "r": "paper_cites_paper", "t": "Paper:2109.01750", "doc_id": "arxiv:2211.16991", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2212.00792", "r": "paper_cites_paper", "t": "Paper:2109.00512", "doc_id": "arxiv:2212.00792", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2212.00792", "r": "paper_cites_paper", "t": "Paper:2012.02190", "doc_id": "arxiv:2212.00792", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2312.14132", "r": "paper_cites_paper", "t": "Paper:2211.12018", "doc_id": "arxiv:2312.14132", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2312.14132", "r": "paper_cites_paper", "t": "Paper:2109.01129", "doc_id": "arxiv:2312.14132", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:1912.04663", "r": "paper_cites_paper", "t": "Paper:1812.03828", "doc_id": "arxiv:1912.04663", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:1912.04663", "r": "paper_cites_paper", "t": "Paper:1804.04610", "doc_id": "arxiv:1912.04663", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2211.11674", "r": "paper_cites_paper", "t": "Paper:2109.01750", "doc_id": "arxiv:2211.11674", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2512.06868", "r": "paper_cites_paper", "t": "Paper:1905.02082", "doc_id": "arxiv:2512.06868", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2606.01940", "r": "paper_cites_paper", "t": "Paper:2112.12761", "doc_id": "arxiv:2606.01940", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2606.00576", "r": "paper_cites_paper", "t": "Paper:2210.13641", "doc_id": "arxiv:2606.00576", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.31217", "r": "paper_cites_paper", "t": "Paper:1812.02541", "doc_id": "arxiv:2605.31217", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.29953", "r": "paper_cites_paper", "t": "Paper:2110.02330", "doc_id": "arxiv:2605.29953", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.28477", "r": "paper_cites_paper", "t": "Paper:1911.11763", "doc_id": "arxiv:2605.28477", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.23523", "r": "paper_cites_paper", "t": "Paper:1812.02541", "doc_id": "arxiv:2605.23523", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.17777", "r": "paper_cites_paper", "t": "Paper:2312.10649", "doc_id": "arxiv:2605.17777", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.16258", "r": "paper_cites_paper", "t": "Paper:2109.01129", "doc_id": "arxiv:2605.16258", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.15583", "r": "paper_cites_paper", "t": "Paper:2211.03375", "doc_id": "arxiv:2605.15583", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.12774", "r": "paper_cites_paper", "t": "Paper:2112.12130", "doc_id": "arxiv:2605.12774", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.12297", "r": "paper_cites_paper", "t": "Paper:2311.04591", "doc_id": "arxiv:2605.12297", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.07023", "r": "paper_cites_paper", "t": "Paper:2312.00947", "doc_id": "arxiv:2605.07023", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.07023", "r": "paper_cites_paper", "t": "Paper:2311.14155", "doc_id": "arxiv:2605.07023", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.03359", "r": "paper_cites_paper", "t": "Paper:2110.06199", "doc_id": "arxiv:2605.03359", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2605.02708", "r": "paper_cites_paper", "t": "Paper:2311.14155", "doc_id": "arxiv:2605.02708", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2604.20650", "r": "paper_cites_paper", "t": "Paper:2311.15707", "doc_id": "arxiv:2604.20650", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:1912.11888", "r": "paper_cites_paper", "t": "Paper:1902.01275", "doc_id": "arxiv:1912.11888", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:1912.08568", "r": "paper_cites_paper", "t": "Paper:1811.11742", "doc_id": "arxiv:1912.08568", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:1911.11763", "r": "paper_cites_paper", "t": "Paper:1812.03245", "doc_id": "arxiv:1911.11763", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2012.03316", "r": "paper_cites_paper", "t": "Paper:1811.05419", "doc_id": "arxiv:2012.03316", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2012.00088", "r": "paper_cites_paper", "t": "Paper:1911.09231", "doc_id": "arxiv:2012.00088", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2012.08501", "r": "paper_cites_paper", "t": "Paper:1808.05942", "doc_id": "arxiv:2012.08501", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2212.12902", "r": "paper_cites_paper", "t": "Paper:1812.11788", "doc_id": "arxiv:2212.12902", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2212.01830", "r": "paper_cites_paper", "t": "Paper:2011.13894", "doc_id": "arxiv:2212.01830", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2312.14733", "r": "paper_cites_paper", "t": "Paper:1911.07524", "doc_id": "arxiv:2312.14733", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2412.03570", "r": "paper_cites_paper", "t": "Paper:2311.12024", "doc_id": "arxiv:2412.03570", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2412.03517", "r": "paper_cites_paper", "t": "Paper:2012.02190", "doc_id": "arxiv:2412.03517", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2412.16742", "r": "paper_cites_paper", "t": "Paper:1812.08008", "doc_id": "arxiv:2412.16742", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2512.10950", "r": "paper_cites_paper", "t": "Paper:2412.03570", "doc_id": "arxiv:2512.10950", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2512.10950", "r": "paper_cites_paper", "t": "Paper:2312.14132", "doc_id": "arxiv:2512.10950", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2512.10950", "r": "paper_cites_paper", "t": "Paper:2109.00512", "doc_id": "arxiv:2512.10950", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2512.10957", "r": "paper_cites_paper", "t": "Paper:2312.14132", "doc_id": "arxiv:2512.10957", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2512.24688", "r": "paper_cites_paper", "t": "Paper:1909.08605", "doc_id": "arxiv:2512.24688", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2604.03814", "r": "paper_cites_paper", "t": "Paper:2312.14132", "doc_id": "arxiv:2604.03814", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2603.27533", "r": "paper_cites_paper", "t": "Paper:2111.10524", "doc_id": "arxiv:2603.27533", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2604.04690", "r": "paper_cites_paper", "t": "Paper:2311.15707", "doc_id": "arxiv:2604.04690", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2604.16522", "r": "paper_cites_paper", "t": "Paper:2211.03375", "doc_id": "arxiv:2604.16522", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:1812.01783", "r": "paper_cites_paper", "t": "Paper:1809.01995", "doc_id": "arxiv:1812.01783", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:1911.04231", "r": "paper_cites_paper", "t": "Paper:1812.02541", "doc_id": "arxiv:1911.04231", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2011.09783", "r": "paper_cites_paper", "t": "Paper:1812.01024", "doc_id": "arxiv:2011.09783", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2112.08775", "r": "paper_cites_paper", "t": "Paper:1912.00416", "doc_id": "arxiv:2112.08775", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2112.00343", "r": "paper_cites_paper", "t": "Paper:1811.11742", "doc_id": "arxiv:2112.00343", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2212.12324", "r": "paper_cites_paper", "t": "Paper:2012.05901", "doc_id": "arxiv:2212.12324", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2212.09530", "r": "paper_cites_paper", "t": "Paper:2012.03065", "doc_id": "arxiv:2212.09530", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2312.02126", "r": "paper_cites_paper", "t": "Paper:2211.11704", "doc_id": "arxiv:2312.02126", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2312.10758", "r": "paper_cites_paper", "t": "Paper:1811.05419", "doc_id": "arxiv:2312.10758", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2312.08060", "r": "paper_cites_paper", "t": "Paper:1909.03752", "doc_id": "arxiv:2312.08060", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2412.13058", "r": "paper_cites_paper", "t": "Paper:2110.00990", "doc_id": "arxiv:2412.13058", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2412.01422", "r": "paper_cites_paper", "t": "Paper:2211.03375", "doc_id": "arxiv:2412.01422", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2412.01543", "r": "paper_cites_paper", "t": "Paper:2112.12130", "doc_id": "arxiv:2412.01543", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2412.02254", "r": "paper_cites_paper", "t": "Paper:2311.17105", "doc_id": "arxiv:2412.02254", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2412.02254", "r": "paper_cites_paper", "t": "Paper:1911.07524", "doc_id": "arxiv:2412.02254", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2412.13502", "r": "paper_cites_paper", "t": "Paper:2003.04618", "doc_id": "arxiv:2412.13502", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2412.13502", "r": "paper_cites_paper", "t": "Paper:1901.05103", "doc_id": "arxiv:2412.13502", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2512.10674", "r": "paper_cites_paper", "t": "Paper:2311.14155", "doc_id": "arxiv:2512.10674", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2512.17505", "r": "paper_cites_paper", "t": "Paper:1911.11763", "doc_id": "arxiv:2512.17505", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2604.10593", "r": "paper_cites_paper", "t": "Paper:2312.02126", "doc_id": "arxiv:2604.10593", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2603.27170", "r": "paper_cites_paper", "t": "Paper:2109.00512", "doc_id": "arxiv:2603.27170", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2604.09715", "r": "paper_cites_paper", "t": "Paper:2212.08641", "doc_id": "arxiv:2604.09715", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2604.09715", "r": "paper_cites_paper", "t": "Paper:1811.11742", "doc_id": "arxiv:2604.09715", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2604.14089", "r": "paper_cites_paper", "t": "Paper:2109.07082", "doc_id": "arxiv:2604.14089", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:1910.10750", "r": "paper_cites_paper", "t": "Paper:1809.10790", "doc_id": "arxiv:1910.10750", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:1909.12494", "r": "paper_cites_paper", "t": "Paper:1808.08319", "doc_id": "arxiv:1909.12494", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:1912.09057", "r": "paper_cites_paper", "t": "Paper:1812.11788", "doc_id": "arxiv:1912.09057", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:1910.10653", "r": "paper_cites_paper", "t": "Paper:1812.02541", "doc_id": "arxiv:1910.10653", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:1912.04071", "r": "paper_cites_paper", "t": "Paper:1808.01525", "doc_id": "arxiv:1912.04071", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2010.13321", "r": "paper_cites_paper", "t": "Paper:1912.08077", "doc_id": "arxiv:2010.13321", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2010.16117", "r": "paper_cites_paper", "t": "Paper:1808.08319", "doc_id": "arxiv:2010.16117", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2012.13392", "r": "paper_cites_paper", "t": "Paper:2110.09554", "doc_id": "arxiv:2012.13392", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2012.13392", "r": "paper_cites_paper", "t": "Paper:1811.11742", "doc_id": "arxiv:2012.13392", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2012.13392", "r": "paper_cites_paper", "t": "Paper:1808.07182", "doc_id": "arxiv:2012.13392", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2012.08055", "r": "paper_cites_paper", "t": "Paper:1912.05656", "doc_id": "arxiv:2012.08055", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2011.04307", "r": "paper_cites_paper", "t": "Paper:1812.11788", "doc_id": "arxiv:2011.04307", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2111.12580", "r": "paper_cites_paper", "t": "Paper:1809.10790", "doc_id": "arxiv:2111.12580", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2110.05092", "r": "paper_cites_paper", "t": "Paper:2010.13302", "doc_id": "arxiv:2110.05092", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2110.05092", "r": "paper_cites_paper", "t": "Paper:1912.08077", "doc_id": "arxiv:2110.05092", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2111.10524", "r": "paper_cites_paper", "t": "Paper:1907.10844", "doc_id": "arxiv:2111.10524", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2110.12401", "r": "paper_cites_paper", "t": "Paper:1911.04231", "doc_id": "arxiv:2110.12401", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2111.11426", "r": "paper_cites_paper", "t": "Paper:2111.13112", "doc_id": "arxiv:2111.11426", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2111.11426", "r": "paper_cites_paper", "t": "Paper:2107.02791", "doc_id": "arxiv:2111.11426", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2111.11426", "r": "paper_cites_paper", "t": "Paper:2009.11193", "doc_id": "arxiv:2111.11426", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2111.11426", "r": "paper_cites_paper", "t": "Paper:1912.07372", "doc_id": "arxiv:2111.11426", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2111.11426", "r": "paper_cites_paper", "t": "Paper:1911.10414", "doc_id": "arxiv:2111.11426", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2111.11426", "r": "paper_cites_paper", "t": "Paper:1812.03828", "doc_id": "arxiv:2111.11426", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2212.08731", "r": "paper_cites_paper", "t": "Paper:1808.07182", "doc_id": "arxiv:2212.08731", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2211.15692", "r": "paper_cites_paper", "t": "Paper:2011.14679", "doc_id": "arxiv:2211.15692", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2311.16495", "r": "paper_cites_paper", "t": "Paper:2212.02796", "doc_id": "arxiv:2311.16495", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2311.16495", "r": "paper_cites_paper", "t": "Paper:2211.16487", "doc_id": "arxiv:2311.16495", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2311.11125", "r": "paper_cites_paper", "t": "Paper:1911.04231", "doc_id": "arxiv:2311.11125", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2312.15130", "r": "paper_cites_paper", "t": "Paper:1804.04610", "doc_id": "arxiv:2312.15130", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2411.18944", "r": "paper_cites_paper", "t": "Paper:2112.10716", "doc_id": "arxiv:2411.18944", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2411.18944", "r": "paper_cites_paper", "t": "Paper:1912.02323", "doc_id": "arxiv:2411.18944", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2411.13607", "r": "paper_cites_paper", "t": "Paper:2212.02796", "doc_id": "arxiv:2411.13607", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2411.16668", "r": "paper_cites_paper", "t": "Paper:2311.15707", "doc_id": "arxiv:2411.16668", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2411.05552", "r": "paper_cites_paper", "t": "Paper:1812.03247", "doc_id": "arxiv:2411.05552", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2512.19058", "r": "paper_cites_paper", "t": "Paper:1812.11788", "doc_id": "arxiv:2512.19058", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2512.22979", "r": "paper_cites_paper", "t": "Paper:2312.08344", "doc_id": "arxiv:2512.22979", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2512.08430", "r": "paper_cites_paper", "t": "Paper:2312.08344", "doc_id": "arxiv:2512.08430", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2603.22631", "r": "paper_cites_paper", "t": "Paper:2109.00512", "doc_id": "arxiv:2603.22631", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:1810.03758", "r": "paper_cites_paper", "t": "Paper:1808.08319", "doc_id": "arxiv:1810.03758", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:1812.00287", "r": "paper_cites_paper", "t": "Paper:1902.01275", "doc_id": "arxiv:1812.00287", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:1909.05730", "r": "paper_cites_paper", "t": "Paper:1807.11130", "doc_id": "arxiv:1909.05730", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:1912.03203", "r": "paper_cites_paper", "t": "Paper:1811.05419", "doc_id": "arxiv:1912.03203", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:1910.04953", "r": "paper_cites_paper", "t": "Paper:1902.01275", "doc_id": "arxiv:1910.04953", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:1912.00416", "r": "paper_cites_paper", "t": "Paper:1808.08319", "doc_id": "arxiv:1912.00416", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2010.06449", "r": "paper_cites_paper", "t": "Paper:1811.11742", "doc_id": "arxiv:2010.06449", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2010.06449", "r": "paper_cites_paper", "t": "Paper:1807.01511", "doc_id": "arxiv:2010.06449", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2009.12678", "r": "paper_cites_paper", "t": "Paper:1902.01275", "doc_id": "arxiv:2009.12678", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2112.04203", "r": "paper_cites_paper", "t": "Paper:1808.05942", "doc_id": "arxiv:2112.04203", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2111.11969", "r": "paper_cites_paper", "t": "Paper:1811.04989", "doc_id": "arxiv:2111.11969", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2210.13540", "r": "paper_cites_paper", "t": "Paper:1812.11788", "doc_id": "arxiv:2210.13540", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2211.02337", "r": "paper_cites_paper", "t": "Paper:1811.11742", "doc_id": "arxiv:2211.02337", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2311.09500", "r": "paper_cites_paper", "t": "Paper:2111.12580", "doc_id": "arxiv:2311.09500", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2311.09500", "r": "paper_cites_paper", "t": "Paper:1912.00416", "doc_id": "arxiv:2311.09500", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2311.09500", "r": "paper_cites_paper", "t": "Paper:1812.00287", "doc_id": "arxiv:2311.09500", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2311.09500", "r": "paper_cites_paper", "t": "Paper:1808.08319", "doc_id": "arxiv:2311.09500", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2312.08344", "r": "paper_cites_paper", "t": "Paper:1808.08319", "doc_id": "arxiv:2312.08344", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2312.06583", "r": "paper_cites_paper", "t": "Paper:2012.09856", "doc_id": "arxiv:2312.06583", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2411.09435", "r": "paper_cites_paper", "t": "Paper:1911.07524", "doc_id": "arxiv:2411.09435", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2411.06869", "r": "paper_cites_paper", "t": "Paper:2311.17891", "doc_id": "arxiv:2411.06869", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2501.01993", "r": "paper_cites_paper", "t": "Paper:2512.06565", "doc_id": "arxiv:2501.01993", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2511.10647", "r": "paper_cites_paper", "t": "Paper:2312.14132", "doc_id": "arxiv:2511.10647", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2511.10647", "r": "paper_cites_paper", "t": "Paper:2109.00512", "doc_id": "arxiv:2511.10647", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2511.15874", "r": "paper_cites_paper", "t": "Paper:1911.01911", "doc_id": "arxiv:2511.15874", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2603.25228", "r": "paper_cites_paper", "t": "Paper:2312.08344", "doc_id": "arxiv:2603.25228", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2603.25228", "r": "paper_cites_paper", "t": "Paper:2311.14155", "doc_id": "arxiv:2603.25228", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:1912.05656", "r": "paper_cites_paper", "t": "Paper:1811.11742", "doc_id": "arxiv:1912.05656", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2009.09633", "r": "paper_cites_paper", "t": "Paper:1912.00416", "doc_id": "arxiv:2009.09633", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2009.09633", "r": "paper_cites_paper", "t": "Paper:1804.04610", "doc_id": "arxiv:2009.09633", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2012.11938", "r": "paper_cites_paper", "t": "Paper:1812.11788", "doc_id": "arxiv:2012.11938", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2009.00348", "r": "paper_cites_paper", "t": "Paper:1912.04071", "doc_id": "arxiv:2009.00348", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2010.13302", "r": "paper_cites_paper", "t": "Paper:1805.09707", "doc_id": "arxiv:2010.13302", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2110.04411", "r": "paper_cites_paper", "t": "Paper:1909.05736", "doc_id": "arxiv:2110.04411", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2112.03045", "r": "paper_cites_paper", "t": "Paper:2012.00972", "doc_id": "arxiv:2112.03045", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2109.08263", "r": "paper_cites_paper", "t": "Paper:1812.08008", "doc_id": "arxiv:2109.08263", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2110.02330", "r": "paper_cites_paper", "t": "Paper:1812.09737", "doc_id": "arxiv:2110.02330", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2112.03810", "r": "paper_cites_paper", "t": "Paper:1902.01275", "doc_id": "arxiv:2112.03810", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2112.10485", "r": "paper_cites_paper", "t": "Paper:1905.03561", "doc_id": "arxiv:2112.10485", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2110.00990", "r": "paper_cites_paper", "t": "Paper:1808.05942", "doc_id": "arxiv:2110.00990", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2211.09325", "r": "paper_cites_paper", "t": "Paper:1911.04231", "doc_id": "arxiv:2211.09325", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2210.15121", "r": "paper_cites_paper", "t": "Paper:1912.05656", "doc_id": "arxiv:2210.15121", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2312.06409", "r": "paper_cites_paper", "t": "Paper:2112.09290", "doc_id": "arxiv:2312.06409", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2410.23643", "r": "paper_cites_paper", "t": "Paper:2111.00312", "doc_id": "arxiv:2410.23643", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2511.22686", "r": "paper_cites_paper", "t": "Paper:2211.16991", "doc_id": "arxiv:2511.22686", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2511.22686", "r": "paper_cites_paper", "t": "Paper:1911.11763", "doc_id": "arxiv:2511.22686", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2511.08294", "r": "paper_cites_paper", "t": "Paper:2412.06273", "doc_id": "arxiv:2511.08294", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2512.17547", "r": "paper_cites_paper", "t": "Paper:2312.12337", "doc_id": "arxiv:2512.17547", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2512.02727", "r": "paper_cites_paper", "t": "Paper:1811.09916", "doc_id": "arxiv:2512.02727", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2603.05078", "r": "paper_cites_paper", "t": "Paper:1905.02082", "doc_id": "arxiv:2603.05078", "confidence": 1.0, "source": "semantic_scholar"}
+{"h": "Paper:2604.03878", "r": "paper_cites_paper", "t": "Paper:1911.11763", "doc_id": "arxiv:2604.03878", "confidence": 1.0, "source": "semantic_scholar"}
