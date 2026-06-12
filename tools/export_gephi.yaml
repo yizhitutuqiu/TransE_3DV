@@ -1,0 +1,21 @@
+paths:
+  data_dir: data/preprocessed/final
+  entity2id_path: data/preprocessed/final/entity2id.txt
+  documents_path: data/preprocessed/text/documents.jsonl
+  triples_paths:
+    - data/preprocessed/final/triples_train.jsonl
+    - data/preprocessed/final/triples_test.jsonl
+  out_dir: data/vis/gephi
+
+sample:
+  node_limit: 500
+  expand_hops: 1
+  top_papers_by_citation: 50
+  top_repos_by_stars: 50
+  seed_entities: []
+  seed: 42
+
+gephi:
+  nodes_csv: nodes.csv
+  edges_csv: edges.csv
+

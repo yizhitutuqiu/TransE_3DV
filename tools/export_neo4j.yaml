@@ -1,0 +1,14 @@
+paths:
+  data_dir: data/preprocessed/final
+  entity2id_path: data/preprocessed/final/entity2id.txt
+  documents_path: data/preprocessed/text/documents.jsonl
+  triples_paths:
+    - data/preprocessed/final/triples_train.jsonl
+    - data/preprocessed/final/triples_test.jsonl
+  out_dir: data/vis/neo4j
+
+neo4j:
+  nodes_csv: nodes.csv
+  rels_csv: relationships.csv
+  delimiter: ","
+

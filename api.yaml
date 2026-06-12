@@ -13,6 +13,7 @@ infer:
   top_k: 10
   batch_size: 512
   filtered: true
+  mode: hybrid
 
 eval:
   batch_size: 256

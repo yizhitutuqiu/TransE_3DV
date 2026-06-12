@@ -4,7 +4,7 @@ import json
 import sys
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Set, Tuple
 
 import torch
 
@@ -97,6 +97,9 @@ class ZSTPAPI:
     ids_by_type: Dict[str, List[int]]
     entity_meta: Dict[str, Dict[str, Any]]
     filter_index: Any
+    heads_by_r: Dict[int, List[int]]
+    tails_by_r: Dict[int, List[int]]
+    triple_set: Set[Tuple[int, int, int]]
     train_triples: List[Tuple[int, int, int]]
     test_triples: List[Tuple[int, int, int]]
 
@@ -208,7 +211,16 @@ class ZSTPAPI:
 
         train_triples = load_triples_hrt(str(data_dir / "train2id.txt")) if (data_dir / "train2id.txt").exists() else []
         test_triples = load_triples_hrt(str(data_dir / "test2id.txt")) if (data_dir / "test2id.txt").exists() else []
-        filter_index = build_filter_index(list(train_triples) + list(test_triples))
+        all_triples = list(train_triples) + list(test_triples)
+        filter_index = build_filter_index(all_triples)
+        heads_by_r_set: Dict[int, set] = {}
+        tails_by_r_set: Dict[int, set] = {}
+        for h, t, r in all_triples:
+            heads_by_r_set.setdefault(int(r), set()).add(int(h))
+            tails_by_r_set.setdefault(int(r), set()).add(int(t))
+        heads_by_r = {k: sorted(v) for k, v in heads_by_r_set.items()}
+        tails_by_r = {k: sorted(v) for k, v in tails_by_r_set.items()}
+        triple_set = {(int(h), int(r), int(t)) for (h, t, r) in all_triples}
 
         info = ModelInfo(
             ckpt_path=str(ckpt_path),
@@ -230,12 +242,16 @@ class ZSTPAPI:
             ids_by_type=ids_by_type,
             entity_meta=entity_meta,
             filter_index=filter_index,
+            heads_by_r=heads_by_r,
+            tails_by_r=tails_by_r,
+            triple_set=triple_set,
             train_triples=list(train_triples),
             test_triples=list(test_triples),
         )
         api._default_top_k = int(infer_cfg.get("top_k", 10))
         api._default_batch_size = int(infer_cfg.get("batch_size", 512))
         api._default_filtered = bool(infer_cfg.get("filtered", True))
+        api._default_infer_mode = str(infer_cfg.get("mode", "hybrid")).strip().lower() or "hybrid"
         api._default_eval_batch_size = int(eval_cfg.get("batch_size", 256))
         api._default_include_entity_meta = bool(meta_cfg.get("include_in_search", True))
         return api
@@ -289,6 +305,142 @@ class ZSTPAPI:
                 out["meta"] = m
         return out
 
+    def query_entities(
+        self,
+        *,
+        entity_type: str = "",
+        where: Optional[List[Dict[str, Any]]] = None,
+        relation: Optional[Dict[str, Any]] = None,
+        order_by: str = "",
+        order: str = "desc",
+        limit: int = 50,
+        offset: int = 0,
+        include_meta: Optional[bool] = None,
+    ) -> Dict[str, Any]:
+        entity_type = str(entity_type or "").strip()
+        limit = max(1, min(int(limit), 5000))
+        offset = max(0, int(offset))
+        inc = self._default_include_entity_meta if include_meta is None else bool(include_meta)
+
+        ids = list(range(self.info.num_entities))
+        if entity_type:
+            ids = list(self.ids_by_type.get(entity_type, []))
+
+        if isinstance(relation, dict) and relation:
+            r_val = relation.get("r")
+            r_id = _resolve_id(r_val, self.rel2id, "relation")
+            role = str(relation.get("role", "either")).strip().lower()
+            other = relation.get("other")
+            if other is None:
+                if role == "head":
+                    allowed_ids = set(self.heads_by_r.get(r_id, []))
+                elif role == "tail":
+                    allowed_ids = set(self.tails_by_r.get(r_id, []))
+                else:
+                    allowed_ids = set(self.heads_by_r.get(r_id, [])) | set(self.tails_by_r.get(r_id, []))
+            else:
+                other_id = _resolve_id(other, self.ent2id, "entity")
+                if role == "tail":
+                    allowed_ids = set(self.filter_index.heads_by_rt.get((r_id, other_id), set()))
+                else:
+                    allowed_ids = set(self.filter_index.tails_by_hr.get((other_id, r_id), set()))
+            ids = [i for i in ids if i in allowed_ids]
+
+        def _get_field(eid: int, field: str) -> Any:
+            field = str(field or "").strip()
+            if field in {"id"}:
+                return eid
+            if field in {"name"}:
+                return self.ent_names[eid]
+            meta = self.entity_meta.get(self.ent_names[eid], {})
+            if isinstance(meta, dict) and field in meta:
+                return meta.get(field)
+            return None
+
+        def _match_cond(eid: int, cond: Dict[str, Any]) -> bool:
+            if not isinstance(cond, dict):
+                return True
+            field = cond.get("field")
+            op = str(cond.get("op", "exists")).strip().lower()
+            val = _get_field(eid, str(field or ""))
+            target = cond.get("value")
+            if op in {"exists"}:
+                return val is not None
+            if op in {"missing", "not_exists"}:
+                return val is None
+            if op in {"=", "=="}:
+                return val == target
+            if op in {"!=", "<>"}:
+                return val != target
+            if op in {">", ">=", "<", "<="}:
+                if val is None:
+                    return False
+                try:
+                    fv = float(val)
+                    ft = float(target)
+                except Exception:
+                    return False
+                if op == ">":
+                    return fv > ft
+                if op == ">=":
+                    return fv >= ft
+                if op == "<":
+                    return fv < ft
+                return fv <= ft
+            if op in {"in"}:
+                if isinstance(target, list):
+                    return val in target
+                return False
+            if op in {"contains"}:
+                if val is None:
+                    return False
+                return str(target or "").lower() in str(val).lower()
+            if op in {"startswith"}:
+                if val is None:
+                    return False
+                return str(val).lower().startswith(str(target or "").lower())
+            return True
+
+        if isinstance(where, list) and where:
+            ids2: List[int] = []
+            for eid in ids:
+                ok = True
+                for cond in where:
+                    if not _match_cond(eid, cond):
+                        ok = False
+                        break
+                if ok:
+                    ids2.append(eid)
+            ids = ids2
+
+        order_by = str(order_by or "").strip()
+        if order_by:
+            desc = str(order or "desc").strip().lower() != "asc"
+
+            def _key(eid: int) -> Tuple[int, float, str]:
+                v = _get_field(eid, order_by)
+                if v is None:
+                    return (1, 0.0, self.ent_names[eid])
+                try:
+                    fv = float(v)
+                    return (0, (-fv if desc else fv), self.ent_names[eid])
+                except Exception:
+                    sv = str(v)
+                    return (0, 0.0, ("" if desc else "") + sv)
+
+            ids = sorted(ids, key=_key)
+
+        items: List[Dict[str, Any]] = []
+        for eid in ids[offset : offset + limit]:
+            it: Dict[str, Any] = {"id": eid, "name": self.ent_names[eid]}
+            if inc:
+                m = self.entity_meta.get(self.ent_names[eid])
+                if isinstance(m, dict) and m:
+                    it["meta"] = m
+            items.append(it)
+
+        return {"count": len(ids), "items": items, "offset": offset, "limit": limit}
+
     def score(self, *, h: Any, r: Any, t: Any) -> Dict[str, Any]:
         h_id = _resolve_id(h, self.ent2id, "entity")
         r_id = _resolve_id(r, self.rel2id, "relation")
@@ -300,7 +452,40 @@ class ZSTPAPI:
                 torch.tensor([r_id], device=device, dtype=torch.long),
                 torch.tensor([t_id], device=device, dtype=torch.long),
             )[0]
-        return {"h": self.ent_names[h_id], "r": self.rel_names[r_id], "t": self.ent_names[t_id], "score": float(sc.item())}
+        exists = (h_id, r_id, t_id) in self.triple_set
+        return {"h": self.ent_names[h_id], "r": self.rel_names[r_id], "t": self.ent_names[t_id], "score": float(sc.item()), "graph_exists": bool(exists)}
+
+    def graph_score(self, *, h: Any, r: Any, t: Any) -> Dict[str, Any]:
+        h_id = _resolve_id(h, self.ent2id, "entity")
+        r_id = _resolve_id(r, self.rel2id, "relation")
+        t_id = _resolve_id(t, self.ent2id, "entity")
+        return {"h": self.ent_names[h_id], "r": self.rel_names[r_id], "t": self.ent_names[t_id], "graph_exists": bool((h_id, r_id, t_id) in self.triple_set)}
+
+    def _normalize_mode(self, mode: Optional[str]) -> str:
+        m = str(self._default_infer_mode if mode is None else mode).strip().lower()
+        if m not in {"infer", "graph", "hybrid"}:
+            return "hybrid"
+        return m
+
+    def _graph_tail(self, *, h_id: int, r_id: int, candidate_type: str, limit: int) -> List[int]:
+        tails = list(self.filter_index.tails_by_hr.get((h_id, r_id), set()))
+        if candidate_type:
+            allowed = set(self.ids_by_type.get(candidate_type, []))
+            if allowed:
+                tails = [x for x in tails if x in allowed]
+        if limit > 0:
+            tails = tails[:limit]
+        return tails
+
+    def _graph_head(self, *, t_id: int, r_id: int, candidate_type: str, limit: int) -> List[int]:
+        heads = list(self.filter_index.heads_by_rt.get((r_id, t_id), set()))
+        if candidate_type:
+            allowed = set(self.ids_by_type.get(candidate_type, []))
+            if allowed:
+                heads = [x for x in heads if x in allowed]
+        if limit > 0:
+            heads = heads[:limit]
+        return heads
 
     def predict_tail(
         self,
@@ -312,6 +497,7 @@ class ZSTPAPI:
         filtered: Optional[bool] = None,
         batch_size: Optional[int] = None,
         keep_t: Any = None,
+        mode: Optional[str] = None,
     ) -> Dict[str, Any]:
         h_id = _resolve_id(h, self.ent2id, "entity")
         r_id = _resolve_id(r, self.rel2id, "relation")
@@ -320,6 +506,7 @@ class ZSTPAPI:
         kk = int(self._default_top_k if k is None else k)
         bb = int(self._default_batch_size if batch_size is None else batch_size)
         ff = bool(self._default_filtered if filtered is None else filtered)
+        mm = self._normalize_mode(mode)
         kk = max(1, kk)
         bb = max(1, bb)
 
@@ -329,6 +516,17 @@ class ZSTPAPI:
             c = relation_type_constraint(self.rel_names[r_id])
             if c is not None:
                 candidate_type = c[1]
+
+        graph_ids: List[int] = []
+        if mm in {"graph", "hybrid"}:
+            graph_ids = self._graph_tail(h_id=h_id, r_id=r_id, candidate_type=candidate_type, limit=kk if mm == "graph" else kk)
+            if mm == "graph":
+                return {
+                    "mode": "graph",
+                    "h": self.ent_names[h_id],
+                    "r": self.rel_names[r_id],
+                    "topk": [{"t": self.ent_names[i], "score": 0.0, "source": "graph"} for i in graph_ids],
+                }
         if candidate_type:
             allowed = set(self.ids_by_type.get(candidate_type, []))
             type_mask = torch.ones(self.info.num_entities, device=device, dtype=torch.bool)
@@ -358,7 +556,14 @@ class ZSTPAPI:
         if mask is not None:
             out = out.masked_fill(mask, float("inf"))
         top = _topk(out, k=kk)
-        return {"h": self.ent_names[h_id], "r": self.rel_names[r_id], "topk": [{"t": self.ent_names[i], "score": s} for i, s in top]}
+        top = _topk(out, k=kk if mm == "infer" else max(0, kk - len(graph_ids)))
+        items: List[Dict[str, Any]] = []
+        if mm == "hybrid":
+            for i in graph_ids:
+                items.append({"t": self.ent_names[i], "score": 0.0, "source": "graph"})
+        for i, s in top:
+            items.append({"t": self.ent_names[i], "score": s, "source": "infer"})
+        return {"mode": mm, "h": self.ent_names[h_id], "r": self.rel_names[r_id], "topk": items}
 
     def predict_head(
         self,
@@ -370,6 +575,7 @@ class ZSTPAPI:
         filtered: Optional[bool] = None,
         batch_size: Optional[int] = None,
         keep_h: Any = None,
+        mode: Optional[str] = None,
     ) -> Dict[str, Any]:
         t_id = _resolve_id(t, self.ent2id, "entity")
         r_id = _resolve_id(r, self.rel2id, "relation")
@@ -378,6 +584,7 @@ class ZSTPAPI:
         kk = int(self._default_top_k if k is None else k)
         bb = int(self._default_batch_size if batch_size is None else batch_size)
         ff = bool(self._default_filtered if filtered is None else filtered)
+        mm = self._normalize_mode(mode)
         kk = max(1, kk)
         bb = max(1, bb)
 
@@ -387,6 +594,17 @@ class ZSTPAPI:
             c = relation_type_constraint(self.rel_names[r_id])
             if c is not None:
                 candidate_type = c[0]
+
+        graph_ids: List[int] = []
+        if mm in {"graph", "hybrid"}:
+            graph_ids = self._graph_head(t_id=t_id, r_id=r_id, candidate_type=candidate_type, limit=kk if mm == "graph" else kk)
+            if mm == "graph":
+                return {
+                    "mode": "graph",
+                    "t": self.ent_names[t_id],
+                    "r": self.rel_names[r_id],
+                    "topk": [{"h": self.ent_names[i], "score": 0.0, "source": "graph"} for i in graph_ids],
+                }
         if candidate_type:
             allowed = set(self.ids_by_type.get(candidate_type, []))
             type_mask = torch.ones(self.info.num_entities, device=device, dtype=torch.bool)
@@ -416,7 +634,14 @@ class ZSTPAPI:
         if mask is not None:
             out = out.masked_fill(mask, float("inf"))
         top = _topk(out, k=kk)
-        return {"t": self.ent_names[t_id], "r": self.rel_names[r_id], "topk": [{"h": self.ent_names[i], "score": s} for i, s in top]}
+        top = _topk(out, k=kk if mm == "infer" else max(0, kk - len(graph_ids)))
+        items: List[Dict[str, Any]] = []
+        if mm == "hybrid":
+            for i in graph_ids:
+                items.append({"h": self.ent_names[i], "score": 0.0, "source": "graph"})
+        for i, s in top:
+            items.append({"h": self.ent_names[i], "score": s, "source": "infer"})
+        return {"mode": mm, "t": self.ent_names[t_id], "r": self.rel_names[r_id], "topk": items}
 
     def neighbors(self, *, entity: Any, k: int = 10) -> Dict[str, Any]:
         ent_id = _resolve_id(entity, self.ent2id, "entity")

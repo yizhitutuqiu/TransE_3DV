@@ -1,0 +1,12 @@
+{
+  "created_at": "2026-06-12T10:31:37+0800",
+  "nodes_csv": "/data/litengmo/ml-test-1/zstp_final/data/vis/neo4j/nodes.csv",
+  "rels_csv": "/data/litengmo/ml-test-1/zstp_final/data/vis/neo4j/relationships.csv",
+  "triples_paths": [
+    "/data/litengmo/ml-test-1/zstp_final/data/preprocessed/final/triples_train.jsonl",
+    "/data/litengmo/ml-test-1/zstp_final/data/preprocessed/final/triples_test.jsonl"
+  ],
+  "documents_path": "/data/litengmo/ml-test-1/zstp_final/data/preprocessed/text/documents.jsonl",
+  "node_count": 5445,
+  "rel_count": 6380
+}
