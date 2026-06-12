@@ -1,5 +1,5 @@
 model:
-  ckpt_path: /data/litengmo/ml-test-1/zstp_final/checkpoints/transe_v1/best.pt
+  ckpt_path: /data/litengmo/ml-test-1/zstp_final/checkpoints/transe_v3/best.pt
   embedding_dim: 100
   p_norm: 1
   device: cpu

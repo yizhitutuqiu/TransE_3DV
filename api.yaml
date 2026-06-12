@@ -1,5 +1,5 @@
 model:
-  ckpt_path: checkpoints/transe_v2/best.pt
+  ckpt_path: checkpoints/transe_v3/best.pt
   data_dir: data/preprocessed/final
   device: auto
   embedding_dim: auto
