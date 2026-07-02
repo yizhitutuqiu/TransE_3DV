@@ -215,30 +215,49 @@ def main() -> int:
         neighbors.setdefault(h, set()).add(t)
         neighbors.setdefault(t, set()).add(h)
 
-    node_limit = int(sample_cfg.get("node_limit", 500))
-    hops = int(sample_cfg.get("expand_hops", 1))
-    top_papers = int(sample_cfg.get("top_papers_by_citation", 50))
-    top_repos = int(sample_cfg.get("top_repos_by_stars", 50))
-    seed_entities = [str(x) for x in (sample_cfg.get("seed_entities") or [])]
     rng = random.Random(int(sample_cfg.get("seed", 42)))
-
-    papers = [n for n in ent_names if _entity_type(n) == "Paper"]
-    repos = [n for n in ent_names if _entity_type(n) == "Repo"]
-
-    papers_sorted = sorted(papers, key=lambda n: _score_for(n, meta, "citation_count"), reverse=True)
-    repos_sorted = sorted(repos, key=lambda n: _score_for(n, meta, "repo_stargazers_count"), reverse=True)
+    mode = str(sample_cfg.get("mode", "seed_bfs")).strip() or "seed_bfs"
 
     seeds: List[str] = []
-    for x in seed_entities:
-        if x in set(ent_names):
-            seeds.append(x)
-    seeds.extend(papers_sorted[: max(0, top_papers)])
-    seeds.extend(repos_sorted[: max(0, top_repos)])
-    if not seeds and ent_names:
-        seeds.append(rng.choice(ent_names))
-    seeds = list(dict.fromkeys(seeds))
+    selected: Set[str] = set()
+    type_counts: Dict[str, int] = {}
 
-    selected = _bfs_expand(seeds, neighbors=neighbors, hops=max(0, hops), limit=max(1, node_limit))
+    if mode == "stratified_by_type":
+        per_type_limit = int(sample_cfg.get("per_type_limit", 300))
+        types = [str(x) for x in (sample_cfg.get("types") or ["Paper", "Method", "Repo", "Dataset"])]
+        for t in types:
+            cand = [n for n in ent_names if _entity_type(n) == t]
+            if not cand:
+                type_counts[t] = 0
+                continue
+            k = min(max(0, per_type_limit), len(cand))
+            pick = rng.sample(cand, k) if k < len(cand) else list(cand)
+            selected.update(pick)
+            type_counts[t] = len(pick)
+        seeds = sorted(selected)[:50]
+    else:
+        node_limit = int(sample_cfg.get("node_limit", 500))
+        hops = int(sample_cfg.get("expand_hops", 1))
+        top_papers = int(sample_cfg.get("top_papers_by_citation", 50))
+        top_repos = int(sample_cfg.get("top_repos_by_stars", 50))
+        seed_entities = [str(x) for x in (sample_cfg.get("seed_entities") or [])]
+
+        papers = [n for n in ent_names if _entity_type(n) == "Paper"]
+        repos = [n for n in ent_names if _entity_type(n) == "Repo"]
+
+        papers_sorted = sorted(papers, key=lambda n: _score_for(n, meta, "citation_count"), reverse=True)
+        repos_sorted = sorted(repos, key=lambda n: _score_for(n, meta, "repo_stargazers_count"), reverse=True)
+
+        for x in seed_entities:
+            if x in set(ent_names):
+                seeds.append(x)
+        seeds.extend(papers_sorted[: max(0, top_papers)])
+        seeds.extend(repos_sorted[: max(0, top_repos)])
+        if not seeds and ent_names:
+            seeds.append(rng.choice(ent_names))
+        seeds = list(dict.fromkeys(seeds))
+
+        selected = _bfs_expand(seeds, neighbors=neighbors, hops=max(0, hops), limit=max(1, node_limit))
 
     edge_rows: List[Dict[str, Any]] = []
     for h, r, t, w in edges:
@@ -284,10 +303,13 @@ def main() -> int:
                 "documents_path": str(documents_path),
                 "node_count": len(node_rows),
                 "edge_count": len(edge_rows),
+                "mode": mode,
                 "seed_count": len(seeds),
                 "seeds": seeds[:50],
-                "node_limit": node_limit,
-                "expand_hops": hops,
+                "type_counts": type_counts,
+                "node_limit": int(sample_cfg.get("node_limit", 500)) if mode != "stratified_by_type" else None,
+                "expand_hops": int(sample_cfg.get("expand_hops", 1)) if mode != "stratified_by_type" else None,
+                "per_type_limit": int(sample_cfg.get("per_type_limit", 300)) if mode == "stratified_by_type" else None,
             },
             ensure_ascii=False,
             indent=2,
@@ -302,4 +324,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

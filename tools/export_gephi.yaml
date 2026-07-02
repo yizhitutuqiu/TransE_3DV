@@ -8,14 +8,15 @@ paths:
   out_dir: data/vis/gephi
 
 sample:
-  node_limit: 500
-  expand_hops: 1
-  top_papers_by_citation: 50
-  top_repos_by_stars: 50
-  seed_entities: []
+  mode: stratified_by_type
+  per_type_limit: 800
+  types:
+    - Paper
+    - Method
+    - Repo
+    - Dataset
   seed: 42
 
 gephi:
   nodes_csv: nodes.csv
   edges_csv: edges.csv
-
